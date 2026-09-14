@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { SITUATION_AS_OF } from '../data/timeframes.js';
 import {
   COMMODITIES,
   COMMODITY_BY_ID,
@@ -60,7 +61,7 @@ export default function MapPanel({
           </div>
 
           <div className="mappanel__group">
-            <h4>Corridor status · August 2026</h4>
+            <h4>Corridor status · {SITUATION_AS_OF}</h4>
             <ul className="keylist">
               {STATUS_ORDER.map((id) => {
                 const s = STATUS[id];

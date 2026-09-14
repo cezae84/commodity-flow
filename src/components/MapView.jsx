@@ -20,16 +20,16 @@ import { smoothPath, pathVariants, wrapLng } from '../lib/geo.js';
 const CARTO_KEY = import.meta.env.VITE_CARTO_KEY ?? '';
 const KEY_PARAM = CARTO_KEY ? `?key=${encodeURIComponent(CARTO_KEY)}` : '';
 
-const BASEMAP = `https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png${KEY_PARAM}`;
-const BASEMAP_LABELS = `https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png${KEY_PARAM}`;
+const BASEMAP = `https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png${KEY_PARAM}`;
+const BASEMAP_LABELS = `https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png${KEY_PARAM}`;
 const ATTRIBUTION =
   '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
 
 /** Line thickness from the corridor's rank (1 to 5). */
 const strokeWidth = (weight) => 1.1 + weight * 0.75;
 
-/** Light casing laid under every path: lifts the line off the basemap. */
-const CASING = '#ffffff';
+/** Dark casing laid under every path: separates crossing lines on the dark basemap. */
+const CASING = '#0a0a0a';
 
 /**
  * Cartographic generalisation: past this many visible corridors, the lightest
@@ -153,7 +153,7 @@ export default function MapView({
       }).addTo(group);
 
       const line = L.polyline(pipe.path, {
-        color: '#6f6a60',
+        color: '#9a9a9a',
         weight: 2,
         dashArray: '1 5',
         lineCap: 'round',
@@ -271,7 +271,7 @@ export default function MapView({
           radius: isSelected ? 5 : 3.5,
           color: commodity.color,
           weight: 2,
-          fillColor: '#ffffff',
+          fillColor: '#0a0a0a',
           fillOpacity: o,
           opacity: o,
           interactive: false,
@@ -279,7 +279,7 @@ export default function MapView({
 
         L.circleMarker(coords[coords.length - 1], {
           radius: isSelected ? 5.5 : 4,
-          color: '#ffffff',
+          color: '#0a0a0a',
           weight: 1.5,
           fillColor: commodity.color,
           fillOpacity: o,
@@ -340,7 +340,7 @@ export default function MapView({
         radius: isSelected ? 7.5 : 6,
         color: status.color,
         weight: 2.5,
-        fillColor: '#ffffff',
+        fillColor: '#0a0a0a',
         fillOpacity: 1,
         className: 'wm-choke-dot',
       });

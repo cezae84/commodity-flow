@@ -13,7 +13,7 @@ import { COMMODITY_BY_ID, STATUS } from '../data/commodities.js';
 import { SCOPES } from '../data/scopes.js';
 import { TIMEFRAMES, SITUATION_AS_OF } from '../data/timeframes.js';
 import { ScopeBadge, SourceLink, TimeframeBadge } from './Facts.jsx';
-import { Change } from './MarketStrip.jsx';
+import { Change } from './MarketsPanel.jsx';
 import { LIVE_DATA_URL, formatAsOf, formatPct, formatPrice, vsReference } from '../data/live.js';
 
 const PIPELINE_BY_ID = Object.fromEntries(PIPELINES.map((p) => [p.id, p]));

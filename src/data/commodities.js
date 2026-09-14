@@ -1,11 +1,12 @@
 /**
  * The 8 commodity families covered by the map.
  *
- * Editorial palette designed for a light basemap (CARTO Positron water,
- * #d4dadc). The hue order was picked among validated permutations: colour-vision
- * separation ΔE 11.5 on the worst adjacent pair, normal-vision floor ΔE 18.5,
- * contrast >= 3:1 against water (teal sits at 2.98 — hence the always-visible
- * legend and tooltips, which name the family in words).
+ * Palette stepped for the dark terminal theme on CARTO Dark Matter (water
+ * #262626), validated with the dataviz palette validator in dark mode: every
+ * hue inside the OKLCH L 0.48–0.67 band, chroma ≥ 0.10, worst adjacent
+ * colour-vision separation ΔE 11.5 (coal ↔ LNG, protan), normal-vision floor
+ * ΔE 17.4, contrast ≥ 3:1 against the water. Same hue families and order as the
+ * former light palette.
  *
  * Do not reorder and do not add a 9th hue: the order IS the colour-blindness
  * safety mechanism, not an aesthetic choice.
@@ -15,7 +16,7 @@ export const COMMODITIES = [
     id: 'crude',
     label: 'Crude oil',
     short: 'Crude',
-    color: '#2C6FB5',
+    color: '#4A90E2',
     unit: 'Mb/d',
     blurb:
       'Flows are polarised Persian Gulf → Asia through Hormuz and Malacca, with a second Russia → India and China axis since the war in Ukraine.',
@@ -24,7 +25,7 @@ export const COMMODITIES = [
     id: 'products',
     label: 'Refined products',
     short: 'Products',
-    color: '#C2410C',
+    color: '#D9652F',
     unit: 'Mb/d',
     blurb:
       'Diesel, jet fuel, naphtha, fuel oil. Europe replaced Russian diesel with cargoes from the Middle East, India and the United States.',
@@ -33,7 +34,7 @@ export const COMMODITIES = [
     id: 'lng',
     label: 'LNG',
     short: 'LNG',
-    color: '#008B7D',
+    color: '#19A089',
     unit: 'Mt/yr',
     blurb:
       'A record year for LNG trade in 2025, dominated by the United States, Qatar and Australia.',
@@ -42,7 +43,7 @@ export const COMMODITIES = [
     id: 'coal',
     label: 'Coal',
     short: 'Coal',
-    color: '#A46A08',
+    color: '#B58924',
     unit: 'Mt/yr',
     blurb:
       'Indonesia, Australia and Russia supply the big Asian importers, led by China and India; trade contracted in 2025.',
@@ -51,7 +52,7 @@ export const COMMODITIES = [
     id: 'fertilizer',
     label: 'Fertilizers',
     short: 'Fertilizer',
-    color: '#9C3070',
+    color: '#D35C9E',
     unit: 'Mt/yr',
     blurb:
       'Urea, potash, phosphates. Canada leads potash exports, Morocco holds most phosphate reserves, and a large share of traded urea comes from inside the Gulf.',
@@ -60,7 +61,7 @@ export const COMMODITIES = [
     id: 'grain',
     label: 'Grain & oilseeds',
     short: 'Grain',
-    color: '#4F7A21',
+    color: '#6FA83A',
     unit: 'Mt/yr',
     blurb:
       'Soybeans, corn, wheat, barley, canola. Brazil ships record soybean volumes to China and has overtaken the United States as China’s corn supplier.',
@@ -69,7 +70,7 @@ export const COMMODITIES = [
     id: 'metals',
     label: 'Metals & ores',
     short: 'Metals',
-    color: '#6A54C0',
+    color: '#8C7BE3',
     unit: 'Mt/yr',
     blurb:
       'Base metals — copper, aluminium, nickel, zinc and tin — from raw ore to refined metal, plus the critical minerals. Nearly every one of these corridors converges on China.',
@@ -78,7 +79,7 @@ export const COMMODITIES = [
     id: 'iron',
     label: 'Iron ore',
     short: 'Iron ore',
-    color: '#B02E2E',
+    color: '#E0605A',
     unit: 'Mt/yr',
     blurb:
       'Australia and Brazil supply most seaborne iron ore, and China absorbs most of it.',
@@ -132,35 +133,35 @@ export const STATUS = {
   normal: {
     id: 'normal',
     label: 'Normal traffic',
-    color: '#0F7B37',
+    color: '#2FB35A',
     icon: '●',
     dash: null,
   },
   reduced: {
     id: 'reduced',
     label: 'Reduced traffic',
-    color: '#B07A0A',
+    color: '#F2B21B',
     icon: '▽',
     dash: '14 5',
   },
   rerouted: {
     id: 'rerouted',
     label: 'Rerouted via the Cape of Good Hope',
-    color: '#C05621',
+    color: '#EC835A',
     icon: '↻',
     dash: '10 6',
   },
   disrupted: {
     id: 'disrupted',
     label: 'Halted or near standstill',
-    color: '#B3261E',
+    color: '#F0524F',
     icon: '✕',
     dash: '2 8',
   },
   new: {
     id: 'new',
     label: 'Recently opened corridor',
-    color: '#1F6FB2',
+    color: '#4FC3F7',
     icon: '✦',
     dash: '1 6',
   },

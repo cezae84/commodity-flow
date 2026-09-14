@@ -7,7 +7,8 @@ import { CHOKEPOINT_BY_ID } from '../data/index.js';
 import { pathLengthNm } from '../lib/geo.js';
 import { TIMEFRAMES, WAR_START } from '../data/timeframes.js';
 import { FactCard, FactList } from './Facts.jsx';
-import { PriceRow } from './MarketStrip.jsx';
+import { PriceRow } from './MarketsPanel.jsx';
+import Star from './Star.jsx';
 import { instrumentsFor } from '../data/live.js';
 
 /**
@@ -34,7 +35,7 @@ function ReferencePeriod({ item }) {
   );
 }
 
-function CurrentPeriod({ item, prices = [] }) {
+function CurrentPeriod({ item, prices = [], watchlist }) {
   const status = item.status ? STATUS[item.status] : null;
   const evidence = [
     ...(item.statusFact ? [item.statusFact] : []),
@@ -72,7 +73,13 @@ function CurrentPeriod({ item, prices = [] }) {
           <h4 className="period__subtitle">Market prices now</h4>
           <ul className="prices">
             {prices.map((inst) => (
-              <PriceRow key={inst.instrument_id} inst={inst} showReference />
+              <PriceRow
+                key={inst.instrument_id}
+                inst={inst}
+                showReference
+                starred={watchlist?.isPrice(inst.instrument_id)}
+                onToggleStar={watchlist?.togglePrice}
+              />
             ))}
           </ul>
           <p className="markets__note">
@@ -85,7 +92,7 @@ function CurrentPeriod({ item, prices = [] }) {
   );
 }
 
-export function RouteDetail({ route, market, onClose, onSelectChokepoint }) {
+export function RouteDetail({ route, market, watchlist, onClose, onSelectChokepoint }) {
   const commodity = COMMODITY_BY_ID[route.commodity];
   const status = STATUS[route.status];
   const sub = route.sub ? SUBFILTER_BY_ID[route.sub] : null;
@@ -106,7 +113,17 @@ export function RouteDetail({ route, market, onClose, onSelectChokepoint }) {
         {commodity.label}
         {sub && <span className="detail__sub"> · {sub.label}</span>}
       </span>
-      <h2 className="detail__title">{route.name}</h2>
+      <div className="detail__titlerow">
+        <h2 className="detail__title">{route.name}</h2>
+        {watchlist && (
+          <Star
+            active={watchlist.isRoute(route.id)}
+            onToggle={() => watchlist.toggleRoute(route.id)}
+            label={route.name}
+            className="detail__star"
+          />
+        )}
+      </div>
 
       <div className="detail__od">
         <div>
@@ -140,6 +157,7 @@ export function RouteDetail({ route, market, onClose, onSelectChokepoint }) {
       <ReferencePeriod item={route} />
       <CurrentPeriod
         item={route}
+        watchlist={watchlist}
         prices={market?.status === 'ok' ? instrumentsFor(market.data, route.commodity) : []}
       />
 

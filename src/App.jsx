@@ -7,8 +7,10 @@ import CountryFilter from './components/CountryFilter.jsx';
 import MapPanel from './components/MapPanel.jsx';
 import { RouteDetail, ChokepointDetail } from './components/DetailPanel.jsx';
 import DataView from './components/DataView.jsx';
-import MarketStrip from './components/MarketStrip.jsx';
+import MarketsPanel from './components/MarketsPanel.jsx';
+import Watchlist from './components/Watchlist.jsx';
 import { useMarketPrices } from './data/live.js';
+import { useWatchlist } from './data/favorites.js';
 
 import {
   ROUTES,
@@ -57,6 +59,11 @@ export default function App() {
   const [alertOpen, setAlertOpen] = useState(true);
   const [dataOpen, setDataOpen] = useState(false);
   const market = useMarketPrices();
+  const watchlist = useWatchlist();
+  // Sidebar menu: route selection, market prices, or the user's watchlist.
+  const [view, setView] = useState('routes');
+  // Restricts the map (and the route list) to the starred routes.
+  const [watchOnly, setWatchOnly] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [shownOnMap, setShownOnMap] = useState(0);
   const [eligibleOnMap, setEligibleOnMap] = useState(0);
@@ -101,6 +108,9 @@ export default function App() {
   }, [commodityFiltered, direction, country]);
 
   const visibleRoutes = useMemo(() => {
+    if (watchOnly) {
+      return watchlist.routes.map((id) => ROUTE_BY_ID[id]).filter(Boolean);
+    }
     const q = fold(query.trim());
     let list = commodityFiltered.filter((r) =>
       matchesCountry(r, country, direction)
@@ -115,7 +125,7 @@ export default function App() {
     return [...list].sort(
       (a, b) => b.weight - a.weight || a.name.localeCompare(b.name, 'en')
     );
-  }, [commodityFiltered, country, direction, query]);
+  }, [commodityFiltered, country, direction, query, watchOnly, watchlist.routes]);
 
   // Single source of truth: the map shows exactly what the panel lists, with no
   // duplicated filtering logic.
@@ -172,6 +182,7 @@ export default function App() {
     setCountry(null);
     setDirection('from');
     setQuery('');
+    setWatchOnly(false);
     setSelectedRouteId(null);
     setSelectedChokepointId(null);
   }, []);
@@ -186,6 +197,12 @@ export default function App() {
     },
     [selectRoute, selectChokepoint]
   );
+
+  const openView = useCallback((id) => {
+    setView(id);
+    setSelectedRouteId(null);
+    setSelectedChokepointId(null);
+  }, []);
 
   const toggleLayer = useCallback((id, value) => {
     setLayers((prev) => ({ ...prev, [id]: value }));
@@ -222,16 +239,18 @@ export default function App() {
 
   const hiddenOnMap = Math.max(0, eligibleOnMap - shownOnMap);
   const hasFilters =
-    activeCommodity !== 'all' || Boolean(activeSub) || Boolean(country) || Boolean(query);
+    activeCommodity !== 'all' ||
+    Boolean(activeSub) ||
+    Boolean(country) ||
+    Boolean(query) ||
+    watchOnly;
 
   return (
     <div className="app">
       <aside className={`sidebar${drawerOpen ? ' is-open' : ''}`}>
         <header className="brand">
           <div className="brand__row">
-            <h1 className="brand__title">
-              Seaborne Commodity Routes
-            </h1>
+            <h1 className="brand__title">CommodityMap</h1>
             <button
               type="button"
               className="brand__close"
@@ -245,20 +264,36 @@ export default function App() {
             {ROUTES.length} corridors · figures: <strong>2025 reference</strong> ·
             situation: <strong>{SITUATION_AS_OF}</strong>
           </p>
-          <button
-            type="button"
-            className="brand__data"
-            onClick={() => setDataOpen(true)}
-          >
-            Data &amp; sources — check every figure
-          </button>
         </header>
+
+        <nav className="menu" aria-label="Sidebar menu">
+          {[
+            { id: 'routes', label: 'Routes', count: ROUTES.length },
+            { id: 'markets', label: 'Markets', count: market.status === 'ok' ? Object.keys(market.data.instruments).length : null },
+            { id: 'watchlist', label: '★ Watchlist', count: watchlist.routes.length + watchlist.prices.length },
+          ].map((tab) => (
+            <button
+              key={tab.id}
+              type="button"
+              className={`menu__tab${view === tab.id ? ' is-active' : ''}`}
+              onClick={() => openView(tab.id)}
+              aria-pressed={view === tab.id}
+            >
+              {tab.label}
+              {tab.count != null && <span className="menu__count">{tab.count}</span>}
+            </button>
+          ))}
+          <button type="button" className="menu__tab menu__tab--data" onClick={() => setDataOpen(true)}>
+            Data
+          </button>
+        </nav>
 
         <div className="sidebar__scroll">
           {selectedRoute ? (
             <RouteDetail
               route={selectedRoute}
               market={market}
+              watchlist={watchlist}
               onClose={clearSelection}
               onSelectChokepoint={selectChokepoint}
             />
@@ -269,8 +304,28 @@ export default function App() {
               onClose={clearSelection}
               onSelectRoute={selectRoute}
             />
+          ) : view === 'markets' ? (
+            <MarketsPanel market={market} watchlist={watchlist} />
+          ) : view === 'watchlist' ? (
+            <Watchlist
+              watchlist={watchlist}
+              market={market}
+              onSelectRoute={selectRoute}
+              onHoverRoute={setHoveredRouteId}
+              selectedRouteId={selectedRouteId}
+              watchOnly={watchOnly}
+              onWatchOnlyChange={setWatchOnly}
+            />
           ) : (
             <>
+              {watchOnly && (
+                <p className="watchonly">
+                  The map shows your watchlist only.{' '}
+                  <button type="button" onClick={() => setWatchOnly(false)}>
+                    Show all routes
+                  </button>
+                </p>
+              )}
               <section className="filters">
                 <h2 className="eyebrow">Filters</h2>
 
@@ -313,8 +368,6 @@ export default function App() {
                 subCounts={subCounts}
               />
 
-              <MarketStrip market={market} commodity={activeCommodity} />
-
               <section className="results">
                 <div className="results__head">
                   <h2 className="eyebrow">
@@ -347,6 +400,7 @@ export default function App() {
                   selectedId={selectedRouteId}
                   onSelect={selectRoute}
                   onHover={setHoveredRouteId}
+                  watchlist={watchlist}
                 />
               </section>
 
@@ -404,7 +458,7 @@ export default function App() {
           className="drawer-handle"
           onClick={() => setDrawerOpen(true)}
         >
-          Filters & routes
+          Menu
         </button>
 
         {alertOpen && (

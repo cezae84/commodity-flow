@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const BUILD = path.join(ROOT, 'dist-standalone');
-const OUT = path.join(ROOT, 'seaborne-commodity-routes.html');
+const OUT = path.join(ROOT, 'commoditymap.html');
 
 const read = (p) => fs.readFileSync(p, 'utf8');
 
@@ -26,7 +26,7 @@ const favicon = fs.readFileSync(path.join(ROOT, 'public', 'favicon.svg'));
 // A </script> inside a JS string would close the tag too early.
 const safeJs = js.replace(/<\/script/gi, '<\\/script');
 
-const title = 'Seaborne Commodity Routes';
+const title = 'CommodityMap';
 
 const html = `<!doctype html>
 <html lang="en">

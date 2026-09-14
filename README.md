@@ -1,9 +1,20 @@
-# Seaborne Commodity Routes
+# CommodityMap
 
-An interactive map of the world's major seaborne commodity corridors, filterable
-by commodity. **83 routes**, **10 chokepoints** and **3 bypass pipelines**, backed by
-**258 sourced facts** from **114 sources** — every figure carries a link and the
-verbatim sentence it was taken from.
+An interactive, terminal-style map of the world's major seaborne commodity corridors
+and markets. **83 routes**, **10 chokepoints** and **3 bypass pipelines**, backed by
+**263 sourced facts** from **115 sources** — every figure carries a link and the
+verbatim sentence it was taken from — plus **18 market prices** refreshed
+automatically.
+
+The sidebar has one menu with four entries:
+
+- **Routes** — filters (commodity, sub-family, country, search) and the route list.
+- **Markets** — every price, grouped by commodity family, with its daily or monthly
+  change and a 30-point sparkline.
+- **★ Watchlist** — the routes and prices you starred (☆ on any route card, route
+  detail or price). Saved in your browser only (localStorage, no account). One click
+  shows only the watchlist routes on the map.
+- **Data** — the *Data & sources* tables.
 
 ## Getting started
 
@@ -221,11 +232,14 @@ scripts/
 - **Antimeridian** — trans-Pacific routes are stored with continuous longitudes
   beyond ±180° (e.g. `-220` = 140°E); `pathVariants()` draws a ∓360° copy so they
   stay visible from any pan position.
-- **Palette** — an editorial range designed for a light basemap and **validated**,
-  not eyeballed: colour-vision separation ΔE 11.5 on the worst adjacent pair,
-  normal-vision floor ΔE 18.5, contrast ≥ 3:1 against water. The hue order *is*
-  the safety mechanism: do not reorder it, do not add a 9th hue.
-- **White casing** under every path, drawn in three passes (all casings, then all
+- **Theme** — dark market-terminal style: black panels, amber monospace labels,
+  CARTO *Dark Matter* basemap. Tokens are at the top of `src/index.css`.
+- **Palette** — stepped for the dark basemap and **validated**, not eyeballed, with
+  the dataviz palette validator (dark mode, water `#262626`): every hue inside the
+  OKLCH lightness band, colour-vision separation ΔE 11.5 on the worst adjacent pair,
+  normal-vision floor ΔE 17.4, contrast ≥ 3:1 against water. The hue order *is* the
+  safety mechanism: do not reorder it, do not add a 9th hue.
+- **Dark casing** under every path, drawn in three passes (all casings, then all
   lines, then the endpoints) — otherwise one route's casing would paint over its
   neighbour's line.
 - **Tooltips** — Leaflet's stylesheet loads after this project's, so at equal
@@ -235,8 +249,8 @@ scripts/
 - **Country resolution** — every port carries an explicit `country` field rather
   than having it parsed out of its label: "Jask (Iran, Gulf of Oman)" names a sea
   in the same parentheses, which a naive extractor would read as a country.
-- **Basemap** — CARTO *Positron* tiles, no API key required. OpenStreetMap /
-  CARTO attribution is shown on the map.
+- **Basemap** — CARTO *Dark Matter* tiles. OpenStreetMap / CARTO attribution is
+  shown on the map.
 
 ## Standalone file (no server)
 
@@ -244,7 +258,7 @@ scripts/
 npm run build:standalone
 ```
 
-Produces `seaborne-commodity-routes.html` at the repository root: **a single file
+Produces `commoditymap.html` at the repository root: **a single file
 of roughly 550 kB**, openable by double-click, easy to archive or email. JS, CSS
 and the favicon are inlined; the images in Leaflet's stylesheet become `data:`
 URIs.

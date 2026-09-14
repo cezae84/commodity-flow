@@ -3,10 +3,18 @@ import {
   STATUS,
   SUBFILTER_BY_ID,
 } from '../data/commodities.js';
+import Star from './Star.jsx';
 
-export default function RouteList({ routes, selectedId, onSelect, onHover }) {
+export default function RouteList({
+  routes,
+  selectedId,
+  onSelect,
+  onHover,
+  watchlist,
+  emptyText = 'No route matches this filter.',
+}) {
   if (!routes.length) {
-    return <p className="empty">No route matches this filter.</p>;
+    return <p className="empty">{emptyText}</p>;
   }
 
   return (
@@ -18,7 +26,7 @@ export default function RouteList({ routes, selectedId, onSelect, onHover }) {
         const isSelected = selectedId === route.id;
 
         return (
-          <li key={route.id}>
+          <li key={route.id} className="routeitem">
             <button
               type="button"
               className={`routecard${isSelected ? ' is-selected' : ''}`}
@@ -64,6 +72,14 @@ export default function RouteList({ routes, selectedId, onSelect, onHover }) {
                 </span>
               </span>
             </button>
+            {watchlist && (
+              <Star
+                active={watchlist.isRoute(route.id)}
+                onToggle={() => watchlist.toggleRoute(route.id)}
+                label={route.name}
+                className="routeitem__star"
+              />
+            )}
           </li>
         );
       })}

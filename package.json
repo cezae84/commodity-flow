@@ -1,5 +1,5 @@
 {
-  "name": "worldmap",
+  "name": "commoditymap",
   "private": true,
   "version": "0.1.0",
   "description": "Interactive map of the world's seaborne commodity routes",

@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 scripts/.cache
 dist-standalone
-seaborne-commodity-routes.html
+commoditymap.html
 .env
 .env.local
 

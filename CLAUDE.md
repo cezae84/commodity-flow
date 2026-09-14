@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A static React + Leaflet map of seaborne commodity corridors (83 routes, 8 commodity families, 10 chokepoints, 258 sourced facts, 114 sources). There is no backend and no test framework: the dataset *is* the product, and correctness is enforced by the check scripts below. All user-facing text is in English; the maintainer converses in French.
+CommodityMap — a static React + Leaflet map of seaborne commodity corridors (83 routes, 8 commodity families, 10 chokepoints, 258 sourced facts, 114 sources). There is no backend and no test framework: the dataset *is* the product, and correctness is enforced by the check scripts below. All user-facing text is in English; the maintainer converses in French.
 
 ## Commands
 
@@ -20,7 +20,7 @@ npm run check:english     # fails on any French left in user-facing strings
 npm run check:live        # instruments.csv consistency + offline self-test of the Python price fetcher
 npm run prices            # fetch live prices into .live/prices.json (served by `npm run dev`)
 npm run build             # dist/ — the deployable static site
-npm run build:standalone  # seaborne-commodity-routes.html, single file openable over file://
+npm run build:standalone  # commoditymap.html, single file openable over file://
 ```
 
 Each check script is standalone (`node scripts/<name>.mjs`); there is no per-test granularity. `check:land` downloads Natural Earth polygons into `scripts/.cache/` on first run.
@@ -57,9 +57,14 @@ Each check script is standalone (`node scripts/<name>.mjs`); there is no per-tes
 - Keep the freshness guard (`max_age_days`) and the keep-last-good behaviour; a new instrument needs a row in `data/live/instruments.csv` and a live check that its ticker still trades.
 - User agents matter: Yahoo rejects non-browser agents, FRED's CDN stalls on browser agents.
 
+## Sidebar and watchlist
+
+- The sidebar menu (`view` state in `App.jsx`: routes · markets · watchlist, plus the Data overlay) switches panels; selecting a route or chokepoint shows its detail on top of the current view, and "back" returns to it.
+- `src/data/favorites.js` (`useWatchlist`) stores starred route ids and instrument ids in localStorage (`commoditymap:watchlist:v1`), every access guarded. `watchOnly` in `App.jsx` restricts `visibleRoutes` (so the map too) to starred routes.
+
 ## Styling constraints
 
-- The 8 commodity colours are a palette validated for colour-vision deficiency on the light basemap water colour; the **order is the safety mechanism**. Do not reorder, recolour ad hoc, or add a 9th hue — new groupings go into sub-filters, which narrow the display without repainting.
+- Dark terminal theme (CARTO Dark Matter, water `#262626`); CSS tokens at the top of `src/index.css` (`--paper` = panel surface, `--ink` = text, `--accent` amber). The 8 commodity colours are validated for colour-vision deficiency against that water colour with the dataviz validator in dark mode — re-run it if the basemap or a hue changes; the **order is the safety mechanism**. Do not reorder, recolour ad hoc, or add a 9th hue — new groupings go into sub-filters, which narrow the display without repainting.
 - Status is never conveyed by colour alone (icon + label + dash pattern).
 - Leaflet's CSS loads after `src/index.css`, so overrides of Leaflet classes need doubled specificity (e.g. `.leaflet-tooltip.wm-tooltip`).
 - Strings inside single-quoted JS literals use the typographic apostrophe `’`, not `'`.
