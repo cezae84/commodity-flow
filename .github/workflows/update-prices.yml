@@ -1,0 +1,66 @@
+# Refreshes the market prices shown on the map.
+#
+# Every 30 minutes on weekdays (futures trade almost around the clock Sunday
+# evening to Friday), plus on demand from the Actions tab ("Run workflow").
+#
+# The prices are NOT committed to `main`: that would trigger a Netlify rebuild
+# every half hour. They are published as a single commit on the `live-data`
+# branch, overwritten each run, and the site fetches
+#   https://raw.githubusercontent.com/<owner>/<repo>/live-data/prices.json
+# at load time. The site itself never needs redeploying for new prices.
+#
+# GitHub may delay scheduled runs by several minutes at busy times, and pauses
+# schedules on repositories with no activity for 60 days (re-enable in the
+# Actions tab).
+name: Update market prices
+
+on:
+  schedule:
+    - cron: '*/30 * * * 0-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-prices
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out main (script and instrument list)
+        uses: actions/checkout@v4
+
+      - name: Fetch the last published prices, if any
+        run: |
+          if git ls-remote --exit-code --heads origin live-data >/dev/null; then
+            git fetch --depth=1 origin live-data
+            git show origin/live-data:prices.json > previous.json || true
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Offline self-test
+        run: python scripts/live/fetch_prices.py --self-test
+
+      - name: Fetch prices
+        run: python scripts/live/fetch_prices.py --out publish/prices.json --previous previous.json
+
+      - name: Publish to the live-data branch
+        run: |
+          cd publish
+          cat > README.md <<'EOF'
+          Machine-generated market prices for the Seaborne Commodity Routes map.
+          Overwritten by .github/workflows/update-prices.yml — do not edit.
+          EOF
+          git init -q -b live-data
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add prices.json README.md
+          git commit -q -m "Market prices $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" live-data

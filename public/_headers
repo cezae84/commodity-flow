@@ -1,0 +1,8 @@
+# Vite fingerprints asset filenames, so they can be cached indefinitely.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# The entry document must always be revalidated, or a deploy never reaches
+# visitors who already have it cached.
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate

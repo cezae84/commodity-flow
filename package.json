@@ -1,0 +1,33 @@
+{
+  "name": "worldmap",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Interactive map of the world's seaborne commodity routes",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "check:land": "node scripts/check-land.mjs",
+    "check": "npm run lint && npm run check:english && npm run check:data && npm run check:live && npm run check:land && npm run build",
+    "build:standalone": "vite build --mode standalone && node scripts/bundle-standalone.mjs",
+    "check:data": "node scripts/audit-routes.mjs",
+    "check:english": "node scripts/check-english.mjs",
+    "check:sources": "node scripts/check-sources.mjs",
+    "prices": "python3 scripts/live/fetch_prices.py --out .live/prices.json --previous .live/prices.json",
+    "check:live": "node scripts/check-live.mjs"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "oxlint": "^1.75.0",
+    "vite": "^8.2.0"
+  }
+}

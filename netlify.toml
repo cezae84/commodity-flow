@@ -1,0 +1,10 @@
+# Netlify build settings (used once the site is linked to the GitHub repository).
+# VITE_CARTO_KEY must be set in Site configuration → Environment variables.
+# The live market-price URL is derived from the linked repository at build time
+# (see vite.config.js); set VITE_LIVE_DATA_URL there only to override it.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "24"

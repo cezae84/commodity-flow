@@ -1,0 +1,11 @@
+﻿chokepoint_id,name,status,status_fact,lead_fact,analysis,situation
+hormuz,Strait of Hormuz,disrupted,hormuz-transits-portwatch,hormuz-oil-1h25,"The most critical oil and LNG chokepoint. Most of what crossed it went to Asia, and bypass pipelines can carry only part of the crude.",Largely blocked by Iran since late February 2026; traffic is close to a standstill.
+malacca,Strait of Malacca,normal,,malacca-oil-1h25,"The largest oil chokepoint by volume, linking Middle East suppliers with East and Southeast Asia, and a major LNG route.",
+suez,Suez Canal & SUMED pipeline,reduced,red-sea-houthi-reroute,suez-oil-1h25,Oil and LNG through Suez collapsed after Houthi attacks in the Red Sea pushed ships around the Cape.,
+babElMandeb,Bab el-Mandeb Strait,reduced,houthi-saudi-blockade,babelmandeb-row,The gate between the Red Sea and the Gulf of Aden. Oil traffic roughly halved and LNG traffic all but disappeared after the Red Sea attacks.,"In July 2026 the Houthis declared a blockade of Saudi Arabia, turning Saudi tankers away from the strait."
+goodHope,Cape of Good Hope,normal,,cape-oil-1h25,Oil and LNG around the Cape rose sharply once ships started avoiding the Red Sea.,
+panama,Panama Canal,normal,,panama-oil-fy25,"A small share of world oil flows, almost all refined products, plus LNG from the US Gulf Coast to Asia and western South America.",
+turkishStraits,Turkish Straits (Bosporus & Dardanelles),normal,,turkish-oil-1h25,"The only outlet of the Black Sea for oil from Russia and the Caspian region, and for Ukrainian and Russian grain. Kazakhstan is the largest oil exporter through it.",
+danishStraits,Danish Straits,normal,,danish-oil-1h25,"The exit from the Baltic. Russia remains its largest oil shipper, sending most volumes to Asia and Türkiye.",
+lombok,Lombok Strait,normal,,sunda-lombok-alternatives,An alternative to Malacca through the Indonesian archipelago. No sourced traffic volume is available.,
+sunda,Sunda Strait,normal,,sunda-lombok-alternatives,An alternative to Malacca between Java and Sumatra. No sourced traffic volume is available.,

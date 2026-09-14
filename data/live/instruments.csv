@@ -1,0 +1,19 @@
+instrument_id,commodity,name,source,symbol,exchange,unit,cadence,max_age_days,note
+brent,crude,Brent crude,yahoo,BZ=F,NYMEX,USD/bbl,intraday,5,Front-month futures (NYMEX Brent financial)
+wti,crude,WTI crude,yahoo,CL=F,NYMEX,USD/bbl,intraday,5,Front-month futures
+ulsd,products,ULSD (heating oil),yahoo,HO=F,NYMEX,USD/gal,intraday,5,Front-month futures; US diesel benchmark
+rbob,products,RBOB gasoline,yahoo,RB=F,NYMEX,USD/gal,intraday,5,Front-month futures
+henry-hub,lng,Henry Hub natural gas,yahoo,NG=F,NYMEX,USD/MMBtu,intraday,5,Front-month futures; US LNG feedgas benchmark
+ttf,lng,Dutch TTF natural gas,yahoo,TTF=F,ICE Endex,EUR/MWh,intraday,5,Front-month futures; European gas benchmark
+japan-lng,lng,Japan LNG import price,fred,PNGASJPUSDM,IMF,USD/MMBtu,monthly,120,IMF Primary Commodity Prices via FRED
+soybeans,grain,Soybeans,yahoo,ZS=F,CBOT,US cents/bu,intraday,5,Front-month futures
+corn,grain,Corn,yahoo,ZC=F,CBOT,US cents/bu,intraday,5,Front-month futures
+wheat,grain,SRW wheat,yahoo,ZW=F,CBOT,US cents/bu,intraday,5,Front-month futures (Chicago soft red winter)
+soymeal,grain,Soybean meal,yahoo,ZM=F,CBOT,USD/short ton,intraday,5,Front-month futures
+copper,metals,Copper,yahoo,HG=F,COMEX,USD/lb,intraday,5,Front-month futures
+aluminium,metals,Aluminium,yahoo,ALI=F,COMEX,USD/t,intraday,5,Front-month futures
+nickel,metals,Nickel,fred,PNICKUSDM,IMF,USD/t,monthly,120,IMF Primary Commodity Prices via FRED
+zinc,metals,Zinc,fred,PZINCUSDM,IMF,USD/t,monthly,120,IMF Primary Commodity Prices via FRED
+tin,metals,Tin,fred,PTINUSDM,IMF,USD/t,monthly,120,IMF Primary Commodity Prices via FRED
+iron-ore,iron,Iron ore CFR China,fred,PIORECRUSDM,IMF,USD/dmt,monthly,120,IMF Primary Commodity Prices via FRED
+coal-australia,coal,Australian thermal coal,fred,PCOALAUUSDM,IMF,USD/t,monthly,120,IMF Primary Commodity Prices via FRED

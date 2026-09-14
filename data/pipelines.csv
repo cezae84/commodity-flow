@@ -1,0 +1,4 @@
+﻿pipeline_id,name,country,lead_fact,analysis,situation
+petroline,"East-West ""Petroline"" pipeline (Abqaiq → Yanbu)",Saudi Arabia,petroline-design,"The largest Hormuz bypass, from Abqaiq to Yanbu on the Red Sea, delivering crude onto a corridor exposed to Red Sea risk.",Attacked in April 2026 and shut after drone attacks in September 2026.
+adcop,ADCOP pipeline (Habshan → Fujairah),United Arab Emirates,adcop-capacity,From Habshan to Fujairah on the Gulf of Oman: the only bypass that loads directly outside the strait.,Carries almost all UAE crude bound for India since Hormuz closed.
+gorehJask,Goreh → Jask pipeline,Iran,goreh-jask,"Iran’s bypass to the Gulf of Oman, effectively non-operational.",
