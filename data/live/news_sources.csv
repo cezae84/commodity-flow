@@ -1,0 +1,18 @@
+source_id,name,kind,url_or_query,topic,max_items
+gcaptain,gCaptain,rss,https://gcaptain.com/feed/,shipping,15
+splash247,Splash247,rss,https://splash247.com/feed/,shipping,15
+hellenicshipping,Hellenic Shipping News,rss,https://www.hellenicshippingnews.com/feed/,shipping,20
+eia,U.S. Energy Information Administration — Today in Energy,rss,https://www.eia.gov/rss/todayinenergy.xml,energy,5
+rigzone,Rigzone,rss,https://www.rigzone.com/news/rss/rigzone_latest.aspx,energy,15
+oilprice,OilPrice.com,rss,https://oilprice.com/rss/main,energy,15
+lngprime,LNG Prime,rss,https://www.lngprime.com/feed/,energy,10
+mining,MINING.COM,rss,https://www.mining.com/feed/,metals,20
+worldgrain,World Grain,rss,https://www.world-grain.com/rss/articles,agri,15
+gn-hormuz,Google News — Hormuz and Gulf shipping,google_news,"Hormuz OR ""Persian Gulf"" tanker",geopolitics,12
+gn-oil,Google News — oil market,google_news,"""oil prices"" OR OPEC OR ""Brent crude""",energy,12
+gn-sanctions,Google News — energy sanctions,google_news,sanctions oil OR LNG OR tanker,geopolitics,10
+gn-redsea,Google News — Red Sea and Suez,google_news,"""Red Sea"" OR Suez OR Houthi shipping",geopolitics,10
+gn-lng,Google News — gas and LNG,google_news,"LNG OR ""natural gas prices""",energy,10
+gn-metals,Google News — metals and iron ore,google_news,"""iron ore"" OR copper OR aluminium OR nickel prices",metals,10
+gn-grain,Google News — grain and fertilizer,google_news,wheat OR soybeans OR corn OR fertilizer exports,agri,10
+gn-freight,Google News — freight markets,google_news,"""freight rates"" OR ""dry bulk"" OR ""tanker rates""",shipping,10

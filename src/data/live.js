@@ -30,24 +30,26 @@ function isValid(data) {
   );
 }
 
-/** Fetches prices.json on mount and every five minutes; keeps the last good copy. */
-export function useMarketPrices() {
-  const [state, setState] = useState({ status: LIVE_DATA_URL ? 'loading' : 'off', data: null });
+/**
+ * Fetches a machine-generated JSON file on mount and every `refreshMs`; keeps
+ * the last good copy when a later fetch fails. Shared by the prices and the
+ * news brief. status: 'off' (no URL) · 'loading' · 'ok' · 'error'.
+ */
+export function useLiveJson(baseUrl, isValidData, refreshMs, label) {
+  const [state, setState] = useState({ status: baseUrl ? 'loading' : 'off', data: null });
 
   useEffect(() => {
-    if (!LIVE_DATA_URL) return undefined;
+    if (!baseUrl) return undefined;
     let cancelled = false;
 
     const load = async () => {
       try {
         // Cache-busting query: raw.githubusercontent.com caches for five minutes.
-        const url = `${LIVE_DATA_URL}${LIVE_DATA_URL.includes('?') ? '&' : '?'}t=${Math.floor(
-          Date.now() / REFRESH_MS
-        )}`;
+        const url = `${baseUrl}${baseUrl.includes('?') ? '&' : '?'}t=${Math.floor(Date.now() / refreshMs)}`;
         const res = await fetch(url, { cache: 'no-store' });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        if (!isValid(data)) throw new Error('unexpected prices.json format');
+        if (!isValidData(data)) throw new Error(`unexpected ${label} format`);
         if (!cancelled) setState({ status: 'ok', data });
       } catch {
         if (!cancelled) setState((prev) => (prev.data ? prev : { status: 'error', data: null }));
@@ -55,14 +57,19 @@ export function useMarketPrices() {
     };
 
     load();
-    const timer = setInterval(load, REFRESH_MS);
+    const timer = setInterval(load, refreshMs);
     return () => {
       cancelled = true;
       clearInterval(timer);
     };
-  }, []);
+  }, [baseUrl, isValidData, refreshMs, label]);
 
   return state;
+}
+
+/** Fetches prices.json on mount and every five minutes; keeps the last good copy. */
+export function useMarketPrices() {
+  return useLiveJson(LIVE_DATA_URL, isValid, REFRESH_MS, 'prices.json');
 }
 
 /** Instruments of one commodity family (all when `commodity` is 'all'), in file order. */

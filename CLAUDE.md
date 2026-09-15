@@ -20,7 +20,9 @@ npm run check:sources     # online: re-fetches every source page and looks for e
 npm run check:land        # every smoothed path tested against Natural Earth 50 m land
 npm run check:english     # fails on any French left in user-facing strings
 npm run check:live        # instruments.csv consistency + offline self-test of the Python price fetcher
+npm run check:news        # news_sources.csv + category sync + offline self-test of the news brief builder
 npm run prices            # fetch live prices into .live/prices.json (served by `npm run dev`)
+npm run news              # build the AI news brief into .live/news.json (needs ANTHROPIC_API_KEY in .env); news:demo = offline sample
 npm run build             # dist/ — the deployable static site
 npm run build:standalone  # commoditiesroutes.html, single file openable over file://
 ```
@@ -58,6 +60,12 @@ Each check script is standalone (`node scripts/<name>.mjs`); there is no per-tes
 - Prices are a separate automated layer: never write them into `facts.csv`; always label source, delay ("Yahoo Finance, delayed, indicative"), time and cadence.
 - Keep the freshness guard (`max_age_days`) and the keep-last-good behaviour; a new instrument needs a row in `data/live/instruments.csv` and a live check that its ticker still trades.
 - User agents matter: Yahoo rejects non-browser agents, FRED's CDN stalls on browser agents.
+
+## AI news brief
+
+- `scripts/news/build_news.py` (stdlib only) collects the last 24 h of headlines from `data/live/news_sources.csv`, has Claude Haiku 4.5 summarise them via a forced tool call, and **validates** the answer: items citing unknown headline ids, with an unknown category, or with a number absent from their cited headlines are dropped. Published by `.github/workflows/update-news.yml` every 2 h to the `live-news` branch (separate from `live-data`: each workflow force-pushes its own branch); `src/data/news.js` (`useNewsBrief`, built on `useLiveJson` in `live.js`) fetches it; `NewsPanel.jsx` floats on the right of the map on desktop and becomes a sidebar tab under 900 px.
+- The brief is a labelled AI layer, never written into `facts.csv`. Keep the validator, the keep-last-good/stale behaviour and the "AI-generated" note. Categories are defined twice (`CATEGORIES` in the Python, `NEWS_CATEGORIES` in `news.js`); `check:news` fails if they drift.
+- `ANTHROPIC_API_KEY` is a GitHub secret; locally it is read from the gitignored `.env`. Never commit it.
 
 ## Freight data
 

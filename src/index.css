@@ -2131,3 +2131,182 @@ button {
   font-family: var(--mono);
   color: var(--ink-2);
 }
+
+/* --------------------------------------------------------------------------
+   Market brief (AI summary of the last 24 hours of headlines)
+   -------------------------------------------------------------------------- */
+
+.newspanel {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 800;
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  max-height: calc(100% - 110px);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+.newspanel__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 12px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 650;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--bar);
+  border: none;
+}
+.newspanel__toggle:hover {
+  background: var(--paper-2);
+}
+.newspanel__ai {
+  margin-left: 4px;
+  padding: 0 5px;
+  font-size: 9.5px;
+  color: var(--ink-2);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+}
+.newspanel__when {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--ink-3);
+}
+.newspanel__body {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  padding: 4px 14px 14px;
+}
+
+/* The Hormuz banner moves left so it never sits under the brief. */
+.mapwrap.has-news .alert {
+  left: calc((100% - 372px) / 2);
+  max-width: min(680px, calc(100% - 420px));
+}
+
+.news__overview {
+  margin: 8px 0 4px;
+  padding: 9px 11px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+}
+.news__overview p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.news__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.news__item {
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.news__item:last-child {
+  border-bottom: none;
+}
+.news__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--ink-3);
+}
+.news__cat {
+  padding: 0 6px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+}
+.news__headline {
+  margin: 6px 0 3px;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.news__summary {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.news__sources {
+  margin: 5px 0 0;
+  font-size: 11px;
+  color: var(--ink-3);
+}
+.news__sources a {
+  color: var(--link);
+}
+.news__warning {
+  margin: 8px 0 0;
+  padding: 6px 9px;
+  font-size: 11px;
+  color: var(--ink);
+  background: rgba(240, 82, 79, 0.1);
+  border-left: 3px solid var(--alert);
+}
+.news__note,
+.news__empty {
+  margin: 10px 0 0;
+  font-size: 10.5px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+.news__note {
+  padding-top: 10px;
+  border-top: 1px solid var(--rule);
+}
+
+/* On desktop the brief floats over the map; the menu tab is for small screens. */
+.menu__tab--news {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .newspanel {
+    width: 300px;
+  }
+  .mapwrap.has-news .alert {
+    left: 16px;
+    right: 332px;
+    transform: none;
+    width: auto;
+    max-width: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .newspanel {
+    display: none;
+  }
+  .menu__tab--news {
+    display: inline-flex;
+  }
+  .mapwrap.has-news .alert {
+    top: 64px;
+    left: 16px;
+    right: 16px;
+  }
+}

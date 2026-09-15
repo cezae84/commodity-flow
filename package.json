@@ -10,13 +10,16 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "check:land": "node scripts/check-land.mjs",
-    "check": "npm run lint && npm run check:english && npm run check:data && npm run check:live && npm run check:land && npm run build",
+    "check": "npm run lint && npm run check:english && npm run check:data && npm run check:live && npm run check:news && npm run check:land && npm run build",
     "build:standalone": "vite build --mode standalone && node scripts/bundle-standalone.mjs",
     "check:data": "node scripts/audit-routes.mjs",
     "check:english": "node scripts/check-english.mjs",
     "check:sources": "node scripts/check-sources.mjs",
     "prices": "python3 scripts/live/fetch_prices.py --out .live/prices.json --previous .live/prices.json",
-    "check:live": "node scripts/check-live.mjs"
+    "news": "python3 scripts/news/build_news.py --out .live/news.json --previous .live/news.json",
+    "news:demo": "python3 scripts/news/build_news.py --demo --out .live/news.json",
+    "check:live": "node scripts/check-live.mjs",
+    "check:news": "node scripts/check-news.mjs"
   },
   "dependencies": {
     "leaflet": "^1.9.4",

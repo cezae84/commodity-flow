@@ -9,8 +9,10 @@ import { RouteDetail, ChokepointDetail } from './components/DetailPanel.jsx';
 import DataView from './components/DataView.jsx';
 import MarketsPanel from './components/MarketsPanel.jsx';
 import Watchlist from './components/Watchlist.jsx';
+import NewsPanel, { NewsBrief } from './components/NewsPanel.jsx';
 import { useMarketPrices } from './data/live.js';
 import { useWatchlist } from './data/favorites.js';
+import { useNewsBrief } from './data/news.js';
 
 import {
   ROUTES,
@@ -60,7 +62,9 @@ export default function App() {
   const [dataOpen, setDataOpen] = useState(false);
   const market = useMarketPrices();
   const watchlist = useWatchlist();
-  // Sidebar menu: route selection, market prices, or the user's watchlist.
+  const news = useNewsBrief();
+  // Sidebar menu: route selection, market prices, the user's watchlist, or (small
+  // screens only, where the floating news panel is hidden) the market brief.
   const [view, setView] = useState('routes');
   // Restricts the map (and the route list) to the starred routes.
   const [watchOnly, setWatchOnly] = useState(false);
@@ -271,11 +275,12 @@ export default function App() {
             { id: 'routes', label: 'Routes', count: ROUTES.length },
             { id: 'markets', label: 'Markets', count: market.status === 'ok' ? Object.keys(market.data.instruments).length : null },
             { id: 'watchlist', label: '★ Watchlist', count: watchlist.routes.length + watchlist.prices.length },
+            ...(news.status === 'ok' ? [{ id: 'news', label: 'News', count: null, className: ' menu__tab--news' }] : []),
           ].map((tab) => (
             <button
               key={tab.id}
               type="button"
-              className={`menu__tab${view === tab.id ? ' is-active' : ''}`}
+              className={`menu__tab${tab.className ?? ''}${view === tab.id ? ' is-active' : ''}`}
               onClick={() => openView(tab.id)}
               aria-pressed={view === tab.id}
             >
@@ -306,6 +311,11 @@ export default function App() {
             />
           ) : view === 'markets' ? (
             <MarketsPanel market={market} watchlist={watchlist} />
+          ) : view === 'news' ? (
+            <section className="panel">
+              <h2 className="eyebrow">Market brief · last 24 hours</h2>
+              <NewsBrief news={news} />
+            </section>
           ) : view === 'watchlist' ? (
             <Watchlist
               watchlist={watchlist}
@@ -438,7 +448,7 @@ export default function App() {
         </div>
       </aside>
 
-      <main className="mapwrap">
+      <main className={`mapwrap${news.status === 'ok' ? ' has-news' : ''}`}>
         <MapView
           visibleIds={visibleIds}
           selectedRouteId={selectedRouteId}
@@ -487,6 +497,8 @@ export default function App() {
             </button>
           </div>
         )}
+
+        <NewsPanel news={news} />
 
         {dataOpen && (
           <DataView

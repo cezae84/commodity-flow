@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Invented test data for the build_news.py self-test. Not real news. -->
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+  <title>Example Shipping Daily</title>
+  <item>
+    <title><![CDATA[Test story: VLCC rates rise as Gulf tankers wait near Fujairah]]></title>
+    <link>https://example.com/news/vlcc-rates</link>
+    <pubDate>Tue, 15 Sep 2026 16:10:00 +0000</pubDate>
+    <description><![CDATA[<p>Test description: 14 VLCCs were fixed this week, owners say.</p>]]></description>
+  </item>
+  <item>
+    <title>Test story: Brazil soybean exports reach 9.5 million tonnes in August</title>
+    <link>https://example.com/news/brazil-soy</link>
+    <pubDate>Tue, 15 Sep 2026 11:00:00 EST</pubDate>
+    <description>Test story: Brazil soybean exports reach 9.5 million tonnes in August</description>
+  </item>
+  <item>
+    <title>Test story: copper climbs on Chile port strike</title>
+    <link>https://example.com/news/copper-strike</link>
+    <pubDate>Tue, 15 Sep 2026 09:30:00 +0000</pubDate>
+    <description>Test description: dockworkers at a copper export port stopped work for 48 hours.</description>
+  </item>
+  <item>
+    <title>Test story: copper climbs on Chile port strike!</title>
+    <link>https://example.com/news/copper-strike-duplicate</link>
+    <pubDate>Tue, 15 Sep 2026 09:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>Test story from last week about iron ore</title>
+    <link>https://example.com/news/old</link>
+    <pubDate>Tue, 08 Sep 2026 09:00:00 +0000</pubDate>
+  </item>
+  <item>
+    <title>Test story without a date</title>
+    <link>https://example.com/news/undated</link>
+  </item>
+</channel>
+</rss>

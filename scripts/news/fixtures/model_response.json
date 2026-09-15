@@ -1,0 +1,44 @@
+{
+  "overview": {
+    "text": "Test overview: Gulf tanker traffic stays constrained while freight rates rise.",
+    "source_ids": ["h01", "h02"]
+  },
+  "items": [
+    {
+      "headline": "Test: two tankers cross Hormuz under escort",
+      "summary": "Test summary: 2 tankers crossed the strait under naval escort.",
+      "category": "geopolitics",
+      "source_ids": ["h01"]
+    },
+    {
+      "headline": "Test: VLCC rates rise near Fujairah",
+      "summary": "Test summary: 14 VLCCs were fixed this week.",
+      "category": "shipping",
+      "source_ids": ["h02"]
+    },
+    {
+      "headline": "Test: VLCC rates up 35%",
+      "summary": "Test summary with an invented figure: rates rose 35% on the week.",
+      "category": "shipping",
+      "source_ids": ["h02"]
+    },
+    {
+      "headline": "Test: OPEC+ policy unchanged",
+      "summary": "Test summary citing a headline that does not exist.",
+      "category": "oil",
+      "source_ids": ["h99"]
+    },
+    {
+      "headline": "Test: bad category",
+      "summary": "Test summary with a category outside the list.",
+      "category": "crypto",
+      "source_ids": ["h03"]
+    },
+    {
+      "headline": "Test: copper climbs on Chile port strike",
+      "summary": "Test summary: dockworkers stopped work for 48 hours at a copper export port.",
+      "category": "metals",
+      "source_ids": ["h05"]
+    }
+  ]
+}

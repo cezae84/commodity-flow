@@ -146,13 +146,64 @@ npm run prices
 
 fetches the prices locally into `.live/prices.json`, which `npm run dev` serves.
 
+## AI news brief
+
+A floating panel on the right of the map (a *News* tab in the sidebar on small screens)
+shows a **market brief of the last 24 hours**, written by Claude and refreshed every two
+hours. Like the prices, it is an automated layer: it never enters `data/facts.csv`, and
+the page labels it as AI-generated.
+
+**Pipeline.** `.github/workflows/update-news.yml` runs `scripts/news/build_news.py`
+(standard-library Python) every two hours, every day:
+
+1. **Collect**: RSS feeds and Google News searches listed in
+   `data/live/news_sources.csv` (add a row to add a feed). Only the title, publisher,
+   link, time and RSS description are kept; article pages are never downloaded. The
+   headlines are deduplicated, limited to the last 24 hours, sampled across the day
+   and across feeds, and capped at 90.
+2. **Summarise**: the headlines go to the Anthropic Messages API (`claude-haiku-4-5-20251001`,
+   override with `NEWS_MODEL`) with a forced tool call. The model returns 5–8 items
+   (headline, summary, category, ids of the headlines used) and a one-line overview.
+3. **Validate**: an item is dropped if it cites an unknown headline, uses an unknown
+   category, or contains a number that is absent from the headlines it cites.
+4. **Publish**: `news.json` is force-pushed to the `live-news` branch. This is a
+   separate branch from the prices, because each workflow overwrites its own branch.
+
+**Safeguards.** If the API fails, the key is missing, or fewer than 3 items pass
+validation, the previous brief is published again as `stale`. The panel then shows
+"Not refreshed since…". A brief older than six hours is flagged the same way. With no
+feed (offline, standalone file) the panel stays hidden.
+
+**Cost.** About 5,000 input tokens and at most 2,000 output tokens per run, 12 runs a
+day. The run log prints the token usage of each call.
+
+**Setup.**
+
+1. Create an API key at console.anthropic.com and set a monthly spend limit.
+2. Add it as the repository secret `ANTHROPIC_API_KEY`.
+3. Run the workflow once from the Actions tab.
+
+Locally, put `ANTHROPIC_API_KEY` in `.env` (gitignored) and run:
+
+```bash
+npm run news
+```
+
+To work on the panel without a key, write an offline sample brief instead:
+
+```bash
+npm run news:demo
+```
+
+`npm run dev` serves the result.
+
 ## Checks
 
 ```bash
 npm run check
 ```
 
-Runs lint, the translation guard, the dataset audit, the live-feed check, the land/sea
+Runs lint, the translation guard, the dataset audit, the live-feed and news checks, the land/sea
 check and the build, in that order. Each can also be run on its own.
 
 ### `npm run check:sources`

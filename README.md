@@ -33,6 +33,7 @@ dataset — not the code.
 | **Sailing time** | Typical vessel class (VLCC, Capesize, LNG carrier…), sea distance, and estimated days at sea, next to published transit times |
 | **10 chokepoints** | Volumes that pass through each one, and the routes that depend on it |
 | **Two periods, never mixed** | 2025 reference figures (before the war) in one block; the current status of each corridor (normal, reduced, rerouted, halted) in another |
+| **AI market brief** | A panel on the right of the map with the commodity and geopolitical news of the last 24 hours, summarised by an AI agent, each item linked to its articles |
 | **18 market prices** | Brent, WTI, TTF, Henry Hub, Japan LNG, coal, iron ore, copper, soybeans, wheat…, refreshed automatically |
 | **Watchlist** | Star routes and prices, and show only those on the map |
 
@@ -79,6 +80,13 @@ the pages it read and returns every value with its verbatim quote — or "not fo
 review each row; scripts then check every quote and figure before anything reaches the
 map. Uncited aggregators are excluded.
 
+**An AI agent for the daily news.** Every two hours, a GitHub Actions workflow collects
+the last 24 hours of public headlines (shipping, energy, metals and agri trade press, and
+Google News searches on Hormuz, OPEC, sanctions, the Red Sea…) and asks Claude (Haiku 4.5)
+to write a short brief. A validator then removes any item that cites no headline or quotes a
+number its headlines do not contain. The panel says it is AI-generated, links every item to
+its articles, and shows when a brief is out of date.
+
 **Automated market prices.** A GitHub Actions workflow runs every 30 minutes on weekdays
 and fetches 18 prices (Yahoo Finance futures, IMF monthly prices via FRED). The site picks
 them up without being rebuilt. Stale or failed prices are flagged, never shown as fresh.
@@ -103,6 +111,8 @@ A separate script re-downloads every source page and looks for each quote.
 - **Ports are sometimes representative.** When a source only reports a country-level
   flow, the port drawn stands for the country, and the route card says so.
 - **Line thickness** is an order of magnitude from 1 to 5, not a measurement.
+- **The news brief is a reading aid, not verified data.** It summarises headlines only
+  (the articles themselves are not read) and never enters the dataset.
 - **Market prices are indicative.** They are delayed and are exchange benchmarks, not
   physical delivered prices.
 
@@ -111,8 +121,8 @@ A separate script re-downloads every source page and looks for each quote.
 ```
 data/                  the dataset: sources, facts, routes, chokepoints, vessels (CSV, editable)
 .claude/agents/        the freight research agent
-.github/workflows/     automated price updates
-scripts/               data checks and the price fetcher
+.github/workflows/     automated price and news updates
+scripts/               data checks, the price fetcher and the news brief builder
 src/                   the web app (React + Leaflet)
 docs/                  technical notes and screenshots
 ```

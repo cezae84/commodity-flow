@@ -1,0 +1,69 @@
+# Writes the AI "Market brief — last 24 hours" shown on the right of the map.
+#
+# Every two hours, every day (news does not stop at weekends), plus on demand
+# from the Actions tab ("Run workflow").
+#
+# scripts/news/build_news.py collects public headlines, asks Claude (Haiku 4.5)
+# for a short brief, and drops any item that cites no headline or contains a
+# number its headlines do not. Needs the repository secret ANTHROPIC_API_KEY
+# (Settings → Secrets and variables → Actions). Without it, or when the API
+# fails, the last good brief is published again, marked stale.
+#
+# Like the prices, the brief is NOT committed to `main` (no Netlify rebuild): it
+# is published as a single commit on its own `live-news` branch — not
+# `live-data`, since both workflows overwrite their branch — and the site fetches
+#   https://raw.githubusercontent.com/<owner>/<repo>/live-news/news.json
+name: Update news brief
+
+on:
+  schedule:
+    - cron: '17 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-news
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out main (script and source list)
+        uses: actions/checkout@v4
+
+      - name: Fetch the last published brief, if any
+        run: |
+          if git ls-remote --exit-code --heads origin live-news >/dev/null; then
+            git fetch --depth=1 origin live-news
+            git show origin/live-news:news.json > previous.json || true
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Offline self-test
+        run: python scripts/news/build_news.py --self-test
+
+      - name: Build the brief
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/news/build_news.py --out publish/news.json --previous previous.json
+
+      - name: Publish to the live-news branch
+        run: |
+          cd publish
+          cat > README.md <<'EOF'
+          Machine-generated AI news brief for CommoditiesRoutes.
+          Overwritten by .github/workflows/update-news.yml — do not edit.
+          EOF
+          git init -q -b live-news
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add news.json README.md
+          git commit -q -m "News brief $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" live-news
