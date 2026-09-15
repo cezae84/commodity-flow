@@ -8,9 +8,10 @@ import facts from '../../data/facts.csv?raw';
 import routes from '../../data/routes.csv?raw';
 import chokepoints from '../../data/chokepoints.csv?raw';
 import pipelines from '../../data/pipelines.csv?raw';
+import vessels from '../../data/vessels.csv?raw';
 import { buildDataset } from './dataset.js';
 
-export const RAW_CSV = { sources, facts, routes, chokepoints, pipelines };
+export const RAW_CSV = { sources, facts, routes, chokepoints, pipelines, vessels };
 
 const data = buildDataset(RAW_CSV);
 
@@ -28,4 +29,6 @@ export const {
   CHOKEPOINTS,
   CHOKEPOINT_BY_ID,
   PIPELINES,
+  VESSELS,
+  VESSEL_BY_ID,
 } = data;

@@ -1,11 +1,11 @@
 /**
  * The 8 commodity families covered by the map.
  *
- * Palette stepped for the dark terminal theme on CARTO Dark Matter (water
- * #262626), validated with the dataviz palette validator in dark mode: every
+ * Palette stepped for the dark terminal theme on CARTO Dark Matter, lifted to a
+ * water colour of #383838 (see .leaflet-tile-pane in index.css), validated with the dataviz palette validator in dark mode: every
  * hue inside the OKLCH L 0.48–0.67 band, chroma ≥ 0.10, worst adjacent
  * colour-vision separation ΔE 11.5 (coal ↔ LNG, protan), normal-vision floor
- * ΔE 17.4, contrast ≥ 3:1 against the water. Same hue families and order as the
+ * ΔE 17.4, contrast ≥ 3:1 against the water (also re-checked at #262626). Same hue families and order as the
  * former light palette.
  *
  * Do not reorder and do not add a 9th hue: the order IS the colour-blindness

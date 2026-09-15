@@ -10,7 +10,7 @@
  *  2. evidence — every route, chokepoint and pipeline has at least one fact;
  *     its lead fact applies to it; any status other than "normal" cites a fact;
  *     every fact has a source and a verbatim quote; the checked value and every
- *     other number in the statement appear in the quote; analysis texts and
+ *     other number in the statement appear in the quote; analysis, trading-context and situation texts and
  *     commodity blurbs carry no figures of their own; every source is cited;
  *  3. geography — a path that declares a strait passes through it, and a path
  *     that passes through one declares it; endpoints sit on the named ports;
@@ -30,9 +30,9 @@ import {
 } from '../src/data/commodities.js';
 import { pathLengthNm } from '../src/lib/geo.js';
 
-const { ROUTES, CHOKEPOINTS, PIPELINES, FACTS, SOURCES, issues } = dataset;
+const { ROUTES, CHOKEPOINTS, PIPELINES, FACTS, SOURCES, VESSELS, issues } = dataset;
 
-const SCOPES = ['corridor', 'exporter', 'importer', 'chokepoint', 'market', 'status', 'policy', 'infrastructure'];
+const SCOPES = ['corridor', 'exporter', 'importer', 'chokepoint', 'market', 'status', 'policy', 'infrastructure', 'freight'];
 const KINDS = ['official', 'industry', 'news', 'reference'];
 
 const problems = [...issues];
@@ -51,6 +51,15 @@ ROUTES.forEach((r) => claim(r.id, 'route'));
 CHOKEPOINTS.forEach((c) => claim(c.id, 'chokepoint'));
 PIPELINES.forEach((p) => claim(p.id, 'pipeline'));
 COMMODITIES.forEach((c) => claim(c.id, 'commodity'));
+VESSELS.forEach((v) => claim(v.id, 'vessel class'));
+
+// Freight: every vessel class needs a sourced speed; route freight facts must apply to the route.
+for (const v of VESSELS) {
+  if (!(v.speedKn > 0)) note(v.id, 'vessel class needs a positive speed_kn');
+  if (!v.speedFact) note(v.id, 'vessel class needs a speed_fact');
+  else if (!v.speedFact.appliesTo.includes(v.id)) note(v.id, `speed_fact "${v.speedFact.id}" does not list ${v.id}`);
+}
+const freightWarnings = [];
 
 const factIds = new Set();
 for (const f of FACTS) {
@@ -163,9 +172,21 @@ const checkEvidence = (item, kind) => {
   else if (!item.leadFact.appliesTo.includes(item.id)) {
     note(item.id, `lead_fact "${item.leadFact.id}" does not list ${item.id} in applies_to`);
   }
-  if (!item.analysis) note(item.id, 'empty analysis');
-  if (digitsOutsideYears(item.analysis)) {
-    note(item.id, 'analysis contains a figure — figures belong in facts.csv, with their quote');
+  if (item.trading) {
+    const t = item.trading;
+    for (const [key, text] of [['sellers', t.sellers], ['buyers', t.buyers], ['why_it_matters', t.whyItMatters]]) {
+      if (!text) note(item.id, `empty ${key}`);
+      if (digitsOutsideYears(text)) note(item.id, `${key} contains a figure — figures belong in facts.csv, with their quote`);
+    }
+    if (!t.facts.length) note(item.id, 'context_facts is empty — the trading context must cite the facts it rests on');
+    for (const f of t.facts) {
+      if (!f.appliesTo.includes(item.id)) note(item.id, `context fact "${f.id}" does not list ${item.id} in applies_to`);
+    }
+  } else {
+    if (!item.analysis) note(item.id, 'empty analysis');
+    if (digitsOutsideYears(item.analysis)) {
+      note(item.id, 'analysis contains a figure — figures belong in facts.csv, with their quote');
+    }
   }
   if ('status' in item) {
     if (!STATUS[item.status]) note(item.id, `unknown status "${item.status}"`);
@@ -280,6 +301,19 @@ for (const r of ROUTES) {
     if (d > 1.5) note(r.id, `${field} "${key}" is ${d.toFixed(1)}° from the end of the drawn path`);
   }
 
+  const s = r.sailing;
+  for (const [key, f] of [['distance_fact', s.distanceFact], ['transit_fact', s.transitFact]]) {
+    if (f && !f.appliesTo.includes(r.id)) note(r.id, `${key} "${f.id}" does not list ${r.id} in applies_to`);
+  }
+  if (s.distanceSource === 'published' && !s.distanceFact) note(r.id, 'distance_nm needs a distance_fact');
+  if (s.distanceSource === 'published') {
+    const drawn = pathLengthNm(r.path);
+    const gap = (drawn - s.distanceNm) / s.distanceNm;
+    if (Math.abs(gap) > 0.2) {
+      freightWarnings.push(`${r.id}: drawn path ${Math.round(drawn)} nm vs published ${s.distanceNm} nm (${Math.round(gap * 100)}%)`);
+    }
+  }
+
   const nm = pathLengthNm(r.path);
   if (nm < 150) note(r.id, `implausibly short voyage: ${Math.round(nm)} nm`);
   if (nm > 16000) note(r.id, `implausibly long voyage: ${Math.round(nm)} nm`);
@@ -294,6 +328,10 @@ console.log(`  sources       ${SOURCES.length}`);
 console.log(`  chokepoints   ${CHOKEPOINTS.length}`);
 console.log(`  pipelines     ${PIPELINES.length}`);
 console.log(`  ports         ${Object.keys(PORTS).length}`);
+console.log(
+  `  freight       ${ROUTES.filter((r) => r.sailing.vessel).length} routes with a vessel class, ${ROUTES.filter((r) => r.sailing.distanceSource === 'published').length} with a published distance, ${ROUTES.filter((r) => r.sailing.transitFact).length} with a published transit time`
+);
+for (const w of freightWarnings) console.log(`  ⚠  ${w}`);
 
 if (!problems.length) {
   console.log('\n✅ No inconsistency found.\n');

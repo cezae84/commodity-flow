@@ -24,7 +24,24 @@ function ReferencePeriod({ item }) {
       <ul className="facts">
         <FactCard fact={item.leadFact} emphasis />
       </ul>
-      <p className="period__text">{item.analysis}</p>
+      {item.trading ? (
+        <dl className="trading">
+          <div>
+            <dt>Sellers</dt>
+            <dd>{item.trading.sellers}</dd>
+          </div>
+          <div>
+            <dt>Buyers</dt>
+            <dd>{item.trading.buyers}</dd>
+          </div>
+          <div>
+            <dt>Why it matters</dt>
+            <dd>{item.trading.whyItMatters}</dd>
+          </div>
+        </dl>
+      ) : (
+        <p className="period__text">{item.analysis}</p>
+      )}
       {rest.length > 0 && (
         <details className="period__more">
           <summary>More 2025 reference facts ({rest.length})</summary>
@@ -92,6 +109,35 @@ function CurrentPeriod({ item, prices = [], watchlist }) {
   );
 }
 
+/**
+ * How long the voyage takes, and on what basis: a computed sailing time from
+ * the published distance and the segment's sourced average speed, next to any
+ * published transit time for the route. Both are shown with their sources.
+ */
+function Freight({ sailing }) {
+  const { vessel, distanceFact, transitFact, days } = sailing;
+  if (!vessel && !distanceFact && !transitFact) return null;
+  return (
+    <section className="period period--freight">
+      <h3 className="period__title">Freight — sailing time</h3>
+      {days != null && (
+        <p className="period__text freight__calc">
+          <strong>≈ {days} days at sea</strong>: {sailing.distanceNm.toLocaleString('en-GB')} nm
+          {sailing.distanceSource === 'drawn' ? ' (drawn path)' : ''} at {vessel.speedKn} knots, the
+          average sailing speed of {vessel.segment}
+          {vessel.speedFact?.period ? ` (${vessel.speedFact.period})` : ''}. Excludes loading,
+          discharge, canal waiting and the ballast leg.
+        </p>
+      )}
+      <ul className="facts">
+        {[transitFact, distanceFact, vessel?.speedFact].filter(Boolean).map((f) => (
+          <FactCard key={f.id} fact={f} />
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 export function RouteDetail({ route, market, watchlist, onClose, onSelectChokepoint }) {
   const commodity = COMMODITY_BY_ID[route.commodity];
   const status = STATUS[route.status];
@@ -139,12 +185,24 @@ export function RouteDetail({ route, market, watchlist, onClose, onSelectChokepo
         </div>
       </div>
 
-      <div className="detail__stats">
+      <div className="detail__stats detail__stats--three">
         <div className="stat">
           <span className="stat__value">
-            {distance.toLocaleString('en-GB')}
+            {route.sailing.days != null ? `≈ ${route.sailing.days} d` : '—'}
           </span>
-          <span className="stat__label">nautical miles (drawn path)</span>
+          <span className="stat__label">
+            {route.sailing.days != null
+              ? `at sea · ${route.sailing.vessel.label} at ${route.sailing.vessel.speedKn} kn`
+              : 'sailing time not sourced yet'}
+          </span>
+        </div>
+        <div className="stat">
+          <span className="stat__value">
+            {(route.sailing.distanceNm ?? distance).toLocaleString('en-GB')}
+          </span>
+          <span className="stat__label">
+            nautical miles ({route.sailing.distanceSource === 'published' ? 'published' : 'drawn path'})
+          </span>
         </div>
         <div className="stat">
           <span className="stat__value" style={{ color: status.color }}>
@@ -155,6 +213,7 @@ export function RouteDetail({ route, market, watchlist, onClose, onSelectChokepo
       </div>
 
       <ReferencePeriod item={route} />
+      <Freight sailing={route.sailing} />
       <CurrentPeriod
         item={route}
         watchlist={watchlist}

@@ -29,7 +29,7 @@ const ATTRIBUTION =
 const strokeWidth = (weight) => 1.1 + weight * 0.75;
 
 /** Dark casing laid under every path: separates crossing lines on the dark basemap. */
-const CASING = '#0a0a0a';
+const CASING = '#1a1c20';
 
 /**
  * Cartographic generalisation: past this many visible corridors, the lightest
@@ -248,6 +248,7 @@ export default function MapView({
            <strong>${route.name}</strong>
            <span class="tt-label">2025 reference</span>
            <span class="tt-metric">${route.leadFact?.statement ?? ''}</span>
+           ${route.sailing.days != null ? `<span class="tt-label">Freight</span><span class="tt-metric">≈ ${route.sailing.days} days at sea · ${route.sailing.vessel.label}</span>` : ''}
            <span class="tt-label tt-label--now">Now</span>
            <span class="tt-status" style="color:${status.color}">${status.icon} ${status.label}</span>`,
           { className: 'wm-tooltip', sticky: true }

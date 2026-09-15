@@ -20,7 +20,7 @@ import { dataset } from './lib/dataset.mjs';
 import { PORTS } from '../src/data/waypoints.js';
 import { COMMODITIES, SUBFILTERS, SUBFILTER_GROUPS, STATUS } from '../src/data/commodities.js';
 
-const { ROUTES, CHOKEPOINTS, PIPELINES, FACTS, SOURCES } = dataset;
+const { ROUTES, CHOKEPOINTS, PIPELINES, FACTS, SOURCES, VESSELS } = dataset;
 
 // Common French words, on word boundaries. Accented proper nouns
 // (São Miguel, Paranaguá, Bolívar, Réunion) are legitimate and are not listed.
@@ -34,9 +34,13 @@ const check = (where, value) => {
 
 for (const r of ROUTES) {
   check(`route ${r.id}.name`, r.name);
-  check(`route ${r.id}.analysis`, r.analysis);
+  check(`route ${r.id}.sellers`, r.trading.sellers);
+  check(`route ${r.id}.buyers`, r.trading.buyers);
+  check(`route ${r.id}.why_it_matters`, r.trading.whyItMatters);
+  check(`route ${r.id}.situation`, r.situation);
 }
 for (const [k, p] of Object.entries(PORTS)) check(`port ${k}`, p.name);
+for (const v of VESSELS) check(`vessel ${v.id}`, `${v.label} ${v.segment}`);
 for (const c of CHOKEPOINTS) {
   check(`chokepoint ${c.id}.name`, c.name);
   check(`chokepoint ${c.id}.analysis`, c.analysis);

@@ -240,6 +240,7 @@ function RoutesTable({ onSelectTarget }) {
         <thead>
           <tr>
             <th>Route</th>
+            <th>Freight</th>
             <th>2025 reference figure</th>
             <th>Now ({SITUATION_AS_OF})</th>
             <th>Facts</th>
@@ -262,6 +263,13 @@ function RoutesTable({ onSelectTarget }) {
                     {COMMODITY_BY_ID[r.commodity]?.short} · {r.from} → {r.to}
                   </span>
                   <code className="datatable__id">{r.id}</code>
+                </td>
+                <td>
+                  {r.sailing.days != null ? `≈ ${r.sailing.days} days` : '—'}
+                  <span className="datatable__muted">
+                    {r.sailing.vessel ? `${r.sailing.vessel.label} · ` : ''}
+                    {r.sailing.distanceNm?.toLocaleString('en-GB')} nm ({r.sailing.distanceSource})
+                  </span>
                 </td>
                 <td>{r.leadFact?.statement}</td>
                 <td>

@@ -1,0 +1,16 @@
+﻿vessel_class,label,segment,speed_kn,speed_fact
+vlcc,VLCC,oil tankers,11.4,speed-oil-tankers
+aframax,Aframax,oil tankers,11.4,speed-oil-tankers
+suezmax,Suezmax,oil tankers,11.4,speed-oil-tankers
+lr2,LR2 product tanker,product tankers,11.2,speed-product-tankers
+mr,MR product tanker,product tankers,11.2,speed-product-tankers
+lng-carrier,LNG carrier,LNG carriers,14.6,speed-lng-carriers
+arc7-lng,Arc7 LNG carrier,LNG carriers,14.6,speed-lng-carriers
+panamax,Panamax,bulk carriers,10.7,speed-bulk-carriers
+capesize,Capesize,bulk carriers,10.7,speed-bulk-carriers
+vloc,VLOC / Valemax,bulk carriers,10.7,speed-bulk-carriers
+newcastlemax,Newcastlemax,bulk carriers,10.7,speed-bulk-carriers
+kamsarmax,Kamsarmax,bulk carriers,10.7,speed-bulk-carriers
+supramax,Supramax,bulk carriers,10.7,speed-bulk-carriers
+container,Container ship,container ships,14.7,speed-container-ships
+ultramax,Ultramax,bulk carriers,10.7,speed-bulk-carriers

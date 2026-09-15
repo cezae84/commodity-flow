@@ -31,7 +31,7 @@ Each check script is standalone (`node scripts/<name>.mjs`); there is no per-tes
 
 **Data flows one way: `data/*.csv` → `src/data/dataset.js` → `App.jsx` (filter state) → `visibleIds` → `MapView` and `RouteList`.**
 
-- `data/*.csv` — the editorial dataset, documented in `data/README.md`. `sources.csv` ← `facts.csv` (statement, value, period, scope, source, verbatim quote) ← `routes.csv` / `chokepoints.csv` / `pipelines.csv`, which reference facts via `lead_fact` / `status_fact` and carry a figure-free `analysis`. Facts attach to targets through `applies_to` (route, chokepoint, pipeline or commodity ids, `|`-separated).
+- `data/*.csv` — the editorial dataset, documented in `data/README.md`. `sources.csv` ← `facts.csv` (statement, value, period, scope, source, verbatim quote) ← `routes.csv` / `chokepoints.csv` / `pipelines.csv`, which reference facts via `lead_fact` / `status_fact`. Routes carry a figure-free, country-level trading context (`sellers`, `buyers`, `why_it_matters`) backed by `context_facts`; chokepoints and pipelines carry a figure-free `analysis`. Facts attach to targets through `applies_to` (route, chokepoint, pipeline or commodity ids, `|`-separated).
 - `src/data/dataset.js` — pure `buildDataset(rawCsvText)`; never throws, collects broken references in `issues`. `src/data/index.js` feeds it via Vite `?raw` imports (so the standalone build inlines the data); `scripts/lib/dataset.mjs` feeds it from disk for the node scripts. Components import from `src/data/index.js`; scripts import `dataset` from `scripts/lib/dataset.mjs`.
 - `src/data/geometry.js` — `ROUTE_PATHS[routeId]`, built with `p(port.c, SEGMENT, [[lat,lng],…], …)`.
 - `src/data/waypoints.js` — `PORTS` (each with an explicit `country`; routes reference port keys), `CHOKEPOINT_POSITIONS`, `PIPELINE_PATHS`, and reusable corridor segments (`GULF_OUT`, `MALACCA`, `CAPE_TO_MALACCA`…). Editing a segment moves every route that uses it — re-run `check:land` afterwards.
@@ -48,7 +48,7 @@ Each check script is standalone (`node scripts/<name>.mjs`); there is no per-tes
 - Trans-Pacific paths use continuous longitudes past ±180° (`-220` = 140°E); `pathVariants()` in `src/lib/geo.js` draws the ±360° copy. Keep a path's longitudes continuous rather than wrapping them.
 - Paths are smoothed with Chaikin (`smoothPath`) before drawing *and* before `check:land`, so a fix must clear land after smoothing. Genuinely navigable passages finer than 50 m resolution go in `ALLOWED` in `scripts/check-land.mjs`, not in the data.
 - Metals routes require a `sub` matching `SUBFILTERS.metals`. A new route needs a `routes.csv` row, a fact, and a path under the same id in `geometry.js`.
-- Two periods are never mixed. Facts carry `timeframe`: `baseline` (2025 reference, before the Hormuz closure on 28 Feb 2026) or `current` (since then). `lead_fact` must be baseline; `analysis` describes the reference period, `situation` the war period; `status`/`status_fact` describe now. `SITUATION_AS_OF` in `src/data/timeframes.js` dates the current block — bump it when statuses are reviewed.
+- Two periods are never mixed. Facts carry `timeframe`: `baseline` (2025 reference, before the Hormuz closure on 28 Feb 2026) or `current` (since then). `lead_fact` must be baseline; the trading context / `analysis` describe the reference period, `situation` the war period; `status`/`status_fact` describe now. `SITUATION_AS_OF` in `src/data/timeframes.js` dates the current block — bump it when statuses are reviewed.
 
 ## Live market prices
 
@@ -56,6 +56,11 @@ Each check script is standalone (`node scripts/<name>.mjs`); there is no per-tes
 - Prices are a separate automated layer: never write them into `facts.csv`; always label source, delay ("Yahoo Finance, delayed, indicative"), time and cadence.
 - Keep the freshness guard (`max_age_days`) and the keep-last-good behaviour; a new instrument needs a row in `data/live/instruments.csv` and a live check that its ticker still trades.
 - User agents matter: Yahoo rejects non-browser agents, FRED's CDN stalls on browser agents.
+
+## Freight data
+
+- `data/vessels.csv` (vessel class → segment speed + `speed_fact`) and route columns `vessel_class`, `distance_nm`, `distance_fact`, `transit_fact`. `dataset.js` computes `route.sailing` (days = distance ÷ speed × 24, published distance or drawn path). Freight facts use scope `freight`.
+- Research is done by the project subagent `.claude/agents/freight-analyst.md` (verbatim quotes from saved pages, "not found" over guesses); review its rows before writing CSVs. Do not use uncited aggregators (MarTool, Shipfinex…) for transit times.
 
 ## Sidebar and watchlist
 

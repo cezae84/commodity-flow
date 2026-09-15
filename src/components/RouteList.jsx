@@ -49,6 +49,11 @@ export default function RouteList({
                   <span className="routecard__tag">
                     {sub ? sub.label : commodity.short}
                   </span>
+                  {route.sailing.days != null && (
+                    <span className="routecard__days" title="Estimated days at sea (see route detail)">
+                      ≈{route.sailing.days}d · {route.sailing.vessel.label}
+                    </span>
+                  )}
                   <span
                     className="routecard__rank"
                     aria-label={`Order of magnitude ${route.weight} of 5`}

@@ -21,8 +21,8 @@ Every fact is filed in one of two periods, and the map never mixes them:
 - **`current` — since the war.** What has changed since the closure: halted traffic,
   blockades, reroutings, new flows.
 
-On a route card the *Reference figures — 2025* block shows the lead fact, the
-`analysis` and the other baseline facts; the *Current situation* block shows the
+On a route card the *Reference figures — 2025* block shows the lead fact, the trading
+context (sellers, buyers, why it matters) and the other baseline facts; the *Current situation* block shows the
 status, the `situation` text, the `status_fact` and every current fact. The date of
 that block is `SITUATION_AS_OF` in `src/data/timeframes.js` — change it whenever you
 review the current facts.
@@ -87,13 +87,37 @@ source, with the exact sentence it comes from. **Routes**, **chokepoints** and
 | `status` | `normal`, `reduced`, `rerouted`, `disrupted` or `new` |
 | `status_fact` | fact proving the status — **required** for anything other than `normal` |
 | `weight` | 1 to 5: line thickness, an editorial rank, not a measurement |
+| `vessel_class` | id from `vessels.csv` — the ship type typically used on this trade (backed by a `freight` fact applying to the route) |
+| `distance_nm` | published port-to-port sea distance, digits only; empty = the map uses its drawn line, and says so |
+| `distance_fact` | fact quoting that distance (required when `distance_nm` is filled) |
+| `transit_fact` | optional fact quoting a published transit time for this voyage |
 | `lead_fact` | the 2025 reference figure shown in the list and tooltip — must be a `baseline` fact listing this route in `applies_to` |
-| `analysis` | the route in the reference period, short English text — **no figures** (years allowed) |
+| `sellers` | trading context, one line: the exporting countries — country level, **no figures** (years allowed) |
+| `buyers` | trading context, one line: the importing countries |
+| `why_it_matters` | trading context, one line: why traders watch this route |
+| `context_facts` | fact ids (`\|`-separated) that back the three trading-context lines; each must list the route in `applies_to` |
 | `situation` | what the war has changed, short English text — no figures; leave empty if nothing is documented (it then needs no current fact) |
 
-`chokepoints.csv` and `pipelines.csv` follow the same pattern (`lead_fact`,
-`status_fact`, `analysis`, `situation`); their map positions and paths are in
+`chokepoints.csv` and `pipelines.csv` follow the same pattern but keep a free
+`analysis` paragraph instead of the trading context (`lead_fact`, `status_fact`,
+`analysis`, `situation`); their map positions and paths are in
 `src/data/waypoints.js`.
+
+## `vessels.csv` — ship types and speeds
+
+`vessel_class` (id), `label`, `segment` (oil tankers, product tankers, LNG carriers,
+bulk carriers, container ships), `speed_kn` and `speed_fact` — the fact quoting the
+fleet-average sailing speed for that segment, which must list the vessel class in
+`applies_to`.
+
+The route card shows **≈ N days at sea** = distance ÷ (speed × 24): published distance
+when there is one, drawn line otherwise; loading, discharge, canal waiting and the
+ballast leg are excluded. Published transit times are shown beside it as facts, with
+their own basis (speed, round trip). Freight facts use the scope `freight`.
+
+Freight data is gathered by the `freight-analyst` agent (`.claude/agents/freight-analyst.md`):
+it fetches each page, quotes it verbatim and returns rows for review. Uncited aggregators
+that contradict themselves are not used for transit times.
 
 ## `sources.csv`
 

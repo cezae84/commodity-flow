@@ -8,4 +8,5 @@ export const SCOPES = {
   status: { label: 'Status', hint: 'Evidence for the operational status' },
   policy: { label: 'Policy', hint: 'Regulation, quota or export control' },
   infrastructure: { label: 'Infrastructure', hint: 'Port, terminal, pipeline or capacity' },
+  freight: { label: 'Freight', hint: 'Vessel class, sea distance, sailing speed or transit time' },
 };

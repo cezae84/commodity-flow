@@ -9,8 +9,9 @@
 import { parseCsv, splitList } from './csv.js';
 import { PORTS, CHOKEPOINT_POSITIONS, PIPELINE_PATHS } from './waypoints.js';
 import { ROUTE_PATHS } from './geometry.js';
+import { pathLengthNm } from '../lib/geo.js';
 
-export const CSV_FILES = ['sources', 'facts', 'routes', 'chokepoints', 'pipelines'];
+export const CSV_FILES = ['sources', 'facts', 'routes', 'chokepoints', 'pipelines', 'vessels'];
 
 export function buildDataset(raw) {
   const issues = [];
@@ -124,6 +125,38 @@ export function buildDataset(raw) {
     };
   });
 
+  // --- Vessel classes ---------------------------------------------------------------
+  const VESSELS = parseCsv(raw.vessels ?? '').map((v) => ({
+    id: v.vessel_class,
+    label: v.label || v.vessel_class,
+    segment: v.segment,
+    speedKn: Number(v.speed_kn),
+    speedFact: fact(v.speed_fact, v.vessel_class, 'speed_fact'),
+  }));
+  const VESSEL_BY_ID = Object.fromEntries(VESSELS.map((v) => [v.id, v]));
+
+  /**
+   * Sailing time at sea: published port-to-port distance (or, failing that, the
+   * drawn path) divided by the segment's sourced fleet-average speed. Excludes
+   * port time, canal waiting and ballast legs — the UI says so.
+   */
+  const sailingFor = (r, id, path) => {
+    const vessel = r.vessel_class ? VESSEL_BY_ID[r.vessel_class] : null;
+    if (r.vessel_class && !vessel) issue(id, `unknown vessel_class "${r.vessel_class}"`);
+    const published = Number(r.distance_nm) > 0 ? Number(r.distance_nm) : null;
+    const distanceNm = published ?? (path.length ? Math.round(pathLengthNm(path)) : null);
+    const days =
+      vessel && vessel.speedKn > 0 && distanceNm ? distanceNm / (vessel.speedKn * 24) : null;
+    return {
+      vessel,
+      distanceNm,
+      distanceSource: published ? 'published' : 'drawn',
+      distanceFact: fact(r.distance_fact, id, 'distance_fact'),
+      transitFact: fact(r.transit_fact, id, 'transit_fact'),
+      days: days == null ? null : Math.max(1, Math.round(days)),
+    };
+  };
+
   // --- Routes -------------------------------------------------------------------
   const ROUTES = parseCsv(raw.routes).map((r) => {
     const id = r.route_id;
@@ -153,12 +186,19 @@ export function buildDataset(raw) {
       statusFact,
       weight: Number(r.weight),
       leadFact,
-      analysis: r.analysis,
+      // Trading context, country level: who sells, who buys, why the route matters.
+      trading: {
+        sellers: r.sellers ?? '',
+        buyers: r.buyers ?? '',
+        whyItMatters: r.why_it_matters ?? '',
+        facts: splitList(r.context_facts).map((fid) => fact(fid, id, 'context_facts')).filter(Boolean),
+      },
       situation: r.situation ?? '',
       facts,
       ...split(facts),
       sourceIds: sourcesOf(facts),
       path: ROUTE_PATHS[id] ?? [],
+      sailing: sailingFor(r, id, ROUTE_PATHS[id] ?? []),
     };
   });
   const ROUTE_BY_ID = Object.fromEntries(ROUTES.map((r) => [r.id, r]));
@@ -173,6 +213,8 @@ export function buildDataset(raw) {
     CHOKEPOINTS,
     CHOKEPOINT_BY_ID,
     PIPELINES,
+    VESSELS,
+    VESSEL_BY_ID,
     issues,
   };
 }
