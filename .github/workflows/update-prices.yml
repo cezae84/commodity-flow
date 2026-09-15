@@ -55,7 +55,7 @@ jobs:
         run: |
           cd publish
           cat > README.md <<'EOF'
-          Machine-generated market prices for CommodityMap.
+          Machine-generated market prices for CommoditiesRoutes.
           Overwritten by .github/workflows/update-prices.yml — do not edit.
           EOF
           git init -q -b live-data

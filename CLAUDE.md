@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-CommodityMap — a static React + Leaflet map of seaborne commodity corridors (83 routes, 8 commodity families, 10 chokepoints, 258 sourced facts, 114 sources). There is no backend and no test framework: the dataset *is* the product, and correctness is enforced by the check scripts below. All user-facing text is in English; the maintainer converses in French.
+CommoditiesRoutes — a static React + Leaflet map of seaborne commodity corridors (83 routes, 8 commodity families, 10 chokepoints, 258 sourced facts, 114 sources). There is no backend and no test framework: the dataset *is* the product, and correctness is enforced by the check scripts below. All user-facing text is in English; the maintainer converses in French.
 
 ## Commands
 
@@ -20,7 +20,7 @@ npm run check:english     # fails on any French left in user-facing strings
 npm run check:live        # instruments.csv consistency + offline self-test of the Python price fetcher
 npm run prices            # fetch live prices into .live/prices.json (served by `npm run dev`)
 npm run build             # dist/ — the deployable static site
-npm run build:standalone  # commoditymap.html, single file openable over file://
+npm run build:standalone  # commoditiesroutes.html, single file openable over file://
 ```
 
 Each check script is standalone (`node scripts/<name>.mjs`); there is no per-test granularity. `check:land` downloads Natural Earth polygons into `scripts/.cache/` on first run.

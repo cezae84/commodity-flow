@@ -250,7 +250,7 @@ export default function App() {
       <aside className={`sidebar${drawerOpen ? ' is-open' : ''}`}>
         <header className="brand">
           <div className="brand__row">
-            <h1 className="brand__title">CommodityMap</h1>
+            <h1 className="brand__title">CommoditiesRoutes</h1>
             <button
               type="button"
               className="brand__close"
