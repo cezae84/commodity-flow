@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-CommoditiesRoutes — a static React + Leaflet map of seaborne commodity corridors (83 routes, 8 commodity families, 10 chokepoints, 258 sourced facts, 114 sources). There is no backend and no test framework: the dataset *is* the product, and correctness is enforced by the check scripts below. All user-facing text is in English; the maintainer converses in French.
+CommoditiesRoutes — a static React + Leaflet map of seaborne commodity corridors (83 routes, 8 commodity families, 10 chokepoints, 359 sourced facts, 169 sources). There is no backend and no test framework: the dataset *is* the product, and correctness is enforced by the check scripts below. All user-facing text is in English; the maintainer converses in French.
+
+The repository is aimed at readers of the output (recruiters, traders): `README.md` explains why the map exists and what it shows; technical documentation lives in `docs/TECHNICAL.md`; `docs/screenshots/` holds the README images.
 
 ## Commands
 
@@ -69,7 +71,7 @@ Each check script is standalone (`node scripts/<name>.mjs`); there is no per-tes
 
 ## Styling constraints
 
-- Dark terminal theme (CARTO Dark Matter, water `#262626`); CSS tokens at the top of `src/index.css` (`--paper` = panel surface, `--ink` = text, `--accent` amber). The 8 commodity colours are validated for colour-vision deficiency against that water colour with the dataviz validator in dark mode — re-run it if the basemap or a hue changes; the **order is the safety mechanism**. Do not reorder, recolour ad hoc, or add a 9th hue — new groupings go into sub-filters, which narrow the display without repainting.
+- Dark terminal theme (CARTO Dark Matter, water `#383838` after the tile-pane filter); CSS tokens at the top of `src/index.css` (`--paper` = panel surface, `--ink` = text, `--accent` amber). The 8 commodity colours are validated for colour-vision deficiency against that water colour with the dataviz validator in dark mode — re-run it if the basemap or a hue changes; the **order is the safety mechanism**. Do not reorder, recolour ad hoc, or add a 9th hue — new groupings go into sub-filters, which narrow the display without repainting.
 - Status is never conveyed by colour alone (icon + label + dash pattern).
 - Leaflet's CSS loads after `src/index.css`, so overrides of Leaflet classes need doubled specificity (e.g. `.leaflet-tooltip.wm-tooltip`).
 - Strings inside single-quoted JS literals use the typographic apostrophe `’`, not `'`.
