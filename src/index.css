@@ -10,11 +10,11 @@
 :root {
   color-scheme: dark;
 
-  /* Surfaces — charcoal rather than black */
-  --paper: #17191d;
-  --paper-2: #1e2126;
-  --paper-3: #282c32;
-  --bar: #111316;
+  /* Surfaces — a trading terminal's black, warmed by one step for raised rows */
+  --paper: #000000;
+  --paper-2: #0a0a0a;
+  --paper-3: #141210;
+  --bar: #0a0a0a;
   --water: #383838;
 
   /* Inks */
@@ -22,14 +22,15 @@
   --ink-2: #b8b5ae;
   --ink-3: #9a978f;
 
-  /* Rules */
-  --rule: rgba(255, 255, 255, 0.13);
-  --rule-soft: rgba(255, 255, 255, 0.07);
+  /* Rules — lifted a step: on pure black, 0.13 white reads as no rule at all */
+  --rule: rgba(255, 255, 255, 0.17);
+  --rule-soft: rgba(255, 255, 255, 0.09);
 
-  /* Terminal accents — a muted amber, not a signal orange */
+  /* Amber is the state colour: what is selected, active or live. Never
+     decoration, never navigation — links get a neutral ink instead. */
   --accent: #d9a05b;
   --accent-soft: rgba(217, 160, 91, 0.16);
-  --link: #e6b77a;
+  --link: #cfd2d6;
   --up: #3ecf6e;
   --down: #ff5f57;
   --alert: #f0524f;
@@ -38,9 +39,11 @@
   --radius: 2px;
   --radius-sm: 2px;
 
-  --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, 'Roboto Mono',
-    'DejaVu Sans Mono', monospace;
+  --sans: 'Archivo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas,
+    'Roboto Mono', 'DejaVu Sans Mono', monospace;
+  /* No serif on a terminal: the "serif" role is the monospace face, used for
+     the display headings that a print design would set in a book face. */
   --serif: var(--mono);
 
   font-family: var(--sans);
@@ -68,7 +71,7 @@ body {
 a {
   color: var(--link);
   text-decoration: none;
-  border-bottom: 1px solid rgba(230, 183, 122, 0.35);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
 }
 a:hover {
   border-bottom-color: currentColor;
@@ -94,7 +97,7 @@ button {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--ink-2);
 }
 
 /* --------------------------------------------------------------------------
@@ -158,8 +161,6 @@ button {
   font-size: 18px;
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   color: var(--accent);
 }
 
@@ -333,8 +334,6 @@ button {
 .subfilter__label {
   font-size: 9.5px;
   font-weight: 650;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--ink-3);
 }
 
@@ -354,7 +353,8 @@ button {
   color: var(--ink-2);
   background: var(--paper);
   border: 1px solid var(--rule);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
+  font-family: var(--mono);
 }
 .subchip:hover {
   border-color: var(--ink-3);
@@ -491,8 +491,6 @@ button {
 }
 
 .routecard__tag {
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   font-weight: 600;
 }
 
@@ -595,8 +593,6 @@ button {
   gap: 7px;
   font-size: 10.5px;
   font-weight: 650;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--ink-2);
 }
 
@@ -633,8 +629,6 @@ button {
 .detail__odlabel {
   display: block;
   font-size: 9.5px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--ink-3);
   margin-bottom: 4px;
 }
@@ -710,8 +704,9 @@ button {
   font-size: 12px;
   background: none;
   border: 1px solid var(--rule);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   color: var(--ink-2);
+  font-family: var(--mono);
 }
 .cp-tag:hover {
   border-color: var(--ink-3);
@@ -758,8 +753,6 @@ button {
 .cp-routes__commodity {
   margin-left: auto;
   font-size: 10px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   color: var(--ink-3);
   flex: none;
 }
@@ -908,8 +901,6 @@ button {
   border: none;
   font-size: 10.5px;
   font-weight: 650;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
   color: var(--ink-2);
 }
 .mappanel__toggle:hover {
@@ -1131,8 +1122,6 @@ button {
   display: block;
   font-size: 9.5px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   margin-bottom: 5px;
 }
 .wm-tooltip strong {
@@ -1377,27 +1366,34 @@ button {
 
 .scope {
   display: inline-block;
-  padding: 1px 7px;
+  padding: 1px 6px;
+  font-family: var(--mono);
   font-size: 9.5px;
   font-weight: 650;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--rule);
   color: var(--ink-2);
   background: var(--paper);
   cursor: help;
 }
 /* The one distinction that matters when reading a figure: does it describe this
-   very flow, or only one end of it? Corridor facts get the solid badge. */
+   very flow, or only one end of it? Corridor facts get the amber tag. */
 .scope--corridor {
-  background: var(--accent);
   border-color: var(--accent);
-  color: var(--bar);
+  color: var(--accent);
 }
+/* A status reads as a terminal field rather than a filled pill: [ STATUS ]. */
 .scope--status {
   border-color: var(--alert);
   color: var(--alert);
+}
+.scope--status::before {
+  content: '[';
+  margin-right: 3px;
+}
+.scope--status::after {
+  content: ']';
+  margin-left: 3px;
 }
 
 .detail__footnote {
@@ -1485,8 +1481,9 @@ button {
   padding: 3px 8px;
   background: var(--paper-2);
   border: 1px solid var(--rule);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   font-size: 11px;
+  font-family: var(--mono);
 }
 
 .dataview__filters {
@@ -1530,8 +1527,6 @@ button {
   text-align: left;
   font-size: 10.5px;
   font-weight: 650;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--ink-3);
 }
 .datatable td {
@@ -1654,21 +1649,30 @@ button {
 
 .timeframe {
   display: inline-block;
-  padding: 1px 7px;
+  padding: 1px 6px;
+  font-family: var(--mono);
   font-size: 9.5px;
   font-weight: 650;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: 999px;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
   cursor: help;
 }
 .timeframe--baseline {
   background: var(--paper-3);
   color: var(--ink-2);
 }
+/* The war period is not a filled block either: [ NOW ] in alert red. */
 .timeframe--current {
-  background: var(--alert);
-  color: var(--bar);
+  border-color: var(--alert);
+  color: var(--alert);
+}
+.timeframe--current::before {
+  content: '[';
+  margin-right: 3px;
+}
+.timeframe--current::after {
+  content: ']';
+  margin-left: 3px;
 }
 
 .routecard__period {
@@ -1677,7 +1681,6 @@ button {
   padding: 0 5px;
   font-size: 9.5px;
   font-weight: 650;
-  letter-spacing: 0.04em;
   border-radius: 3px;
   background: var(--paper-3);
   color: var(--ink-2);
@@ -1689,8 +1692,6 @@ button {
   margin-top: 6px;
   font-size: 9.5px;
   font-weight: 650;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--ink-3);
 }
 .wm-tooltip .tt-label--now {
@@ -1744,6 +1745,7 @@ button {
 .price__value {
   font-size: 13px;
   font-weight: 600;
+  color: var(--accent);
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
@@ -1807,8 +1809,6 @@ button {
   margin: 0;
   font-size: 10.5px;
   font-weight: 650;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--ink-2);
 }
 
@@ -1857,6 +1857,11 @@ button {
 .datatable__value,
 .dataview__tab,
 .dataview__count,
+.detail__odvalue,
+.chg,
+.routecard__days,
+.news__meta,
+.newspanel__when,
 .cp-routes__commodity,
 .wm-tooltip .tt-kicker,
 .wm-tooltip .tt-label,
@@ -1870,7 +1875,7 @@ button {
 .period__subtitle,
 .mappanel__group h4,
 .datatable th {
-  color: var(--accent);
+  color: var(--ink-2);
 }
 
 .fact__quote {
@@ -1918,8 +1923,6 @@ button {
   font-family: var(--mono);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--ink-2);
   background: none;
   border: none;
@@ -2033,7 +2036,7 @@ button {
 .watch__emptytitle {
   margin-bottom: 6px !important;
   font-family: var(--mono);
-  color: var(--accent);
+  color: var(--ink-2);
 }
 
 .toggle {
@@ -2101,9 +2104,7 @@ button {
   font-family: var(--mono);
   font-size: 10.5px;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
+  color: var(--ink-3);
   padding-top: 2px;
 }
 .trading dd {
@@ -2161,9 +2162,7 @@ button {
   font-family: var(--mono);
   font-size: 10.5px;
   font-weight: 650;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--accent);
+  color: var(--ink-2);
   background: var(--bar);
   border: none;
 }
@@ -2199,8 +2198,8 @@ button {
 .news__overview {
   margin: 8px 0 4px;
   padding: 9px 11px;
-  background: var(--accent-soft);
-  border-left: 3px solid var(--accent);
+  background: var(--paper-2);
+  border-left: 3px solid var(--ink-3);
 }
 .news__overview p {
   margin: 0;
@@ -2230,13 +2229,11 @@ button {
   color: var(--ink-3);
 }
 .news__cat {
-  padding: 0 6px;
+  padding: 0 5px;
   font-weight: 650;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--ink-2);
   border: 1px solid var(--rule);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
 }
 .news__headline {
   margin: 6px 0 3px;
