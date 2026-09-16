@@ -59,7 +59,7 @@ MIN_ITEMS = 3
 MAX_ITEMS = 8
 CATEGORIES = ["oil", "gas-lng", "dry-bulk", "agri", "metals", "shipping", "geopolitics"]
 
-SYSTEM_PROMPT = """You write the "Market brief — last 24 hours" of CommoditiesRoutes, a public map of \
+SYSTEM_PROMPT = """You write the "Market brief — last 24 hours" of CommodityFlow, a public map of \
 seaborne commodity trades read by physical commodity traders.
 
 You receive a numbered list of news headlines (id, publisher, time, title, sometimes a short description). \

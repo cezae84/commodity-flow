@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 scripts/.cache
 dist-standalone
-commoditiesroutes.html
+commodityflow.html
 .env
 .env.local
 

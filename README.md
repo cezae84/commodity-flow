@@ -1,10 +1,10 @@
-# CommoditiesRoutes
+# CommodityFlow
 
 **A self-built atlas of the world's main seaborne commodity trades — who ships what to
 whom, through which straits, on which ships, and what changed when the Strait of Hormuz
 closed.**
 
-![CommoditiesRoutes — 83 seaborne commodity corridors on a world map](docs/screenshots/overview.png)
+![CommodityFlow — 83 seaborne commodity corridors on a world map](docs/screenshots/overview.png)
 
 ## Why this map exists
 

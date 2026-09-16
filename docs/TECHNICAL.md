@@ -1,4 +1,4 @@
-# CommoditiesRoutes — technical notes
+# CommodityFlow — technical notes
 
 An interactive, terminal-style map of the world's major seaborne commodity corridors
 and markets. **83 routes**, **10 chokepoints** and **3 bypass pipelines**, backed by
@@ -310,7 +310,7 @@ scripts/
 npm run build:standalone
 ```
 
-Produces `commoditiesroutes.html` at the repository root: **a single file
+Produces `commodityflow.html` at the repository root: **a single file
 of roughly 550 kB**, openable by double-click, easy to archive or email. JS, CSS
 and the favicon are inlined; the images in Leaflet's stylesheet become `data:`
 URIs.

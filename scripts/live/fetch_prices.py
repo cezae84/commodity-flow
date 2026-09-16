@@ -53,7 +53,7 @@ BROWSER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 )
-SCRIPT_AGENT = "commoditiesroutes/1.0 (price fetcher)"
+SCRIPT_AGENT = "commodityflow/1.0 (price fetcher)"
 REFERENCE_YEAR = 2025
 SPARK_POINTS = 30
 SOURCES = {

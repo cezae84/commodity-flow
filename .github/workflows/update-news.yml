@@ -58,7 +58,7 @@ jobs:
         run: |
           cd publish
           cat > README.md <<'EOF'
-          Machine-generated AI news brief for CommoditiesRoutes.
+          Machine-generated AI news brief for CommodityFlow.
           Overwritten by .github/workflows/update-news.yml — do not edit.
           EOF
           git init -q -b live-news

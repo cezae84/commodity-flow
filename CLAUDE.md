@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-CommoditiesRoutes — a static React + Leaflet map of seaborne commodity corridors (83 routes, 8 commodity families, 10 chokepoints, 359 sourced facts, 169 sources). There is no backend and no test framework: the dataset *is* the product, and correctness is enforced by the check scripts below. All user-facing text is in English; the maintainer converses in French.
+CommodityFlow — a static React + Leaflet map of seaborne commodity corridors (83 routes, 8 commodity families, 10 chokepoints, 359 sourced facts, 169 sources). There is no backend and no test framework: the dataset *is* the product, and correctness is enforced by the check scripts below. All user-facing text is in English; the maintainer converses in French.
 
 The repository is aimed at readers of the output (recruiters, traders): `README.md` explains why the map exists and what it shows; technical documentation lives in `docs/TECHNICAL.md`; `docs/screenshots/` holds the README images.
 
@@ -24,7 +24,7 @@ npm run check:news        # news_sources.csv + category sync + offline self-test
 npm run prices            # fetch live prices into .live/prices.json (served by `npm run dev`)
 npm run news              # build the AI news brief into .live/news.json (needs ANTHROPIC_API_KEY in .env); news:demo = offline sample
 npm run build             # dist/ — the deployable static site
-npm run build:standalone  # commoditiesroutes.html, single file openable over file://
+npm run build:standalone  # commodityflow.html, single file openable over file://
 ```
 
 Each check script is standalone (`node scripts/<name>.mjs`); there is no per-test granularity. `check:land` downloads Natural Earth polygons into `scripts/.cache/` on first run.
