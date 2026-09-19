@@ -1,0 +1,322 @@
+{
+ "generated_at": "2026-09-19T17:16:37+00:00",
+ "window_hours": 24,
+ "model": "claude-haiku-4-5-20251001",
+ "feeds": [
+  {
+   "id": "gcaptain",
+   "name": "gCaptain",
+   "ok": true,
+   "items": 12
+  },
+  {
+   "id": "splash247",
+   "name": "Splash247",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "hellenicshipping",
+   "name": "Hellenic Shipping News",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "eia",
+   "name": "U.S. Energy Information Administration — Today in Energy",
+   "ok": true,
+   "items": 17
+  },
+  {
+   "id": "rigzone",
+   "name": "Rigzone",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "oilprice",
+   "name": "OilPrice.com",
+   "ok": true,
+   "items": 15
+  },
+  {
+   "id": "lngprime",
+   "name": "LNG Prime",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "mining",
+   "name": "MINING.COM",
+   "ok": true,
+   "items": 36
+  },
+  {
+   "id": "worldgrain",
+   "name": "World Grain",
+   "ok": true,
+   "items": 30
+  },
+  {
+   "id": "gn-hormuz",
+   "name": "Google News — Hormuz and Gulf shipping",
+   "ok": true,
+   "items": 62
+  },
+  {
+   "id": "gn-oil",
+   "name": "Google News — oil market",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-sanctions",
+   "name": "Google News — energy sanctions",
+   "ok": true,
+   "items": 92
+  },
+  {
+   "id": "gn-redsea",
+   "name": "Google News — Red Sea and Suez",
+   "ok": true,
+   "items": 56
+  },
+  {
+   "id": "gn-lng",
+   "name": "Google News — gas and LNG",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-metals",
+   "name": "Google News — metals and iron ore",
+   "ok": true,
+   "items": 55
+  },
+  {
+   "id": "gn-grain",
+   "name": "Google News — grain and fertilizer",
+   "ok": true,
+   "items": 45
+  },
+  {
+   "id": "gn-freight",
+   "name": "Google News — freight markets",
+   "ok": true,
+   "items": 19
+  }
+ ],
+ "counts": {
+  "collected": 699,
+  "candidates": 90,
+  "items": 8,
+  "dropped": 0
+ },
+ "usage": {
+  "input_tokens": 6102,
+  "output_tokens": 831
+ },
+ "status": "ok",
+ "brief_generated_at": "2026-09-19T17:16:37+00:00",
+ "overview": {
+  "text": "Iran-US tensions escalate Strait of Hormuz disruptions; Trump sanctions threaten India, China oil access; LNG supply shock as Qatar declares force majeure; shipping costs hit records.",
+  "sources": [
+   {
+    "title": "Strait of Hormuz Traffic 6-Month High, 2,000+ Ships Escorted, Says US A Day After Iran Hits Tanker",
+    "publisher": "Times Now",
+    "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPemRBZnZrSlRKY0NVSGg0NkVBUC1PZlE1eTRsVktPX2dLUlNqdzd1ZWZTeHJ6Yy1zREI4aGkzRVNZVmxYNVJyQjB5OFN2Zmh5eFotU1FBTTJ3c2Z6QklkdXd5ZEh5ankzRDFwQzZLdUhkTmY1NUNieGZqanJMSXJvckNMSGo1b3E0YVVBYnFDdlBvLVh0TmNCWUZuSjRHaGJZZ3NLdjRfQmFQZXViMURBLTVpVDdtaHBUbnZ2eE1Ld3hsaFZhZDQ5TDBTSllNa0F2VTBHcmt3a2MwVWJodzN5WUF2dmN2NFlwMlg3dERqRU_SAfYBQVVfeXFMTkRHaTdKOU5MZmZfaTdjZFpsOWIxc1N4MERxbTVfQktnbW8yU0dUWEhpRUVzQm1QMEUyc0phWHI1YlM5ZmxmUFhWV29OMHRoYk8tcUkzNXNGYzU1R00xUnM5dXNydGFFNkNiWUNkM0pUSU9DQXJvS09PV0h2Rm56SVM5bDdnX2U2SVFkNzRNXzFFbEplZmhvc2RsMERubzZfSUFJSWQ1bVlDQXJ0YmdCd2oxMFE3aks3ZTVpM2F0ajNMWlFvcGo2Q05iVHo2T1lFODEwOFVPM3hMdEJQd1FGNnltMEY3WXU0S1Qtc1AwUm0wMkVnUmd3?oc=5",
+    "published_at": "2026-09-19T16:52+00:00"
+   },
+   {
+    "title": "Iran claims oil tanker strike in Strait of Hormuz",
+    "publisher": "newstodaynet.com",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQTFlWbXF5bEZvX3RsTjBwUDlfZXJMWG40dk5oR0NTVkpycm1yWEV4UHRmQWZZa0ZaSnVvNHJESkpSV21qS1ptNTFPVjMwd20zTkNLXzlYV2NadHBzelE4QnJUSXFxbkxWSXY3X0RpWEkyUXM2ZHpJbk1oVGFkcFM1dmVRZ3lsUnhCMHlhRi1xaw?oc=5",
+    "published_at": "2026-09-19T12:24+00:00"
+   },
+   {
+    "title": "Trump signs Russia sanctions bill: India faces fresh 100% tariff threat over Moscow oil",
+    "publisher": "Indiablooms",
+    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPYUx3MkYzdjFBTGppWWFzaVdLbVktb2ZfNFN5MWQ0VktmakF4b19tZklCWjNNMkM3Yk90V0tEMWVFanJ2UkpLWnJHZXFRc0hRNHZNaDRPR3pRMEQzRU1QeUdPR2FUbHNVRzdGWEk2a2VlUVdOMkhTYjZmbURqZTlSQWJxQS1ya256dUZEME5FcWI4UjNreFQzUHlyTk9VUFpQOXp4Zzd5MEswV2VwWnA0Y1JIOEZuWnNhenpqcnFSdjZjOS1EeHc?oc=5",
+    "published_at": "2026-09-19T06:49+00:00"
+   },
+   {
+    "title": "Trump Signs Russia Sanctions Bill, Clears Way For 100% Tariffs On India, China",
+    "publisher": "IBTimes India",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQS0ZraG5Bc0UyR2lGdHBPUGlaUTlHMUU0VUxtZnFxSmVXeHdfUnFxX0g2YV9MelJyQ1daR0NRSmE3RlhKLW1UTnNRZXVPZlJVc3dRdzhCSDl2YVhKMWRSa0hKSUJUZ2xvZ2YxV1U5RGtIZ1JsYmpCQmlsZGtva0xUZjU3SU5NMjNYS0c0NlY5eEYxWjlaV01yazdmWm40em9idi1V?oc=5",
+    "published_at": "2026-09-19T05:44+00:00"
+   }
+  ]
+ },
+ "items": [
+  {
+   "headline": "Iran tanker strike intensifies Strait of Hormuz disruptions",
+   "summary": "Iran claims strike on oil tanker in Strait of Hormuz as tensions escalate. US reports 2,000+ ships escorted through strait at 6-month traffic high following attack.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "Strait of Hormuz Traffic 6-Month High, 2,000+ Ships Escorted, Says US A Day After Iran Hits Tanker",
+     "publisher": "Times Now",
+     "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPemRBZnZrSlRKY0NVSGg0NkVBUC1PZlE1eTRsVktPX2dLUlNqdzd1ZWZTeHJ6Yy1zREI4aGkzRVNZVmxYNVJyQjB5OFN2Zmh5eFotU1FBTTJ3c2Z6QklkdXd5ZEh5ankzRDFwQzZLdUhkTmY1NUNieGZqanJMSXJvckNMSGo1b3E0YVVBYnFDdlBvLVh0TmNCWUZuSjRHaGJZZ3NLdjRfQmFQZXViMURBLTVpVDdtaHBUbnZ2eE1Ld3hsaFZhZDQ5TDBTSllNa0F2VTBHcmt3a2MwVWJodzN5WUF2dmN2NFlwMlg3dERqRU_SAfYBQVVfeXFMTkRHaTdKOU5MZmZfaTdjZFpsOWIxc1N4MERxbTVfQktnbW8yU0dUWEhpRUVzQm1QMEUyc0phWHI1YlM5ZmxmUFhWV29OMHRoYk8tcUkzNXNGYzU1R00xUnM5dXNydGFFNkNiWUNkM0pUSU9DQXJvS09PV0h2Rm56SVM5bDdnX2U2SVFkNzRNXzFFbEplZmhvc2RsMERubzZfSUFJSWQ1bVlDQXJ0YmdCd2oxMFE3aks3ZTVpM2F0ajNMWlFvcGo2Q05iVHo2T1lFODEwOFVPM3hMdEJQd1FGNnltMEY3WXU0S1Qtc1AwUm0wMkVnUmd3?oc=5",
+     "published_at": "2026-09-19T16:52+00:00"
+    },
+    {
+     "title": "Iran claims oil tanker strike in Strait of Hormuz",
+     "publisher": "newstodaynet.com",
+     "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQTFlWbXF5bEZvX3RsTjBwUDlfZXJMWG40dk5oR0NTVkpycm1yWEV4UHRmQWZZa0ZaSnVvNHJESkpSV21qS1ptNTFPVjMwd20zTkNLXzlYV2NadHBzelE4QnJUSXFxbkxWSXY3X0RpWEkyUXM2ZHpJbk1oVGFkcFM1dmVRZ3lsUnhCMHlhRi1xaw?oc=5",
+     "published_at": "2026-09-19T12:24+00:00"
+    },
+    {
+     "title": "Iran strikes tanker in Hormuz as Tehran rallies",
+     "publisher": "Ahmedabad Mirror",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOc1pTcEc5dUkyUWlObTFmdkh6a1g4dllfMW9JZGNMdGlYeXZBYXotU2NvY3ZJTWFXWjZZbXNhdW9zQWlSWEhHcWRkYWdlUGlvbks0SHBrLUk5MXBmVXFJTUUxSEVvMF82VlJGeDF3SlNYVy1JOGpIeVFvWE1zeHNCQ05BRjFxSWtic1U1WnFRTExsYWxpa01ibQ?oc=5",
+     "published_at": "2026-09-19T06:43+00:00"
+    },
+    {
+     "title": "World News Today Live Updates: Iran claims it struck an oil tanker in the Strait of Hormuz",
+     "publisher": "The Indian Express",
+     "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNWl8tRlRYNXRIZG1jaE9pVmp1aU9pN2xhRUhjVHM3anppTDNDUkIxdVJFMnl3aDRlRnJtcHhtNWIxWEQtOTk0dXlyQmxTeHYtMEFpQkdEVk5SYTBDQ0cyVXlfSXFlLWxpQk1LWVllN2FIQ2dicGF4OUlZaGtUZGNJU3AyNmZFQTRCNnRTUWZvSjBGN0hWRXhsOVJPQjRCYU1DLWx2NXE0MURlUG45R3laaHNzQUlhMUo3Zm5zWl9vMzRiQXdOc3k2OTB3STRSNnd3SXVTaDVraVlOa05ScC1TOWI2MWJLSmlDYkE3TXFZZUZjLTTSAfMBQVVfeXFMTVpfLUZUWDV0SGRtY2hPaVZqdWlPaTdsYUVIY1RzN2p6aUwzQ1JCMXVSRTJ5d2g0ZUZybXB4bTViMVhELTk5NHV5ckJsU3h2LTBBaUJHRFZOUmEwQ0NHMlV5X0lxZS1saUJNS1lZZTdhSENnYnBheDlJWWhrVGRjSVNwMjZmRUE0QjZ0U1Fmb0owRjdIVkV4bDlST0I0QmFNQy1sdjVxNDFEZVBuOUd5Wmhzc0FJYTFKN2Zuc1pfbzM0YkF3TnN5Njkwd0k0UjZ3d0l1U2g1a2lZTmtOUnAtUzliNjFiS0ppQ2JBN01xWWVGYy00?oc=5",
+     "published_at": "2026-09-18T23:59+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Trump sanctions bill threatens 100% tariffs on Indian, Chinese oil",
+   "summary": "Trump signs Russia sanctions law clearing path for up to 100% tariffs on major oil buyers India and China over Russian crude purchases.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "US Russia Sanctions Law: Up To 100% Tariffs May Hit Top Oil Buyers India, China - India Today",
+     "publisher": "India Today",
+     "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOcG04UmlHSVdFZ0JlSEtxWmVSMlVSSU11V1pGWWhrWDB4eVpiSU1ORnRfdW43Z1laNzV4QXE1MFJvZ0V1LWZWb0NYWlpKOXNUYWF1MW14TENLcWwxbTNkbURDUmhyeW9uSF9yTmdkTmxKRFR5YS0wYzExSVZLLXZtYUoxLXdlNzlKaE5LTk9IVThiWXdsZkhPTTRlR0JKWjNCYVR6ZEVuc21rOVJFZHpnSDQ4Si1NQUhOWmhKU1ZyS3dpQUFIYTBwcnNWNlhfN1M1Ulk3cTFadldrUdIB2gFBVV95cUxOcG04UmlHSVdFZ0JlSEtxWmVSMlVSSU11V1pGWWhrWDB4eVpiSU1ORnRfdW43Z1laNzV4QXE1MFJvZ0V1LWZWb0NYWlpKOXNUYWF1MW14TENLcWwxbTNkbURDUmhyeW9uSF9yTmdkTmxKRFR5YS0wYzExSVZLLXZtYUoxLXdlNzlKaE5LTk9IVThiWXdsZkhPTTRlR0JKWjNCYVR6ZEVuc21rOVJFZHpnSDQ4Si1NQUhOWmhKU1ZyS3dpQUFIYTBwcnNWNlhfN1M1Ulk3cTFadldrUQ?oc=5",
+     "published_at": "2026-09-19T17:07+00:00"
+    },
+    {
+     "title": "Trump signs Russia sanctions bill: India faces fresh 100% tariff threat over Moscow oil",
+     "publisher": "Indiablooms",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPYUx3MkYzdjFBTGppWWFzaVdLbVktb2ZfNFN5MWQ0VktmakF4b19tZklCWjNNMkM3Yk90V0tEMWVFanJ2UkpLWnJHZXFRc0hRNHZNaDRPR3pRMEQzRU1QeUdPR2FUbHNVRzdGWEk2a2VlUVdOMkhTYjZmbURqZTlSQWJxQS1ya256dUZEME5FcWI4UjNreFQzUHlyTk9VUFpQOXp4Zzd5MEswV2VwWnA0Y1JIOEZuWnNhenpqcnFSdjZjOS1EeHc?oc=5",
+     "published_at": "2026-09-19T06:49+00:00"
+    },
+    {
+     "title": "Trump Signs Russia Sanctions Bill, Clears Way For 100% Tariffs On India, China",
+     "publisher": "IBTimes India",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQS0ZraG5Bc0UyR2lGdHBPUGlaUTlHMUU0VUxtZnFxSmVXeHdfUnFxX0g2YV9MelJyQ1daR0NRSmE3RlhKLW1UTnNRZXVPZlJVc3dRdzhCSDl2YVhKMWRSa0hKSUJUZ2xvZ2YxV1U5RGtIZ1JsYmpCQmlsZGtva0xUZjU3SU5NMjNYS0c0NlY5eEYxWjlaV01yazdmWm40em9idi1V?oc=5",
+     "published_at": "2026-09-19T05:44+00:00"
+    },
+    {
+     "title": "Trump signs Russia sanctions bill, India among countries facing 100% tariff risk",
+     "publisher": "India Today",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQajVBQ053bGNvMTNOWG1sVVFILUxha0JZai01d2o2MVdkekZQM2NrR0MteTJRZl92OHp4dEQ3Z2RIelgxUmVpYnNJWWs4WVRnbEFpODNDSnI2YjFUVEZrOGd5eFZvODg5bDNzR0d5LW5Jd3pRNU91LS1oTjktdERLakw4ZG54Um5FVy04d0NlVlQyaFRRMTd5Q3Q5Um9aWHNBRkx3Ym5sNHQ4aVZpV0xSY1hsczZrd1ZOeTdrY2JzT3BhdE4xSFhUa0NB0gHPAUFVX3lxTE1HNHNQbzM1MmlkMTRnOHp5MmIxMDR2cklRREFnM0lsN1JvcXE1RHVPREhKV28zaEh0Y2JyXzlsVlE3WVV3M0xRaUVRTllkbFVmbTU3cHdRZU9JQUl5dEswczBVbHNLZHpzX25xSDBiY0MzSFlQb2ZNU2h3OGlNX0o3cTVUWXN5dTBPUXBaZDRZaURMNnlHeVdkTmZpREh2ajc2Z2FDb0tINjdOWjRrU3JNdW1hZ056b2g5YmdpSGJISVd6OWNYWTBPWjZCMVY4TQ?oc=5",
+     "published_at": "2026-09-19T00:12+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Qatar declares force majeure on LNG supply",
+   "summary": "QatarEnergy declares force majeure, throttling LNG supply as Middle East tensions disrupt global energy markets.",
+   "category": "gas-lng",
+   "sources": [
+    {
+     "title": "Gas Giant QatarEnergy Throttles LNG Supply by Declaring Force Majeure",
+     "publisher": "EnergyNow.com",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNNU9qYU5acXlyOGhBUXk0MUJwTHoxSnN1bWJJNV9uWDJWbjdkdkN4UFB4MGJMUV9WNGxVTkpVX0lxUFctS0IxTEJUZWFQQzVUTnNvMExmQ3A1WndnRzhZcmdlUk5rSEpSbzZhS3BBcXg1Uk9SN2xtbWF2SEdJdGRsa1QwQS0wOFJ0dFdsSmp3M2xNUm91VC1pTjlLSFk4LTNtY2c?oc=5",
+     "published_at": "2026-09-18T22:51+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Global shipping costs hit record highs amid chokepoint crisis",
+   "summary": "Strait of Hormuz and Red Sea disruptions send global shipping costs soaring to record levels. Far East-US container rates jump 324% on Hormuz crisis.",
+   "category": "shipping",
+   "sources": [
+    {
+     "title": "Strait of Hormuz And Red Sea Disruptions Send Global Shipping Costs Soaring To Record Highs",
+     "publisher": "foreignpolicyjournal.com",
+     "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOWkJVeXVleHhjekduUUhVUS1QVFBDNkdFc1pXcDBGZE5UdnRQQmUtb3BnUExiZ0JpUlNnNWU2cXk2bVhFelN4MmVFVVFWVGdwRkpMWFVrMmY2SmprbW5ndWxmdFpPd3NLSHVuOEZvZHQ2ajFmSWYtckpTV19yNlVkN2s5cm9EcWd3SC1KbjY4TkxRbkMwV29jLWRrdlFkdWcybUVtSENOUTJEWUNhd05BNnBqNWMxZjQxQjJaU3RGcjI0bjd6V1EwQ3NSeWRVRDRzVG83TFNscw?oc=5",
+     "published_at": "2026-09-19T12:33+00:00"
+    },
+    {
+     "title": "Far East-US Container Rates Jump 324% on Hormuz Crisis - News and Statistics",
+     "publisher": "IndexBox",
+     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPeDllU3BkdWowWGkzdmdIdzk0Y0I3QnhPNGc5S1NUNTUwbXp1ZlRZYk91TTE1eXFaRUNEZk53VkhJcE5rTGlOLWdhWnBzNWkwNEM2V1lGSzk5Nk1odGUzNDE5XzVhSlB5WEx0RUt4MFdaaUFsRjZsVmxObFo3Ym1KNGFXZm5JM2xheWxvem93?oc=5",
+     "published_at": "2026-09-19T04:00+00:00"
+    },
+    {
+     "title": "Global Shipping Costs Explode as Hormuz Disruptions Hit Key Trade Routes",
+     "publisher": "OilPrice.com",
+     "url": "https://oilprice.com/Energy/Crude-Oil/Global-Shipping-Costs-Explode-as-Hormuz-Disruptions-Hit-Key-Trade-Routes.html",
+     "published_at": "2026-09-18T21:00+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Saudi Arabia cuts October crude exports to Europe",
+   "summary": "Saudi Aramco tells European customers they receive no Saudi crude in October after East-West pipeline damage diverts exports through Persian Gulf.",
+   "category": "oil",
+   "sources": [
+    {
+     "title": "Oil Prices Rise as Saudi East-West Pipeline Attack Threatens Export Routes",
+     "publisher": "WSJ",
+     "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOeDdvckhVQlJKZzN2eU90TEg3YU9vRmhZdTdjdkZ1cExSOUd4N09GVEktMTBVT012ZUdGWUdtc2JLaDdIWDJWWFdpUmlJU3pMVWt3MXR2bXRyUXlnSHJTVDJ2Vzg1bmx1ZFptX3ZoVmlMZS1EODlaM3FHbGFJTHFUM0I5YkE5WVRGcEs0UlNkZjdsdXhzdHF6dXFqbHV0bFFZRmRCNDF1WHpQOGZLeGJCdkJIRmNOa1Bzb1FKNU9fcGc?oc=5",
+     "published_at": "2026-09-19T03:08+00:00"
+    },
+    {
+     "title": "Saudi Arabia Cuts Europe Off From October Crude as Gulf Exports Surge",
+     "publisher": "OilPrice.com",
+     "url": "https://oilprice.com/Latest-Energy-News/World-News/Saudi-Arabia-Cuts-Europe-Off-From-October-Crude-as-Gulf-Exports-Surge.html",
+     "published_at": "2026-09-18T17:30+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Supertanker shortage threatens long-haul oil flows",
+   "summary": "World supertanker shortage makes long-distance crude trades uneconomical, threatening global oil movement. VLCC spot earnings hit $1m per day.",
+   "category": "shipping",
+   "sources": [
+    {
+     "title": "World Running Short Of Supertankers Threatens Long-Haul Oil Flow",
+     "publisher": "gCaptain",
+     "url": "https://gcaptain.com/world-running-short-of-supertankers-threatens-long-haul-oil-flow/",
+     "published_at": "2026-09-19T15:28+00:00"
+    },
+    {
+     "title": "VLCC Spot Earnings Hit $1m/Day: The right time for Tanker pooling is now",
+     "publisher": "Hellenic Shipping News",
+     "url": "https://www.hellenicshippingnews.com/vlcc-spot-earnings-hit-1m-day-the-right-time-for-tanker-pooling-is-now/",
+     "published_at": "2026-09-18T21:00+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "US, China discuss cutting tariffs on US LNG exports",
+   "summary": "US and China discuss plan to reduce or eliminate Chinese tariffs on American LNG ahead of Xi visit.",
+   "category": "gas-lng",
+   "sources": [
+    {
+     "title": "US, China Discuss Cutting Tariffs On US LNG Ahead Of Xi Visit",
+     "publisher": "gCaptain",
+     "url": "https://gcaptain.com/us-china-discuss-cutting-tariffs-on-us-lng-ahead-of-xi-visit/",
+     "published_at": "2026-09-19T15:08+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Houthis threaten Red Sea shipping; Yemen conflict spreads",
+   "summary": "Yemen's Houthis ready to join Iran war, raising new shipping risks. Houthi advances threaten Red Sea shipping as geopolitical tensions escalate.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "Houthi Advances Threaten Red Sea Shipping as US Avoids Direct Strikes | Ukraine news - #Mezha",
+     "publisher": "Межа. Новини України.",
+     "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAzYlNlNkZzalJ1elJxbDFQam92cnVhVk10MDk5aWdKbnhScVhwR2l0OVdzamtNbDU3ZVBlbFF1WkVaMGdXckw0Z1JZcGkzQVRhaUNEX2kzWmpkRHNqTXJfNl80NE0wRGRDV3Fma3lB?oc=5",
+     "published_at": "2026-09-19T04:35+00:00"
+    },
+    {
+     "title": "Yemen’s Houthis Ready to Join Iran War if Needed, Raising New Shipping Risk",
+     "publisher": "EnergyNow.com",
+     "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNT1RvZTBldy1KRkRoR0hMYUJHVFRxd2w3R19DdzJfa3pqbHQ4TGpaWUdsTUx1LU5Wb1BPbmJKWUs4b2pnUXgtTVZ5ZlhhSXNUVG5Bek9FV3pwbURtd2JNZWdQUTBuaENyaVNVSVc4aE40RlQwYnBHZ3BlZmZENWZUN2hSeVlVQzhXaFE2S2xCeFk3SVVUZWVOZU9OSVFvd2dHMEplT3VwQQ?oc=5",
+     "published_at": "2026-09-18T23:13+00:00"
+    }
+   ]
+  }
+ ]
+}
