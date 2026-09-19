@@ -829,55 +829,6 @@ button {
    Map overlays
    -------------------------------------------------------------------------- */
 
-.alert {
-  position: absolute;
-  top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 800;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  width: max-content;
-  max-width: min(680px, calc(100% - 32px));
-  padding: 11px 12px 11px 14px;
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  border-left: 3px solid var(--alert);
-  border-radius: var(--radius);
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
-}
-.alert p {
-  margin: 0;
-  font-size: 12.5px;
-  line-height: 1.5;
-  color: var(--ink-2);
-}
-.alert strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-.alert__dot {
-  width: 7px;
-  height: 7px;
-  margin-top: 5px;
-  border-radius: 50%;
-  background: var(--alert);
-  flex: none;
-}
-.alert__close {
-  background: none;
-  border: none;
-  padding: 0 2px;
-  font-size: 12px;
-  line-height: 1.4;
-  color: var(--ink-3);
-  flex: none;
-}
-.alert__close:hover {
-  color: var(--ink);
-}
-
 .mappanel {
   position: absolute;
   left: 16px;
@@ -1216,15 +1167,6 @@ button {
   .brand__close,
   .drawer-handle {
     display: block;
-  }
-
-  .alert {
-    top: 64px;
-    left: 16px;
-    right: 16px;
-    transform: none;
-    max-width: none;
-    width: auto;
   }
 
   .mappanel {
@@ -2189,12 +2131,6 @@ button {
   padding: 4px 14px 14px;
 }
 
-/* The Hormuz banner moves left so it never sits under the brief. */
-.mapwrap.has-news .alert {
-  left: calc((100% - 372px) / 2);
-  max-width: min(680px, calc(100% - 420px));
-}
-
 .news__overview {
   margin: 8px 0 4px;
   padding: 9px 11px;
@@ -2285,13 +2221,6 @@ button {
   .newspanel {
     width: 300px;
   }
-  .mapwrap.has-news .alert {
-    left: 16px;
-    right: 332px;
-    transform: none;
-    width: auto;
-    max-width: none;
-  }
 }
 
 @media (max-width: 900px) {
@@ -2300,10 +2229,5 @@ button {
   }
   .menu__tab--news {
     display: inline-flex;
-  }
-  .mapwrap.has-news .alert {
-    top: 64px;
-    left: 16px;
-    right: 16px;
   }
 }

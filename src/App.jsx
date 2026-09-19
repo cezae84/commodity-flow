@@ -25,10 +25,6 @@ import { DIRECTIONS, matchesCountry, countriesFor } from './data/filters.js';
 import { SUBFILTERS, SUBFILTER_BY_ID } from './data/commodities.js';
 import { SITUATION_AS_OF } from './data/timeframes.js';
 
-/** The banner quotes the Hormuz status fact rather than restating it. */
-const HORMUZ = CHOKEPOINT_BY_ID.hormuz;
-const HORMUZ_CLOSURE = HORMUZ?.facts.find((f) => f.id === 'hormuz-closure-date');
-
 const LAYER_LABELS = {
   chokepoints: 'Chokepoints',
   bypass: 'Bypass pipelines',
@@ -58,7 +54,6 @@ export default function App() {
     labels: false,
     declutter: true,
   });
-  const [alertOpen, setAlertOpen] = useState(true);
   const [dataOpen, setDataOpen] = useState(false);
   const market = useMarketPrices();
   const watchlist = useWatchlist();
@@ -448,7 +443,7 @@ export default function App() {
         </div>
       </aside>
 
-      <main className={`mapwrap${news.status === 'ok' ? ' has-news' : ''}`}>
+      <main className="mapwrap">
         <MapView
           visibleIds={visibleIds}
           selectedRouteId={selectedRouteId}
@@ -470,33 +465,6 @@ export default function App() {
         >
           Menu
         </button>
-
-        {alertOpen && (
-          <div className="alert" role="status">
-            <span className="alert__dot" aria-hidden="true" />
-            <p>
-              <strong>
-                {HORMUZ_CLOSURE?.statement ?? 'Strait of Hormuz closed.'}
-              </strong>{' '}
-              {HORMUZ?.statusFact?.statement}{' '}
-              <a
-                href={HORMUZ?.statusFact?.source?.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Source
-              </a>
-            </p>
-            <button
-              type="button"
-              className="alert__close"
-              onClick={() => setAlertOpen(false)}
-              aria-label="Dismiss alert"
-            >
-              ✕
-            </button>
-          </div>
-        )}
 
         <NewsPanel news={news} />
 
