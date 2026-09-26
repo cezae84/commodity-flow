@@ -1,0 +1,291 @@
+{
+ "generated_at": "2026-09-26T21:09:29+00:00",
+ "window_hours": 24,
+ "model": "claude-haiku-4-5-20251001",
+ "feeds": [
+  {
+   "id": "gcaptain",
+   "name": "gCaptain",
+   "ok": true,
+   "items": 12
+  },
+  {
+   "id": "splash247",
+   "name": "Splash247",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "hellenicshipping",
+   "name": "Hellenic Shipping News",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "eia",
+   "name": "U.S. Energy Information Administration — Today in Energy",
+   "ok": true,
+   "items": 19
+  },
+  {
+   "id": "rigzone",
+   "name": "Rigzone",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "oilprice",
+   "name": "OilPrice.com",
+   "ok": true,
+   "items": 15
+  },
+  {
+   "id": "lngprime",
+   "name": "LNG Prime",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "mining",
+   "name": "MINING.COM",
+   "ok": true,
+   "items": 36
+  },
+  {
+   "id": "worldgrain",
+   "name": "World Grain",
+   "ok": true,
+   "items": 30
+  },
+  {
+   "id": "gn-hormuz",
+   "name": "Google News — Hormuz and Gulf shipping",
+   "ok": true,
+   "items": 50
+  },
+  {
+   "id": "gn-oil",
+   "name": "Google News — oil market",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-sanctions",
+   "name": "Google News — energy sanctions",
+   "ok": true,
+   "items": 45
+  },
+  {
+   "id": "gn-redsea",
+   "name": "Google News — Red Sea and Suez",
+   "ok": true,
+   "items": 50
+  },
+  {
+   "id": "gn-lng",
+   "name": "Google News — gas and LNG",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-metals",
+   "name": "Google News — metals and iron ore",
+   "ok": true,
+   "items": 45
+  },
+  {
+   "id": "gn-grain",
+   "name": "Google News — grain and fertilizer",
+   "ok": true,
+   "items": 36
+  },
+  {
+   "id": "gn-freight",
+   "name": "Google News — freight markets",
+   "ok": true,
+   "items": 11
+  }
+ ],
+ "counts": {
+  "collected": 609,
+  "candidates": 90,
+  "items": 7,
+  "dropped": 0
+ },
+ "usage": {
+  "input_tokens": 5389,
+  "output_tokens": 731
+ },
+ "status": "ok",
+ "brief_generated_at": "2026-09-26T21:09:29+00:00",
+ "overview": {
+  "text": "US-Iran tensions dominate oil and shipping markets as Trump rejects Hormuz reopening deal; Houthis attack Saudi Arabia; QatarEnergy declares force majeure on LNG.",
+  "sources": [
+   {
+    "title": "Trump Rejects Iran Proposal On Hormuz As Houthis Target Riyadh",
+    "publisher": "gCaptain",
+    "url": "https://gcaptain.com/trump-rejects-iran-proposal-on-hormuz-as-houthis-target-riyadh/",
+    "published_at": "2026-09-26T18:09+00:00"
+   },
+   {
+    "title": "Gas Giant QatarEnergy Throttles LNG Supply by Declaring Force Majeure",
+    "publisher": "EnergyNow.com",
+    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNNU9qYU5acXlyOGhBUXk0MUJwTHoxSnN1bWJJNV9uWDJWbjdkdkN4UFB4MGJMUV9WNGxVTkpVX0lxUFctS0IxTEJUZWFQQzVUTnNvMExmQ3A1WndnRzhZcmdlUk5rSEpSbzZhS3BBcXg1Uk9SN2xtbWF2SEdJdGRsa1QwQS0wOFJ0dFdsSmp3M2xNUm91VC1pTjlLSFk4LTNtY2c?oc=5",
+    "published_at": "2026-09-26T11:10+00:00"
+   },
+   {
+    "title": "Trump Rejects Iran's Plan To Reopen Strait Of Hormuz",
+    "publisher": "rferl.org",
+    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9OeTc1VE5lcEx0QzNhVlh6TnBVZUhfdi1MR0xZQnJOLWo2U3dHb09ucVhPNXctSTFXNTF6R3EwZEJXSl96SF9zS2FPUWFwcHpHeFVMaGtUckZiaGIydHc1SFMwT3U1R1h5WnMtY2RGUkdtYm1jV2VUMWFB?oc=5",
+    "published_at": "2026-09-26T01:23+00:00"
+   }
+  ]
+ },
+ "items": [
+  {
+   "headline": "Trump rejects Iran deal to reopen Strait of Hormuz",
+   "summary": "President Trump rejected Iran's proposal to reopen the Strait of Hormuz despite diplomatic efforts. Tensions remain high as Houthis continue targeting Saudi Arabia's capital.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "Trump Rejects Iran Proposal On Hormuz As Houthis Target Riyadh",
+     "publisher": "gCaptain",
+     "url": "https://gcaptain.com/trump-rejects-iran-proposal-on-hormuz-as-houthis-target-riyadh/",
+     "published_at": "2026-09-26T18:09+00:00"
+    },
+    {
+     "title": "US-Iran war news updates: Donald Trump rejects Iran's proposal to reopen the Strait of Hormuz",
+     "publisher": "ABC7 San Francisco",
+     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOLVE3X0V6MWxEZkJLZFhPalhkM3U2ZExDalR2QUhabXpZd2x4Q2JQY3ZWMldCSjNWTHRXemhtYTZ2anJ1VzlKOVdYcnlyWVZydWlXS2NJZUtaYjhlTkR5cjQ3RFd2ZmE1SUZqYnluMkw5YkYzUGpYNWpnSVdjQ2xjeW9NMkt4SGdsV09DNzVLTnU3ZEpMYUpuZUdjNWEtaW9uRlgtVVRkcDcxN3lIenpfTWxXTmp0Q3lUcmVLOENR0gG-AUFVX3lxTE4tUTdfRXoxbERmQktkWE9qWGQzdTZkTENqVHZBSFptell3bHhDYlBjdlYyV0JKM1ZMdFd6aG1hNnZqcnVXOUo5V1hyeXJZVnJ1aVdLY0llS1piOGVORHlyNDdEV3ZmYTVJRmpieW4yTDliRjNQalg1amdJV2NDbGN5b00yS3hIZ2xXT0M3NUtOdTdkSkxhSm5lR2M1YS1pb25GWC1VVGRwNzE3eUh6el9NbFdOanRDeVRyZUs4Q1E?oc=5",
+     "published_at": "2026-09-26T15:42+00:00"
+    },
+    {
+     "title": "Iran proposes a deal to reopen the Strait of Hormuz in 7 days if the US meets its conditions",
+     "publisher": "The Washington Post",
+     "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOcjB5VENvX2YzWUt6MVhzTU5Ec1l6V2ROMUJaanNuWUFVb185aVdzMnhxNTFaeWE4ZElUbHBqWnFtSzlmR2dycVEzamczMkh5c205d1hEczlPMFBzWXZweFZwUUtaMEcya0VNcy1JZEpVQzZreERNSGVvVGcwSkN6ZGdva0RhYTNPTFA4NzcwdEw0aXdDT1h5bzh1N2dFS1dQNFNPRUJkci13MjgwTWVIaHE2cElfWmFlT3ZxNHhNWWs3OGpoYjY0dzhPQjZTalA3UU9v?oc=5",
+     "published_at": "2026-09-26T04:22+00:00"
+    },
+    {
+     "title": "Iran proposes deal to reopen Strait of Hormuz in 7 days if US meets conditions",
+     "publisher": "Gulf News",
+     "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOV3lPUExzVnc5bmZvM09IemtwWjRDU2M2em1pVEU1bnV3ZWxKLW5TX09XV05Lc3RSSDU2Rjhyd245M214NS1LNlgyVDB5elJQdnA3SWljT1c1Zld4VkJsQWR5dHRKT001T3hwNTRTVGJPLWpueFdBV0NuUHFEcHk3S2d5dVJ3N3FsZ1h0LVBabndpTE9HVGlPNnJoV2pLMWtvSnpQTWRETlozMlN1anY3NklCRTJGNEpSMWNVNGVocTJSUmVEV3VNZmhsYUVuQmh4TmfSAdIBQVVfeXFMTld5T1BMc1Z3OW5mbzNPSHprcFo0Q1NjNnptaVRFNW51d2VsSi1uU19PV1dOS3N0Ukg1NkY4cnduOTNteDUtSzZYMlQweXpSUHZwN0lpY09XNWZXeFZCbEFkeXR0Sk9NNU94cDU0U1RiTy1qbnhXQVdDblBxRHB5N0tneXVSdzdxbGdYdC1QWm53aUxPR1RpTzZyaFdqSzFrb0p6UE1kRE5aMzJTdWp2NzZJQkUyRjRKUjFjVTRlaHEyUlJlRFd1TWZobGFFbkJoeE5n?oc=5",
+     "published_at": "2026-09-26T03:07+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "QatarEnergy declares force majeure on LNG supply",
+   "summary": "Gas giant QatarEnergy declared force majeure, throttling LNG supply amid regional conflict. Global LNG trade hit record volumes in 2025 but faces uncertain outlook.",
+   "category": "gas-lng",
+   "sources": [
+    {
+     "title": "Gas Giant QatarEnergy Throttles LNG Supply by Declaring Force Majeure",
+     "publisher": "EnergyNow.com",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNNU9qYU5acXlyOGhBUXk0MUJwTHoxSnN1bWJJNV9uWDJWbjdkdkN4UFB4MGJMUV9WNGxVTkpVX0lxUFctS0IxTEJUZWFQQzVUTnNvMExmQ3A1WndnRzhZcmdlUk5rSEpSbzZhS3BBcXg1Uk9SN2xtbWF2SEdJdGRsa1QwQS0wOFJ0dFdsSmp3M2xNUm91VC1pTjlLSFk4LTNtY2c?oc=5",
+     "published_at": "2026-09-26T11:10+00:00"
+    },
+    {
+     "title": "Global LNG Trade Hit Record in 2025, But Middle East Conflict Clouds Outlook, IGU Says",
+     "publisher": "EnergyNow.com",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSHNScjloYXM2MEplaTZsQU5BcHFCWjhGRk9HRlRjTklPWE9GOUZtQ3hwQ25sZy1PVkRnMWtfMjVIakxjRUtCeFd0TTVIc3VyRV9ad2tDbm10Ums4bTNrQWJXRC16YlN5cTY2SEZyN2F0TTY2WmpmTWYzblNoVnFMUjNRdk5ONGJ2T0psajBTWldYQ1JCS1U3YzluVFd1ZEZzb0pvMHhJTW5DNF8tVXUxMnhGUm9LUQ?oc=5",
+     "published_at": "2026-09-25T23:03+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Tanker shortage sends oil-shipping rates soaring",
+   "summary": "Oil tanker shipping rates surged as geopolitical tensions disrupt trade routes and increase demand for vessel capacity in the Gulf region.",
+   "category": "shipping",
+   "sources": [
+    {
+     "title": "Tanker Shortage Sends Oil-Shipping Rates Soaring",
+     "publisher": "WSJ",
+     "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNUkNqbVhTZVNUVXVDMy1PM1JmcURBV0o1YUR3Zk9jMmRWMkxRNE9ZbkhJR0owRDc3dzUtSjNpT3Z4R3REUnB3dHpjTXF1YmZKX2hOYngwTkFTTEI3SDVaTmlPX1lRa2R5aTdyTDVOWTlYTmliU3ZUbmRMR09BaHQ0SVlNTGJ5Vi1RSGxuWVlJOUpsQl81My1wZkxn?oc=5",
+     "published_at": "2026-09-26T14:03+00:00"
+    },
+    {
+     "title": "3 Tanker Shipping Stocks With Direct Exposure to Crude and LNG Rates",
+     "publisher": "Yahoo Finance",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNVF9Ra2JSTUIzM0xKMWFRQ3pfc0tkaWJVb3lSbGZXUFVPTU1PRTF4SnRTOURicW5WNUVmNnl0TWJaQlpucEJxWEFUTjN4SzNYeVM4MmtaRDlyZjVkMFprVVRmZzEwZEZPdzNLdVhwc1VEZFRaZF9rZnh1RDRfUEhmU0NPRHpyVVhiMTEtSExIZURVZw?oc=5",
+     "published_at": "2026-09-26T12:11+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Houthis attack Saudi Arabia; Saudi crude exports surge",
+   "summary": "Houthi drones targeted Riyadh as Saudi air defences intercepted attacks. Gulf of Oman ship-to-ship transfers reached capacity as Saudi exports surge.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "Trump Rejects Iran Proposal On Hormuz As Houthis Target Riyadh",
+     "publisher": "gCaptain",
+     "url": "https://gcaptain.com/trump-rejects-iran-proposal-on-hormuz-as-houthis-target-riyadh/",
+     "published_at": "2026-09-26T18:09+00:00"
+    },
+    {
+     "title": "Gulf Of Oman Ship-to-Ship Oil Transfers Reach Capacity As Saudi Exports Surge",
+     "publisher": "Marine Insight",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPRkpEN1huaG52cXNUcVVYMk9ybnZjSjFfN2RfTWZNUm1uemhBTll4LUZ4LXZpZXgtNWVIQ1RDX21fSllZVFVPSFZHSXRxM0VodkZCUE5KR1hGU2pkQXZTcE5mOVRBVzZJRFB0djhjZ010NE1OdWxuRUx4cVFNNE41YjU5d2pkQm0yYjRhazlWcTUybk8tT0twa0ZvQ2ZDRzU3MFQ0ZG9ER3ptUmct?oc=5",
+     "published_at": "2026-09-26T10:16+00:00"
+    },
+    {
+     "title": "UN Security Council condemns Houthi attacks on Saudi Arabia, backs Yemeni government",
+     "publisher": "وكالة الأنباء السورية – سانا",
+     "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE96OXpKaC1tbFFDY0pyQ1FNNG5OZjl3VW82dDZCclhFLUo5TWgxaXZ5eGx0Q1FqUHp1eXVhcW5jT0F4dGgzWWxpdDl5Wl8?oc=5",
+     "published_at": "2026-09-26T08:33+00:00"
+    },
+    {
+     "title": "Saudi air defences intercept Houthi drones targeting Riyadh, missiles near Khamis Mushait",
+     "publisher": "Moneycontrol.com",
+     "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPdkExX3g2bTd5azFXNFBLbVpTSXpYWFFKcWtkMDR1Z1NubDZ0dWVHR3M4R1dmR3JUaks3RkpYcmhJVnZyUUJhSnpJTnVkMFBxREhOR2o1dko0cUxJX1c5cWZLQVNocFRtNVZDbVNONkNVbUdHcTUxT3B4NzJZTy1TaTRJWEYtMnJ3LWw5c0w4NWRCM2c4Q1NJcmRFT0cyeFNvQ29melZkNVNHWlFoQnExeFB0Y05SWkNQRkpFM0lJemlHMWJNY2k2R1RzS05rRnluOXF3MEpRaXlYNTVMTFHSAeMBQVVfeXFMT0ZGSGZrSC1FMUFrN0xxMXRyVjNlRGNNaHhnTnFRandUemlpYUxqaS0tWmJlVTRPeVNQUW16X2RvRGpLRVFJdmR3QVpTcm5sRS1lU254aHViZUVPR1llRTA0WmhxMDFzV0QwOVc4d1Z1SVk3UlBqdEctUjNJX04wX2R5SVNqTldLS2wwQkN3a21xVVB0MmRkSnRBc0JzS1FSa2gzSFJ5cnNCTkV6S1hPM3hOdVZGVHFtZUp5dVJTQmNueEw5SkxaRmFfNTl0YnJmU0RaSVZCaTBmc2I0X1RuRVZrUTA?oc=5",
+     "published_at": "2026-09-26T05:51+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "US doubles oil volume exiting Gulf with naval escort",
+   "summary": "US military now guides oil tankers in daylight, helping double oil volume exiting the Persian Gulf amid regional security concerns.",
+   "category": "shipping",
+   "sources": [
+    {
+     "title": "US helps double oil volume exiting the Gulf, with the military now guiding ships in broad daylight",
+     "publisher": "Fortune",
+     "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQVXVUVjdpd1BtNmtQNFdfYWNTclZZUVYwSWctUGJmZ0toLWo4X2tVdnF1YVBvZmZwR2diTGd4cm5ISjd3a0FiZ0laa0lWMGc2Ung1ZnZEam1NTV9ld3RDeEdkSFkxcVBwUllVeTNuTzlpQjlyS2VTLTdQakRQcURJWWZIS1AzUGJnSlp3N1RqbjRLWnpKY19CZ1NnZkJvQm5TbWJ1c29ad0pmaTV4blhJX3ZSZw?oc=5",
+     "published_at": "2026-09-26T19:40+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "India sees Qatar LNG supply cut after Iran strike",
+   "summary": "India faces potential LNG supply cuts from Qatar following escalating tensions. Iranian threats to expand conflict to Indian Ocean complicate energy security.",
+   "category": "gas-lng",
+   "sources": [
+    {
+     "title": "India Sees Qatar LNG Supply Cut After Iran Strike - Energy News, Top Headlines, Commentaries, Features & Events",
+     "publisher": "EnergyNow.com",
+     "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOQWtlUEpScEI3aXZTVk9wdVBPUDFKQ24ybU55X0R3WlVYR01kUTY0LVhUMjh5ZF9PUlpxbGZ0QUE0ZG9ieGlNbHNqQmxEclMxTzAwQ0FQRXJZbmdFSXNBaTlmVEVIcUJ6U1FQUlBzTUExVGlYaThsUTctLVlwaGxvNm9la3EtXzA?oc=5",
+     "published_at": "2026-09-26T11:35+00:00"
+    },
+    {
+     "title": "Iran threatens to expand war to Indian Ocean if U.S. attacks again",
+     "publisher": "India Shipping News",
+     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQRHZxaklsYnY3a1ZmUDlweC1HaVRETGVrb3lYcFpneGZ6YUNtLXdXdDloc002czhuZmtfOUJyNnVJb21VTnFzNDhOSDB4d2RISUY3YlAwNkt5d2NqTVI5NzktNVJMZkNEeDloeGk1NTdDQkYybVBubjkzQWN5cjIzUzdVSEVYUmozYl8zZmpxV05WMWJjR3BqRWFSbldpWFB1SllUV0lQZU1ScndwRXlj?oc=5",
+     "published_at": "2026-09-26T03:56+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Russia can restart 80% Black Sea grain capacity",
+   "summary": "Russia could quickly restore up to 80% of its Black Sea grain terminal capacity if diplomatic efforts halt attacks on port infrastructure.",
+   "category": "agri",
+   "sources": [
+    {
+     "title": "Russia Can Restart 80% Of Black Sea Grain Export If Attacks Stop",
+     "publisher": "gCaptain",
+     "url": "https://gcaptain.com/russia-can-restart-80-of-black-sea-grain-export-if-attacks-stop/",
+     "published_at": "2026-09-26T18:29+00:00"
+    }
+   ]
+  }
+ ]
+}
