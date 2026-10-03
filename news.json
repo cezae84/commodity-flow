@@ -1,0 +1,329 @@
+{
+ "generated_at": "2026-10-03T19:15:42+00:00",
+ "window_hours": 24,
+ "model": "claude-haiku-4-5-20251001",
+ "feeds": [
+  {
+   "id": "gcaptain",
+   "name": "gCaptain",
+   "ok": true,
+   "items": 12
+  },
+  {
+   "id": "splash247",
+   "name": "Splash247",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "hellenicshipping",
+   "name": "Hellenic Shipping News",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "eia",
+   "name": "U.S. Energy Information Administration — Today in Energy",
+   "ok": true,
+   "items": 22
+  },
+  {
+   "id": "rigzone",
+   "name": "Rigzone",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "oilprice",
+   "name": "OilPrice.com",
+   "ok": true,
+   "items": 15
+  },
+  {
+   "id": "lngprime",
+   "name": "LNG Prime",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "mining",
+   "name": "MINING.COM",
+   "ok": true,
+   "items": 36
+  },
+  {
+   "id": "worldgrain",
+   "name": "World Grain",
+   "ok": true,
+   "items": 30
+  },
+  {
+   "id": "gn-hormuz",
+   "name": "Google News — Hormuz and Gulf shipping",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-oil",
+   "name": "Google News — oil market",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-sanctions",
+   "name": "Google News — energy sanctions",
+   "ok": true,
+   "items": 52
+  },
+  {
+   "id": "gn-redsea",
+   "name": "Google News — Red Sea and Suez",
+   "ok": true,
+   "items": 30
+  },
+  {
+   "id": "gn-lng",
+   "name": "Google News — gas and LNG",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-metals",
+   "name": "Google News — metals and iron ore",
+   "ok": true,
+   "items": 44
+  },
+  {
+   "id": "gn-grain",
+   "name": "Google News — grain and fertilizer",
+   "ok": true,
+   "items": 41
+  },
+  {
+   "id": "gn-freight",
+   "name": "Google News — freight markets",
+   "ok": true,
+   "items": 13
+  }
+ ],
+ "counts": {
+  "collected": 655,
+  "candidates": 90
+ },
+ "status": "stale",
+ "stale_reason": "'str' object has no attribute 'get'",
+ "brief_generated_at": "2026-10-03T11:38:07+00:00",
+ "overview": {
+  "text": "Strait of Hormuz attacks and Middle East tensions drive oil price volatility; G7 releases emergency barrels amid Red Sea shipping disruption and LNG supply concerns.",
+  "sources": [
+   {
+    "title": "Two Oil Tankers Hit By Unidentified Projectiles Near Strait Of Hormuz",
+    "publisher": "Marine Insight",
+    "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWVowV3NGYnh0SkhtMUNvSEpqd2RTN2hrbjF2VndZUjJ1UDZQeEJSS1d2Wlpfc3NTci1ySk9uYTdGSERONVJubWZUTWJMbWk5OElaQll1TDBnLUxjTG9odzJ0NGt2Z1MxRlhSMHMtc19nNUlWSXF1MTNHMzUyOGpwVTJ4Q2gwV21uRmE5N0FRZDlFYVVyeW0xNHFFRWIwbUtseFE?oc=5",
+    "published_at": "2026-10-03T10:31+00:00"
+   },
+   {
+    "title": "Seven Tankers Targeted in Five Days in Strait of Hormuz",
+    "publisher": "WANA News Agency",
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZzlxUlBGMVhlRUNNM0ctOEdBWTBEZXRvYTR4R1ZQNWlmRV8xclpfVnhtSHlOQjZ2N3ZPYjd2X1prZVNvVUstS2dvZkk0TThMQnA3cUxUM3hZcW4xb0xWdnAzYkVoQk1fMGZXNjNiTW9mZU9UNW9GNS1JbFo0Ui1lRw?oc=5",
+    "published_at": "2026-10-03T07:24+00:00"
+   },
+   {
+    "title": "Oil Prices Drop: WTI Down 3.78%, Brent Below $100 on Reserve Release Talks - News and Statistics",
+    "publisher": "IndexBox",
+    "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPaTBya3JYTVVCaGZYdDY1c1hBUmNRWDZZRlAzeGxQempKdW4yV08wNEdGME1GZXN3bGVzc0IxdkN6UGFiTUc4ZGdnTUJXX3IyZ0tLeUdTRm5fUnRsdHZaWUsxUzBieEdldERjMHU3bFhfTUE5cGJfcWlTSXQ0cmVMRl9zQkVaY0dLT3lxMEYwMV9oWFZVYnltcWxDQW9XQzVJQ2xKLUJfOTZjQQ?oc=5",
+    "published_at": "2026-10-03T04:40+00:00"
+   },
+   {
+    "title": "Oil Falls as G7 Taps Emergency Supplies",
+    "publisher": "Rigzone",
+    "url": "https://www.rigzone.com/news/wire/oil_falls_as_g7_taps_emergency_supplies-02-oct-2026-184766-article/?rss=true",
+    "published_at": "2026-10-02T20:10+00:00"
+   }
+  ]
+ },
+ "items": [
+  {
+   "headline": "Seven tankers targeted in Strait of Hormuz within five days",
+   "summary": "Multiple vessels struck by unidentified projectiles in Hormuz, with at least six tanker incidents reported since late September, disrupting oil transport and raising supply risk premiums.",
+   "category": "shipping",
+   "sources": [
+    {
+     "title": "Two Oil Tankers Hit By Unidentified Projectiles Near Strait Of Hormuz",
+     "publisher": "Marine Insight",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWVowV3NGYnh0SkhtMUNvSEpqd2RTN2hrbjF2VndZUjJ1UDZQeEJSS1d2Wlpfc3NTci1ySk9uYTdGSERONVJubWZUTWJMbWk5OElaQll1TDBnLUxjTG9odzJ0NGt2Z1MxRlhSMHMtc19nNUlWSXF1MTNHMzUyOGpwVTJ4Q2gwV21uRmE5N0FRZDlFYVVyeW0xNHFFRWIwbUtseFE?oc=5",
+     "published_at": "2026-10-03T10:31+00:00"
+    },
+    {
+     "title": "Seven Tankers Targeted in Five Days in Strait of Hormuz",
+     "publisher": "WANA News Agency",
+     "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPZzlxUlBGMVhlRUNNM0ctOEdBWTBEZXRvYTR4R1ZQNWlmRV8xclpfVnhtSHlOQjZ2N3ZPYjd2X1prZVNvVUstS2dvZkk0TThMQnA3cUxUM3hZcW4xb0xWdnAzYkVoQk1fMGZXNjNiTW9mZU9UNW9GNS1JbFo0Ui1lRw?oc=5",
+     "published_at": "2026-10-03T07:24+00:00"
+    },
+    {
+     "title": "5 Indian nationals rescued after Kuwait-flagged tanker struck by projectile in Strait of Hormuz",
+     "publisher": "newsonair.gov.in",
+     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNbGIydzRKV3pnY2pDLWpPcW5QLVdUb3VQbk1VdjBlcG1wb05RRFg0XzhzQWNRdS1GSG5pa19UWjZNVXRHeVI4dFQ4UEpTeGdGRnhja0JUOFZHUlY1UmM3S1Z5Z2pMR3NuMWFiOFk1dGp4VnBWSHFrb1pJalFwV2lwRmh6Q1hEZnBNMGlNR2ZTV0xmbkVjME11YW8xZXBMa2Q3elZLSDhPYk9LaFp5UlhQSE9vWWdHR2JVcklRNmtB?oc=5",
+     "published_at": "2026-10-03T05:58+00:00"
+    },
+    {
+     "title": "Kuwait-flagged tanker hit in Hormuz, five Indians rescued",
+     "publisher": "The Siasat Daily",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQTkplRkotSzNMZW8yaDY1OVpMWW9kMmtxMURhNlBmaWJHdEN0N3FqTmVGd3I0Z1doVTBBN2g5M2FBMHpXSmx3VDFKWWJmNElVUV9BNFlJVjF3M1BodGMxNERLZ2tIdzNXUC0zMnFrVTkyM0tBeGlOVlUzS0lCZ0RHZ2VfYnA1YWRGbUdDWURPVTV2Z2U4bzhR0gGXAUFVX3lxTFBOSmVGSi1LM0xlbzJoNjU5WkxZb2Qya3ExRGE2UGZpYkd0Q3Q3cWpOZUZ3cjRnV2hVMEE3aDkzYUEweldKbHdUMUpZYmY0SVVRX0E0WUlWMXczUGh0YzE0REtna0h3M1dQLTMycWtVOTIzS0F4aU5WVTNLSUJnREdnZV9icDVhZEZtR0NZRE9VNXZnZThvOFE?oc=5",
+     "published_at": "2026-10-03T05:17+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "G7 releases up to 100 million barrels to counter oil crisis",
+   "summary": "Seven nations agree to release emergency diesel and crude stocks over four months to ease fuel shortage. WTI and Brent crude fell following the announcement.",
+   "category": "oil",
+   "sources": [
+    {
+     "title": "Oil Falls as G7 Taps Emergency Supplies",
+     "publisher": "Rigzone",
+     "url": "https://www.rigzone.com/news/wire/oil_falls_as_g7_taps_emergency_supplies-02-oct-2026-184766-article/?rss=true",
+     "published_at": "2026-10-02T20:10+00:00"
+    },
+    {
+     "title": "G7 to Release Up to 100 Million Barrels of Diesel, Crude",
+     "publisher": "gCaptain",
+     "url": "https://gcaptain.com/g7-to-release-up-to-100-million-barrels-of-diesel-crude/",
+     "published_at": "2026-10-02T16:58+00:00"
+    },
+    {
+     "title": "G7 Moves to Release 100 Million Barrels to Counter Diesel Crisis",
+     "publisher": "OilPrice.com",
+     "url": "https://oilprice.com/Latest-Energy-News/World-News/G7-Moves-to-Release-100-Million-Barrels-to-Counter-Diesel-Crisis.html",
+     "published_at": "2026-10-02T15:23+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Oil prices whipsaw between supply relief and Middle East risk",
+   "summary": "WTI volatile as Gulf flows improve but Hormuz attacks persist. Dated Brent surged above $120 amid physical market tightness despite ICE Brent near $101.",
+   "category": "oil",
+   "sources": [
+    {
+     "title": "Oil Prices Drop: WTI Down 3.78%, Brent Below $100 on Reserve Release Talks - News and Statistics",
+     "publisher": "IndexBox",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPaTBya3JYTVVCaGZYdDY1c1hBUmNRWDZZRlAzeGxQempKdW4yV08wNEdGME1GZXN3bGVzc0IxdkN6UGFiTUc4ZGdnTUJXX3IyZ0tLeUdTRm5fUnRsdHZaWUsxUzBieEdldERjMHU3bFhfTUE5cGJfcWlTSXQ0cmVMRl9zQkVaY0dLT3lxMEYwMV9oWFZVYnltcWxDQW9XQzVJQ2xKLUJfOTZjQQ?oc=5",
+     "published_at": "2026-10-03T04:40+00:00"
+    },
+    {
+     "title": "Dated Brent Above $120 Signals a Serious Oil Squeeze",
+     "publisher": "OilPrice.com",
+     "url": "https://oilprice.com/Energy/Crude-Oil/Dated-Brent-Above-120-Signals-a-Serious-Oil-Squeeze.html",
+     "published_at": "2026-10-02T16:50+00:00"
+    },
+    {
+     "title": "WTI Whipsaws as Gulf Supply Improves and Middle East Risk Returns",
+     "publisher": "OilPrice.com",
+     "url": "https://oilprice.com/Energy/Energy-General/WTI-Whipsaws-as-Gulf-Supply-Improves-and-Middle-East-Risk-Returns.html",
+     "published_at": "2026-10-02T14:45+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Saudi Arabia plans military offensive to reopen Red Sea route",
+   "summary": "Riyadh prepares assault on Houthis to unblock Bab el-Mandeb shipping corridor. Tensions follow continued attacks on vessels in the waterway.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "Saudi Arabia-Houthi Tensions: Riyadh Prepares Military Offensive to Reopen Bab el-Mandeb Shipping Route",
+     "publisher": "The Sunday Guardian",
+     "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxNNW5HakNBTU1GREdzWk4xNFRxcXRuNHlkTDV3VU5EejV1OU9Pa1lIX0tuZWpPc29jQ2VlOGp6UW90MTJHRTVZaEJ5WDlkVFFjTzlvOXNpZnVGZm9ST0h1c0xBUFBZazZSM3Z5UnF1TWRUN0ZTSTZIaEdGQm0zOXc5cVNqVUV6aENHaURFZFBkNml3elQ2LUc0eEdFNFgxSkIzQUhobUJobW5BZ0FDaS1IV280TnU4QzhrTm1BTC14aWJWS0F5cDBxS0hDWVBmcDkydHZ0Tmx2cWExN3Z6TGhwblVTT3FPZ9IB5gFBVV95cUxNNW5HakNBTU1GREdzWk4xNFRxcXRuNHlkTDV3VU5EejV1OU9Pa1lIX0tuZWpPc29jQ2VlOGp6UW90MTJHRTVZaEJ5WDlkVFFjTzlvOXNpZnVGZm9ST0h1c0xBUFBZazZSM3Z5UnF1TWRUN0ZTSTZIaEdGQm0zOXc5cVNqVUV6aENHaURFZFBkNml3elQ2LUc0eEdFNFgxSkIzQUhobUJobW5BZ0FDaS1IV280TnU4QzhrTm1BTC14aWJWS0F5cDBxS0hDWVBmcDkydHZ0Tmx2cWExN3Z6TGhwblVTT3FPZw?oc=5",
+     "published_at": "2026-10-03T07:49+00:00"
+    },
+    {
+     "title": "Saudi Arabia Plans Houthi Offensive To Retake Bab el-Mandeb And Secure Red Sea Shipping",
+     "publisher": "Outlook India",
+     "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNdWtjMG5hdjRqd1NfYWY2Z3N2dWxnWDRXTjVDWm5qYzhhbko0LU9Zcm1DVDJ2QjlTMk5hRE1WVUJtLWx2cDlYU21lblNaVE8tRU5jbGZubzliMEloNVFUbnRxYlQ0WUhOU1Vhak5kUzhiWWFSU0g0aW16NV8yb0xISTg0ZGIxd2tLQm9mX0hyeFVWY1JCaFA3N3ZLOWVZb2pQTTVVTkVQak5NVnB5bjMwdjhWVVVMRG9wY0N1ZTBJdlYxUmd5QWNkNEdB0gHXAUFVX3lxTE5QMUQ0dV9mYkwyV21acmQxa1RDRFVDb1BKYzBjR19Pc1RDbWtneU9MdmFLVGpFSXhtZ2U2Y0JoTjB6dFBOQUY5ZWFQZEwyVGc4ZEpycEJLZzB2S1dGVEdCNFBIRWZzOU0tdUlnZkZtT01ZVlNtWFhUVkRfSVJsUmdBUnkzNGc5ZlR3Z3VNM2hNUUdiMDNvcjRnWF9NQk1JVWpaNlAzZkw2RDJ6OHRLOWZDREdVSjlhZEVVSFVBbHBKZTNlU3IyZEFlQnc2Vk01OS04RmFtYmtv?oc=5",
+     "published_at": "2026-10-03T02:37+00:00"
+    },
+    {
+     "title": "Saudis Plan Attack on Houthi Rebels to Unblock Red Sea",
+     "publisher": "Nacionale News",
+     "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxObVJPa3FCT0owWVUyVXkyNUYtajl4bHd3QktYbUQyWFpSZUR0MVd1c0Q5X2NoRW9LOGxISlNLaFJiMXNzTEhyckVFZDUtMmpyM3pCUjY5ZFFYbUdrMmJwcENlTXN2UnJNM2ZZdEhLT0JSSlZ6Z1NEakx4SmFaN2FpU0pNMnFNaVdZOHd3ME1Palp0WjQ0ckNN?oc=5",
+     "published_at": "2026-10-02T18:38+00:00"
+    },
+    {
+     "title": "Saudi plans assault to end Red Sea chokehold",
+     "publisher": "Oman Observer",
+     "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFAxaXhIbnRHT3hXTFpMZDdjU0MxWk9PVC0telR2XzNGV2pnWGxidEtJU0pMcllKTm52NkJJT0hBaVZOMTNvazJFbThOX3RWUVhCa2Y3RDZQczZVZ9IBWkFVX3lxTFAxaXhIbnRHT3hXTFpMZDdjU0MxWk9PVC0telR2XzNGV2pnWGxidEtJU0pMcllKTm52NkJJT0hBaVZOMTNvazJFbThOX3RWUVhCa2Y3RDZQczZVZw?oc=5",
+     "published_at": "2026-10-02T17:54+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "LNG shipments through Hormuz hit highest monthly level since Iran war",
+   "summary": "Twenty-one LNG cargoes exited Strait of Hormuz in September, highest monthly total since war began, though below pre-war levels.",
+   "category": "gas-lng",
+   "sources": [
+    {
+     "title": "LNG Shipments Through Hormuz Hit Highest Level Since Iran War Began",
+     "publisher": "OilPrice.com",
+     "url": "https://oilprice.com/Energy/Energy-General/LNG-Shipments-Through-Hormuz-Hit-Highest-Level-Since-Iran-War-Began.html",
+     "published_at": "2026-10-02T15:00+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "US Senate passes sweeping Russia energy sanctions; House next",
+   "summary": "Legislation approved to expand sanctions on Russian energy sector. Trump threatens South Korea over Alaska LNG investment terms.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "US Senate Passes Sweeping Russia Energy Sanctions, Next Stop US House",
+     "publisher": "EnergyNow.com",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSzRPWW9ZaG5rYlg3RGhsalJOdjZ2N2h1eUlUVk1vd1BqWHJMR2V2MU4weFpKeVlRbXVTNVhlRmwzSTVOSm5mdVVzQ1RyZGVJT0JTaXhsWVJfM2RqVjh2YUw0WmZoeThvSVBScWRIMTFEMkgyYzQyZVc4WC1lNWRGX1F0ZGNuVlVtcDNHaHdaTzdla3p0RGtmZDNrZXdEM2Ey?oc=5",
+     "published_at": "2026-10-02T17:32+00:00"
+    },
+    {
+     "title": "President Trump threatens Seoul with higher costs over Alaska LNG — Korea Herald",
+     "publisher": "UA.NEWS",
+     "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZ25ObGxfRE41djJQMWdnR09KY3ZzUlUwVGw5YWZHMW9kbmVqWHFkQVFhMV9DQV9TOU5GWlNacnNtYjFpcW5YTWZSektwUzZ3RUtESkE3N0tzV0g0dlgzR2J4MXZyeE9mRkJKV0NCSko2MTh1WmtfZzhvREJoUERSRzByenBqQTd6akVkZlN0WnZuMXA2NzRLT2l4M2ltR3NzejlsX0NkRVl4dw?oc=5",
+     "published_at": "2026-10-03T02:44+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Pentagon deploys additional carrier and 10,000 troops to Gulf",
+   "summary": "US military reinforcement to Persian Gulf gives commanders more options amid escalating Middle East tensions and Iran threats.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "U.S. Adds Carrier and 10,000 Troops to Middle East",
+     "publisher": "gCaptain",
+     "url": "https://gcaptain.com/us-adds-carrier-and-10000-troops-to-middle-east/",
+     "published_at": "2026-10-02T16:55+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Baltic Dry Index rises on Capesize freight rate rebound",
+   "summary": "Dry bulk shipping index gains for second day driven by stronger capesize rates, though posting 8.1% decline for the week.",
+   "category": "shipping",
+   "sources": [
+    {
+     "title": "Baltic Dry Index rises as Capesize freight rates rebound",
+     "publisher": "BigMint",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPVGpOUksxTXZiUEI5ZHdMWFVtZmU4WGNhTnYwVFZ5V3pOU0ZhNHE2OHZnU0JSYzlNbU44QnctTnlJbC1NcmNzakFSU1dzT0dobExGQmE1UDF4TWhOT2YwMEpHTmR5aU0zOXhjOURERWpLQk9jLU5lSTRpSW0wS1RBeUJLMmlmUVZDSGhMLUdCMkFZdjhrV0RmQ0VxbHozelJwQkNpWQ?oc=5",
+     "published_at": "2026-10-03T07:00+00:00"
+    },
+    {
+     "title": "Baltic Dry Bulk Freight Index Edges Up On Capesize Gains",
+     "publisher": "Hellenic Shipping News",
+     "url": "https://www.hellenicshippingnews.com/baltic-dry-bulk-freight-index-edges-up-on-capesize-gains/",
+     "published_at": "2026-10-02T21:00+00:00"
+    },
+    {
+     "title": "Baltic dry bulk index gains for second day, but posts weekly loss",
+     "publisher": "Baird Maritime",
+     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPYWhIOHgtNlk1Z3pBSFFseVdtX3JHRzVlbUFpR2QzZXpzRUl4dS1iZExyMmNGWlU4eVhoUVg5Z195WFc1b3dicVRCR0tZWGRPcFR1U0U3YS1sOGItMFg3U2RGS2hBTVNUNEp4UjVZelUwZmdxRGdud1FGNTNJWlBScEhNZl85UzRhWllNejVwUnI2Tl9zQWt1Vy1wYVpDTnh6NFhjbHo5ckpFd2p3bHVBMkpmMnJ4bDJfWmNPWDBUU1JFOF9oOGxrdTJPY9IBywFBVV95cUxPYWhIOHgtNlk1Z3pBSFFseVdtX3JHRzVlbUFpR2QzZXpzRUl4dS1iZExyMmNGWlU4eVhoUVg5Z195WFc1b3dicVRCR0tZWGRPcFR1U0U3YS1sOGItMFg3U2RGS2hBTVNUNEp4UjVZelUwZmdxRGdud1FGNTNJWlBScEhNZl85UzRhWllNejVwUnI2Tl9zQWt1Vy1wYVpDTnh6NFhjbHo5ckpFd2p3bHVBMkpmMnJ4bDJfWmNPWDBUU1JFOF9oOGxrdTJPYw?oc=5",
+     "published_at": "2026-10-02T18:33+00:00"
+    }
+   ]
+  }
+ ]
+}
