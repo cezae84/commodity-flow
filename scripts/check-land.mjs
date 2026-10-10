@@ -44,16 +44,7 @@ const ALLOWED = [
   [40.0, 41.5, 25.9, 29.4, 'Dardanelles, Marmara and Bosporus'],
   [-34.8, -32.7, -61.0, -57.4, 'Paraná channel (river navigation)'],
   [4.4, 8.2, 116.6, 120.0, 'Sulu Sea: Sibutu and Balabac passages'],
-  [70.8, 74.2, 68.5, 75.5, 'Gulf of Ob (Sabetta)'],
-  [12.2, 13.1, 42.9, 44.0, 'Bab el-Mandeb'],
-  [21.8, 23.1, 68.5, 70.3, 'Gulf of Kutch (Vadinar, Mundra)'],
-  [25.9, 27.0, 55.7, 57.0, 'Strait of Hormuz'],
-  [-6.9, -5.3, 104.6, 106.3, 'Sunda Strait'],
   [-9.2, -8.2, 115.3, 116.3, 'Lombok Strait'],
-  [1.0, 6.2, 94.5, 100.0, 'Northern entrance of the Malacca Strait'],
-  [69.9, 71.0, 55.8, 60.2, 'Kara Gate'],
-  [64.8, 66.6, 189.8, 192.0, 'Bering Strait'],
-  [-11.4, -10.2, 141.6, 143.9, 'Torres Strait (Prince of Wales Channel)'],
 ];
 
 const inAllowed = (lat, lng) => {
@@ -177,6 +168,11 @@ if (waived.size) {
   }
   console.log('');
 }
+
+// A waiver no path needs any more only hides land: remove it from ALLOWED.
+const unused = ALLOWED.map((a) => a[4]).filter((label) => !waived.has(label));
+for (const label of unused) console.log(`⚠  "${label}" is allowed but no path uses it — remove it from ALLOWED`);
+if (unused.length) console.log('');
 
 if (!failures.length) {
   console.log('✅ No path crosses land outside the allowed passages.\n');

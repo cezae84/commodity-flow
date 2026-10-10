@@ -67,7 +67,7 @@ Every figure below comes from the dataset and links to its source.
 
 ## How the data is built and kept up to date
 
-**One rule: nothing without a source.** Each of the **359 facts** (from **169 sources**:
+**One rule: nothing without a source.** Each of the **360 facts** (from **170 sources**:
 EIA, IEA, IMF, Kpler, Drewry, national statistics, trade press…) carries a link and the
 *verbatim sentence* it was taken from. A figure that does not appear in its quote is
 rejected automatically. When a source could not be found, the map says "not sourced yet"

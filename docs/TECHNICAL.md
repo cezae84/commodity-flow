@@ -2,7 +2,7 @@
 
 An interactive, terminal-style map of the world's major seaborne commodity corridors
 and markets. **83 routes**, **10 chokepoints** and **3 bypass pipelines**, backed by
-**359 sourced facts** from **169 sources** — every figure carries a link and the
+**360 sourced facts** from **170 sources** — every figure carries a link and the
 verbatim sentence it was taken from — plus two automated layers that never enter the
 dataset: **18 market prices** refreshed every 30 minutes and an **AI market brief** of
 the last 24 hours of news, rewritten every two hours.
@@ -88,8 +88,8 @@ for the columns and the editing rules.
 
 | file | rows | content |
 |---|---|---|
-| `data/sources.csv` | 169 | publisher, title, URL, publication date, type of source |
-| `data/facts.csv` | 359 | statement, value, unit, period, scope, source, **verbatim quote**, check date |
+| `data/sources.csv` | 170 | publisher, title, URL, publication date, type of source |
+| `data/facts.csv` | 360 | statement, value, unit, period, scope, source, **verbatim quote**, check date |
 | `data/routes.csv` | 83 | commodity, ports, chokepoints, status + evidence, rank, lead fact, vessel class and freight facts, trading context (sellers, buyers, why it matters) |
 | `data/vessels.csv` | 15 | vessel class → segment, fleet-average speed and its fact |
 | `data/chokepoints.csv` | 10 | status + evidence, lead fact, analysis |
@@ -236,12 +236,15 @@ still reads as French. Quotes are verbatim and are not checked.
 - **References** — every id resolves: sources, facts, ports, chokepoints, pipelines,
   commodities, statuses, sub-families.
 - **Evidence** — every route, chokepoint and pipeline has facts and a lead fact that
-  applies to it; any status other than normal cites a fact; every fact has a quote;
+  applies to it; any status other than normal cites a fact that applies to it; every fact has a quote;
   every number of a statement appears in its quote; trading contexts, analyses,
   situations and commodity blurbs carry no figures; every source is cited.
-- **Periods** — a lead fact is always a 2025 reference figure; a war-period fact is
-  never filed as baseline.
-- **Freight** — every vessel class has a sourced speed; distance and transit facts
+- **Periods** — a lead fact and the facts behind a trading context are always 2025
+  reference figures; a war-period fact is never filed as baseline. A status resting on
+  a pre-war fact is tolerated (the card says the evidence predates the war) but listed
+  as a warning, to be replaced by current evidence.
+- **Freight** — every vessel class has a sourced speed; a route's vessel class is backed
+  by a freight fact applying to the route; distance and transit facts
   apply to their route; a drawn path more than 20% away from the published distance
   is reported as a warning.
 - **Geography** — a route that declares a strait passes through it and a route that
@@ -257,9 +260,10 @@ route crosses a landmass.
 
 Some genuinely navigable passages are finer than the dataset's resolution — the
 Suez and Panama canals, the Dover Strait, the Danish Straits, the Singapore
-Strait, the Dardanelles, the Paraná channel, the Torres Strait, the Sulu Sea
-passages. They are declared explicitly in `ALLOWED` (`scripts/check-land.mjs`)
-and counted separately.
+Strait, the Dardanelles, the Paraná channel, the Sulu Sea passages, the Lombok
+Strait. They are declared explicitly in `ALLOWED` (`scripts/check-land.mjs`)
+and counted separately. Keep each box tight around the passage: a waiver hides
+land. A box no path uses any more is reported as a warning and should be removed.
 
 The Natural Earth basemap is downloaded on first run into `scripts/.cache/`
 (git-ignored).

@@ -1164,8 +1164,11 @@ export const ROUTE_PATHS = {
       [-12.0, 105.0],
       [-8.0, 102.0],
       [-4.0, 99.0],
-      [1.0, 96.5],
-      [5.9, 95.3],
+      [-1.5, 97.6], // west of Siberut and Nias
+      [1.5, 95.8],
+      [3.5, 94.9], // west of Simeulue
+      [5.8, 94.7],
+      [6.1, 95.4], // round Weh island
     ],
     MALACCA,
     [

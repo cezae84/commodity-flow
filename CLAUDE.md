@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-CommodityFlow — a static React + Leaflet map of seaborne commodity corridors (83 routes, 8 commodity families, 10 chokepoints, 359 sourced facts, 169 sources). There is no backend and no test framework: the dataset *is* the product, and correctness is enforced by the check scripts below. All user-facing text is in English; the maintainer converses in French.
+CommodityFlow — a static React + Leaflet map of seaborne commodity corridors (83 routes, 8 commodity families, 10 chokepoints, 360 sourced facts, 170 sources). There is no backend and no test framework: the dataset *is* the product, and correctness is enforced by the check scripts below. All user-facing text is in English; the maintainer converses in French.
 
 The repository is aimed at readers of the output (recruiters, traders): `README.md` explains why the map exists and what it shows; technical documentation lives in `docs/TECHNICAL.md`; `docs/screenshots/` holds the README images.
 
@@ -47,12 +47,12 @@ Each check script is standalone (`node scripts/<name>.mjs`); there is no per-tes
 
 - Never write a figure that is not in a quote. Every number in a fact `statement` must appear in its `quote` (years, Q1/H1 and `/26` season suffixes excepted); `value` must appear in both. `analysis` fields and commodity blurbs must contain no digits other than years. When adding a fact, fetch the page and copy the sentence verbatim; mark `verification=manual` only for JavaScript-rendered pages.
 - Use the `scope` honestly: `corridor` only when the figure is for that origin→destination flow; otherwise `exporter`, `importer`, `chokepoint`, `market`, `status`, `policy`, `infrastructure`. Ports are representative when sources are country-level — say so in the analysis rather than inventing port-level claims.
-- Any `status` other than `normal` needs a `status_fact`. `weight` (1–5) is an ordinal for line thickness, not a measurement.
+- Any `status` other than `normal` needs a `status_fact` that lists the target in `applies_to`. It should be a `current` fact; a pre-war one is tolerated (the card shows a caveat) but `check:data` lists it as a warning. `weight` (1–5) is an ordinal for line thickness, not a measurement.
 - A route's `chokepoints` must match its geometry: `check:data` fails both when a declared strait is not traversed and when a traversed one is not declared. A route's own origin/destination port is excluded from detection (Fujairah sits 1.4° from Hormuz by design).
 - Trans-Pacific paths use continuous longitudes past ±180° (`-220` = 140°E); `pathVariants()` in `src/lib/geo.js` draws the ±360° copy. Keep a path's longitudes continuous rather than wrapping them.
-- Paths are smoothed with Chaikin (`smoothPath`) before drawing *and* before `check:land`, so a fix must clear land after smoothing. Genuinely navigable passages finer than 50 m resolution go in `ALLOWED` in `scripts/check-land.mjs`, not in the data.
+- Paths are smoothed with Chaikin (`smoothPath`) before drawing *and* before `check:land`, so a fix must clear land after smoothing. Genuinely navigable passages finer than 50 m resolution go in `ALLOWED` in `scripts/check-land.mjs`, not in the data — as tight boxes, since a waiver hides land; `check:land` warns about boxes no path uses.
 - Metals routes require a `sub` matching `SUBFILTERS.metals`. A new route needs a `routes.csv` row, a fact, and a path under the same id in `geometry.js`.
-- Two periods are never mixed. Facts carry `timeframe`: `baseline` (2025 reference, before the Hormuz closure on 28 Feb 2026) or `current` (since then). `lead_fact` must be baseline; the trading context / `analysis` describe the reference period, `situation` the war period; `status`/`status_fact` describe now. `SITUATION_AS_OF` in `src/data/timeframes.js` dates the current block — bump it when statuses are reviewed.
+- Two periods are never mixed. Facts carry `timeframe`: `baseline` (2025 reference, before the Hormuz closure on 28 Feb 2026) or `current` (since then). `lead_fact` and `context_facts` must be baseline; the trading context / `analysis` describe the reference period, `situation` the war period; `status`/`status_fact` describe now. `SITUATION_AS_OF` in `src/data/timeframes.js` dates the current block — bump it when statuses are reviewed.
 
 ## Live market prices
 

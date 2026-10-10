@@ -8,7 +8,9 @@
  *  1. references — every id used anywhere exists (sources, facts, ports,
  *     chokepoints, pipelines, commodities, statuses, sub-families);
  *  2. evidence — every route, chokepoint and pipeline has at least one fact;
- *     its lead fact applies to it; any status other than "normal" cites a fact;
+ *     its lead and status facts apply to it; any status other than "normal"
+ *     cites a fact (a pre-war status fact is reported as a warning); context
+ *     facts are 2025 reference facts; a vessel class is backed by a freight fact;
  *     every fact has a source and a verbatim quote; the checked value and every
  *     other number in the statement appear in the quote; analysis, trading-context and situation texts and
  *     commodity blurbs carry no figures of their own; every source is cited;
@@ -60,6 +62,7 @@ for (const v of VESSELS) {
   else if (!v.speedFact.appliesTo.includes(v.id)) note(v.id, `speed_fact "${v.speedFact.id}" does not list ${v.id}`);
 }
 const freightWarnings = [];
+const periodWarnings = [];
 
 const factIds = new Set();
 for (const f of FACTS) {
@@ -159,8 +162,13 @@ for (const s of SOURCES) if (!citedSources.has(s.id)) note(s.id, 'source is neve
 const checkEvidence = (item, kind) => {
   if (!item.facts.length) note(item.id, `${kind} has no fact (add one in facts.csv with applies_to = ${item.id})`);
   if (!item.leadFact) note(item.id, `${kind} has no lead_fact`);
-  else if (item.leadFact.timeframe !== 'baseline') {
-    note(item.id, `lead_fact "${item.leadFact.id}" must be a 2025 reference (baseline) fact — war-period facts belong in status_fact or situation`);
+  else {
+    if (item.leadFact.timeframe !== 'baseline') {
+      note(item.id, `lead_fact "${item.leadFact.id}" must be a 2025 reference (baseline) fact — war-period facts belong in status_fact or situation`);
+    }
+    if (!item.leadFact.appliesTo.includes(item.id)) {
+      note(item.id, `lead_fact "${item.leadFact.id}" does not list ${item.id} in applies_to`);
+    }
   }
   if (!item.baselineFacts.length) note(item.id, `${kind} has no 2025 reference (baseline) fact`);
   if (digitsOutsideYears(item.situation)) {
@@ -169,8 +177,15 @@ const checkEvidence = (item, kind) => {
   if (item.situation && !item.currentFacts.length && item.statusFact?.timeframe !== 'current') {
     note(item.id, 'situation text has no current fact to back it');
   }
-  else if (!item.leadFact.appliesTo.includes(item.id)) {
-    note(item.id, `lead_fact "${item.leadFact.id}" does not list ${item.id} in applies_to`);
+  if (item.statusFact) {
+    if (!item.statusFact.appliesTo.includes(item.id)) {
+      note(item.id, `status_fact "${item.statusFact.id}" does not list ${item.id} in applies_to`);
+    }
+    // Tolerated (the card shows a "predates the war" caveat) but reported: the
+    // status describes now, so its evidence should be a current fact.
+    if (item.statusFact.timeframe !== 'current') {
+      periodWarnings.push(`${item.id}: status "${item.status}" rests on the pre-war fact "${item.statusFact.id}"`);
+    }
   }
   if (item.trading) {
     const t = item.trading;
@@ -181,6 +196,9 @@ const checkEvidence = (item, kind) => {
     if (!t.facts.length) note(item.id, 'context_facts is empty — the trading context must cite the facts it rests on');
     for (const f of t.facts) {
       if (!f.appliesTo.includes(item.id)) note(item.id, `context fact "${f.id}" does not list ${item.id} in applies_to`);
+      if (f.timeframe !== 'baseline') {
+        note(item.id, `context fact "${f.id}" is a war-period fact — the trading context describes the 2025 reference; use situation instead`);
+      }
     }
   } else {
     if (!item.analysis) note(item.id, 'empty analysis');
@@ -305,6 +323,9 @@ for (const r of ROUTES) {
   for (const [key, f] of [['distance_fact', s.distanceFact], ['transit_fact', s.transitFact]]) {
     if (f && !f.appliesTo.includes(r.id)) note(r.id, `${key} "${f.id}" does not list ${r.id} in applies_to`);
   }
+  if (s.vessel && !r.facts.some((f) => f.scope === 'freight' && f !== s.vessel.speedFact)) {
+    note(r.id, `vessel_class "${s.vessel.id}" needs a freight fact applying to the route`);
+  }
   if (s.distanceSource === 'published' && !s.distanceFact) note(r.id, 'distance_nm needs a distance_fact');
   if (s.distanceSource === 'published') {
     const drawn = pathLengthNm(r.path);
@@ -332,6 +353,7 @@ console.log(
   `  freight       ${ROUTES.filter((r) => r.sailing.vessel).length} routes with a vessel class, ${ROUTES.filter((r) => r.sailing.distanceSource === 'published').length} with a published distance, ${ROUTES.filter((r) => r.sailing.transitFact).length} with a published transit time`
 );
 for (const w of freightWarnings) console.log(`  ⚠  ${w}`);
+for (const w of periodWarnings) console.log(`  ⚠  ${w}`);
 
 if (!problems.length) {
   console.log('\n✅ No inconsistency found.\n');

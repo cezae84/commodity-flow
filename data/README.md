@@ -70,6 +70,9 @@ source, with the exact sentence it comes from. **Routes**, **chokepoints** and
   `2025/26` season suffixes excepted — they go in `period`); `1,111`, `1 111` and
   `108,2` / `108.2` count as the same number;
 - `value`, when filled, must appear in both `statement` and `quote`;
+- `quote` is the source sentence exactly as published — never trim a date or change
+  a tense (“As of 2013, … was”) to make an old figure read as current; put the date in
+  `period`;
 - `quote` must not be empty and `source_id` must exist;
 - a `current` fact needs a 2026 `period`; a `baseline` fact cannot have a period after
   February 2026 (`2026-06`, `H1 2026`, `Q2 2026`…).
@@ -85,7 +88,7 @@ source, with the exact sentence it comes from. **Routes**, **chokepoints** and
 | `from_port`, `to_port` | port keys from `PORTS` in `src/data/waypoints.js` (they set the countries used by the country filter) |
 | `chokepoints` | chokepoint ids crossed, separated by `\|` — must match the drawn path |
 | `status` | `normal`, `reduced`, `rerouted`, `disrupted` or `new` |
-| `status_fact` | fact proving the status — **required** for anything other than `normal` |
+| `status_fact` | fact proving the status — **required** for anything other than `normal`; must list the route in `applies_to`, and should be a `current` fact (a pre-war fact is shown with a “predates the war” caveat and reported as a warning by `check:data`) |
 | `weight` | 1 to 5: line thickness, an editorial rank, not a measurement |
 | `vessel_class` | id from `vessels.csv` — the ship type typically used on this trade (backed by a `freight` fact applying to the route) |
 | `distance_nm` | published port-to-port sea distance, digits only; empty = the map uses its drawn line, and says so |
@@ -95,7 +98,7 @@ source, with the exact sentence it comes from. **Routes**, **chokepoints** and
 | `sellers` | trading context, one line: the exporting countries — country level, **no figures** (years allowed) |
 | `buyers` | trading context, one line: the importing countries |
 | `why_it_matters` | trading context, one line: why traders watch this route |
-| `context_facts` | fact ids (`\|`-separated) that back the three trading-context lines; each must list the route in `applies_to` |
+| `context_facts` | fact ids (`\|`-separated) that back the three trading-context lines; each must be a `baseline` fact listing the route in `applies_to` |
 | `situation` | what the war has changed, short English text — no figures; leave empty if nothing is documented (it then needs no current fact) |
 
 `chokepoints.csv` and `pipelines.csv` follow the same pattern but keep a free
