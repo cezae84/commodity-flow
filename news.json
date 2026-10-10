@@ -1,0 +1,322 @@
+{
+ "generated_at": "2026-10-10T18:34:26+00:00",
+ "window_hours": 24,
+ "model": "claude-haiku-4-5-20251001",
+ "feeds": [
+  {
+   "id": "gcaptain",
+   "name": "gCaptain",
+   "ok": true,
+   "items": 12
+  },
+  {
+   "id": "splash247",
+   "name": "Splash247",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "hellenicshipping",
+   "name": "Hellenic Shipping News",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "eia",
+   "name": "U.S. Energy Information Administration — Today in Energy",
+   "ok": true,
+   "items": 14
+  },
+  {
+   "id": "rigzone",
+   "name": "Rigzone",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "oilprice",
+   "name": "OilPrice.com",
+   "ok": true,
+   "items": 15
+  },
+  {
+   "id": "lngprime",
+   "name": "LNG Prime",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "mining",
+   "name": "MINING.COM",
+   "ok": true,
+   "items": 36
+  },
+  {
+   "id": "worldgrain",
+   "name": "World Grain",
+   "ok": true,
+   "items": 30
+  },
+  {
+   "id": "gn-hormuz",
+   "name": "Google News — Hormuz and Gulf shipping",
+   "ok": true,
+   "items": 38
+  },
+  {
+   "id": "gn-oil",
+   "name": "Google News — oil market",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-sanctions",
+   "name": "Google News — energy sanctions",
+   "ok": true,
+   "items": 55
+  },
+  {
+   "id": "gn-redsea",
+   "name": "Google News — Red Sea and Suez",
+   "ok": true,
+   "items": 43
+  },
+  {
+   "id": "gn-lng",
+   "name": "Google News — gas and LNG",
+   "ok": true,
+   "items": 77
+  },
+  {
+   "id": "gn-metals",
+   "name": "Google News — metals and iron ore",
+   "ok": true,
+   "items": 41
+  },
+  {
+   "id": "gn-grain",
+   "name": "Google News — grain and fertilizer",
+   "ok": true,
+   "items": 45
+  },
+  {
+   "id": "gn-freight",
+   "name": "Google News — freight markets",
+   "ok": true,
+   "items": 17
+  }
+ ],
+ "counts": {
+  "collected": 583,
+  "candidates": 90,
+  "items": 8,
+  "dropped": 0
+ },
+ "usage": {
+  "input_tokens": 5863,
+  "output_tokens": 927
+ },
+ "status": "ok",
+ "brief_generated_at": "2026-10-10T18:34:26+00:00",
+ "overview": {
+  "text": "Middle East tanker attacks and mine strikes in Hormuz escalate shipping risks; Trump approves Russian diesel supply deal; copper supply deficit forecast; Houthi-Saudi conflict disrupts Red Sea trade.",
+  "sources": [
+   {
+    "title": "IRGC: Oil tanker hits sea mine in Strait of Hormuz",
+    "publisher": "Report.az",
+    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPak1TZzVYWmc4WU1jTW5IUms4Vnh6N3Z0WERYVkFCal9mRjVtX1ZwN0JLMlc1U0pSWXI0N2lsVm43QWV4S3BSMzJEdFZrZVdXTjdLVDBTQ0lSaVJDellzNzFLVjRnUWdwUzhSaHN0MnRQd3d4aExHa3hmdU5xRTYteTB0MA?oc=5",
+    "published_at": "2026-10-10T18:26+00:00"
+   },
+   {
+    "title": "Iran's Guards say tanker exploded after hitting mine in Strait of Hormuz",
+    "publisher": "The Economic Times",
+    "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOR2ZLQ1AwUEFXV0ZDc2dYV2dkcjR3MmU4cGktQ2gyc0hta1ZkVFI3TVdtREJiU2JjMFpHZG1hMHl2MjBFUU41OGZvYnlIM0p5WFc2bjh6VXlvQXNpMUhhRDR3eDlvdk1ZZjlyeEs1UGpSTjltbUwzelNwZDBQajhDdlg0TlBNU0FnQm9LY1hrSWFraUZXakxkcnBTNl8wU2NJOERsaXVXS3diM2I3WTFTb1lUM256ekNvWTJJY2ZaV2J2cjZYZ2JlSTBiQkg2SThHZlN2cjlmd2llXzlRRmJ4dTM3dEVlYXktN1dB0gHwAUFVX3lxTE9NM3JLeDUwSWl4cjlUaEFLN2tMWHBrX3NkMVFHQ0RpT095WnI0bXR6NWhMWVhkcHNvLUdTbUJCWERqWFZVbTc5T0JLTkpnbnRKNWJpbE5vWlRMY01KX1RWR2dXNnZNbUdYdHN0V1Y2eElzNFMtRUhOSWxIWVpFWTFKc3lpTkN5U3l1ODVZUzNWM01meklFV2pBVW4ySW1qS1Y1dVVoVjdRZUpGQnM1ZFZxODVKck5qWk56ZFF1RU9vdDRQYzBtRVk4ZnMzSHZuWGxnZlFuN0x0QmQwQUwta0xsUnZpRW82dUs1ZlAxTWh1VA?oc=5",
+    "published_at": "2026-10-10T17:25+00:00"
+   },
+   {
+    "title": "UAE National Guard rescues 22 after oil tanker catches fire in Arabian Gulf",
+    "publisher": "Gulf News",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPX2JtTlJBZEhURWktbmlIcjBHeVNPN25YOG94dzFLaEZFM0lfcEJGZ1RDSzZiTlJMcjFhM2lIM3NTQko1MHJjMkJQalZVM3htRUJHaHZpYzNEY2pVOXBnV3hWZW5QS1RMbTJ1dXVIM2p2NG55cWdnZnM4UTFmc1QzUzJHUDgzSjIxN3ZneGJTSjczNHF3Qkw1TVV1WTBIOXk5WjVaYUw3empQRjFXOXpNNTZB0gHCAUFVX3lxTFB3ZGtYNnI0VmNod0RJRlhxeUxuUDRnajhlajVweTNacnNia2E5aTFaZHFreUhnUFlRUTNDTXQ4eWtzUm4xMF9FMW9tdzRFMjE3YVV5aGtPaDFZRWZ2bmRwMGFkLUx1UGZIQzdfSXpZM29zS3FwaGh6eHFyS2FwUlNPUjZIWENUbnVfZkNRcUJMTnhKU291cjlvQmlEUWxLWVFXRUkwZ0dPS3lKSXp2THRUd01lMzZFeTJkYmk3Vmlob0dn?oc=5",
+    "published_at": "2026-10-10T16:35+00:00"
+   },
+   {
+    "title": "Russia, Germany Add Diesel Supply as Fuel Market Scrambles for Barrels",
+    "publisher": "OilPrice.com",
+    "url": "https://oilprice.com/Latest-Energy-News/World-News/Russia-Germany-Add-Diesel-Supply-as-Fuel-Market-Scrambles-for-Barrels.html",
+    "published_at": "2026-10-09T21:30+00:00"
+   }
+  ]
+ },
+ "items": [
+  {
+   "headline": "Oil tanker hit sea mine, catches fire in Strait of Hormuz",
+   "summary": "Iranian Revolutionary Guard Corps reported tanker explosion after striking mine in Strait of Hormuz. UAE rescued 22 people from oil tanker fire in Arabian Gulf. Incident heightens maritime security risks in critical shipping corridor.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "IRGC: Oil tanker hits sea mine in Strait of Hormuz",
+     "publisher": "Report.az",
+     "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPak1TZzVYWmc4WU1jTW5IUms4Vnh6N3Z0WERYVkFCal9mRjVtX1ZwN0JLMlc1U0pSWXI0N2lsVm43QWV4S3BSMzJEdFZrZVdXTjdLVDBTQ0lSaVJDellzNzFLVjRnUWdwUzhSaHN0MnRQd3d4aExHa3hmdU5xRTYteTB0MA?oc=5",
+     "published_at": "2026-10-10T18:26+00:00"
+    },
+    {
+     "title": "Iran's Guards say tanker exploded after hitting mine in Strait of Hormuz",
+     "publisher": "The Economic Times",
+     "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOR2ZLQ1AwUEFXV0ZDc2dYV2dkcjR3MmU4cGktQ2gyc0hta1ZkVFI3TVdtREJiU2JjMFpHZG1hMHl2MjBFUU41OGZvYnlIM0p5WFc2bjh6VXlvQXNpMUhhRDR3eDlvdk1ZZjlyeEs1UGpSTjltbUwzelNwZDBQajhDdlg0TlBNU0FnQm9LY1hrSWFraUZXakxkcnBTNl8wU2NJOERsaXVXS3diM2I3WTFTb1lUM256ekNvWTJJY2ZaV2J2cjZYZ2JlSTBiQkg2SThHZlN2cjlmd2llXzlRRmJ4dTM3dEVlYXktN1dB0gHwAUFVX3lxTE9NM3JLeDUwSWl4cjlUaEFLN2tMWHBrX3NkMVFHQ0RpT095WnI0bXR6NWhMWVhkcHNvLUdTbUJCWERqWFZVbTc5T0JLTkpnbnRKNWJpbE5vWlRMY01KX1RWR2dXNnZNbUdYdHN0V1Y2eElzNFMtRUhOSWxIWVpFWTFKc3lpTkN5U3l1ODVZUzNWM01meklFV2pBVW4ySW1qS1Y1dVVoVjdRZUpGQnM1ZFZxODVKck5qWk56ZFF1RU9vdDRQYzBtRVk4ZnMzSHZuWGxnZlFuN0x0QmQwQUwta0xsUnZpRW82dUs1ZlAxTWh1VA?oc=5",
+     "published_at": "2026-10-10T17:25+00:00"
+    },
+    {
+     "title": "UAE National Guard rescues 22 after oil tanker catches fire in Arabian Gulf",
+     "publisher": "Gulf News",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPX2JtTlJBZEhURWktbmlIcjBHeVNPN25YOG94dzFLaEZFM0lfcEJGZ1RDSzZiTlJMcjFhM2lIM3NTQko1MHJjMkJQalZVM3htRUJHaHZpYzNEY2pVOXBnV3hWZW5QS1RMbTJ1dXVIM2p2NG55cWdnZnM4UTFmc1QzUzJHUDgzSjIxN3ZneGJTSjczNHF3Qkw1TVV1WTBIOXk5WjVaYUw3empQRjFXOXpNNTZB0gHCAUFVX3lxTFB3ZGtYNnI0VmNod0RJRlhxeUxuUDRnajhlajVweTNacnNia2E5aTFaZHFreUhnUFlRUTNDTXQ4eWtzUm4xMF9FMW9tdzRFMjE3YVV5aGtPaDFZRWZ2bmRwMGFkLUx1UGZIQzdfSXpZM29zS3FwaGh6eHFyS2FwUlNPUjZIWENUbnVfZkNRcUJMTnhKU291cjlvQmlEUWxLWVFXRUkwZ0dPS3lKSXp2THRUd01lMzZFeTJkYmk3Vmlob0dn?oc=5",
+     "published_at": "2026-10-10T16:35+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Trump approves Russian diesel supply of 300,000 metric tons",
+   "summary": "President Trump said Russia agreed to immediately supply more than 300,000 metric tons of diesel to global markets. Deal aims to address fuel shortage ahead of midterm elections.",
+   "category": "oil",
+   "sources": [
+    {
+     "title": "Russia, Germany Add Diesel Supply as Fuel Market Scrambles for Barrels",
+     "publisher": "OilPrice.com",
+     "url": "https://oilprice.com/Latest-Energy-News/World-News/Russia-Germany-Add-Diesel-Supply-as-Fuel-Market-Scrambles-for-Barrels.html",
+     "published_at": "2026-10-09T21:30+00:00"
+    },
+    {
+     "title": "Trump Strikes Diesel Deal With Putin to Lower Fuel Prices Ahead of Midterms",
+     "publisher": "gCaptain",
+     "url": "https://gcaptain.com/trump-strikes-diesel-deal-with-putin-to-lower-fuel-prices-ahead-of-midterms/",
+     "published_at": "2026-10-09T20:34+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "UBS forecasts copper supply deficit of 379,000 metric tons 2027",
+   "summary": "UBS predicts 379,000 metric ton copper supply deficit in 2027, targeting price of $15,500 per ton. Mine disruptions threaten supply as copper gains 1.08% amid supply concerns.",
+   "category": "metals",
+   "sources": [
+    {
+     "title": "UBS Forecasts Copper Supply Deficit of 379,000 Metric Tons in 2027, Targets $15,500 per Ton",
+     "publisher": "Yahoo Finance",
+     "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPTzhUdjFENWtjRERCaWZRRFhTQ292b3lTZTJ0NXZrM1JBcllyb1ZDaHVVcFp1ZkpEWEs0c2gwNmdsRGdqMkt0b3FqZDEtN2VzNDhXT1lYRUlHeFkyVjNRc2RkZVh3TEIwOGlpRUtvRXFUVDJsNDJ0R19BWlhOOEpqbmxuZzBSSkd6ekpycjdXeENYOW9EVUpJVDJfcWN5Q3VkVWtYTXo5VWk?oc=5",
+     "published_at": "2026-10-10T13:04+00:00"
+    },
+    {
+     "title": "Copper gains 1.08% to $14,464 as mine disruptions threaten supply",
+     "publisher": "Businessamlive",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNYW5JT3RMNGtNeW5NeE1aYS1FN0lQQ1JkNFM0WmlCYV9EcGxpc0dYT1JrUWRlM2xXUVd2OEVpYUpPZVF4anJRNk53U3AtSEJDY1NmazhCVF9iU1FtU3FKT0lndW5yM0VZQkpkYWt2VFNLYnlrZXpuek1VcTBBWGdQS2hCa1F1eUdRRlhjNmZIUWh0dEZG?oc=5",
+     "published_at": "2026-10-10T17:13+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Houthi attacks disrupt grain exports from Black Sea, Ukraine",
+   "summary": "Black Sea attacks threaten Ukraine and Russia grain exports. Houthi-Saudi conflict in Red Sea region affects African countries and trade routes. Sowing incentives weakened by ongoing hostilities.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "Black Sea Attacks Threaten Ukraine Grain Exports",
+     "publisher": "Oz Arab Media",
+     "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5VVzU1SjN4X0c0WlU2ZFFOTk5zZE9QdmVLYkdKcUFGbWN3UmtKWmVJeXJIOUpHbl9TXzV0M1h3Y2k5UG5JWmhTX2F4YXQ3ODFCSnJRejVRODc4VlhQUFFoRzFScG0zczRDZl96SkR3eHZvcXhoTzRJTF9R?oc=5",
+     "published_at": "2026-10-10T07:00+00:00"
+    },
+    {
+     "title": "Black Sea attacks threaten Ukraine and Russia grain exports as sowing incentives weaken",
+     "publisher": "Traders Union",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPclVvQnV2NlU4T2JVYlloZ1A4b0ZZLVg2dERjMlRITWJ6OGdnX1gzZ2RjbW9GSlEwZThvSTgxQkU5T3Y5b2dkNjY0Ni1mcWNxQXlRNEd3cV9UTVpwanJjZGhsbmx1T2JZQVRId0s4SFlfRkhPeU9Xd0tLLU1xX19wZDZhS3M4Ymw1NjJXNEhwdGJKS0dFNHNTSzZ2a0lyUQ?oc=5",
+     "published_at": "2026-10-10T05:11+00:00"
+    },
+    {
+     "title": "The Houthi-Saudi conflict is directly affecting African countries in the Red Sea region — and beyond",
+     "publisher": "DW.com",
+     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOQnBha3VpVVVrYTg2Wi1WLVJUQjRPNzNyaG1EYklBZFZuQ1A2T0hxRDFTMWJycnZjVm0zc2Q3dXR1OVBHdWh3elVBMHhxLS14RU9fcVJ4WkdqUGVZd05iVHJYU3BpcmRnbTlRdkZkcXpKX2pYZ0hIS00yOG0yMl9LaXBTSjVnaG9LQmhmTGp3dVRfbXFFQ1RtTTQ2NS10b3c5WkdwRmFHcklDdmxOSlNkT3hYS0dRRGZBM0JpWWtB0gG-AUFVX3lxTE9XT2JMLVBaekkxTy1OQ0w4R2d0bnk4SF85RlBwNDMzSE1BN1M5TmZaUVRsSFJsaE1BYjBmTnZ1TVRieUVPbVZIYmRNbHZzbmRsVXJ2cExLUVBxV2p4cnB0a3BJUHctbVc5bWJHRUQ1ZWgyNGFmZ0tCMGs2eUZhbWhwd2FtVWVnV2ZwbDhEcjRTRGlGWDZBMTBwRWtwTFBxNVd4Y3NzdS1pUGdfcE80b0lNb2hKVFFMXzFRVHdpN2c?oc=5",
+     "published_at": "2026-10-10T16:39+00:00"
+    },
+    {
+     "title": "How Houthi attacks are threatening trade, fuel and economies across Africa",
+     "publisher": "The Eastleigh Voice",
+     "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQOU0yM1NxckFUU1NlUHhNQWxNb3cwVkhWWkR6Z05yaFpla3p4RW1Zb1VBVng0OC1BU2hsMnVHdjBIQV93TS1mVjc3NDRYOGVXSkkzSTR0NWlPRFVuRU5ITDQwMjUwZDk5VHRJelM3d1BFYWlJbDhaU2JZZG94aHZnYlp6bUh3ZDdxdWNZWHFxNGhBVFZKNTNTWTZoRHZ0ZzJfVlhGZkx2aDZsMWJ2T3ppN0NPekZqaVE?oc=5",
+     "published_at": "2026-10-10T09:08+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Tanker shipping rates boom; VLCC market strengthens across basins",
+   "summary": "Oil tanker rates top $1 million per day as freight costs soar. VLCC market gains across Atlantic and other basins. Some tanker bosses see boom lasting for years.",
+   "category": "shipping",
+   "sources": [
+    {
+     "title": "Oil Tanker Rates Top $1 Million a Day as Shipping Profits Soar",
+     "publisher": "USFunds",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQOU5lSXVUTEU5UmFUR0t5ajVrTlRpMGk0TnBFREtkNkRtaWxTbVhVRXlhQmhCaFJ5NmtETVRRTGp2WUNkSTktZWVXc2pfbWs1WXl1OTJoX1lFT1d4OXZxakhubXBDU0MxSmR6eWZ1RlpRRUkwS3FLVkljbHhkc2pIbGwxMXJiUy1QQzZ3SXhzSkZiTUdyc0F6Tmp4WQ?oc=5",
+     "published_at": "2026-10-09T20:22+00:00"
+    },
+    {
+     "title": "Some tanker bosses see boom lasting for years, not months",
+     "publisher": "Lloyd's List",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPTHh0R3ZVVm1sQ0NkMW5aWmo2cjhmLU5vM0dyTTVJTlZNRzZ4MzQ0a1ppdFRNTmQwYmF1RmVJd3BBMkd0YzdrYWpIWDcxZzZwZUdXZk90Nnp3WEM0X0JvUlhDYUdob252Vy1Od0FhdlhtcnhVYmJxRVIySmRsMFhWSGZfWVZCOG1BaGVBNVNFbjhueTU1NnRUXw?oc=5",
+     "published_at": "2026-10-10T08:15+00:00"
+    },
+    {
+     "title": "Tanker Shipping Freight Costs Exceed the Price of Launching a Rocket",
+     "publisher": "eu.36kr.com",
+     "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9ZVTdjbjYyUnZiNmM5QXhHNklVY2U4U19OMXlrazk3UURQN1lwTHROVnlFX2xBbW5pSU1WRGpJR1gtdTNLejM3a2lMbEltRC1yWVln?oc=5",
+     "published_at": "2026-10-10T14:20+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Hurricane Isaias shuts 1.46 million barrels Gulf oil production",
+   "summary": "Hurricane Isaias knocked 1.46 million barrels per day of U.S. Gulf oil production offline. Operators shut in 71% of production as supply concerns mount.",
+   "category": "oil",
+   "sources": [
+    {
+     "title": "Hurricane Isaias Shuts In 71% of U.S. Gulf Oil Production",
+     "publisher": "OilPrice.com",
+     "url": "https://oilprice.com/Latest-Energy-News/World-News/Hurricane-Isaias-Shuts-In-71-of-US-Gulf-Oil-Production.html",
+     "published_at": "2026-10-09T20:30+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Russia crude exports rise on non-G7 tanker fleet expansion",
+   "summary": "Russia increased September crude exports using domestic and non-G7 tanker operators, reaching highest level since G7 price cap. Oil product shipments climbed to three-month high.",
+   "category": "oil",
+   "sources": [
+    {
+     "title": "Russian tanker operators lift crude exports to highest level since G7 price cap",
+     "publisher": "Hellenic Shipping News",
+     "url": "https://www.hellenicshippingnews.com/russian-tanker-operators-lift-crude-exports-to-highest-level-since-g7-price-cap/",
+     "published_at": "2026-10-09T21:00+00:00"
+    },
+    {
+     "title": "Russia's Oil Product Exports Rise",
+     "publisher": "Rigzone",
+     "url": "https://www.rigzone.com/news/wire/russias_oil_product_exports_rise-10-oct-2026-184813-article/?rss=true",
+     "published_at": "2026-10-10T12:00+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "EU purchased record Russian LNG despite preparing import ban",
+   "summary": "European Union bought record volume of Russian LNG while preparing for import restrictions. QatarEnergy declared force majeure on LNG supply.",
+   "category": "gas-lng",
+   "sources": [
+    {
+     "title": "EU purchased a record volume of Russian LNG despite preparing for an import ban",
+     "publisher": "Inbox.lv",
+     "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOVFNRVHE3V2h0WkdDbkZmSV9fZXZwNUlyRG9Da3cyRjlzb1lXYUd4djFKWm1rZHlFN3NRTk1Ca19QeWxRbFRQNXFJNm1aMmZfdlpQRHQ1RENfNWlqM0JtM05oS3pES21ST19zR0RkTEtaT1UtTm5ta29ocWlyS2d4c0ZQRzhiNnkxRlFuSGxrNXI0RHlOeF96V0Z1V3JEZlNMYTBzOXNSdlZPTzNTWVdma053MlRQcWZoT1F3d0Rn?oc=5",
+     "published_at": "2026-10-10T12:45+00:00"
+    },
+    {
+     "title": "Gas Giant QatarEnergy Throttles LNG Supply by Declaring Force Majeure",
+     "publisher": "EnergyNow.com",
+     "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNNU9qYU5acXlyOGhBUXk0MUJwTHoxSnN1bWJJNV9uWDJWbjdkdkN4UFB4MGJMUV9WNGxVTkpVX0lxUFctS0IxTEJUZWFQQzVUTnNvMExmQ3A1WndnRzhZcmdlUk5rSEpSbzZhS3BBcXg1Uk9SN2xtbWF2SEdJdGRsa1QwQS0wOFJ0dFdsSmp3M2xNUm91VC1pTjlLSFk4LTNtY2c?oc=5",
+     "published_at": "2026-10-09T19:56+00:00"
+    }
+   ]
+  }
+ ]
+}
