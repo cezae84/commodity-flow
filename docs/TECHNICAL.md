@@ -3,10 +3,11 @@
 An interactive, terminal-style map of the world's major seaborne commodity corridors
 and markets. **83 routes**, **10 chokepoints** and **3 bypass pipelines**, backed by
 **359 sourced facts** from **169 sources** — every figure carries a link and the
-verbatim sentence it was taken from — plus **18 market prices** refreshed
-automatically.
+verbatim sentence it was taken from — plus two automated layers that never enter the
+dataset: **18 market prices** refreshed every 30 minutes and an **AI market brief** of
+the last 24 hours of news, rewritten every two hours.
 
-The sidebar has one menu with four entries:
+The sidebar has one menu with four entries (five on small screens):
 
 - **Routes** — filters (commodity, sub-family, country, search) and the route list.
 - **Markets** — every price, grouped by commodity family, with its daily or monthly
@@ -15,6 +16,8 @@ The sidebar has one menu with four entries:
   detail or price). Saved in your browser only (localStorage, no account). One click
   shows only the watchlist routes on the map.
 - **Data** — the *Data & sources* tables.
+- **News** (under 900 px only) — the AI market brief, which floats on the right of the
+  map on wider screens.
 
 ## Getting started
 
@@ -49,14 +52,18 @@ can open by double-clicking, see [Standalone file](#standalone-file-no-server).
 - **Filters compose** — commodity, sub-family, country and search stack, and a
   *Clear filters* link resets them in one click.
 - **Hover the list** — pointing at a row thickens its line on the map.
-- **Route detail** — origin, destination, drawn distance, the key figure, the
-  evidence for the status, a short analysis, every other sourced fact and the
-  chokepoints crossed. Each fact shows a scope badge (*this corridor*, *exporter*,
+- **Route detail** — estimated days at sea (vessel class and speed), distance, status,
+  then two blocks that never mix: the **2025 reference** (key figure and a three-line
+  trading context — sellers, buyers, why the route matters) and the **current
+  situation** (status, its evidence, market prices now). A **freight** block gives the
+  sailing-time calculation and any published transit time. Every other sourced fact
+  and the chokepoints crossed follow. Each fact shows a scope badge (*this corridor*, *exporter*,
   *importer*, *chokepoint*…), its period, a link to the source and, on demand, the
   verbatim quote.
 - **Data & sources** — a full-screen table of every fact (searchable, filterable by
   scope and by source), every source with its citation count, and every route with
-  its key figure. The five CSV files can be downloaded from there.
+  its freight data, key figure and current status. Every CSV file can be downloaded
+  from there.
 - **Chokepoints** — Hormuz, Malacca, Suez, Bab el-Mandeb, Cape of Good Hope,
   Panama, the Turkish Straits, the Danish Straits, Lombok, Sunda. Click one for
   its sourced volumes and the list of routes using it.
@@ -68,6 +75,11 @@ can open by double-clicking, see [Standalone file](#standalone-file-no-server).
   hidden, and a checkbox disables the behaviour.
 - **Hormuz bypass pipelines** — Petroline, ADCOP, Goreh-Jask, dashed in grey,
   with their capacities.
+- **AI market brief** — a collapsible panel on the right of the map: 5 to 8 commodity
+  and geopolitical stories from the last 24 hours, each linked to its articles (see
+  [AI news brief](#ai-news-brief)).
+- **Watchlist** — star routes and prices; one toggle shows only the starred routes
+  on the map.
 
 ## Data
 
@@ -109,7 +121,7 @@ analysis says so. Line thickness is an ordinal rank from 1 to 5, not a measureme
 ## Live market prices
 
 Alongside the verified dataset, the map shows **market prices refreshed automatically**:
-a *Markets* panel under the commodity filter, *Market prices now* in each route's
+the *Markets* tab of the sidebar, starred prices in the *Watchlist*, *Market prices now* in each route's
 current-situation block (with the gap to the 2025 average), and a *Market prices* tab in
 *Data & sources*. These prices are an automated feed and never enter `data/facts.csv`.
 
@@ -214,8 +226,9 @@ check; pages that block automated requests and PDFs are listed for a manual look
 
 ### `npm run check:english`
 
-Walks every user-facing string — route names, fact statements, analyses, ports,
-chokepoints, pipelines, commodities, statuses and JSX literals — and fails if anything
+Walks every user-facing string — route names, fact statements, trading contexts,
+situations, analyses, vessel labels, ports, chokepoints, pipelines, commodities,
+statuses and JSX literals — and fails if anything
 still reads as French. Quotes are verbatim and are not checked.
 
 ### `npm run check:data`
@@ -224,8 +237,13 @@ still reads as French. Quotes are verbatim and are not checked.
   commodities, statuses, sub-families.
 - **Evidence** — every route, chokepoint and pipeline has facts and a lead fact that
   applies to it; any status other than normal cites a fact; every fact has a quote;
-  every number of a statement appears in its quote; analyses and commodity blurbs
-  carry no figures; every source is cited.
+  every number of a statement appears in its quote; trading contexts, analyses,
+  situations and commodity blurbs carry no figures; every source is cited.
+- **Periods** — a lead fact is always a 2025 reference figure; a war-period fact is
+  never filed as baseline.
+- **Freight** — every vessel class has a sourced speed; distance and transit facts
+  apply to their route; a drawn path more than 20% away from the published distance
+  is reported as a warning.
 - **Geography** — a route that declares a strait passes through it and a route that
   passes through one declares it (a route's own port never counts as a transit:
   Fujairah sits 1.4° from Hormuz precisely because it exists to avoid it); path
@@ -249,31 +267,44 @@ The Natural Earth basemap is downloaded on first run into `scripts/.cache/`
 ## Structure
 
 ```
-data/                  the dataset — sources, facts, routes, chokepoints, pipelines (CSV)
+data/                  the dataset — sources, facts, routes, chokepoints, pipelines, vessels (CSV)
+  live/                inputs of the automated layers: instruments.csv (prices), news_sources.csv (news)
 src/
   data/
     csv.js             CSV reader/writer
-    dataset.js         builds routes/facts/sources objects from the CSV text
+    dataset.js         builds routes/facts/sources/vessels objects from the CSV text (incl. sailing days)
     index.js           the dataset as the app imports it (CSV inlined at build time)
     geometry.js        route paths, keyed by route id
     waypoints.js       ports (with country), chokepoint positions, pipeline paths, segments
     commodities.js     8 families, validated palette, sub-filters, statuses
     filters.js         country filter helpers
     scopes.js          fact scope labels
+    timeframes.js      war start date, SITUATION_AS_OF, period labels
+    live.js            useLiveJson (shared fetch + keep-last-good) and the market prices
+    news.js            the AI market brief feed
+    favorites.js       watchlist in localStorage
   lib/geo.js           Chaikin smoothing, antimeridian handling, distances
   components/
     MapView.jsx        Leaflet rendering (casings, lines, markers, tooltips)
-    DetailPanel.jsx    route and chokepoint cards   Facts.jsx  fact cards
+    DetailPanel.jsx    route and chokepoint cards (reference, current, freight)   Facts.jsx  fact cards
     DataView.jsx       Data & sources tables
+    MarketsPanel.jsx   prices, sparklines   Watchlist.jsx  Star.jsx
+    NewsPanel.jsx      AI market brief (floating panel / sidebar tab)
     CommodityFilter.jsx  CountryFilter.jsx  RouteList.jsx  MapPanel.jsx
   App.jsx              application state and layout
 scripts/
   lib/dataset.mjs      loads data/*.csv for the scripts
-  audit-routes.mjs     dataset integrity, evidence rules, geographic consistency
+  audit-routes.mjs     dataset integrity, evidence, period, freight and geographic rules
   check-sources.mjs    online re-verification of every quote
   check-english.mjs    translation guard
   check-land.mjs       land/sea check
+  check-live.mjs       instruments.csv + price fetcher self-test
+  check-news.mjs       news_sources.csv + category sync + news builder self-test
+  live/fetch_prices.py market prices (Yahoo Finance, FRED) → prices.json
+  news/build_news.py   headlines → Claude Haiku → validated news.json
   bundle-standalone.mjs  single-file HTML build
+.github/workflows/     update-prices.yml (every 30 min), update-news.yml (every 2 h)
+.claude/agents/        freight-analyst.md, the freight research subagent
 ```
 
 ### Design notes
@@ -284,8 +315,13 @@ scripts/
 - **Antimeridian** — trans-Pacific routes are stored with continuous longitudes
   beyond ±180° (e.g. `-220` = 140°E); `pathVariants()` draws a ∓360° copy so they
   stay visible from any pan position.
-- **Theme** — dark market-terminal style: charcoal panels, muted amber monospace labels,
-  CARTO *Dark Matter* basemap. Tokens are at the top of `src/index.css`.
+- **Theme** — trading-terminal style on a CARTO *Dark Matter* basemap: pure black
+  panels, *Archivo* for text and *JetBrains Mono* for every figure and label (Google
+  Fonts, with system fallbacks). Amber is a state colour only — selected tab, active
+  filter, starred item, the live price — and links are a neutral grey. Tags are square
+  and monospace; status tags read `[ … ]` instead of a filled pill. Uppercase tracked
+  labels are kept for one level only, section headings. Tokens are at the top of
+  `src/index.css`.
 - **Palette** — stepped for the dark basemap and **validated**, not eyeballed, with
   the dataviz palette validator (dark mode, water `#383838` after the tile filter, also passing on `#262626`): every hue inside the
   OKLCH lightness band, colour-vision separation ΔE 11.5 on the worst adjacent pair,

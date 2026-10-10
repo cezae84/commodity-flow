@@ -14,7 +14,7 @@ Node comes from nvm and is not on the PATH of non-interactive shells — prefix 
 
 ```bash
 npm run dev               # http://localhost:5173
-npm run check             # lint → check:english → check:data → check:land → build (run before declaring work done)
+npm run check             # lint → check:english → check:data → check:live → check:news → check:land → build (run before declaring work done)
 npm run check:data        # references, evidence rules (numbers vs quotes), chokepoint/geography consistency
 npm run check:sources     # online: re-fetches every source page and looks for each quote (not in `check`)
 npm run check:land        # every smoothed path tested against Natural Earth 50 m land
@@ -74,12 +74,15 @@ Each check script is standalone (`node scripts/<name>.mjs`); there is no per-tes
 
 ## Sidebar and watchlist
 
-- The sidebar menu (`view` state in `App.jsx`: routes · markets · watchlist, plus the Data overlay) switches panels; selecting a route or chokepoint shows its detail on top of the current view, and "back" returns to it.
+- The sidebar menu (`view` state in `App.jsx`: routes · markets · watchlist, plus a `news` tab shown only under 900 px, and the Data overlay) switches panels; selecting a route or chokepoint shows its detail on top of the current view, and "back" returns to it.
 - `src/data/favorites.js` (`useWatchlist`) stores starred route ids and instrument ids in localStorage (`commoditymap:watchlist:v1`), every access guarded. `watchOnly` in `App.jsx` restricts `visibleRoutes` (so the map too) to starred routes.
 
 ## Styling constraints
 
-- Dark terminal theme (CARTO Dark Matter, water `#383838` after the tile-pane filter); CSS tokens at the top of `src/index.css` (`--paper` = panel surface, `--ink` = text, `--accent` amber). The 8 commodity colours are validated for colour-vision deficiency against that water colour with the dataviz validator in dark mode — re-run it if the basemap or a hue changes; the **order is the safety mechanism**. Do not reorder, recolour ad hoc, or add a 9th hue — new groupings go into sub-filters, which narrow the display without repainting.
+- Trading-terminal theme (CARTO Dark Matter, water `#383838` after the tile-pane filter; pure black panels). CSS tokens at the top of `src/index.css` (`--paper` = panel surface, `--ink` = text, `--accent` amber). Fonts: `--sans` Archivo, `--mono` JetBrains Mono, loaded from Google Fonts in `index.html` with system fallbacks; every displayed figure uses `--mono`.
+- Amber (`--accent`) is a state colour only (active tab/filter/toggle, starred item, checked box, the live price value, the *this corridor* tag) — never for headings, decoration or links; `--link` is neutral grey. `--up`/`--down` are for price changes only.
+- Tags are square (`--radius-sm`), bordered, monospace — no `999px` pills; status tags (`.scope--status`, `.timeframe--current`) get `[ ]` brackets via `::before`/`::after`, no filled background. Uppercase + letter-spacing is reserved for section headings (`.eyebrow`, `.detail__block h3`, `.sources__title`, `.period__title`, `.mappanel__group h4`).
+- There is deliberately no banner over the map: the current situation lives in route/chokepoint statuses and the AI market brief. The 8 commodity colours are validated for colour-vision deficiency against that water colour with the dataviz validator in dark mode — re-run it if the basemap or a hue changes; the **order is the safety mechanism**. Do not reorder, recolour ad hoc, or add a 9th hue — new groupings go into sub-filters, which narrow the display without repainting.
 - Status is never conveyed by colour alone (icon + label + dash pattern).
 - Leaflet's CSS loads after `src/index.css`, so overrides of Leaflet classes need doubled specificity (e.g. `.leaflet-tooltip.wm-tooltip`).
 - Strings inside single-quoted JS literals use the typographic apostrophe `’`, not `'`.

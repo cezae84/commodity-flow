@@ -1,7 +1,7 @@
 /* ==========================================================================
    CommodityFlow
-   A dark, dense market-terminal interface on a CARTO Dark Matter basemap:
-   black panels, amber labels, monospace figures. Series colours live in
+   A dense trading-terminal interface on a CARTO Dark Matter basemap: black
+   panels, Archivo text, JetBrains Mono figures, amber kept for active state. Series colours live in
    commodities.js; this sheet defines the surfaces, the inks and the rules.
    The token names (paper, ink) date from the light theme: paper is the panel
    surface, ink the text, whatever their actual values.

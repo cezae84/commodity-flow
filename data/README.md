@@ -162,8 +162,8 @@ hand), and PDFs (search the PDF for the quote). Limit it to some sources with
 
 ## `live/instruments.csv` — market prices (automated)
 
-Not part of the verified dataset: these series are fetched automatically (see the
-main README, *Live market prices*).
+Not part of the verified dataset: these series are fetched automatically (see
+`docs/TECHNICAL.md`, *Live market prices*).
 
 | column | meaning |
 |---|---|
@@ -178,3 +178,20 @@ main README, *Live market prices*).
 
 The first instrument of each family is the one shown when all families are selected.
 Run `npm run check:live`, then `npm run prices` to try a change locally.
+
+## `live/news_sources.csv` — feeds for the AI market brief (automated)
+
+Not part of the verified dataset either: the headlines the news brief is written from
+(see `docs/TECHNICAL.md`, *AI news brief*).
+
+| column | meaning |
+|---|---|
+| `source_id` | unique id, lowercase with dashes |
+| `name` | label, used as the publisher for RSS feeds |
+| `kind` | `rss` (a publisher feed) or `google_news` (a Google News search) |
+| `url_or_query` | the https feed URL, or the search query (Google News syntax: `OR`, quotes) |
+| `topic` | `shipping`, `energy`, `metals`, `agri` or `geopolitics` |
+| `max_items` | at most this many headlines from the feed per run, spread over the 24 hours |
+
+Run `npm run check:news`, then `npm run news` (needs `ANTHROPIC_API_KEY` in `.env`)
+to try a change locally.
