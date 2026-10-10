@@ -52,9 +52,14 @@ Every figure below comes from the dataset and links to its source.
   For Gulf crude bound for Europe, that means a published transit of nearly 35 days via
   the Cape against 19 days via Suez
   ([EIA](https://www.eia.gov/todayinenergy/detail.php?id=61363)).
-- **Hormuz today is almost empty.** IMF PortWatch recorded 2 transits through Hormuz on
-  2 August 2026, against a pre-crisis baseline of 73 a day
-  ([straits.live, compiling IMF PortWatch](https://straits.live/briefs/2026-08-08)).
+- **Hormuz is a moving target.** The strait has been effectively closed since 28 February
+  2026. IMF PortWatch, which counts ships broadcasting their position, recorded 4 transits
+  on 4 October 2026, against a pre-crisis baseline of 85 a day
+  ([straits.live, compiling IMF PortWatch](https://straits.live/briefs/2026-10-09)). The
+  crude that still gets through moves mostly by ship-to-ship transfer onto shuttle tankers
+  ([Kpler](https://www.kpler.com/blog/explainer-how-mideast-gulf-crude-exports-returned-to-pre-war-levels)).
+  Estimates of what crosses differ from one source to another and change from day to day,
+  so every figure on the map carries its date.
 - **Iron ore is an Australian trade.** Australia shipped 695.55 million tonnes in
   Q1–Q3 2025, 55.77% of seaborne supply
   ([AXSMarine](https://public.axsmarine.com/blog/iron-ore-flows-2025)). Pilbara to China
@@ -67,7 +72,7 @@ Every figure below comes from the dataset and links to its source.
 
 ## How the data is built and kept up to date
 
-**One rule: nothing without a source.** Each of the **360 facts** (from **170 sources**:
+**One rule: nothing without a source.** Each of the **383 facts** (from **188 sources**:
 EIA, IEA, IMF, Kpler, Drewry, national statistics, trade press…) carries a link and the
 *verbatim sentence* it was taken from. A figure that does not appear in its quote is
 rejected automatically. When a source could not be found, the map says "not sourced yet"

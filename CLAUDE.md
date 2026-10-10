@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-CommodityFlow — a static React + Leaflet map of seaborne commodity corridors (83 routes, 8 commodity families, 10 chokepoints, 360 sourced facts, 170 sources). There is no backend and no test framework: the dataset *is* the product, and correctness is enforced by the check scripts below. All user-facing text is in English; the maintainer converses in French.
+CommodityFlow — a static React + Leaflet map of seaborne commodity corridors (83 routes, 8 commodity families, 10 chokepoints, 383 sourced facts, 188 sources). There is no backend and no test framework: the dataset *is* the product, and correctness is enforced by the check scripts below. All user-facing text is in English; the maintainer converses in French.
 
 The repository is aimed at readers of the output (recruiters, traders): `README.md` explains why the map exists and what it shows; technical documentation lives in `docs/TECHNICAL.md`; `docs/screenshots/` holds the README images.
 

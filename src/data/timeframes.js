@@ -8,7 +8,7 @@
  * Update SITUATION_AS_OF whenever the `current` facts and statuses are reviewed.
  */
 export const WAR_START = '28 February 2026';
-export const SITUATION_AS_OF = '14 September 2026';
+export const SITUATION_AS_OF = '9 October 2026';
 
 export const TIMEFRAMES = {
   baseline: {

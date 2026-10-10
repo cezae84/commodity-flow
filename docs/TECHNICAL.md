@@ -2,7 +2,7 @@
 
 An interactive, terminal-style map of the world's major seaborne commodity corridors
 and markets. **83 routes**, **10 chokepoints** and **3 bypass pipelines**, backed by
-**360 sourced facts** from **170 sources** — every figure carries a link and the
+**383 sourced facts** from **188 sources** — every figure carries a link and the
 verbatim sentence it was taken from — plus two automated layers that never enter the
 dataset: **18 market prices** refreshed every 30 minutes and an **AI market brief** of
 the last 24 hours of news, rewritten every two hours.
@@ -67,7 +67,7 @@ can open by double-clicking, see [Standalone file](#standalone-file-no-server).
 - **Chokepoints** — Hormuz, Malacca, Suez, Bab el-Mandeb, Cape of Good Hope,
   Panama, the Turkish Straits, the Danish Straits, Lombok, Sunda. Click one for
   its sourced volumes and the list of routes using it.
-- **Operational status (September 2026)** — normal, reduced, rerouted, halted, or
+- **Operational status (October 2026)** — normal, reduced, rerouted, halted, or
   recently opened; every status other than normal cites its evidence. Line style
   (solid / dashed) and an icon carry the information: never colour alone.
 - **Generalisation when zoomed out** — past 20 visible corridors the lightest are
@@ -88,8 +88,8 @@ for the columns and the editing rules.
 
 | file | rows | content |
 |---|---|---|
-| `data/sources.csv` | 170 | publisher, title, URL, publication date, type of source |
-| `data/facts.csv` | 360 | statement, value, unit, period, scope, source, **verbatim quote**, check date |
+| `data/sources.csv` | 188 | publisher, title, URL, publication date, type of source |
+| `data/facts.csv` | 383 | statement, value, unit, period, scope, source, **verbatim quote**, check date |
 | `data/routes.csv` | 83 | commodity, ports, chokepoints, status + evidence, rank, lead fact, vessel class and freight facts, trading context (sellers, buyers, why it matters) |
 | `data/vessels.csv` | 15 | vessel class → segment, fleet-average speed and its fact |
 | `data/chokepoints.csv` | 10 | status + evidence, lead fact, analysis |
