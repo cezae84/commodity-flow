@@ -1,0 +1,275 @@
+{
+ "generated_at": "2026-10-17T18:29:59+00:00",
+ "window_hours": 24,
+ "model": "claude-haiku-4-5-20251001",
+ "feeds": [
+  {
+   "id": "gcaptain",
+   "name": "gCaptain",
+   "ok": true,
+   "items": 12
+  },
+  {
+   "id": "splash247",
+   "name": "Splash247",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "hellenicshipping",
+   "name": "Hellenic Shipping News",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "eia",
+   "name": "U.S. Energy Information Administration — Today in Energy",
+   "ok": true,
+   "items": 17
+  },
+  {
+   "id": "rigzone",
+   "name": "Rigzone",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "oilprice",
+   "name": "OilPrice.com",
+   "ok": true,
+   "items": 15
+  },
+  {
+   "id": "lngprime",
+   "name": "LNG Prime",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "mining",
+   "name": "MINING.COM",
+   "ok": true,
+   "items": 36
+  },
+  {
+   "id": "worldgrain",
+   "name": "World Grain",
+   "ok": true,
+   "items": 30
+  },
+  {
+   "id": "gn-hormuz",
+   "name": "Google News — Hormuz and Gulf shipping",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-oil",
+   "name": "Google News — oil market",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-sanctions",
+   "name": "Google News — energy sanctions",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-redsea",
+   "name": "Google News — Red Sea and Suez",
+   "ok": true,
+   "items": 19
+  },
+  {
+   "id": "gn-lng",
+   "name": "Google News — gas and LNG",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-metals",
+   "name": "Google News — metals and iron ore",
+   "ok": true,
+   "items": 43
+  },
+  {
+   "id": "gn-grain",
+   "name": "Google News — grain and fertilizer",
+   "ok": true,
+   "items": 40
+  },
+  {
+   "id": "gn-freight",
+   "name": "Google News — freight markets",
+   "ok": true,
+   "items": 18
+  }
+ ],
+ "counts": {
+  "collected": 690,
+  "candidates": 90
+ },
+ "status": "stale",
+ "stale_reason": "Anthropic API HTTP 401: {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011Cg8HVGoXdMKhJm6hdtrpe\"}",
+ "brief_generated_at": "2026-10-15T21:21:49+00:00",
+ "overview": {
+  "text": "Middle East conflicts disrupt oil shipping and refining, lifting crude prices and tanker costs while sanctions debate reshapes markets.",
+  "sources": [
+   {
+    "title": "Ukraine Strikes Major Russian Oil Refinery",
+    "publisher": "OilPrice.com",
+    "url": "https://oilprice.com/Latest-Energy-News/World-News/Ukraine-Strikes-Major-Russian-Oil-Refinery.html",
+    "published_at": "2026-10-15T19:30+00:00"
+   },
+   {
+    "title": "U.S. Claims Control of Hormuz as Ship Attacks Hit New High",
+    "publisher": "gCaptain",
+    "url": "https://gcaptain.com/by-the-numbers-u-s-claims-control-of-hormuz-as-ship-attacks-hit-new-high/",
+    "published_at": "2026-10-15T18:33+00:00"
+   },
+   {
+    "title": "Oil Shipping Costs Spike, Lifting Prices from Pump to Grocery",
+    "publisher": "gCaptain",
+    "url": "https://gcaptain.com/oil-shipping-costs-spike-lifting-prices-from-pump-to-grocery/",
+    "published_at": "2026-10-15T17:27+00:00"
+   },
+   {
+    "title": "UK Tightens Russian Oil Sanctions as U.S. Weighs Relief",
+    "publisher": "gCaptain",
+    "url": "https://gcaptain.com/uk-tightens-russian-oil-sanctions-as-u-s-weighs-relief/",
+    "published_at": "2026-10-15T16:13+00:00"
+   }
+  ]
+ },
+ "items": [
+  {
+   "headline": "Ukraine strikes major Russian refinery",
+   "summary": "Ukrainian drones hit Ryazan refinery, resuming attacks on Russian energy infrastructure after a brief pause.",
+   "category": "oil",
+   "sources": [
+    {
+     "title": "Ukraine Strikes Major Russian Oil Refinery",
+     "publisher": "OilPrice.com",
+     "url": "https://oilprice.com/Latest-Energy-News/World-News/Ukraine-Strikes-Major-Russian-Oil-Refinery.html",
+     "published_at": "2026-10-15T19:30+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "IEA accelerates emergency oil release to 400 million barrels",
+   "summary": "International Energy Agency releases over 20 million barrels of diesel immediately, exceeding March pledge as markets tighten.",
+   "category": "oil",
+   "sources": [
+    {
+     "title": "IEA Speeds Emergency Oil Release",
+     "publisher": "OilPrice.com",
+     "url": "https://oilprice.com/Latest-Energy-News/World-News/IEA-Speeds-Emergency-Oil-Release.html",
+     "published_at": "2026-10-15T19:00+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "UK tightens Russia oil sanctions; US weighs shadow fleet relief",
+   "summary": "Britain expands oil industry sanctions on Russia while Trump administration considers easing shadow fleet restrictions to lower freight rates.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "UK Tightens Russian Oil Sanctions as U.S. Weighs Relief",
+     "publisher": "gCaptain",
+     "url": "https://gcaptain.com/uk-tightens-russian-oil-sanctions-as-u-s-weighs-relief/",
+     "published_at": "2026-10-15T16:13+00:00"
+    },
+    {
+     "title": "US Weighs Easing Sanctions On Shadow Fleet Tankers To Reduce Global Freight Rates",
+     "publisher": "Arise News",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPOW44LTdXLTE0cVlQSW9iS0hpc2RZcmdraXJ0OVJUeHF3Q25nYTI1UVgwb1RHRG1MOVpwdjNtODlVWlB3emZ2Y1cyY01iYnA5REs1Z1dVb0FMUGM0a3AzVzRjYWI4eFBnY1c5UUplOXNXb3FRYW9MbWotNGQzaXdVODR4RENBU1k4UWdsWjJWVjkxZ3hVbW51dW9HM1lrSlV6VDBVWDNn?oc=5",
+     "published_at": "2026-10-15T10:39+00:00"
+    },
+    {
+     "title": "Trump Administration Considers Easing Shadow Fleet Sanctions to Cut Freight Rates",
+     "publisher": "Yahoo",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOLVg4RloyT216M0gybngwemhTTVFMWHZ5dHF3Y1hmcWtVNXl0NVQtMHlLTGZkQTlkZTVBSGJjcnhWaGhnQ3JVdjNiSzFEdFhfQm1zMmdrQUJGMGtpX2dRcm1Ka3h2QXNoZmV0VlI0SkZWTkZ1VEVfYkhrV1p4RVpldkFVOGVWcUwxTnZjbE4zTlZGbXBoSnlQRA?oc=5",
+     "published_at": "2026-10-15T10:00+00:00"
+    },
+    {
+     "title": "Brent slips as US weighs easing sanctions on shadow fleet",
+     "publisher": "RTE.ie",
+     "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9oTk5UaV9fcTBqSzYteVdnTjM0c19ET055VDNpRzlyaHg4NlBROVNnbTZSMzgweGpyTE5Od1pPemZ3MDF5RUY3am9ubkJaU2lYZGNhSXRCTE15RjhWS1dPY2tXS0RzbWp4WHhfQmRiODg1UGI1bUFv?oc=5",
+     "published_at": "2026-10-15T08:58+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Aramco CEO warns global crude squeeze is serious",
+   "summary": "Saudi Aramco chief signals tight oil supply conditions amid Houthi attacks on regional energy infrastructure.",
+   "category": "oil",
+   "sources": [
+    {
+     "title": "Aramco CEO Warns Oil Squeeze is Serious",
+     "publisher": "Rigzone",
+     "url": "https://www.rigzone.com/news/aramco_ceo_warns_oil_squeeze_is_serious-15-oct-2026-184859-article/?rss=true",
+     "published_at": "2026-10-15T14:02+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "ADNOC keeps loading LNG despite Hormuz disruption",
+   "summary": "Abu Dhabi National Oil Company continues LNG tanker operations and crosses Strait of Hormuz amid regional instability.",
+   "category": "gas-lng",
+   "sources": [
+    {
+     "title": "Adnoc Keeps Loading LNG on Tankers Despite Hormuz Disruption",
+     "publisher": "EnergyNow.com",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQeDN1dG5rTzdCM2JxazN6eEtHc1pRR1VJVmF4MXF2TXVfcGNmSzVsTVRQQXhXeWE4bC1HTTJhb3Awc0kzWnQ3blVwLW5Ub0VDSFpLMDkwSVp5bF9SRlliOFlUenpyMHRaNWFQT2x5eVlQZmE2aTBLOS00a2pVVk9WOGY5Z1NiUkwwOWZsQUpHc2NMN0hfeFE?oc=5",
+     "published_at": "2026-10-15T20:18+00:00"
+    },
+    {
+     "title": "ADNOC LNG Tanker Crosses Strait of Hormuz for First Time Since Iran War, Ship-Tracking Data Shows",
+     "publisher": "EnergyNow.com",
+     "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQdnd0LXF2RjVDNGZXQVU2WjBla1Zpc2dqNU5YMkJfdUY1bUNUT1BXbjVsWmtrRnYxLTM0bGc5N2lWVDNYRzFyVXlBQ01BTnR4b015WFc3NXo4LTJkLWRIc0hOM1hoX0ZjS0RGTjRGaVdvUTQ4ZjZQWVlqVlpaeDBYYUV4aXlrY0t5dExDcy0wVEt6V1p1Tl9CQXZ4Ykk2dHNoNGpzYVdtcUI1TGlianBKU2d1NFFSTy1aUmFwZUtBeURrQnI4S2c?oc=5",
+     "published_at": "2026-10-15T13:30+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "LNG terminal expansions in Louisiana, Texas boosted by wars",
+   "summary": "Middle East conflicts accelerate US Gulf Coast LNG project development as global demand rises.",
+   "category": "gas-lng",
+   "sources": [
+    {
+     "title": "LNG terminal expansion projects in Louisiana, Texas boosted by wars",
+     "publisher": "Louisiana Illuminator",
+     "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE4xUzRVMENDQ2psZDRPVldTRkNVa1BtNktGR3JINHBfYndWLWc5NE5iX3hjVDdMOHZOT1gtVm5oTVF5QXViakRLOXNVSnFXdGdZZmlkTFFNYnN5R0MzU2txMDZKQ1RQUQ?oc=5",
+     "published_at": "2026-10-15T20:54+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Australia struggles to meet Asia's rising LNG needs: Chevron",
+   "summary": "Australian suppliers face supply constraints as Asian LNG demand increases amid geopolitical disruptions.",
+   "category": "gas-lng",
+   "sources": [
+    {
+     "title": "Australia Is Struggling to Meet Asia’s Rising LNG Needs, Chevron Says",
+     "publisher": "EnergyNow",
+     "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOc3Y0RUVicGViOHlEUjlwb1c2UzFHMURqRXdrc1JGNExuYnY1Q3c0b3hvblBXaHNZcW05ei1YMG42M1hwbUpQdmpZNk5kSGU5WS1rLUsxUkNnSEE1M1lzQnBFblBEb243Rzdpb0hlSGtnZVBXOEpTLUhZaEFyS295dFUwdVZueHJLNVdKeHIzTkttM2d5RlUtRXJWeXVCQQ?oc=5",
+     "published_at": "2026-10-15T17:50+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Egypt tightens wheat imports as Black Sea supplies shrink",
+   "summary": "Cairo strengthens import requirements amid reduced supplies from Ukraine region affecting global grain flows.",
+   "category": "agri",
+   "sources": [
+    {
+     "title": "Egypt tightens wheat import requirements as Black Sea supplies shrink",
+     "publisher": "Arab News",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQbzBjYy1UaHg5WnJuQWRvamZDVGdYUkRRSEkzV25ZMlpMeVRjMWNnQnpHMkRnN1VoaWw5NzZKWnFfcy15LUVtTmRNUnFvSnoxRWl6enIxVHR2ZHZNRjlYWnlRUDB5RU56Rk1ITVRxcDJxa08xaHlYYzVvemYtbGZQT1U4Y25FU1c3eXVGdmVsMk5iSjZHeS1TOUVkNmlzSGtJdjc0T2ZmNFBhRE9paFo2N3RIN3c?oc=5",
+     "published_at": "2026-10-15T15:42+00:00"
+    }
+   ]
+  }
+ ]
+}
