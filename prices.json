@@ -1,0 +1,2245 @@
+{
+ "generated_at": "2026-10-31T01:58:14+00:00",
+ "reference_year": 2025,
+ "instruments": {
+  "brent": {
+   "instrument_id": "brent",
+   "commodity": "crude",
+   "name": "Brent crude",
+   "unit": "USD/bbl",
+   "cadence": "intraday",
+   "symbol": "BZ=F",
+   "source": "yahoo",
+   "source_label": "Yahoo Finance",
+   "notice": "Delayed, indicative front-month futures price",
+   "note": "Front-month futures (NYMEX Brent financial)",
+   "quote_url": "https://finance.yahoo.com/quote/BZ%3DF",
+   "value": 112.33,
+   "as_of": "2026-10-30T20:59:57+00:00",
+   "previous": 114.88,
+   "previous_as_of": "2026-10-29",
+   "change": -2.55,
+   "change_pct": -2.22,
+   "change_basis": "previous close",
+   "avg_reference": 68.1015,
+   "reference_points": 252,
+   "spark": [
+    [
+     "2026-09-21",
+     100.34
+    ],
+    [
+     "2026-09-22",
+     99.25
+    ],
+    [
+     "2026-09-23",
+     103.08
+    ],
+    [
+     "2026-09-24",
+     106.6
+    ],
+    [
+     "2026-09-25",
+     104.32
+    ],
+    [
+     "2026-09-28",
+     105.28
+    ],
+    [
+     "2026-09-29",
+     102.59
+    ],
+    [
+     "2026-09-30",
+     103.53
+    ],
+    [
+     "2026-10-01",
+     102.31
+    ],
+    [
+     "2026-10-02",
+     102.25
+    ],
+    [
+     "2026-10-05",
+     100.32
+    ],
+    [
+     "2026-10-06",
+     100.58
+    ],
+    [
+     "2026-10-07",
+     100.2
+    ],
+    [
+     "2026-10-08",
+     104.28
+    ],
+    [
+     "2026-10-09",
+     104.72
+    ],
+    [
+     "2026-10-12",
+     106.65
+    ],
+    [
+     "2026-10-13",
+     105.69
+    ],
+    [
+     "2026-10-14",
+     106.06
+    ],
+    [
+     "2026-10-15",
+     105.92
+    ],
+    [
+     "2026-10-16",
+     109.86
+    ],
+    [
+     "2026-10-19",
+     109.55
+    ],
+    [
+     "2026-10-20",
+     108.79
+    ],
+    [
+     "2026-10-21",
+     108.82
+    ],
+    [
+     "2026-10-22",
+     113.17
+    ],
+    [
+     "2026-10-23",
+     116.72
+    ],
+    [
+     "2026-10-26",
+     115.81
+    ],
+    [
+     "2026-10-27",
+     113.88
+    ],
+    [
+     "2026-10-28",
+     115.32
+    ],
+    [
+     "2026-10-29",
+     114.88
+    ],
+    [
+     "2026-10-30",
+     112.33
+    ]
+   ],
+   "contract": "Brent Crude Oil Last Day Financ",
+   "exchange": "NY Mercantile",
+   "currency": "USD",
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "wti": {
+   "instrument_id": "wti",
+   "commodity": "crude",
+   "name": "WTI crude",
+   "unit": "USD/bbl",
+   "cadence": "intraday",
+   "symbol": "CL=F",
+   "source": "yahoo",
+   "source_label": "Yahoo Finance",
+   "notice": "Delayed, indicative front-month futures price",
+   "note": "Front-month futures",
+   "quote_url": "https://finance.yahoo.com/quote/CL%3DF",
+   "value": 102.95,
+   "as_of": "2026-10-30T20:59:59+00:00",
+   "previous": 102.0,
+   "previous_as_of": "2026-10-29",
+   "change": 0.95,
+   "change_pct": 0.93,
+   "change_basis": "previous close",
+   "avg_reference": 64.7395,
+   "reference_points": 252,
+   "spark": [
+    [
+     "2026-09-21",
+     95.78
+    ],
+    [
+     "2026-09-22",
+     94.59
+    ],
+    [
+     "2026-09-23",
+     92.16
+    ],
+    [
+     "2026-09-24",
+     94.61
+    ],
+    [
+     "2026-09-25",
+     92.41
+    ],
+    [
+     "2026-09-28",
+     92.6
+    ],
+    [
+     "2026-09-29",
+     89.38
+    ],
+    [
+     "2026-09-30",
+     90.42
+    ],
+    [
+     "2026-10-01",
+     92.87
+    ],
+    [
+     "2026-10-02",
+     91.11
+    ],
+    [
+     "2026-10-05",
+     89.43
+    ],
+    [
+     "2026-10-06",
+     89.44
+    ],
+    [
+     "2026-10-07",
+     88.28
+    ],
+    [
+     "2026-10-08",
+     91.49
+    ],
+    [
+     "2026-10-09",
+     91.85
+    ],
+    [
+     "2026-10-12",
+     93.74
+    ],
+    [
+     "2026-10-13",
+     94.14
+    ],
+    [
+     "2026-10-14",
+     95.09
+    ],
+    [
+     "2026-10-15",
+     97.97
+    ],
+    [
+     "2026-10-16",
+     101.41
+    ],
+    [
+     "2026-10-19",
+     103.66
+    ],
+    [
+     "2026-10-20",
+     101.79
+    ],
+    [
+     "2026-10-21",
+     97.15
+    ],
+    [
+     "2026-10-22",
+     99.47
+    ],
+    [
+     "2026-10-23",
+     103.27
+    ],
+    [
+     "2026-10-26",
+     101.76
+    ],
+    [
+     "2026-10-27",
+     99.9
+    ],
+    [
+     "2026-10-28",
+     102.78
+    ],
+    [
+     "2026-10-29",
+     102.0
+    ],
+    [
+     "2026-10-30",
+     102.95
+    ]
+   ],
+   "contract": "Crude Oil Dec 26",
+   "exchange": "NY Mercantile",
+   "currency": "USD",
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "ulsd": {
+   "instrument_id": "ulsd",
+   "commodity": "products",
+   "name": "ULSD (heating oil)",
+   "unit": "USD/gal",
+   "cadence": "intraday",
+   "symbol": "HO=F",
+   "source": "yahoo",
+   "source_label": "Yahoo Finance",
+   "notice": "Delayed, indicative front-month futures price",
+   "note": "Front-month futures; US diesel benchmark",
+   "quote_url": "https://finance.yahoo.com/quote/HO%3DF",
+   "value": 4.655,
+   "as_of": "2026-10-30T20:59:59+00:00",
+   "previous": 4.736,
+   "previous_as_of": "2026-10-29",
+   "change": -0.081,
+   "change_pct": -1.71,
+   "change_basis": "previous close",
+   "avg_reference": 2.301,
+   "reference_points": 252,
+   "spark": [
+    [
+     "2026-09-21",
+     4.8895
+    ],
+    [
+     "2026-09-22",
+     4.9421
+    ],
+    [
+     "2026-09-23",
+     4.7764
+    ],
+    [
+     "2026-09-24",
+     4.7303
+    ],
+    [
+     "2026-09-25",
+     4.6847
+    ],
+    [
+     "2026-09-28",
+     4.7553
+    ],
+    [
+     "2026-09-29",
+     4.8979
+    ],
+    [
+     "2026-09-30",
+     4.9569
+    ],
+    [
+     "2026-10-01",
+     4.642
+    ],
+    [
+     "2026-10-02",
+     4.5011
+    ],
+    [
+     "2026-10-05",
+     4.5452
+    ],
+    [
+     "2026-10-06",
+     4.5694
+    ],
+    [
+     "2026-10-07",
+     4.6227
+    ],
+    [
+     "2026-10-08",
+     4.8829
+    ],
+    [
+     "2026-10-09",
+     4.7384
+    ],
+    [
+     "2026-10-12",
+     4.7232
+    ],
+    [
+     "2026-10-13",
+     4.9344
+    ],
+    [
+     "2026-10-14",
+     4.9274
+    ],
+    [
+     "2026-10-15",
+     4.8456
+    ],
+    [
+     "2026-10-16",
+     4.8991
+    ],
+    [
+     "2026-10-19",
+     4.9201
+    ],
+    [
+     "2026-10-20",
+     4.925
+    ],
+    [
+     "2026-10-21",
+     4.7633
+    ],
+    [
+     "2026-10-22",
+     4.9321
+    ],
+    [
+     "2026-10-23",
+     4.9842
+    ],
+    [
+     "2026-10-26",
+     4.912
+    ],
+    [
+     "2026-10-27",
+     4.7752
+    ],
+    [
+     "2026-10-28",
+     4.8152
+    ],
+    [
+     "2026-10-29",
+     4.736
+    ],
+    [
+     "2026-10-30",
+     4.655
+    ]
+   ],
+   "contract": "Heating Oil Dec 26",
+   "exchange": "NY Mercantile",
+   "currency": "USD",
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "rbob": {
+   "instrument_id": "rbob",
+   "commodity": "products",
+   "name": "RBOB gasoline",
+   "unit": "USD/gal",
+   "cadence": "intraday",
+   "symbol": "RB=F",
+   "source": "yahoo",
+   "source_label": "Yahoo Finance",
+   "notice": "Delayed, indicative front-month futures price",
+   "note": "Front-month futures",
+   "quote_url": "https://finance.yahoo.com/quote/RB%3DF",
+   "value": 3.1144,
+   "as_of": "2026-10-30T20:59:53+00:00",
+   "previous": 3.185,
+   "previous_as_of": "2026-10-29",
+   "change": -0.0706,
+   "change_pct": -2.22,
+   "change_basis": "previous close",
+   "avg_reference": 2.038,
+   "reference_points": 252,
+   "spark": [
+    [
+     "2026-09-21",
+     3.4699
+    ],
+    [
+     "2026-09-22",
+     3.4875
+    ],
+    [
+     "2026-09-23",
+     3.587
+    ],
+    [
+     "2026-09-24",
+     3.5646
+    ],
+    [
+     "2026-09-25",
+     3.3934
+    ],
+    [
+     "2026-09-28",
+     3.3377
+    ],
+    [
+     "2026-09-29",
+     3.2782
+    ],
+    [
+     "2026-09-30",
+     3.4378
+    ],
+    [
+     "2026-10-01",
+     3.4026
+    ],
+    [
+     "2026-10-02",
+     3.3124
+    ],
+    [
+     "2026-10-05",
+     3.2462
+    ],
+    [
+     "2026-10-06",
+     3.2732
+    ],
+    [
+     "2026-10-07",
+     3.2342
+    ],
+    [
+     "2026-10-08",
+     3.316
+    ],
+    [
+     "2026-10-09",
+     3.2952
+    ],
+    [
+     "2026-10-12",
+     3.2917
+    ],
+    [
+     "2026-10-13",
+     3.2501
+    ],
+    [
+     "2026-10-14",
+     3.2595
+    ],
+    [
+     "2026-10-15",
+     3.1802
+    ],
+    [
+     "2026-10-16",
+     3.2354
+    ],
+    [
+     "2026-10-19",
+     3.1914
+    ],
+    [
+     "2026-10-20",
+     3.1172
+    ],
+    [
+     "2026-10-21",
+     3.1205
+    ],
+    [
+     "2026-10-22",
+     3.1765
+    ],
+    [
+     "2026-10-23",
+     3.2116
+    ],
+    [
+     "2026-10-26",
+     3.2185
+    ],
+    [
+     "2026-10-27",
+     3.1376
+    ],
+    [
+     "2026-10-28",
+     3.1734
+    ],
+    [
+     "2026-10-29",
+     3.185
+    ],
+    [
+     "2026-10-30",
+     3.1144
+    ]
+   ],
+   "contract": "RBOB Gasoline Dec 26",
+   "exchange": "NY Mercantile",
+   "currency": "USD",
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "henry-hub": {
+   "instrument_id": "henry-hub",
+   "commodity": "lng",
+   "name": "Henry Hub natural gas",
+   "unit": "USD/MMBtu",
+   "cadence": "intraday",
+   "symbol": "NG=F",
+   "source": "yahoo",
+   "source_label": "Yahoo Finance",
+   "notice": "Delayed, indicative front-month futures price",
+   "note": "Front-month futures; US LNG feedgas benchmark",
+   "quote_url": "https://finance.yahoo.com/quote/NG%3DF",
+   "value": 2.883,
+   "as_of": "2026-10-30T20:59:59+00:00",
+   "previous": 2.952,
+   "previous_as_of": "2026-10-29",
+   "change": -0.069,
+   "change_pct": -2.34,
+   "change_basis": "previous close",
+   "avg_reference": 3.6198,
+   "reference_points": 252,
+   "spark": [
+    [
+     "2026-09-21",
+     2.836
+    ],
+    [
+     "2026-09-22",
+     2.965
+    ],
+    [
+     "2026-09-23",
+     3.023
+    ],
+    [
+     "2026-09-24",
+     3.297
+    ],
+    [
+     "2026-09-25",
+     3.196
+    ],
+    [
+     "2026-09-28",
+     3.0
+    ],
+    [
+     "2026-09-29",
+     3.011
+    ],
+    [
+     "2026-09-30",
+     3.026
+    ],
+    [
+     "2026-10-01",
+     2.967
+    ],
+    [
+     "2026-10-02",
+     3.035
+    ],
+    [
+     "2026-10-05",
+     3.066
+    ],
+    [
+     "2026-10-06",
+     3.114
+    ],
+    [
+     "2026-10-07",
+     3.203
+    ],
+    [
+     "2026-10-08",
+     3.168
+    ],
+    [
+     "2026-10-09",
+     3.22
+    ],
+    [
+     "2026-10-12",
+     3.167
+    ],
+    [
+     "2026-10-13",
+     3.283
+    ],
+    [
+     "2026-10-14",
+     3.198
+    ],
+    [
+     "2026-10-15",
+     3.236
+    ],
+    [
+     "2026-10-16",
+     3.116
+    ],
+    [
+     "2026-10-19",
+     3.058
+    ],
+    [
+     "2026-10-20",
+     2.963
+    ],
+    [
+     "2026-10-21",
+     2.79
+    ],
+    [
+     "2026-10-22",
+     2.796
+    ],
+    [
+     "2026-10-23",
+     2.64
+    ],
+    [
+     "2026-10-26",
+     2.602
+    ],
+    [
+     "2026-10-27",
+     2.697
+    ],
+    [
+     "2026-10-28",
+     2.817
+    ],
+    [
+     "2026-10-29",
+     2.952
+    ],
+    [
+     "2026-10-30",
+     2.883
+    ]
+   ],
+   "contract": "Natural Gas Dec 26",
+   "exchange": "NY Mercantile",
+   "currency": "USD",
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "ttf": {
+   "instrument_id": "ttf",
+   "commodity": "lng",
+   "name": "Dutch TTF natural gas",
+   "unit": "EUR/MWh",
+   "cadence": "intraday",
+   "symbol": "TTF=F",
+   "source": "yahoo",
+   "source_label": "Yahoo Finance",
+   "notice": "Delayed, indicative front-month futures price",
+   "note": "Front-month futures; European gas benchmark",
+   "quote_url": "https://finance.yahoo.com/quote/TTF%3DF",
+   "value": 103.19,
+   "as_of": "2026-10-30T16:50:45+00:00",
+   "previous": 98.588,
+   "previous_as_of": "2026-10-29",
+   "change": 4.602,
+   "change_pct": 4.67,
+   "change_basis": "previous close",
+   "avg_reference": 36.2327,
+   "reference_points": 252,
+   "spark": [
+    [
+     "2026-09-21",
+     73.253
+    ],
+    [
+     "2026-09-22",
+     73.34
+    ],
+    [
+     "2026-09-23",
+     72.01
+    ],
+    [
+     "2026-09-24",
+     75.106
+    ],
+    [
+     "2026-09-25",
+     72.071
+    ],
+    [
+     "2026-09-28",
+     73.437
+    ],
+    [
+     "2026-09-29",
+     69.805
+    ],
+    [
+     "2026-09-30",
+     72.357
+    ],
+    [
+     "2026-10-01",
+     73.938
+    ],
+    [
+     "2026-10-02",
+     74.76
+    ],
+    [
+     "2026-10-05",
+     73.513
+    ],
+    [
+     "2026-10-06",
+     75.691
+    ],
+    [
+     "2026-10-07",
+     78.08
+    ],
+    [
+     "2026-10-08",
+     78.849
+    ],
+    [
+     "2026-10-09",
+     81.434
+    ],
+    [
+     "2026-10-12",
+     84.351
+    ],
+    [
+     "2026-10-13",
+     87.223
+    ],
+    [
+     "2026-10-14",
+     87.138
+    ],
+    [
+     "2026-10-15",
+     86.432
+    ],
+    [
+     "2026-10-16",
+     87.547
+    ],
+    [
+     "2026-10-19",
+     88.04
+    ],
+    [
+     "2026-10-20",
+     85.062
+    ],
+    [
+     "2026-10-21",
+     87.426
+    ],
+    [
+     "2026-10-22",
+     90.043
+    ],
+    [
+     "2026-10-23",
+     93.853
+    ],
+    [
+     "2026-10-26",
+     96.681
+    ],
+    [
+     "2026-10-27",
+     96.061
+    ],
+    [
+     "2026-10-28",
+     100.72
+    ],
+    [
+     "2026-10-29",
+     98.588
+    ],
+    [
+     "2026-10-30",
+     103.19
+    ]
+   ],
+   "contract": "Dutch TTF Natural Gas Calendar ",
+   "exchange": "NY Mercantile",
+   "currency": "EUR",
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "japan-lng": {
+   "instrument_id": "japan-lng",
+   "commodity": "lng",
+   "name": "Japan LNG import price",
+   "unit": "USD/MMBtu",
+   "cadence": "monthly",
+   "symbol": "PNGASJPUSDM",
+   "source": "fred",
+   "source_label": "IMF Primary Commodity Prices via FRED",
+   "notice": "Monthly average price",
+   "note": "IMF Primary Commodity Prices via FRED",
+   "quote_url": "https://fred.stlouisfed.org/series/PNGASJPUSDM",
+   "value": 26.637,
+   "as_of": "2026-09-01",
+   "period": "2026-09",
+   "previous": 22.038,
+   "previous_as_of": "2026-08-01",
+   "change": 4.599,
+   "change_pct": 20.87,
+   "change_basis": "previous month",
+   "avg_reference": 12.0877,
+   "reference_points": 12,
+   "spark": [
+    [
+     "2025-10-01",
+     10.842
+    ],
+    [
+     "2025-11-01",
+     11.067
+    ],
+    [
+     "2025-12-01",
+     9.91
+    ],
+    [
+     "2026-01-01",
+     10.435
+    ],
+    [
+     "2026-02-01",
+     10.752
+    ],
+    [
+     "2026-03-01",
+     20.812
+    ],
+    [
+     "2026-04-01",
+     16.569
+    ],
+    [
+     "2026-05-01",
+     18.101
+    ],
+    [
+     "2026-06-01",
+     17.189
+    ],
+    [
+     "2026-07-01",
+     19.562
+    ],
+    [
+     "2026-08-01",
+     22.038
+    ],
+    [
+     "2026-09-01",
+     26.637
+    ]
+   ],
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "soybeans": {
+   "instrument_id": "soybeans",
+   "commodity": "grain",
+   "name": "Soybeans",
+   "unit": "US cents/bu",
+   "cadence": "intraday",
+   "symbol": "ZS=F",
+   "source": "yahoo",
+   "source_label": "Yahoo Finance",
+   "notice": "Delayed, indicative front-month futures price",
+   "note": "Front-month futures",
+   "quote_url": "https://finance.yahoo.com/quote/ZS%3DF",
+   "value": 1234.0,
+   "as_of": "2026-10-30T18:19:59+00:00",
+   "previous": 1219.75,
+   "previous_as_of": "2026-10-29",
+   "change": 14.25,
+   "change_pct": 1.17,
+   "change_basis": "previous close",
+   "avg_reference": 1038.738,
+   "reference_points": 251,
+   "spark": [
+    [
+     "2026-09-21",
+     1328.0
+    ],
+    [
+     "2026-09-22",
+     1325.5
+    ],
+    [
+     "2026-09-23",
+     1318.0
+    ],
+    [
+     "2026-09-24",
+     1317.5
+    ],
+    [
+     "2026-09-25",
+     1319.0
+    ],
+    [
+     "2026-09-28",
+     1288.25
+    ],
+    [
+     "2026-09-29",
+     1297.75
+    ],
+    [
+     "2026-09-30",
+     1293.0
+    ],
+    [
+     "2026-10-01",
+     1284.0
+    ],
+    [
+     "2026-10-02",
+     1278.25
+    ],
+    [
+     "2026-10-05",
+     1280.75
+    ],
+    [
+     "2026-10-06",
+     1303.0
+    ],
+    [
+     "2026-10-07",
+     1297.5
+    ],
+    [
+     "2026-10-08",
+     1287.5
+    ],
+    [
+     "2026-10-09",
+     1292.0
+    ],
+    [
+     "2026-10-12",
+     1287.75
+    ],
+    [
+     "2026-10-13",
+     1283.75
+    ],
+    [
+     "2026-10-14",
+     1277.25
+    ],
+    [
+     "2026-10-15",
+     1263.0
+    ],
+    [
+     "2026-10-16",
+     1261.25
+    ],
+    [
+     "2026-10-19",
+     1253.5
+    ],
+    [
+     "2026-10-20",
+     1248.25
+    ],
+    [
+     "2026-10-21",
+     1245.25
+    ],
+    [
+     "2026-10-22",
+     1253.0
+    ],
+    [
+     "2026-10-23",
+     1256.5
+    ],
+    [
+     "2026-10-26",
+     1241.25
+    ],
+    [
+     "2026-10-27",
+     1229.25
+    ],
+    [
+     "2026-10-28",
+     1224.5
+    ],
+    [
+     "2026-10-29",
+     1219.75
+    ],
+    [
+     "2026-10-30",
+     1234.0
+    ]
+   ],
+   "contract": "Soybean Futures,Nov-2026",
+   "exchange": "CBOT",
+   "currency": "USX",
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "corn": {
+   "instrument_id": "corn",
+   "commodity": "grain",
+   "name": "Corn",
+   "unit": "US cents/bu",
+   "cadence": "intraday",
+   "symbol": "ZC=F",
+   "source": "yahoo",
+   "source_label": "Yahoo Finance",
+   "notice": "Delayed, indicative front-month futures price",
+   "note": "Front-month futures",
+   "quote_url": "https://finance.yahoo.com/quote/ZC%3DF",
+   "value": 447.5,
+   "as_of": "2026-10-30T18:19:58+00:00",
+   "previous": 451.25,
+   "previous_as_of": "2026-10-29",
+   "change": -3.75,
+   "change_pct": -0.83,
+   "change_basis": "previous close",
+   "avg_reference": 438.3187,
+   "reference_points": 251,
+   "spark": [
+    [
+     "2026-09-21",
+     543.0
+    ],
+    [
+     "2026-09-22",
+     536.75
+    ],
+    [
+     "2026-09-23",
+     529.0
+    ],
+    [
+     "2026-09-24",
+     527.5
+    ],
+    [
+     "2026-09-25",
+     528.25
+    ],
+    [
+     "2026-09-28",
+     523.0
+    ],
+    [
+     "2026-09-29",
+     522.0
+    ],
+    [
+     "2026-09-30",
+     500.75
+    ],
+    [
+     "2026-10-01",
+     502.25
+    ],
+    [
+     "2026-10-02",
+     497.75
+    ],
+    [
+     "2026-10-05",
+     497.25
+    ],
+    [
+     "2026-10-06",
+     508.0
+    ],
+    [
+     "2026-10-07",
+     502.0
+    ],
+    [
+     "2026-10-08",
+     500.25
+    ],
+    [
+     "2026-10-09",
+     479.75
+    ],
+    [
+     "2026-10-12",
+     483.0
+    ],
+    [
+     "2026-10-13",
+     482.75
+    ],
+    [
+     "2026-10-14",
+     480.75
+    ],
+    [
+     "2026-10-15",
+     478.0
+    ],
+    [
+     "2026-10-16",
+     474.25
+    ],
+    [
+     "2026-10-19",
+     467.0
+    ],
+    [
+     "2026-10-20",
+     462.0
+    ],
+    [
+     "2026-10-21",
+     463.25
+    ],
+    [
+     "2026-10-22",
+     460.5
+    ],
+    [
+     "2026-10-23",
+     456.0
+    ],
+    [
+     "2026-10-26",
+     455.0
+    ],
+    [
+     "2026-10-27",
+     448.75
+    ],
+    [
+     "2026-10-28",
+     451.75
+    ],
+    [
+     "2026-10-29",
+     451.25
+    ],
+    [
+     "2026-10-30",
+     447.5
+    ]
+   ],
+   "contract": "Corn Futures,Dec-2026",
+   "exchange": "CBOT",
+   "currency": "USX",
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "wheat": {
+   "instrument_id": "wheat",
+   "commodity": "grain",
+   "name": "SRW wheat",
+   "unit": "US cents/bu",
+   "cadence": "intraday",
+   "symbol": "ZW=F",
+   "source": "yahoo",
+   "source_label": "Yahoo Finance",
+   "notice": "Delayed, indicative front-month futures price",
+   "note": "Front-month futures (Chicago soft red winter)",
+   "quote_url": "https://finance.yahoo.com/quote/ZW%3DF",
+   "value": 603.25,
+   "as_of": "2026-10-30T18:19:58+00:00",
+   "previous": 603.75,
+   "previous_as_of": "2026-10-29",
+   "change": -0.5,
+   "change_pct": -0.08,
+   "change_basis": "previous close",
+   "avg_reference": 532.6424,
+   "reference_points": 251,
+   "spark": [
+    [
+     "2026-09-21",
+     726.75
+    ],
+    [
+     "2026-09-22",
+     717.25
+    ],
+    [
+     "2026-09-23",
+     708.5
+    ],
+    [
+     "2026-09-24",
+     707.0
+    ],
+    [
+     "2026-09-25",
+     703.25
+    ],
+    [
+     "2026-09-28",
+     688.75
+    ],
+    [
+     "2026-09-29",
+     692.75
+    ],
+    [
+     "2026-09-30",
+     675.75
+    ],
+    [
+     "2026-10-01",
+     682.75
+    ],
+    [
+     "2026-10-02",
+     683.0
+    ],
+    [
+     "2026-10-05",
+     692.25
+    ],
+    [
+     "2026-10-06",
+     704.25
+    ],
+    [
+     "2026-10-07",
+     686.5
+    ],
+    [
+     "2026-10-08",
+     683.25
+    ],
+    [
+     "2026-10-09",
+     671.0
+    ],
+    [
+     "2026-10-12",
+     672.25
+    ],
+    [
+     "2026-10-13",
+     669.25
+    ],
+    [
+     "2026-10-14",
+     673.25
+    ],
+    [
+     "2026-10-15",
+     670.0
+    ],
+    [
+     "2026-10-16",
+     660.5
+    ],
+    [
+     "2026-10-19",
+     655.25
+    ],
+    [
+     "2026-10-20",
+     643.25
+    ],
+    [
+     "2026-10-21",
+     628.25
+    ],
+    [
+     "2026-10-22",
+     624.75
+    ],
+    [
+     "2026-10-23",
+     625.0
+    ],
+    [
+     "2026-10-26",
+     616.0
+    ],
+    [
+     "2026-10-27",
+     610.25
+    ],
+    [
+     "2026-10-28",
+     599.0
+    ],
+    [
+     "2026-10-29",
+     603.75
+    ],
+    [
+     "2026-10-30",
+     603.25
+    ]
+   ],
+   "contract": "Chicago SRW Wheat Futures,Dec-2",
+   "exchange": "CBOT",
+   "currency": "USX",
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "soymeal": {
+   "instrument_id": "soymeal",
+   "commodity": "grain",
+   "name": "Soybean meal",
+   "unit": "USD/short ton",
+   "cadence": "intraday",
+   "symbol": "ZM=F",
+   "source": "yahoo",
+   "source_label": "Yahoo Finance",
+   "notice": "Delayed, indicative front-month futures price",
+   "note": "Front-month futures",
+   "quote_url": "https://finance.yahoo.com/quote/ZM%3DF",
+   "value": 324.7,
+   "as_of": "2026-10-30T18:19:58+00:00",
+   "previous": 329.3,
+   "previous_as_of": "2026-10-29",
+   "change": -4.6,
+   "change_pct": -1.4,
+   "change_basis": "previous close",
+   "avg_reference": 291.3446,
+   "reference_points": 251,
+   "spark": [
+    [
+     "2026-09-21",
+     366.6
+    ],
+    [
+     "2026-09-22",
+     368.9
+    ],
+    [
+     "2026-09-23",
+     370.3
+    ],
+    [
+     "2026-09-24",
+     376.1
+    ],
+    [
+     "2026-09-25",
+     373.9
+    ],
+    [
+     "2026-09-28",
+     361.7
+    ],
+    [
+     "2026-09-29",
+     360.1
+    ],
+    [
+     "2026-09-30",
+     357.1
+    ],
+    [
+     "2026-10-01",
+     352.1
+    ],
+    [
+     "2026-10-02",
+     344.7
+    ],
+    [
+     "2026-10-05",
+     345.9
+    ],
+    [
+     "2026-10-06",
+     353.4
+    ],
+    [
+     "2026-10-07",
+     365.9
+    ],
+    [
+     "2026-10-08",
+     360.7
+    ],
+    [
+     "2026-10-09",
+     368.7
+    ],
+    [
+     "2026-10-12",
+     375.6
+    ],
+    [
+     "2026-10-13",
+     370.1
+    ],
+    [
+     "2026-10-14",
+     370.1
+    ],
+    [
+     "2026-10-15",
+     359.8
+    ],
+    [
+     "2026-10-16",
+     357.1
+    ],
+    [
+     "2026-10-19",
+     354.8
+    ],
+    [
+     "2026-10-20",
+     348.7
+    ],
+    [
+     "2026-10-21",
+     348.3
+    ],
+    [
+     "2026-10-22",
+     347.3
+    ],
+    [
+     "2026-10-23",
+     346.1
+    ],
+    [
+     "2026-10-26",
+     340.2
+    ],
+    [
+     "2026-10-27",
+     334.6
+    ],
+    [
+     "2026-10-28",
+     335.7
+    ],
+    [
+     "2026-10-29",
+     329.3
+    ],
+    [
+     "2026-10-30",
+     324.7
+    ]
+   ],
+   "contract": "Soybean Meal Futures,Dec-2026",
+   "exchange": "CBOT",
+   "currency": "USD",
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "copper": {
+   "instrument_id": "copper",
+   "commodity": "metals",
+   "name": "Copper",
+   "unit": "USD/lb",
+   "cadence": "intraday",
+   "symbol": "HG=F",
+   "source": "yahoo",
+   "source_label": "Yahoo Finance",
+   "notice": "Delayed, indicative front-month futures price",
+   "note": "Front-month futures",
+   "quote_url": "https://finance.yahoo.com/quote/HG%3DF",
+   "value": 6.5095,
+   "as_of": "2026-10-30T20:59:59+00:00",
+   "previous": 6.581,
+   "previous_as_of": "2026-10-29",
+   "change": -0.0715,
+   "change_pct": -1.09,
+   "change_basis": "previous close",
+   "avg_reference": 4.8248,
+   "reference_points": 252,
+   "spark": [
+    [
+     "2026-09-21",
+     6.6865
+    ],
+    [
+     "2026-09-22",
+     6.7595
+    ],
+    [
+     "2026-09-23",
+     6.678
+    ],
+    [
+     "2026-09-24",
+     6.7185
+    ],
+    [
+     "2026-09-25",
+     6.6955
+    ],
+    [
+     "2026-09-28",
+     6.566
+    ],
+    [
+     "2026-09-29",
+     6.5435
+    ],
+    [
+     "2026-09-30",
+     6.559
+    ],
+    [
+     "2026-10-01",
+     6.482
+    ],
+    [
+     "2026-10-02",
+     6.492
+    ],
+    [
+     "2026-10-05",
+     6.5855
+    ],
+    [
+     "2026-10-06",
+     6.5945
+    ],
+    [
+     "2026-10-07",
+     6.5965
+    ],
+    [
+     "2026-10-08",
+     6.519
+    ],
+    [
+     "2026-10-09",
+     6.6425
+    ],
+    [
+     "2026-10-12",
+     6.6985
+    ],
+    [
+     "2026-10-13",
+     6.678
+    ],
+    [
+     "2026-10-14",
+     6.6115
+    ],
+    [
+     "2026-10-15",
+     6.5115
+    ],
+    [
+     "2026-10-16",
+     6.531
+    ],
+    [
+     "2026-10-19",
+     6.538
+    ],
+    [
+     "2026-10-20",
+     6.5665
+    ],
+    [
+     "2026-10-21",
+     6.543
+    ],
+    [
+     "2026-10-22",
+     6.3625
+    ],
+    [
+     "2026-10-23",
+     6.476
+    ],
+    [
+     "2026-10-26",
+     6.508
+    ],
+    [
+     "2026-10-27",
+     6.622
+    ],
+    [
+     "2026-10-28",
+     6.6415
+    ],
+    [
+     "2026-10-29",
+     6.581
+    ],
+    [
+     "2026-10-30",
+     6.5095
+    ]
+   ],
+   "contract": "Copper Dec 26",
+   "exchange": "COMEX",
+   "currency": "USD",
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "aluminium": {
+   "instrument_id": "aluminium",
+   "commodity": "metals",
+   "name": "Aluminium",
+   "unit": "USD/t",
+   "cadence": "intraday",
+   "symbol": "ALI=F",
+   "source": "yahoo",
+   "source_label": "Yahoo Finance",
+   "notice": "Delayed, indicative front-month futures price",
+   "note": "Front-month futures",
+   "quote_url": "https://finance.yahoo.com/quote/ALI%3DF",
+   "value": 3166.0,
+   "as_of": "2026-10-30T20:11:29+00:00",
+   "previous": 3332.25,
+   "previous_as_of": "2026-10-29",
+   "change": -166.25,
+   "change_pct": -4.99,
+   "change_basis": "previous close",
+   "avg_reference": 2561.1345,
+   "reference_points": 251,
+   "spark": [
+    [
+     "2026-09-21",
+     3425.5
+    ],
+    [
+     "2026-09-22",
+     3474.75
+    ],
+    [
+     "2026-09-23",
+     3434.75
+    ],
+    [
+     "2026-09-24",
+     3426.75
+    ],
+    [
+     "2026-09-25",
+     3435.0
+    ],
+    [
+     "2026-09-28",
+     3385.75
+    ],
+    [
+     "2026-09-29",
+     3320.5
+    ],
+    [
+     "2026-09-30",
+     3285.0
+    ],
+    [
+     "2026-10-01",
+     3198.0
+    ],
+    [
+     "2026-10-02",
+     3191.75
+    ],
+    [
+     "2026-10-05",
+     3238.5
+    ],
+    [
+     "2026-10-06",
+     3238.0
+    ],
+    [
+     "2026-10-07",
+     3214.25
+    ],
+    [
+     "2026-10-08",
+     3153.75
+    ],
+    [
+     "2026-10-09",
+     3180.0
+    ],
+    [
+     "2026-10-12",
+     3134.25
+    ],
+    [
+     "2026-10-13",
+     3127.75
+    ],
+    [
+     "2026-10-14",
+     3086.25
+    ],
+    [
+     "2026-10-15",
+     3096.5
+    ],
+    [
+     "2026-10-16",
+     3113.25
+    ],
+    [
+     "2026-10-19",
+     3148.5
+    ],
+    [
+     "2026-10-20",
+     3109.0
+    ],
+    [
+     "2026-10-21",
+     3177.75
+    ],
+    [
+     "2026-10-22",
+     3193.0
+    ],
+    [
+     "2026-10-23",
+     3268.5
+    ],
+    [
+     "2026-10-26",
+     3222.0
+    ],
+    [
+     "2026-10-27",
+     3285.25
+    ],
+    [
+     "2026-10-28",
+     3278.0
+    ],
+    [
+     "2026-10-29",
+     3332.25
+    ],
+    [
+     "2026-10-30",
+     3166.0
+    ]
+   ],
+   "contract": "Aluminum Futures,Jan-2027",
+   "exchange": "COMEX",
+   "currency": "USD",
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "nickel": {
+   "instrument_id": "nickel",
+   "commodity": "metals",
+   "name": "Nickel",
+   "unit": "USD/t",
+   "cadence": "monthly",
+   "symbol": "PNICKUSDM",
+   "source": "fred",
+   "source_label": "IMF Primary Commodity Prices via FRED",
+   "notice": "Monthly average price",
+   "note": "IMF Primary Commodity Prices via FRED",
+   "quote_url": "https://fred.stlouisfed.org/series/PNICKUSDM",
+   "value": 16323.8219,
+   "as_of": "2026-09-01",
+   "period": "2026-09",
+   "previous": 16748.1819,
+   "previous_as_of": "2026-08-01",
+   "change": -424.36,
+   "change_pct": -2.53,
+   "change_basis": "previous month",
+   "avg_reference": 15161.3316,
+   "reference_points": 12,
+   "spark": [
+    [
+     "2025-10-01",
+     15092.1143
+    ],
+    [
+     "2025-11-01",
+     14670.7685
+    ],
+    [
+     "2025-12-01",
+     14879.03
+    ],
+    [
+     "2026-01-01",
+     17710.8636
+    ],
+    [
+     "2026-02-01",
+     17173.1035
+    ],
+    [
+     "2026-03-01",
+     17076.2927
+    ],
+    [
+     "2026-04-01",
+     17864.9164
+    ],
+    [
+     "2026-05-01",
+     18792.7486
+    ],
+    [
+     "2026-06-01",
+     17588.2855
+    ],
+    [
+     "2026-07-01",
+     16632.3614
+    ],
+    [
+     "2026-08-01",
+     16748.1819
+    ],
+    [
+     "2026-09-01",
+     16323.8219
+    ]
+   ],
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "zinc": {
+   "instrument_id": "zinc",
+   "commodity": "metals",
+   "name": "Zinc",
+   "unit": "USD/t",
+   "cadence": "monthly",
+   "symbol": "PZINCUSDM",
+   "source": "fred",
+   "source_label": "IMF Primary Commodity Prices via FRED",
+   "notice": "Monthly average price",
+   "note": "IMF Primary Commodity Prices via FRED",
+   "quote_url": "https://fred.stlouisfed.org/series/PZINCUSDM",
+   "value": 4020.549,
+   "as_of": "2026-09-01",
+   "period": "2026-09",
+   "previous": 3884.5262,
+   "previous_as_of": "2026-08-01",
+   "change": 136.0229,
+   "change_pct": 3.5,
+   "change_basis": "previous month",
+   "avg_reference": 2866.5985,
+   "reference_points": 12,
+   "spark": [
+    [
+     "2025-10-01",
+     3151.9991
+    ],
+    [
+     "2025-11-01",
+     3176.8435
+    ],
+    [
+     "2025-12-01",
+     3162.175
+    ],
+    [
+     "2026-01-01",
+     3206.7332
+    ],
+    [
+     "2026-02-01",
+     3323.7125
+    ],
+    [
+     "2026-03-01",
+     3182.2609
+    ],
+    [
+     "2026-04-01",
+     3354.6155
+    ],
+    [
+     "2026-05-01",
+     3477.6443
+    ],
+    [
+     "2026-06-01",
+     3538.7427
+    ],
+    [
+     "2026-07-01",
+     3593.775
+    ],
+    [
+     "2026-08-01",
+     3884.5262
+    ],
+    [
+     "2026-09-01",
+     4020.549
+    ]
+   ],
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "tin": {
+   "instrument_id": "tin",
+   "commodity": "metals",
+   "name": "Tin",
+   "unit": "USD/t",
+   "cadence": "monthly",
+   "symbol": "PTINUSDM",
+   "source": "fred",
+   "source_label": "IMF Primary Commodity Prices via FRED",
+   "notice": "Monthly average price",
+   "note": "IMF Primary Commodity Prices via FRED",
+   "quote_url": "https://fred.stlouisfed.org/series/PTINUSDM",
+   "value": 53711.6767,
+   "as_of": "2026-09-01",
+   "period": "2026-09",
+   "previous": 55360.3095,
+   "previous_as_of": "2026-08-01",
+   "change": -1648.6329,
+   "change_pct": -2.98,
+   "change_basis": "previous month",
+   "avg_reference": 34058.3242,
+   "reference_points": 12,
+   "spark": [
+    [
+     "2025-10-01",
+     36011.9252
+    ],
+    [
+     "2025-11-01",
+     36963.2215
+    ],
+    [
+     "2025-12-01",
+     41402.9091
+    ],
+    [
+     "2026-01-01",
+     49133.7823
+    ],
+    [
+     "2026-02-01",
+     48694.3375
+    ],
+    [
+     "2026-03-01",
+     47323.6818
+    ],
+    [
+     "2026-04-01",
+     48566.2614
+    ],
+    [
+     "2026-05-01",
+     53238.4043
+    ],
+    [
+     "2026-06-01",
+     53036.5455
+    ],
+    [
+     "2026-07-01",
+     52881.9986
+    ],
+    [
+     "2026-08-01",
+     55360.3095
+    ],
+    [
+     "2026-09-01",
+     53711.6767
+    ]
+   ],
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "iron-ore": {
+   "instrument_id": "iron-ore",
+   "commodity": "iron",
+   "name": "Iron ore CFR China",
+   "unit": "USD/dmt",
+   "cadence": "monthly",
+   "symbol": "PIORECRUSDM",
+   "source": "fred",
+   "source_label": "IMF Primary Commodity Prices via FRED",
+   "notice": "Monthly average price",
+   "note": "IMF Primary Commodity Prices via FRED",
+   "quote_url": "https://fred.stlouisfed.org/series/PIORECRUSDM",
+   "value": 100.4409,
+   "as_of": "2026-09-01",
+   "period": "2026-09",
+   "previous": 99.619,
+   "previous_as_of": "2026-08-01",
+   "change": 0.8219,
+   "change_pct": 0.83,
+   "change_basis": "previous month",
+   "avg_reference": 103.7151,
+   "reference_points": 12,
+   "spark": [
+    [
+     "2025-10-01",
+     106.8696
+    ],
+    [
+     "2025-11-01",
+     106.23
+    ],
+    [
+     "2025-12-01",
+     107.5864
+    ],
+    [
+     "2026-01-01",
+     107.4455
+    ],
+    [
+     "2026-02-01",
+     100.965
+    ],
+    [
+     "2026-03-01",
+     107.5773
+    ],
+    [
+     "2026-04-01",
+     109.3864
+    ],
+    [
+     "2026-05-01",
+     111.6286
+    ],
+    [
+     "2026-06-01",
+     103.7909
+    ],
+    [
+     "2026-07-01",
+     101.5957
+    ],
+    [
+     "2026-08-01",
+     99.619
+    ],
+    [
+     "2026-09-01",
+     100.4409
+    ]
+   ],
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  },
+  "coal-australia": {
+   "instrument_id": "coal-australia",
+   "commodity": "coal",
+   "name": "Australian thermal coal",
+   "unit": "USD/t",
+   "cadence": "monthly",
+   "symbol": "PCOALAUUSDM",
+   "source": "fred",
+   "source_label": "IMF Primary Commodity Prices via FRED",
+   "notice": "Monthly average price",
+   "note": "IMF Primary Commodity Prices via FRED",
+   "quote_url": "https://fred.stlouisfed.org/series/PCOALAUUSDM",
+   "value": 153.84,
+   "as_of": "2026-09-01",
+   "period": "2026-09",
+   "previous": 140.5082,
+   "previous_as_of": "2026-08-01",
+   "change": 13.3318,
+   "change_pct": 9.49,
+   "change_basis": "previous month",
+   "avg_reference": 112.4376,
+   "reference_points": 12,
+   "spark": [
+    [
+     "2025-10-01",
+     111.4982
+    ],
+    [
+     "2025-11-01",
+     115.4368
+    ],
+    [
+     "2025-12-01",
+     115.6843
+    ],
+    [
+     "2026-01-01",
+     115.815
+    ],
+    [
+     "2026-02-01",
+     122.2093
+    ],
+    [
+     "2026-03-01",
+     140.0561
+    ],
+    [
+     "2026-04-01",
+     142.11
+    ],
+    [
+     "2026-05-01",
+     141.4532
+    ],
+    [
+     "2026-06-01",
+     150.3621
+    ],
+    [
+     "2026-07-01",
+     140.3968
+    ],
+    [
+     "2026-08-01",
+     140.5082
+    ],
+    [
+     "2026-09-01",
+     153.84
+    ]
+   ],
+   "stale": false,
+   "fetched_at": "2026-10-31T01:58:14+00:00"
+  }
+ },
+ "failures": 0
+}
