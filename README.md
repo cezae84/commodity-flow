@@ -9,7 +9,7 @@ closed.**
 ## Why this map exists
 
 I built this map to train myself on physical commodity flows. Price screens show that oil,
-LNG, iron ore or soybeans move, but not *where the cargoes actually go*. To understand a
+LNG, metals or agriculturals commodities move, but not *where the cargoes actually go*. To understand a
 market, you need to know:
 
 - **Who sells and who buys**: Saudi crude to China, Pilbara iron ore to Chinese mills,
