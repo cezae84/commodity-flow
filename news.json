@@ -1,0 +1,310 @@
+{
+ "generated_at": "2026-11-07T08:46:14+00:00",
+ "window_hours": 24,
+ "model": "claude-haiku-4-5-20251001",
+ "feeds": [
+  {
+   "id": "gcaptain",
+   "name": "gCaptain",
+   "ok": true,
+   "items": 12
+  },
+  {
+   "id": "splash247",
+   "name": "Splash247",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "hellenicshipping",
+   "name": "Hellenic Shipping News",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "eia",
+   "name": "U.S. Energy Information Administration — Today in Energy",
+   "ok": true,
+   "items": 24
+  },
+  {
+   "id": "rigzone",
+   "name": "Rigzone",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "oilprice",
+   "name": "OilPrice.com",
+   "ok": true,
+   "items": 15
+  },
+  {
+   "id": "lngprime",
+   "name": "LNG Prime",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "mining",
+   "name": "MINING.COM",
+   "ok": true,
+   "items": 36
+  },
+  {
+   "id": "worldgrain",
+   "name": "World Grain",
+   "ok": true,
+   "items": 30
+  },
+  {
+   "id": "gn-hormuz",
+   "name": "Google News — Hormuz and Gulf shipping",
+   "ok": true,
+   "items": 53
+  },
+  {
+   "id": "gn-oil",
+   "name": "Google News — oil market",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-sanctions",
+   "name": "Google News — energy sanctions",
+   "ok": true,
+   "items": 26
+  },
+  {
+   "id": "gn-redsea",
+   "name": "Google News — Red Sea and Suez",
+   "ok": true,
+   "items": 27
+  },
+  {
+   "id": "gn-lng",
+   "name": "Google News — gas and LNG",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-metals",
+   "name": "Google News — metals and iron ore",
+   "ok": true,
+   "items": 59
+  },
+  {
+   "id": "gn-grain",
+   "name": "Google News — grain and fertilizer",
+   "ok": true,
+   "items": 18
+  },
+  {
+   "id": "gn-freight",
+   "name": "Google News — freight markets",
+   "ok": true,
+   "items": 18
+  }
+ ],
+ "counts": {
+  "collected": 578,
+  "candidates": 90,
+  "items": 8,
+  "dropped": 0
+ },
+ "usage": {
+  "input_tokens": 6505,
+  "output_tokens": 816
+ },
+ "status": "ok",
+ "brief_generated_at": "2026-11-07T08:46:14+00:00",
+ "overview": {
+  "text": "Hormuz tanker attacks and midterm election hopes for Iran diplomacy drove oil lower, while Red Sea disruption sustains LNG and freight.",
+  "sources": [
+   {
+    "title": "Oil Prices Sink as U.S. Midterms Raise Market Hopes for Middle East Solution",
+    "publisher": "WSJ",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVGZJRGVaVkdJaDR5b1REaE5CdWQtY2ZlczBhUXFWT253Vi0tMkNoUVhSNUI0Rzlqbnc5UnVVS0lqN1kwVzZ3eTJ6ODByNlc5ck5HYmlkMEVyRzlrVDNFdk8zQ2JuRWdQLUdYc3ozNUVCc3hRSGhDc0tKNW9QY1A2ZVpMZC1PNGxqUU81QkQyZms0R1VxWUUzbTRLSmYyUTRvM0ZHVmVjdTRpZ2NxLUJkcFlQZzY?oc=5",
+    "published_at": "2026-11-07T08:08+00:00"
+   },
+   {
+    "title": "Seafarer dead in Hormuz tanker blast",
+    "publisher": "News Today",
+    "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1Pb0V3Y3A0NHM1UHI0Ujl6UkJEbUJ2c3ppV3pEZzJwMDVPNW1QeTZqRE04aHhNZ25HQUNkUFkycjBGY29aNEJpYThjMVhzWUFjNF9ncXhqLTdWaE51VGdpUFE3MDl1RlpNMFhGV29fTjJwSlV3Wlo5MDl6Uk9Ldw?oc=5",
+    "published_at": "2026-11-07T07:55+00:00"
+   },
+   {
+    "title": "Two Tankers Carrying Saudi Oil Attacked in Strait of Hormuz",
+    "publisher": "EnergyNow.com",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNc1RZenJuTHRESkRiYzhIMkFyUDktdjQzLTRjZlZrMUt4TVBkOFVsZVZ0NnZwRzQzend4WjFTS2h5ZHNFMTNhUExzaDNZYTV1RlY5QVo3XzRkVGMwYndmWkVHN1VaNkdzdTJFWmtxN0V0Sng5Wm1vaXZDelhoNFVoQTNDRjU5RllSMVZjSzFiX2swQlBP?oc=5",
+    "published_at": "2026-11-06T23:05+00:00"
+   },
+   {
+    "title": "QatarEnergy Buys 33 US LNG Cargoes to Offset Hormuz Disruption",
+    "publisher": "EnergyNow.com",
+    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZHMwRFdQa0ZINzNVUjF5YmpaV1gyTllsZmlRYWZXSEF6NXgySWVaUVF0cnE5YkZvRzJjbVRLRmEtdnd4aUJmWGc1aHZ0b3IwdDk5U2tIdzBwTEpNQlRzei0tR2lIeFdvWG5RNVBuWlZmWGs5VlZCVlEwaXVfVnpnelhuY2xObzN1ZkVWeUxHdUJxVy15NnpXMQ?oc=5",
+    "published_at": "2026-11-06T22:46+00:00"
+   }
+  ]
+ },
+ "items": [
+  {
+   "headline": "Tanker attacks kill seafarer in Strait of Hormuz",
+   "summary": "A seafarer died when a tanker was struck by missile in the Gulf. Iran reported fires on two more tankers hit by mines in Hormuz, prompting QatarEnergy to buy 33 US LNG cargoes to offset disruption.",
+   "category": "oil",
+   "sources": [
+    {
+     "title": "Seafarer dead in Hormuz tanker blast",
+     "publisher": "News Today",
+     "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1Pb0V3Y3A0NHM1UHI0Ujl6UkJEbUJ2c3ppV3pEZzJwMDVPNW1QeTZqRE04aHhNZ25HQUNkUFkycjBGY29aNEJpYThjMVhzWUFjNF9ncXhqLTdWaE51VGdpUFE3MDl1RlpNMFhGV29fTjJwSlV3Wlo5MDl6Uk9Ldw?oc=5",
+     "published_at": "2026-11-07T07:55+00:00"
+    },
+    {
+     "title": "Two Tankers Carrying Saudi Oil Attacked in Strait of Hormuz",
+     "publisher": "EnergyNow.com",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNc1RZenJuTHRESkRiYzhIMkFyUDktdjQzLTRjZlZrMUt4TVBkOFVsZVZ0NnZwRzQzend4WjFTS2h5ZHNFMTNhUExzaDNZYTV1RlY5QVo3XzRkVGMwYndmWkVHN1VaNkdzdTJFWmtxN0V0Sng5Wm1vaXZDelhoNFVoQTNDRjU5RllSMVZjSzFiX2swQlBP?oc=5",
+     "published_at": "2026-11-06T23:05+00:00"
+    },
+    {
+     "title": "Sailor killed in Gulf as Iran says tankers on fire",
+     "publisher": "The New Indian Express",
+     "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPdDhQYkdLX043WWM3VVlVLS1UdlNfUWNnemc3S1U5T2ZLTnB0alRoR1JoMU8wWUw1MnZ0NDBJQTNZaU9hcEh3NXhBUlA3S2ZUbXpHclpoZU1NUVRyYlU5eUh6Z0thRUJrcVY0dm1RU1dmTTdxVWMwVTg5RlkyUmlkYjBzZHFRQWIzcU9IUWdhVVd5d1p0M2VaanRvMDZFZjRYOHB30gGwAUFVX3lxTE1WcHB4SXJFdXhjdjdkSVNld041a2lYcWVveHQ3XzhEaEJ4bWMyMFl5NE1kOXRBT29FR0tpdXRpTzV2X09hd3VJNnpCUDJxdk5IMzVoUnY1MmJhRWJyMWZHQUFZZmxiMGg2NEprUUJrUWZCQ2FBcXlMcTlabVlVM2pycmJqT3pudXJoMTQ5aVdSd1pRd0FUa2pXb3lvc1VObS10MXpQbVUtQlBReXV0emlT?oc=5",
+     "published_at": "2026-11-06T18:49+00:00"
+    },
+    {
+     "title": "Three Palestinians killed in Gaza as West Bank demolitions continue; Iran reports tanker fires in Hormuz",
+     "publisher": "The Muslim News",
+     "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOb21icVI5Ulh1dWt5VjdfUWxYOE1GZ0Jpc1J3RGJ2V3lsbmxBQkdSY2c5N0F3TTFEb0t6U2pMUVZsUWYtS1BHOEt6Z0FNYTl6aG9CWUJtYnRYZjRYQ1pLakM0Vnl3TU1ZNjZpQ01seXJGMVB2WU9LY05uN0pSbTJiQmUwR2dqOWVQS0FuTEJ1dDNrN2RmWUR5bks1Z2gyVEJYa0FFVmFWSDNFX29QdVB2TjdHWUJVR0hXNE5naGNyTGUxeUpnWEZ4dGh5SjZ6aU0?oc=5",
+     "published_at": "2026-11-06T16:54+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Oil prices sink on midterm election hopes for Iran diplomacy",
+   "summary": "Crude fell sharply as US midterms raised market expectations for possible resolution of Iran tensions. Oil posted its biggest weekly drop since 2022.",
+   "category": "oil",
+   "sources": [
+    {
+     "title": "Oil Prices Sink as U.S. Midterms Raise Market Hopes for Middle East Solution",
+     "publisher": "WSJ",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPVGZJRGVaVkdJaDR5b1REaE5CdWQtY2ZlczBhUXFWT253Vi0tMkNoUVhSNUI0Rzlqbnc5UnVVS0lqN1kwVzZ3eTJ6ODByNlc5ck5HYmlkMEVyRzlrVDNFdk8zQ2JuRWdQLUdYc3ozNUVCc3hRSGhDc0tKNW9QY1A2ZVpMZC1PNGxqUU81QkQyZms0R1VxWUUzbTRLSmYyUTRvM0ZHVmVjdTRpZ2NxLUJkcFlQZzY?oc=5",
+     "published_at": "2026-11-07T08:08+00:00"
+    },
+    {
+     "title": "Oil prices fall as mid-terms signal possible end to Iran war",
+     "publisher": "Oil & Gas Journal",
+     "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPRXlkWkZDQWhUblg3c0VWaHN4Mmp4MjgwMGFmRWRieWp3VnNHR2t1MzlSa0xsRExCVDc0WFdXOGduekR5RmlsbEFuOGFJWW5VX3hOOW1ELVY4SjhlMTZjSkRsRTFFeURyUVhaNkcxajNMalpQbEtKSHk1Y3BEYmU4em5wV05GVFZ4RlFWQUhiTjdzQmh3Mkg4UWZ6SGNYNjlMcTBxOUh1Q21VemVZQWRRcUZmdVY5aG90eGhBSkJiZmNQQTdRSXJ1UDBSU2c?oc=5",
+     "published_at": "2026-11-06T23:29+00:00"
+    },
+    {
+     "title": "Oil Posts Biggest Weekly Drop Since 2022",
+     "publisher": "Rigzone",
+     "url": "https://www.rigzone.com/news/wire/oil_posts_biggest_weekly_drop_since_2022-06-nov-2026-185035-article/?rss=true",
+     "published_at": "2026-11-06T21:05+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Woodside signs 3.5 Mtpa LNG supply deals to Europe",
+   "summary": "Woodside Energy secured long-term LNG supply contracts to Europe, capitalizing on demand from disruptions to Middle East export routes.",
+   "category": "gas-lng",
+   "sources": [
+    {
+     "title": "Woodside signs about 3.5 Mtpa of LNG supply deals to Europe",
+     "publisher": "Trend News Agency",
+     "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1vMHJKeFNLNzlCVGcxa3IzNl9ESG54b3cyOU5LLWU2ZFdVMkhBZFd6b0FSLVRyRlZEX2poOG9OSlpEN05jbXE2T1ctLVV3S2tw?oc=5",
+     "published_at": "2026-11-07T04:05+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "US sanctions Indian businessman over Iran shadow oil fleet",
+   "summary": "Washington sanctioned Indian businessman and companies for alleged links to Iran's shadow tanker fleet, tightening enforcement over oil trade routes.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "US Sanctions Indian Businessman, Companies Over Alleged Links To Iran's Shadow Oil Fleet",
+     "publisher": "BW Businessworld",
+     "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPOEVoVXpFTFNOTTN6SXRVTlZfakhsamVHRlVlcVdhcFk5Mkk2aTVpRFVtVG9NUUlOZnVrZEN1TlEyRUE2bkZDMjdCSGo2NW1KdEVqUUhLcWpodWdhQzBlREF0N2tEZ3E5dGhUQV91clJqY2pIRnZFRTg1Z0xjLVh3WERuZlB6eVBQckI4Z0ZEVDhwSENQWUtCRW1xVjJWaHNNcTYyMy00UWE1T2dsRkx4MG9obzRwdzdvRGtHZ3FqMnBBUlVxWXJzNzVyRQ?oc=5",
+     "published_at": "2026-11-07T06:29+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Copper falls to July lows after US midterm elections",
+   "summary": "Copper prices declined as Democratic Party gains in midterms weakened expectations for import tariffs on Chinese goods.",
+   "category": "metals",
+   "sources": [
+    {
+     "title": "Copper faces further slide after US vote: pricing outlook for mine planners",
+     "publisher": "Geomechanics.io",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxONWpLYnlrd1NBRm5KNXd0cjZwT1FSNEZXcnVya01uRXlnOElPZjJuU19wbG1GMnhmTjRfVnpMREVkT2FOUW0zWHJ1S2xCT1BtNEhnNUZZZkQyT3piRHJvSGZqVFdpaFRyRUN2TUJXcEJFTUlJeHN6LUdPQ2VQVWtQR29mZ2Jpc21KZGd1Ny13VWdCMnY1cWtlMFVkV0VGT2dlR0VGMll0WEJQX3RERGlKb2ZkQVVyUQ?oc=5",
+     "published_at": "2026-11-07T00:00+00:00"
+    },
+    {
+     "title": "Copper faces further slide after US vote: TD",
+     "publisher": "MINING.COM",
+     "url": "https://www.mining.com/copper-faces-further-slide-after-us-vote-td/",
+     "published_at": "2026-11-06T23:54+00:00"
+    },
+    {
+     "title": "Copper Prices Fall to July Lows Amid U.S. Midterm Uncertainty; F",
+     "publisher": "GuruFocus",
+     "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPVGVzNkN6M3hLMjlCWTUycE14ODBMQkNjZ0hBYUFTR0FzcnZRTjJ1SkFEOTJha2gtSDNKN3JlU093a1lpOFhabnIzWEdLRG9mU2kzUktwLTZwUUNxcXA5MlJnaEFpU013aHI3X1FaMW5qN3NCSmJlVXZVVFlqOTZQaHl5ZWhZOXdjVlhXeFJXZkNFZkNtbGw2ajFYWjZnOU5pb19Ka1hGWkx0YmdHRWc?oc=5",
+     "published_at": "2026-11-06T14:45+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Ocean freight rates to fall 30% in 2027 as Red Sea clears",
+   "summary": "Analysts forecast spot rates will drop significantly as Red Sea return allows capacity to flood back, though operators seek Houthi transit assurances.",
+   "category": "shipping",
+   "sources": [
+    {
+     "title": "Xeneta Summit: Analysts forecast ocean freight spot rates to fall 30% in 2027 as Red Sea return sees capacity flooding back",
+     "publisher": "India Shipping News",
+     "url": "https://news.google.com/rss/articles/CBMihgJBVV95cUxQZ2t1QWxjQzllNVJFUjJiTXd0ZGhReTNNZFk2bkFQeVZEa3FaX2tFVG9oczY0SWh4TXBXYXBpRWtOTjBNd2ktdVBHb3hsTWl6ZE9aRWgtZXVYT0JxTmNaVjBzTVZxVzVUVUJncjBBczdJX3dVRU9nWl9BNVo0R2lOOS1aaTdIcmtpWVQ0ZjNVMGkzb1dXNk9TX21DTWNmRDhuUHJoVmVwMzJ3RUVSajVKVEtLN1R1Q1BsNUVZYWxOZzRYTEZwYmZJVjU3QjBPTjdMTndPUXVlc3VLOVZNUjd2NGtwdzd0U2VjMjdEMU13OTRCRjBhOEQybWc1Vmswcm4yVlVfWTh3?oc=5",
+     "published_at": "2026-11-07T03:49+00:00"
+    },
+    {
+     "title": "Shipping operators seek Houthi transit assurances as Red Sea risks persist",
+     "publisher": "Maritime Gateway",
+     "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPXzF2S3pMNEZXV3RMNHFES1hPWms2MHVXd3VtVklYdGg3X2xpUDlENkNxUklqQUZqZldCQ3JDaTFvcnRmQWFzRW9IUVV0RFR0TVJlenA0LVQxbmk0M05aYzVTZzd2NnBCMVdPbGRRYXF3bXRIQnEzWUNYX1VCSU5ZM2czeXR1d1c1RjVrelBPdzJYR2JkRXBBYlJOWkpiNjRBM1NxdGw3bkNkc1U?oc=5",
+     "published_at": "2026-11-07T00:34+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Bulgaria wheat exports hit record pace in 2026/27",
+   "summary": "Bulgarian wheat exports surged to record levels while Ukrainian prices eased despite constrained export routes.",
+   "category": "agri",
+   "sources": [
+    {
+     "title": "Bulgaria’s wheat exports reach record pace in 2026/27",
+     "publisher": "UkrAgroConsult",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPN1p3QVFoUDIwdWRDOUhjZzJ1T1B5VUNaZTZ2ejlPTjFJTUo5YlZHVlNmVU5lUmZhSzgzMXBmZDgyTVd6UXN6T21uOVgyaUZVdjlmajhhUG9BX3ZpTWtwTEM2bzR5RWNxVjh4UzdSS254TjlHem9YQTFjQXhlZ0hHY1k0MHU3YWpJVFBpaThVSjRZZw?oc=5",
+     "published_at": "2026-11-07T06:15+00:00"
+    },
+    {
+     "title": "Ukrainian Wheat Prices Ease as Export Routes Stay Constrained — CMB News",
+     "publisher": "CMB News",
+     "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNeHI2akZsTzlZWjRfUWU4TFhkcV9lc0JlMk5jeUFBNlo2SXNqUEhzd2dDaHNHVF9ZT3dObWY5ZHYwMkRyUTNSUFNraGRNdG1FYlJjZU1pbWRST2d5T2hnelJUZ2E2cWN4a1VEX2NFeGptcDNHZXNMeWZUeVRWb3N2LTZObjdaS0Y1a0Utaw?oc=5",
+     "published_at": "2026-11-07T02:00+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Trafigura snaps up copper as China faces supply crunch",
+   "summary": "Copper trader Trafigura increased purchases in Asia amid tight supply conditions in China.",
+   "category": "metals",
+   "sources": [
+    {
+     "title": "Trafigura Snaps Up Copper in Asia as China Faces Supply Crunch",
+     "publisher": "Livemint",
+     "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxONEFWWFRORV8zRnFsNS1WMGtCamNHWjZqR2ZwbHZlWUxOM1o4bWF4SEdWYlh5OFhLUXo4akFxbEhwNTU3eUszcFFJX2QwbVVFVGlUV1g2RmFNYXlqN2thcFNlYkFxSWxUcExPZFo3NWhaX2N0Q3otSHhzYkNWc3MxNlNybnAzRy1WcUJHLU9IMUlSSkZ2QlI2N0wtMVVyX0kyYWRZYlRSdVVtNW5ZTFpYeldlZUrSAboBQVVfeXFMT0pGay1LOUxFVnBGSnd1eEpuWEw0UDZjaHhCa0tUVi1QckdYR1E5bFlKWFRtcmxXQmh0WlVBeF9ZTUVPNXM2LWlOV1pna2hKbEtzbDZPTF9MSTlpYVBJdC0wb0YtNTNqdlZKYzk2bkExWEIzeV82Y19QbFV1UXdWdFN6ajVLRE9yR3QzYWJBSk9OZDdmNTlKSWFWcnlrMEZjb0x5akgyazFaTVg0WEIwM1N3RzhYUmdVSGZB?oc=5",
+     "published_at": "2026-11-07T08:30+00:00"
+    }
+   ]
+  }
+ ]
+}
