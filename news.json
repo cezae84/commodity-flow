@@ -1,0 +1,303 @@
+{
+ "generated_at": "2026-11-14T06:19:26+00:00",
+ "window_hours": 24,
+ "model": "claude-haiku-4-5-20251001",
+ "feeds": [
+  {
+   "id": "gcaptain",
+   "name": "gCaptain",
+   "ok": true,
+   "items": 12
+  },
+  {
+   "id": "splash247",
+   "name": "Splash247",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "hellenicshipping",
+   "name": "Hellenic Shipping News",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "eia",
+   "name": "U.S. Energy Information Administration — Today in Energy",
+   "ok": true,
+   "items": 26
+  },
+  {
+   "id": "rigzone",
+   "name": "Rigzone",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "oilprice",
+   "name": "OilPrice.com",
+   "ok": true,
+   "items": 15
+  },
+  {
+   "id": "lngprime",
+   "name": "LNG Prime",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "mining",
+   "name": "MINING.COM",
+   "ok": true,
+   "items": 36
+  },
+  {
+   "id": "worldgrain",
+   "name": "World Grain",
+   "ok": true,
+   "items": 30
+  },
+  {
+   "id": "gn-hormuz",
+   "name": "Google News — Hormuz and Gulf shipping",
+   "ok": true,
+   "items": 72
+  },
+  {
+   "id": "gn-oil",
+   "name": "Google News — oil market",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-sanctions",
+   "name": "Google News — energy sanctions",
+   "ok": true,
+   "items": 26
+  },
+  {
+   "id": "gn-redsea",
+   "name": "Google News — Red Sea and Suez",
+   "ok": true,
+   "items": 24
+  },
+  {
+   "id": "gn-lng",
+   "name": "Google News — gas and LNG",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-metals",
+   "name": "Google News — metals and iron ore",
+   "ok": true,
+   "items": 63
+  },
+  {
+   "id": "gn-grain",
+   "name": "Google News — grain and fertilizer",
+   "ok": true,
+   "items": 31
+  },
+  {
+   "id": "gn-freight",
+   "name": "Google News — freight markets",
+   "ok": true,
+   "items": 25
+  }
+ ],
+ "counts": {
+  "collected": 620,
+  "candidates": 90,
+  "items": 7,
+  "dropped": 1
+ },
+ "usage": {
+  "input_tokens": 6621,
+  "output_tokens": 767
+ },
+ "status": "ok",
+ "brief_generated_at": "2026-11-14T06:19:26+00:00",
+ "overview": {
+  "text": "Hormuz shipping disrupted by Iranian mine strikes as world oil market recovers; container freight rates surge on geopolitical constraints.",
+  "sources": [
+   {
+    "title": "Iran says another tanker hit naval mine east of Strait of Hormuz",
+    "publisher": "Latest news from Azerbaijan",
+    "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQcEZTal9OMkx5V0JOaF9HN2lfNzloUVI2aTVGVXM0YUJoa3dTTUNlQ2hSLS1GbUg1Y3VJdVM3ci1sZ200WTBldjVQLWxlb3NjSldxWHdpVnNra2pNQ0Q5MEJrQUJLLTZ4anhucWU1MTZyRm5HQm1CcUgyMWI2dUhwc05Denh4QnZpUTBmVTBn?oc=5",
+    "published_at": "2026-11-14T06:06+00:00"
+   },
+   {
+    "title": "Tankers Hit in Hormuz as Iran Keeps Up Pressure After US Vote",
+    "publisher": "EnergyNow",
+    "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQa0gtc0xGbkFaQ3A5ZXBLQnpiSnBIRm9NZmV6OV85Mmx2WVhGUFItbUs0cjAwNWZvejFtSnBFSGRYVEJrbkRvYTdTLXJlV0lLWnhRcXd1RHlzbjZCMEZ4MXBoTjZEb0ZOWjZXWFUwNnlDUnlvMXFYQjhweWFuQjhnZVlkcWVkUERFOEZNazhGSWVKbk1kOXc?oc=5",
+    "published_at": "2026-11-14T02:14+00:00"
+   },
+   {
+    "title": "Iranian Army: Two Tankers on Fire After Striking Mine in Hormuz",
+    "publisher": "Orinoco Tribune",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQYWxfNWhRZU9iTktCWnY4U3B6OUtfa1ZGdGRhcjNlV2t6ekhEV1BJNzBiX21DY3QydnhrTDZ2NVY1RHBFRzI1NVViQ29hS1F6NUREblc5OXdIOC1fX2FrS2k5QWE5aFlrbHN0TF80WmxFdjlaWnVkYXcxRHZQRF8yb3YtNzZKemJaX0lJOVRDWmZGNkNk?oc=5",
+    "published_at": "2026-11-13T22:24+00:00"
+   },
+   {
+    "title": "Iran says 2 oil tankers strike mines, catch fire in Strait of Hormuz",
+    "publisher": "Anadolu Ajansı",
+    "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPLUN3MXNQaXZ0TWdTdHpVOW8zRnUtd0FWNHdKMnhvZnp1SlpCVVlja3k0ZmRPd3RKSWFCWjZ5YjJNaGRsZ1RENEE3ODZ3OUVkcXgyYU1yZXBLakFQNGpRTW80a2xnV2hIMFItSHdiSUh6LUJjNWxZSWEwc1FRNExINXBnR2M3QkZ5Qi1rcFl6Y054WVRqRGszdnZtTmtibUsyNkNaMFVwLW4zN2Y5?oc=5",
+    "published_at": "2026-11-13T21:01+00:00"
+   }
+  ]
+ },
+ "items": [
+  {
+   "headline": "Iranian tankers strike mines in Strait of Hormuz",
+   "summary": "Iran reported two oil tankers hit naval mines and caught fire east of the Strait of Hormuz. Vessel traffic through the strait remains roughly 65% below pre-conflict levels despite recovery in Middle East oil exports.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "Iran says another tanker hit naval mine east of Strait of Hormuz",
+     "publisher": "Latest news from Azerbaijan",
+     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQcEZTal9OMkx5V0JOaF9HN2lfNzloUVI2aTVGVXM0YUJoa3dTTUNlQ2hSLS1GbUg1Y3VJdVM3ci1sZ200WTBldjVQLWxlb3NjSldxWHdpVnNra2pNQ0Q5MEJrQUJLLTZ4anhucWU1MTZyRm5HQm1CcUgyMWI2dUhwc05Denh4QnZpUTBmVTBn?oc=5",
+     "published_at": "2026-11-14T06:06+00:00"
+    },
+    {
+     "title": "Tankers Hit in Hormuz as Iran Keeps Up Pressure After US Vote",
+     "publisher": "EnergyNow",
+     "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQa0gtc0xGbkFaQ3A5ZXBLQnpiSnBIRm9NZmV6OV85Mmx2WVhGUFItbUs0cjAwNWZvejFtSnBFSGRYVEJrbkRvYTdTLXJlV0lLWnhRcXd1RHlzbjZCMEZ4MXBoTjZEb0ZOWjZXWFUwNnlDUnlvMXFYQjhweWFuQjhnZVlkcWVkUERFOEZNazhGSWVKbk1kOXc?oc=5",
+     "published_at": "2026-11-14T02:14+00:00"
+    },
+    {
+     "title": "Iranian Army: Two Tankers on Fire After Striking Mine in Hormuz",
+     "publisher": "Orinoco Tribune",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQYWxfNWhRZU9iTktCWnY4U3B6OUtfa1ZGdGRhcjNlV2t6ekhEV1BJNzBiX21DY3QydnhrTDZ2NVY1RHBFRzI1NVViQ29hS1F6NUREblc5OXdIOC1fX2FrS2k5QWE5aFlrbHN0TF80WmxFdjlaWnVkYXcxRHZQRF8yb3YtNzZKemJaX0lJOVRDWmZGNkNk?oc=5",
+     "published_at": "2026-11-13T22:24+00:00"
+    },
+    {
+     "title": "Iran says 2 oil tankers strike mines, catch fire in Strait of Hormuz",
+     "publisher": "Anadolu Ajansı",
+     "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPLUN3MXNQaXZ0TWdTdHpVOW8zRnUtd0FWNHdKMnhvZnp1SlpCVVlja3k0ZmRPd3RKSWFCWjZ5YjJNaGRsZ1RENEE3ODZ3OUVkcXgyYU1yZXBLakFQNGpRTW80a2xnV2hIMFItSHdiSUh6LUJjNWxZSWEwc1FRNExINXBnR2M3QkZ5Qi1rcFl6Y054WVRqRGszdnZtTmtibUsyNkNaMFVwLW4zN2Y5?oc=5",
+     "published_at": "2026-11-13T21:01+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Container shipping profits surge on freight rate gains",
+   "summary": "CMA CGM net profit more than tripled to $2.32 billion in Q3 as freight rates and cargo volumes rose sharply. Hapag-Lloyd also reported earnings surge driven by higher freight rates amid Middle East disruptions.",
+   "category": "shipping",
+   "sources": [
+    {
+     "title": "CMA CGM Net Profit More Than Triples to $2.32 Billion as Freight Rates Surge",
+     "publisher": "gCaptain",
+     "url": "https://gcaptain.com/cma-cgm-net-profit-more-than-triples-to-2-32-billion-as-freight-rates-surge/",
+     "published_at": "2026-11-13T17:24+00:00"
+    },
+    {
+     "title": "Hapag-Lloyd Profit Surges as Freight Rates Rise, Red Sea Services Return",
+     "publisher": "gCaptain",
+     "url": "https://gcaptain.com/hapag-lloyd-profit-surges-as-freight-rates-rise-red-sea-services-return/",
+     "published_at": "2026-11-13T17:09+00:00"
+    },
+    {
+     "title": "CMA CGM triples profit as Q3 freight rates and cargo volumes rise",
+     "publisher": "FreightWaves",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQV0dzTWh6TDBoZzZ5ckRLeW4yb1ZkLU9LTmxUbGxCby1PQ3pqQU92bFZDQ1NkTldWSXZja21STVlpZEJlaEExYjlkU1A1N2E4TU1oQlFWNlBSU0J1ZmJlMTk0amw3dVFwLWN4SDF2X1M0VUNKcjUxanhHOTJCcFIzLWR0M0I0bXFtNzZfdEhTMkpRVmtoeW5sSUV1Vm90VVE5?oc=5",
+     "published_at": "2026-11-13T19:19+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Canada invests C$200 million in Woodfibre LNG project",
+   "summary": "Canada committed C$200 million backing Woodfibre LNG's net-zero export expansion. Project aims to lift LNG export capacity amid supply concerns.",
+   "category": "gas-lng",
+   "sources": [
+    {
+     "title": "Canada Puts C$200 Million Behind Woodfibre LNG’s Net-Zero Bet",
+     "publisher": "Bloomberg.com",
+     "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNTFFQTHI2bE41cXhvY0dveDZ5STZmcHFFYnVQeEl6eFZSRXNfVFBVcF9HVGdySWlPYWdZSVByMWM0MTh0OW1hODlmWkxHQjkwNnBrZ1lyZ1g4dWRNRmJTZEd2UG02NHZBeTZsR25yQWx4VldoVS1XbU51OXgxai0wRXVVQXRJMy1SNl94Z2w0aXZheGstUWFfSHRrNkFKbWVnZm95ZWstd3hoc0VkS2paOU1lalhOQQ?oc=5",
+     "published_at": "2026-11-14T06:10+00:00"
+    },
+    {
+     "title": "Ottawa invests $200 million in Woodfibre LNG to lift export capacity",
+     "publisher": "Financial Post",
+     "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPc2xhQmFyVm83c2Q4bUN3bUVYWGxzTE9CQldMcWhiM0t3SDZNeEM1cXBoOXdLa09YVlQycG9KZXk1VWtZQVZtRDNNal91Wm5uQjNGQlVOSVIzcDRpZ0F5VzZSN3AxREdqSmNDQl9EeXpmSWJoc3NsVVY2NUkxX2dJZDFZSDg?oc=5",
+     "published_at": "2026-11-13T21:39+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "UK blacklists Russia's top ten oil producers",
+   "summary": "UK sanctioned all ten of Russia's major oil producers, targeting Russian oil supply. Sanctions focus on Arctic oil project's weakest points.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "UK blacklists Slavneft and says it now sanctions all ten of Russia’s top oil producers",
+     "publisher": "Euromaidan Press",
+     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxONndHMFMwWDdESTFmcFZWZ2QyWHpRamhTV2xQcTdycFp4dnh3N2x0N0JRVUJIeUJCTzRqeE9LUkdGV1J2RE5UcWg2WDh0WDVkTkE1LW9pV19WSVUyWFJPa1hTTGprVWJFazdjTmZabnlUemk1c190czZDRTdOdS1MMUp5c3MtRmg3WUNUTTltNkw2QVQ2ajQwbUc4Q2pvRm94ZzZwRkJ1OTA3WlRrZVFOOWFDdk9EeUlxZXNPOXNKd0VhaFE?oc=5",
+     "published_at": "2026-11-13T14:46+00:00"
+    },
+    {
+     "title": "UK slaps fresh sanctions on Russia's biggest oil companies",
+     "publisher": "Female First",
+     "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOakdwcG9ySVRYUnljYXJ4dmVwY0NSUGhjaWxlZjFTb0thTXlCUnViV0RWdWJLUjBRMWZrZnVUeGhxbVFVME5FZzJvNHBHQm4zSjNQODZ5N1lwODRNUmZ0WDFydnpEbENoWFk2UmtKeUhsQmVxV0VORDZ3ek9lUnBISzVZQ3pjRlV1UFFUTW5RNlR2NGo3VW40eDU1Z1BPSkVURjhhQkJ3?oc=5",
+     "published_at": "2026-11-13T11:17+00:00"
+    },
+    {
+     "title": "UK sanctions target the weakest point of Russia’s Arctic oil project",
+     "publisher": "Tomorrow's Affairs",
+     "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOU3BELXB0MG1fYkxmclVIUHBwVWFUQWR3OVNFQ1g2Y1NBMVBhQlRfcGRIZW9ZQ2w2aVZ6cHZiQm9IeEJSUHlyZUllUTdOTjA3b3RwQ2oyRDJVV1VOdDNfNnQzLUMyMFQ5cGE4X3Jwb1VsRkE3a19xWlJadEF0Q3BoMloxTGRKQkJid1dvM3U2U3dnaUVVajNLWHdic3Y?oc=5",
+     "published_at": "2026-11-13T12:12+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Ukraine strikes ninth Russian oil refinery in November",
+   "summary": "Ukraine continued near-daily strikes against Russian oil assets, hitting nine refineries since start of November. Campaign aims to disrupt Russian fuel supplies.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "Ukraine Hits 9th Russian Oil Refinery Since Start of Nov",
+     "publisher": "Rigzone",
+     "url": "https://www.rigzone.com/news/wire/ukraine_hits_9th_russian_oil_refinery_since_start_of_nov-13-nov-2026-185083-article/?rss=true",
+     "published_at": "2026-11-13T16:20+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "CSN Mineração Q3 margins collapse as iron ore prices fall",
+   "summary": "Brazilian miner CSN Mineração reported sliding Q3 results with margins collapsing on lower iron ore prices. Capstone also cut annual copper production forecast by 5,000 tonnes.",
+   "category": "metals",
+   "sources": [
+    {
+     "title": "CSN Mineração Q3 2026 slides: margins collapse on iron ore prices",
+     "publisher": "Investing.com Nigeria",
+     "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPdVhIbnZvRHJIdW9fc1FKMzA4VDBlN1JDdDJSRUlMYVVDUXNoZXRNcTd3NW5EazBoRFkyNFRnb09fU0w2aS1lZUlnR2VFbWp4WVE4VXNOVUxCTU5jbjYwVzFZZUNEeW5qeGwwYzRnbEoxemFQcEx3TjhKM2VVNkQ1RlVkcnZGYjZ3eHJzSF9QT2JqWXdORTJWdGFuZFJfb3I5ZlZUcDB2aDhmZFpXOG44SDhxZVh5Y2pNYkZ0MjlvNUtQQWs?oc=5",
+     "published_at": "2026-11-14T04:36+00:00"
+    },
+    {
+     "title": "Capstone cuts copper outlook as restart slips",
+     "publisher": "MINING.COM",
+     "url": "https://www.mining.com/capstone-cuts-copper-outlook-as-restart-slips/",
+     "published_at": "2026-11-13T22:36+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Corn prices soften on Ukraine export pressure",
+   "summary": "Corn prices firmed into the weekend as export business picked up, but face downward pressure from Ukraine exports and stable global supply balance.",
+   "category": "agri",
+   "sources": [
+    {
+     "title": "Corn prices soften on Ukraine export pressure and stable global balance",
+     "publisher": "CMB News",
+     "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSms3dHhxVGpQWTRxVTB4QnBfVVhEMW1mVDMwN1pmMFpZRXdERmRGbGhiVFBMYlo5TVcxcjRMR2JlTzRWMU51NEFSY2p6Um82ckc1Ym52TllNYkpvbXJmNWc4LUdjNWwtLWluTi1RdjNvUlZxdGN5dlFUWDBNaTI1MFR4cGktZ1lTNEwxOWR3QmNPUQ?oc=5",
+     "published_at": "2026-11-14T02:00+00:00"
+    },
+    {
+     "title": "Corn Firm into the Weekend as Export Business Picks Up",
+     "publisher": "Barchart.com",
+     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdmZ1dkMxWGZtS0RXdjRrM1F6cEtka2FnUmVDMURGVDc4WDd4a1U5SGpVTXRKaUJRQVJWcFg5RlY5Z0Z4dFMyaG5VX3pMVU4xQlB4azMwMExfcktpWWFaUnozbG55T25HaEJtdU5RNlpwZ0tFbkJGR3ZfWjlRdkZGTzhjajRKTlR2Q09NTV82WU50UTNBSTlDVEgtczRKaEk?oc=5",
+     "published_at": "2026-11-13T22:58+00:00"
+    }
+   ]
+  }
+ ]
+}
