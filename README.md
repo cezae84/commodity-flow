@@ -53,9 +53,9 @@ Every figure below comes from the dataset and links to its source.
   the Cape against 19 days via Suez
   ([EIA](https://www.eia.gov/todayinenergy/detail.php?id=61363)).
 - **Hormuz is a moving target.** The strait has been effectively closed since 28 February
-  2026. IMF PortWatch, which counts ships broadcasting their position, recorded 4 transits
-  on 4 October 2026, against a pre-crisis baseline of 85 a day
-  ([straits.live, compiling IMF PortWatch](https://straits.live/briefs/2026-10-09)). The
+  2026. IMF PortWatch, which counts ships broadcasting their position, recorded 3 transits
+  on 8 November 2026, against a pre-crisis baseline of 85 a day
+  ([straits.live, compiling IMF PortWatch](https://straits.live/briefs/2026-11-14)). The
   crude that still gets through moves mostly by ship-to-ship transfer onto shuttle tankers
   ([Kpler](https://www.kpler.com/blog/explainer-how-mideast-gulf-crude-exports-returned-to-pre-war-levels)).
   Estimates of what crosses differ from one source to another and change from day to day,
@@ -72,7 +72,7 @@ Every figure below comes from the dataset and links to its source.
 
 ## How the data is built and kept up to date
 
-**One rule: nothing without a source.** Each of the **383 facts** (from **188 sources**:
+**One rule: nothing without a source.** Each of the **396 facts** (from **195 sources**:
 EIA, IEA, IMF, Kpler, Drewry, national statistics, trade press…) carries a link and the
 *verbatim sentence* it was taken from. A figure that does not appear in its quote is
 rejected automatically. When a source could not be found, the map says "not sourced yet"
