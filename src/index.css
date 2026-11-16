@@ -35,7 +35,7 @@
   --down: #ff5f57;
   --alert: #f0524f;
 
-  --sidebar-w: 380px;
+  --sidebar-w: 400px;
   --radius: 2px;
   --radius-sm: 2px;
 
@@ -829,59 +829,6 @@ button {
    Map overlays
    -------------------------------------------------------------------------- */
 
-.mappanel {
-  position: absolute;
-  left: 16px;
-  bottom: 16px;
-  z-index: 800;
-  width: 286px;
-  background: var(--paper);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
-  overflow: hidden;
-}
-
-.mappanel__toggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 9px 12px;
-  background: none;
-  border: none;
-  font-size: 10.5px;
-  font-weight: 650;
-  color: var(--ink-2);
-}
-.mappanel__toggle:hover {
-  background: var(--paper-2);
-}
-.mappanel__chevron {
-  color: var(--ink-3);
-}
-
-.mappanel__body {
-  padding: 2px 12px 12px;
-  max-height: 58vh;
-  overflow-y: auto;
-  scrollbar-width: thin;
-}
-
-.mappanel__group + .mappanel__group {
-  margin-top: 14px;
-  padding-top: 12px;
-  border-top: 1px solid var(--rule-soft);
-}
-.mappanel__group h4 {
-  margin: 0 0 8px;
-  font-size: 9.5px;
-  font-weight: 650;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-3);
-}
-
 .keylist,
 .layerlist {
   list-style: none;
@@ -966,29 +913,6 @@ button {
 .check input:focus-visible + .check__box {
   outline: 2px solid var(--link);
   outline-offset: 2px;
-}
-
-.mappanel__hint {
-  margin: 12px 0 0;
-  padding: 8px 10px;
-  font-size: 10.5px;
-  line-height: 1.5;
-  color: var(--ink-2);
-  background: var(--paper-2);
-  border-radius: var(--radius-sm);
-}
-.mappanel__hint strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-
-.mappanel__note {
-  margin: 14px 0 0;
-  padding-top: 12px;
-  border-top: 1px solid var(--rule-soft);
-  font-size: 10.5px;
-  line-height: 1.5;
-  color: var(--ink-3);
 }
 
 .drawer-handle {
@@ -1143,7 +1067,7 @@ button {
 
 @media (max-width: 1180px) {
   :root {
-    --sidebar-w: 336px;
+    --sidebar-w: 344px;
   }
 }
 
@@ -1169,10 +1093,6 @@ button {
     display: block;
   }
 
-  .mappanel {
-    width: calc(100% - 32px);
-    max-width: 300px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1792,8 +1712,6 @@ button {
 .price__value,
 .price__meta,
 .price__ref,
-.mappanel__toggle,
-.mappanel__group h4,
 .datatable th,
 .datatable__id,
 .datatable__value,
@@ -1815,7 +1733,6 @@ button {
 .detail__block h3,
 .period__title,
 .period__subtitle,
-.mappanel__group h4,
 .datatable th {
   color: var(--ink-2);
 }
@@ -2229,5 +2146,614 @@ button {
   }
   .menu__tab--news {
     display: inline-flex;
+  }
+}
+
+/* ==========================================================================
+   Readability pass
+   Larger small text, a compact header, the status as a first-class filter and
+   tag, the current situation ahead of the reference figures, and a legend that
+   sits along the foot of the map instead of over it.
+   ========================================================================== */
+
+/* --- Small text: nothing a reader needs is set under 11px ------------------ */
+
+.eyebrow {
+  font-size: 11px;
+}
+.routecard__name {
+  font-size: 14px;
+}
+.routecard__metric {
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.routecard__foot {
+  font-size: 11px;
+  gap: 4px 10px;
+}
+.routecard {
+  padding: 13px 9px 14px;
+}
+.method p {
+  font-size: 12px;
+  color: var(--ink-2);
+}
+.detail__close {
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+.detail__kicker {
+  font-size: 11px;
+}
+.detail__odlabel,
+.stat__label {
+  font-size: 10.5px;
+  color: var(--ink-2);
+}
+.fact__statement,
+.detail__block .fact__statement {
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.fact--lead .fact__statement {
+  font-size: 15px;
+  line-height: 1.5;
+}
+.fact__evidence summary,
+.period__more summary {
+  color: var(--ink-2);
+}
+.scope,
+.timeframe {
+  font-size: 10px;
+}
+.fact__period {
+  font-size: 11px;
+  color: var(--ink-2);
+}
+
+/* --- Header ---------------------------------------------------------------- */
+
+.brand__tag {
+  margin: 4px 0 0;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--ink-2);
+}
+.brand__periods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  margin: 12px 0 0;
+  background: var(--rule-soft);
+  border: 1px solid var(--rule-soft);
+}
+.brand__periods div {
+  padding: 6px 9px 7px;
+  background: var(--paper);
+}
+.brand__periods dt {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  color: var(--ink-3);
+}
+.brand__periods dd {
+  margin: 2px 0 0;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.menu__tab {
+  padding: 10px 6px 9px;
+  font-size: 11.5px;
+  white-space: nowrap;
+}
+@media (max-width: 1180px) {
+  .menu__count {
+    display: none;
+  }
+}
+
+/* --- How to read this map -------------------------------------------------- */
+
+.intro {
+  margin: 16px 18px 0;
+  padding: 13px 14px 12px;
+  background: var(--paper-2);
+  border: 1px solid var(--rule-soft);
+  border-left: 3px solid var(--ink-3);
+}
+.intro__list {
+  margin: 9px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 7px;
+}
+.intro__list li {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.intro__list strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.intro__dismiss {
+  margin-top: 10px;
+  padding: 4px 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+}
+.intro__dismiss:hover {
+  border-color: var(--ink-3);
+}
+
+/* --- Status: filter chips and the [ ✕ Halted ] tag ------------------------- */
+
+.statusfilter {
+  margin-top: 12px;
+}
+.statusfilter__label {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--ink-3);
+}
+.statusfilter__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.statuschip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.3;
+  color: var(--ink-2);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+}
+.statuschip:hover {
+  border-color: var(--ink-3);
+  color: var(--ink);
+}
+.statuschip__icon {
+  color: var(--status-color);
+}
+.statuschip__count {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+}
+.statuschip.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bar);
+}
+.statuschip.is-active .statuschip__icon {
+  color: inherit;
+}
+
+.statustag {
+  display: inline-block;
+  flex: none;
+  padding: 1px 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 650;
+  line-height: 1.5;
+  white-space: nowrap;
+  color: var(--status-color);
+  border: 1px solid var(--status-color);
+  border-radius: var(--radius-sm);
+}
+.statustag::before {
+  content: '[';
+  margin-right: 3px;
+}
+.statustag::after {
+  content: ']';
+  margin-left: 3px;
+}
+/* "Normal" is the absence of news: it stays quiet. */
+.statustag--normal {
+  color: var(--ink-2);
+  border-color: var(--rule);
+}
+
+.routecard__now {
+  display: flex;
+  margin: 1px 0 2px;
+}
+
+.filterrow__blurb {
+  margin: 2px 9px 6px 31px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.results__zoom {
+  margin: 8px 0 2px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+
+/* --- Detail: the current situation, coloured by its status ----------------- */
+
+.detail__title {
+  margin: 8px 0 16px;
+  font-size: 22px;
+}
+.period__headrow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.period__headrow .period__title {
+  margin: 0;
+  padding-top: 2px;
+}
+.period--current {
+  background: color-mix(in srgb, var(--status-color, var(--ink-3)) 8%, var(--paper));
+  border-left: 3px solid var(--status-color, var(--ink-3));
+}
+.period--current.period--normal {
+  background: var(--paper-2);
+  border-left-color: var(--ink-3);
+}
+.period--current .period__text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.period--current .period__more {
+  margin-top: 10px;
+}
+.period--prices {
+  background: var(--paper-2);
+  border-left: 3px solid var(--accent);
+}
+.period--prices .prices {
+  margin-top: 0;
+}
+.trading dd {
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+.trading dt {
+  color: var(--ink-2);
+}
+
+.cp-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--rule-soft);
+}
+.cp-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 4px;
+  text-align: left;
+  font-size: 13px;
+  color: var(--ink);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.cp-row:hover {
+  background: var(--paper-2);
+}
+.cp-row__name {
+  flex: 1;
+  min-width: 0;
+}
+.cp-row__go {
+  color: var(--ink-3);
+}
+.cp-routes__name {
+  flex: 1;
+  min-width: 0;
+}
+.cp-routes button {
+  font-size: 13px;
+}
+.cp-routes__commodity {
+  margin-left: 0;
+  font-size: 10.5px;
+}
+
+/* --- Chokepoints tab ------------------------------------------------------- */
+
+.chokelist__lead {
+  margin: 8px 0 12px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.chokelist__items {
+  list-style: none;
+  margin: 0 -9px;
+  padding: 0;
+}
+.chokecard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  padding: 13px 9px 14px 12px;
+  text-align: left;
+  background: none;
+  border: none;
+  border-top: 1px solid var(--rule-soft);
+  box-shadow: inset 3px 0 0 var(--status-color);
+}
+.chokecard:hover {
+  background: var(--paper-2);
+}
+.chokecard__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+.chokecard__name {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--ink);
+}
+.chokecard__now {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.chokecard__ref {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.chokecard__foot {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--ink-3);
+}
+
+/* --- Legend strip along the foot of the map -------------------------------- */
+
+.legend {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 800;
+  display: flex;
+  align-items: stretch;
+  max-width: calc(100% - 96px);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+}
+.legend__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding: 9px 12px;
+}
+.legend__keys {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+.legend__keys li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  line-height: 1.4;
+  white-space: nowrap;
+  color: var(--ink);
+}
+.legend__keys .key-line {
+  width: 16px;
+}
+.legend__keys--status li {
+  color: var(--ink-2);
+}
+.legend__keys--status .key-dash {
+  width: 18px;
+}
+.legend__keys .legend__title {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.legend__hint {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--ink-3);
+}
+.legend__hint strong {
+  font-family: var(--mono);
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.legend__layers {
+  position: relative;
+  display: flex;
+  border-left: 1px solid var(--rule);
+}
+.legend__toggle {
+  padding: 0 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--ink-2);
+  background: none;
+  border: none;
+}
+.legend__toggle:hover {
+  color: var(--ink);
+  background: var(--paper-2);
+}
+.legend__toggle.is-active {
+  color: var(--accent);
+}
+.legend__pop {
+  position: absolute;
+  right: -1px;
+  bottom: calc(100% + 7px);
+  width: 250px;
+  padding: 12px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+}
+.legend__pop .check {
+  font-size: 12.5px;
+  color: var(--ink);
+}
+.legend__note {
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--rule-soft);
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--ink-3);
+}
+
+@media (max-width: 900px) {
+  .legend {
+    left: 10px;
+    bottom: 10px;
+    max-width: calc(100% - 70px);
+  }
+  .legend__keys li {
+    font-size: 11px;
+  }
+  .legend__pop {
+    right: auto;
+    left: -1px;
+  }
+}
+
+/* --- Market brief: narrower, and a one-line teaser when folded ------------- */
+
+.newspanel {
+  width: 320px;
+  max-height: calc(100% - 150px);
+}
+.newspanel__teaser {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  width: 100%;
+  padding: 0 12px;
+  margin: 8px 0 10px;
+  text-align: left;
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--ink-2);
+  background: none;
+  border: none;
+}
+.newspanel__teaser:hover {
+  color: var(--ink);
+}
+.news__summary {
+  font-size: 13px;
+}
+
+/* --- Map labels ------------------------------------------------------------ */
+
+.wm-choke-label {
+  font-size: 11px;
+}
+.wm-choke-label.is-alert {
+  color: var(--ink);
+}
+.wm-choke-label__icon {
+  color: var(--status-color);
+}
+.wm-port-label-wrap {
+  pointer-events: none;
+}
+.wm-port-label {
+  display: inline-block;
+  padding: 2px 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--ink);
+  background: rgba(0, 0, 0, 0.82);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-sm);
+}
+.wm-tooltip strong {
+  font-size: 13.5px;
+}
+.wm-tooltip .tt-metric {
+  font-size: 12px;
+}
+.wm-port-label--left,
+.wm-choke-label--left {
+  transform: translateX(-100%);
+}
+
+/* Leaflet's own sheet loads later and paints the container light grey while
+   tiles load: keep the water colour instead. */
+.map-canvas.leaflet-container {
+  background: var(--water);
+}
+
+/* The heading and its status tag stack: side by side, the heading wrapped. */
+.period__headrow {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chokecard__now {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.menu__tab--data {
+  padding: 10px 10px 9px;
+}
+
+@media (max-width: 900px) {
+  .legend__hint {
+    display: none;
   }
 }

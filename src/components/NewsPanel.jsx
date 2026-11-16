@@ -3,11 +3,13 @@ import { NEWS_CATEGORIES, isOutdated, timeAgo } from '../data/news.js';
 
 const OPEN_KEY = 'commoditiesroutes:newspanel-open:v1';
 
+/** The reader's own choice, or null when they have never toggled the panel. */
 function readOpen() {
   try {
-    return window.localStorage.getItem(OPEN_KEY) !== '0';
+    const stored = window.localStorage.getItem(OPEN_KEY);
+    return stored == null ? null : stored !== '0';
   } catch {
-    return true;
+    return null;
   }
 }
 
@@ -90,11 +92,14 @@ export function NewsBrief({ news }) {
 
 /** Floating, collapsible panel on the right of the map. Hidden when there is no feed. */
 export default function NewsPanel({ news }) {
-  const [open, setOpen] = useState(readOpen);
+  const [choice, setChoice] = useState(readOpen);
   if (news.status !== 'ok') return null;
 
+  // Until the reader decides, a fresh brief opens and a stale one stays folded:
+  // an old brief should not cover a third of the map.
+  const open = choice ?? !isOutdated(news.data);
   const toggle = () => {
-    setOpen(!open);
+    setChoice(!open);
     writeOpen(!open);
   };
   const written = news.data.brief_generated_at || news.data.generated_at;
@@ -109,10 +114,16 @@ export default function NewsPanel({ news }) {
           {timeAgo(written)} <span aria-hidden="true">{open ? '▴' : '▾'}</span>
         </span>
       </button>
-      {open && (
+      {open ? (
         <div className="newspanel__body">
           <NewsBrief news={news} />
         </div>
+      ) : (
+        news.data.overview && (
+          <button type="button" className="newspanel__teaser" onClick={toggle}>
+            {news.data.overview.text}
+          </button>
+        )
       )}
     </aside>
   );

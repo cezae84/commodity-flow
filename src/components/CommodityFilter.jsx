@@ -63,6 +63,8 @@ export default function CommodityFilter({
                 <span className="filterrow__count">{counts[c.id] ?? 0}</span>
               </button>
 
+              {isActive && c.blurb && <p className="filterrow__blurb">{c.blurb}</p>}
+
               {isActive && groups.length > 0 && (
                 <div className="subfilter">
                   <button

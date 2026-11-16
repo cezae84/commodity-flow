@@ -10,6 +10,9 @@ import DataView from './components/DataView.jsx';
 import MarketsPanel from './components/MarketsPanel.jsx';
 import Watchlist from './components/Watchlist.jsx';
 import NewsPanel, { NewsBrief } from './components/NewsPanel.jsx';
+import ChokepointList from './components/ChokepointList.jsx';
+import StatusFilter from './components/StatusFilter.jsx';
+import Intro from './components/Intro.jsx';
 import { useMarketPrices } from './data/live.js';
 import { useWatchlist } from './data/favorites.js';
 import { useNewsBrief } from './data/news.js';
@@ -17,12 +20,13 @@ import { useNewsBrief } from './data/news.js';
 import {
   ROUTES,
   ROUTE_BY_ID,
+  CHOKEPOINTS,
   CHOKEPOINT_BY_ID,
   FACTS,
   SOURCES,
 } from './data/index.js';
 import { DIRECTIONS, matchesCountry, countriesFor } from './data/filters.js';
-import { SUBFILTERS, SUBFILTER_BY_ID } from './data/commodities.js';
+import { COMMODITY_BY_ID, STATUS, SUBFILTERS, SUBFILTER_BY_ID } from './data/commodities.js';
 import { SITUATION_AS_OF } from './data/timeframes.js';
 
 const LAYER_LABELS = {
@@ -39,14 +43,47 @@ const fold = (s) =>
     .replace(/[̀-ͯ]/g, '')
     .toLowerCase();
 
+const VIEWS = ['routes', 'chokepoints', 'markets', 'watchlist', 'news'];
+
+/**
+ * What the address bar remembers, so a view can be bookmarked or shared:
+ * `#route=crude-gulf-china`, `#chokepoint=hormuz`, `#commodity=lng&status=disrupted`.
+ * Unknown ids are dropped rather than trusted.
+ */
+function readHash() {
+  let p;
+  try {
+    p = new URLSearchParams(window.location.hash.slice(1));
+  } catch {
+    p = new URLSearchParams();
+  }
+  const route = p.get('route');
+  const chokepoint = p.get('chokepoint');
+  const commodity = p.get('commodity');
+  const status = p.get('status');
+  const view = p.get('view');
+  return {
+    route: route && ROUTE_BY_ID[route] ? route : null,
+    chokepoint: chokepoint && CHOKEPOINT_BY_ID[chokepoint] ? chokepoint : null,
+    commodity: commodity && COMMODITY_BY_ID[commodity] ? commodity : 'all',
+    status: status && STATUS[status] ? status : null,
+    view: VIEWS.includes(view) ? view : 'routes',
+  };
+}
+
 export default function App() {
-  const [activeCommodity, setActiveCommodity] = useState('all');
+  const [initial] = useState(readHash);
+  const [activeCommodity, setActiveCommodity] = useState(initial.commodity);
   const [activeSub, setActiveSub] = useState(null);
+  // Restricts the list (and so the map) to one current status: halted, reduced…
+  const [statusFilter, setStatusFilter] = useState(initial.status);
   const [direction, setDirection] = useState('from');
   const [country, setCountry] = useState(null);
   const [query, setQuery] = useState('');
-  const [selectedRouteId, setSelectedRouteId] = useState(null);
-  const [selectedChokepointId, setSelectedChokepointId] = useState(null);
+  const [selectedRouteId, setSelectedRouteId] = useState(initial.route);
+  const [selectedChokepointId, setSelectedChokepointId] = useState(
+    initial.route ? null : initial.chokepoint
+  );
   const [hoveredRouteId, setHoveredRouteId] = useState(null);
   const [layers, setLayers] = useState({
     chokepoints: true,
@@ -60,7 +97,7 @@ export default function App() {
   const news = useNewsBrief();
   // Sidebar menu: route selection, market prices, the user's watchlist, or (small
   // screens only, where the floating news panel is hidden) the market brief.
-  const [view, setView] = useState('routes');
+  const [view, setView] = useState(initial.view);
   // Restricts the map (and the route list) to the starred routes.
   const [watchOnly, setWatchOnly] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -106,7 +143,9 @@ export default function App() {
     return opts;
   }, [commodityFiltered, direction, country]);
 
-  const visibleRoutes = useMemo(() => {
+  // Everything but the status filter: the status chips count against this list,
+  // so each chip says how many routes it would leave.
+  const beforeStatus = useMemo(() => {
     if (watchOnly) {
       return watchlist.routes.map((id) => ROUTE_BY_ID[id]).filter(Boolean);
     }
@@ -117,7 +156,7 @@ export default function App() {
     if (q) {
       list = list.filter((r) =>
         fold(
-          `${r.name} ${r.from} ${r.to} ${r.facts.map((f) => f.statement).join(' ')}`
+          `${r.name} ${r.from} ${r.to} ${r.situation} ${r.facts.map((f) => f.statement).join(' ')}`
         ).includes(q)
       );
     }
@@ -125,6 +164,20 @@ export default function App() {
       (a, b) => b.weight - a.weight || a.name.localeCompare(b.name, 'en')
     );
   }, [commodityFiltered, country, direction, query, watchOnly, watchlist.routes]);
+
+  const statusCounts = useMemo(() => {
+    const acc = {};
+    for (const r of beforeStatus) acc[r.status] = (acc[r.status] ?? 0) + 1;
+    return acc;
+  }, [beforeStatus]);
+
+  const visibleRoutes = useMemo(
+    () =>
+      statusFilter && !watchOnly
+        ? beforeStatus.filter((r) => r.status === statusFilter)
+        : beforeStatus,
+    [beforeStatus, statusFilter, watchOnly]
+  );
 
   // Single source of truth: the map shows exactly what the panel lists, with no
   // duplicated filtering logic.
@@ -175,9 +228,16 @@ export default function App() {
     setSelectedChokepointId(null);
   }, []);
 
+  const changeStatus = useCallback((id) => {
+    setStatusFilter(id);
+    setSelectedRouteId(null);
+    setSelectedChokepointId(null);
+  }, []);
+
   const clearFilters = useCallback(() => {
     setActiveCommodity('all');
     setActiveSub(null);
+    setStatusFilter(null);
     setCountry(null);
     setDirection('from');
     setQuery('');
@@ -214,6 +274,40 @@ export default function App() {
     setEligibleOnMap(eligible);
   }, []);
 
+  // Keep the address bar in step with what is on screen (see readHash).
+  useEffect(() => {
+    const p = new URLSearchParams();
+    if (selectedRouteId) p.set('route', selectedRouteId);
+    else if (selectedChokepointId) p.set('chokepoint', selectedChokepointId);
+    if (view !== 'routes') p.set('view', view);
+    if (activeCommodity !== 'all') p.set('commodity', activeCommodity);
+    if (statusFilter) p.set('status', statusFilter);
+    const hash = p.toString();
+    try {
+      window.history.replaceState(
+        null,
+        '',
+        hash ? `#${hash}` : window.location.pathname + window.location.search
+      );
+    } catch {
+      // Some embedded or file:// contexts refuse history changes: nothing to keep in step.
+    }
+  }, [selectedRouteId, selectedChokepointId, view, activeCommodity, statusFilter]);
+
+  // A pasted or edited link while the page is open.
+  useEffect(() => {
+    const onHash = () => {
+      const h = readHash();
+      setActiveCommodity(h.commodity);
+      setStatusFilter(h.status);
+      setView(h.view);
+      setSelectedRouteId(h.route);
+      setSelectedChokepointId(h.route ? null : h.chokepoint);
+    };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
+
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') {
@@ -240,6 +334,7 @@ export default function App() {
   const hasFilters =
     activeCommodity !== 'all' ||
     Boolean(activeSub) ||
+    Boolean(statusFilter) ||
     Boolean(country) ||
     Boolean(query) ||
     watchOnly;
@@ -259,17 +354,27 @@ export default function App() {
               ✕
             </button>
           </div>
-          <p className="brand__sub">
-            {ROUTES.length} corridors · figures: <strong>2025 reference</strong> ·
-            situation: <strong>{SITUATION_AS_OF}</strong>
+          <p className="brand__tag">
+            Seaborne commodity corridors, sourced fact by fact
           </p>
+          <dl className="brand__periods">
+            <div>
+              <dt>Figures</dt>
+              <dd>2025 reference</dd>
+            </div>
+            <div>
+              <dt>Situation as of</dt>
+              <dd>{SITUATION_AS_OF}</dd>
+            </div>
+          </dl>
         </header>
 
         <nav className="menu" aria-label="Sidebar menu">
           {[
             { id: 'routes', label: 'Routes', count: ROUTES.length },
+            { id: 'chokepoints', label: 'Chokepoints', count: CHOKEPOINTS.length },
             { id: 'markets', label: 'Markets', count: market.status === 'ok' ? Object.keys(market.data.instruments).length : null },
-            { id: 'watchlist', label: '★ Watchlist', count: watchlist.routes.length + watchlist.prices.length },
+            { id: 'watchlist', label: '★', title: 'Watchlist', count: watchlist.routes.length + watchlist.prices.length },
             ...(news.status === 'ok' ? [{ id: 'news', label: 'News', count: null, className: ' menu__tab--news' }] : []),
           ].map((tab) => (
             <button
@@ -278,6 +383,8 @@ export default function App() {
               className={`menu__tab${tab.className ?? ''}${view === tab.id ? ' is-active' : ''}`}
               onClick={() => openView(tab.id)}
               aria-pressed={view === tab.id}
+              aria-label={tab.title}
+              title={tab.title}
             >
               {tab.label}
               {tab.count != null && <span className="menu__count">{tab.count}</span>}
@@ -304,6 +411,8 @@ export default function App() {
               onClose={clearSelection}
               onSelectRoute={selectRoute}
             />
+          ) : view === 'chokepoints' ? (
+            <ChokepointList onSelect={selectChokepoint} />
           ) : view === 'markets' ? (
             <MarketsPanel market={market} watchlist={watchlist} />
           ) : view === 'news' ? (
@@ -331,6 +440,7 @@ export default function App() {
                   </button>
                 </p>
               )}
+              <Intro />
               <section className="filters">
                 <h2 className="eyebrow">Filters</h2>
 
@@ -361,6 +471,15 @@ export default function App() {
                   onCountryChange={setCountry}
                   options={countryOptions}
                 />
+
+                {!watchOnly && (
+                  <StatusFilter
+                    active={statusFilter}
+                    onChange={changeStatus}
+                    counts={statusCounts}
+                    total={beforeStatus.length}
+                  />
+                )}
               </section>
 
               <CommodityFilter
@@ -388,7 +507,7 @@ export default function App() {
                       Clear filters
                     </button>
                   ) : (
-                    <span className="results__hint">by order of magnitude</span>
+                    <span className="results__hint">largest corridors first</span>
                   )}
                 </div>
 
@@ -397,6 +516,12 @@ export default function App() {
                     {DIRECTIONS.find((d) => d.id === direction)?.label}{' '}
                     <strong>{country}</strong>
                     {activeSub && ` · ${SUBFILTER_BY_ID[activeSub]?.label}`}
+                  </p>
+                )}
+                {hiddenOnMap > 0 && (
+                  <p className="results__zoom">
+                    The map draws the {shownOnMap} largest of these at this zoom —
+                    zoom in, or pick a route below, to see the others.
                   </p>
                 )}
 

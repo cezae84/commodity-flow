@@ -7,9 +7,12 @@ verbatim sentence it was taken from — plus two automated layers that never ent
 dataset: **18 market prices** refreshed every 30 minutes and an **AI market brief** of
 the last 24 hours of news, rewritten every two hours.
 
-The sidebar has one menu with four entries (five on small screens):
+The sidebar has one menu with five entries (six on small screens):
 
-- **Routes** — filters (commodity, sub-family, country, search) and the route list.
+- **Routes** — filters (commodity, sub-family, country, current status, search) and
+  the route list. A short *How to read this map* card sits on top until dismissed.
+- **Chokepoints** — the ten straits and canals as a list, most affected first, each
+  with its current status, its situation and its 2025 reference figure.
 - **Markets** — every price, grouped by commodity family, with its daily or monthly
   change and a 30-point sparkline.
 - **★ Watchlist** — the routes and prices you starred (☆ on any route card, route
@@ -71,8 +74,14 @@ can open by double-clicking, see [Standalone file](#standalone-file-no-server).
   recently opened; every status other than normal cites its evidence. Line style
   (solid / dashed) and an icon carry the information: never colour alone.
 - **Generalisation when zoomed out** — past 20 visible corridors the lightest are
-  hidden until you zoom out of world scale. A printed atlas does the same. The panel counter reports how many are
-  hidden, and a checkbox disables the behaviour.
+  hidden until you zoom out of world scale. A printed atlas does the same. The legend strip and the route list
+  report how many are drawn, a checkbox under *Layers* disables the behaviour, and a selected route is always drawn.
+- **Status filter** — one row of chips (*Halted*, *Reduced*, *New corridor*, *Normal*) narrows the
+  list and the map to a single current status; each chip shows how many routes it would leave.
+- **Shareable links** — the address bar follows the selection:
+  `#route=crude-gulf-china`, `#chokepoint=hormuz`, `#commodity=lng&status=disrupted`, `#view=chokepoints`.
+- **Legend strip** — commodity colours and status line styles stay visible along the foot of the map;
+  the layer toggles open from its *Layers* button.
 - **Hormuz bypass pipelines** — Petroline, ADCOP, Goreh-Jask, dashed in grey,
   with their capacities.
 - **AI market brief** — a collapsible panel on the right of the map: 5 to 8 commodity
@@ -294,7 +303,9 @@ src/
     DataView.jsx       Data & sources tables
     MarketsPanel.jsx   prices, sparklines   Watchlist.jsx  Star.jsx
     NewsPanel.jsx      AI market brief (floating panel / sidebar tab)
-    CommodityFilter.jsx  CountryFilter.jsx  RouteList.jsx  MapPanel.jsx
+    CommodityFilter.jsx  CountryFilter.jsx  StatusFilter.jsx  RouteList.jsx
+    ChokepointList.jsx  StatusTag.jsx  Intro.jsx
+    MapPanel.jsx       legend strip and layer toggles
   App.jsx              application state and layout
 scripts/
   lib/dataset.mjs      loads data/*.csv for the scripts

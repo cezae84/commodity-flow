@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { SITUATION_AS_OF } from '../data/timeframes.js';
 import {
   COMMODITIES,
@@ -6,10 +6,18 @@ import {
   STATUS,
   STATUS_ORDER,
 } from '../data/commodities.js';
+import { ROUTES, CHOKEPOINTS } from '../data/index.js';
+
+/** Only the statuses that actually occur: a key for something absent is noise. */
+const USED_STATUSES = STATUS_ORDER.filter(
+  (id) =>
+    ROUTES.some((r) => r.status === id) || CHOKEPOINTS.some((c) => c.status === id)
+);
 
 /**
- * A single panel at the foot of the map: legend and layers together.
- * Three separate floating boxes cluttered the map; only one remains.
+ * The legend as a strip along the foot of the map. With eight series on screen
+ * the colour key has to stay visible — but as two short rows, not a box over
+ * the middle of the Indian Ocean. Layers open on demand above the strip.
  */
 export default function MapPanel({
   activeCommodity,
@@ -18,75 +26,84 @@ export default function MapPanel({
   shown,
   hidden,
 }) {
-  // Open by default: with eight series on screen the legend carries colour
-  // identity — collapsing it would leave hue to speak alone.
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef(null);
   const keyed =
     activeCommodity === 'all'
       ? COMMODITIES
       : [COMMODITY_BY_ID[activeCommodity]];
 
+  // The layers menu closes on a click anywhere else, like any menu.
+  useEffect(() => {
+    if (!open) return undefined;
+    const onDown = (e) => {
+      if (!rootRef.current?.contains(e.target)) setOpen(false);
+    };
+    window.addEventListener('pointerdown', onDown);
+    return () => window.removeEventListener('pointerdown', onDown);
+  }, [open]);
+
   return (
-    <div className={`mappanel${open ? ' is-open' : ''}`}>
-      <button
-        type="button"
-        className="mappanel__toggle"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-      >
-        <span>Legend &amp; layers</span>
-        <span className="mappanel__chevron" aria-hidden="true">
-          {open ? '▾' : '▴'}
-        </span>
-      </button>
+    <div className="legend" ref={rootRef}>
+      <div className="legend__rows">
+        <ul className="legend__keys" aria-label="Commodity colours">
+          {keyed.map((c) => (
+            <li key={c.id}>
+              <span
+                className="key-line"
+                style={{ background: c.color }}
+                aria-hidden="true"
+              />
+              {c.label}
+            </li>
+          ))}
+        </ul>
 
-      {open && (
-        <div className="mappanel__body">
-          <div className="mappanel__group">
-            <h4>Commodity</h4>
-            <ul
-              className={`keylist${keyed.length > 4 ? ' keylist--two' : ''}`}
-            >
-              {keyed.map((c) => (
-                <li key={c.id}>
-                  <span
-                    className="key-line"
-                    style={{ background: c.color }}
-                    aria-hidden="true"
-                  />
-                  {c.label}
-                </li>
-              ))}
-            </ul>
-          </div>
+        <ul className="legend__keys legend__keys--status" aria-label="Corridor status">
+          <li className="legend__title">Now · {SITUATION_AS_OF}</li>
+          {USED_STATUSES.map((id) => {
+            const s = STATUS[id];
+            return (
+              <li key={id} title={s.label}>
+                <span
+                  className="key-dash"
+                  style={{
+                    borderTopColor: s.color,
+                    borderTopStyle: s.dash ? 'dashed' : 'solid',
+                  }}
+                  aria-hidden="true"
+                />
+                <span style={{ color: s.color }} aria-hidden="true">
+                  {s.icon}
+                </span>
+                {s.short}
+              </li>
+            );
+          })}
+        </ul>
 
-          <div className="mappanel__group">
-            <h4>Corridor status · {SITUATION_AS_OF}</h4>
-            <ul className="keylist">
-              {STATUS_ORDER.map((id) => {
-                const s = STATUS[id];
-                return (
-                  <li key={id}>
-                    <span
-                      className="key-dash"
-                      style={{
-                        borderTopColor: s.color,
-                        borderTopStyle: s.dash ? 'dashed' : 'solid',
-                      }}
-                      aria-hidden="true"
-                    />
-                    <span style={{ color: s.color }} aria-hidden="true">
-                      {s.icon}
-                    </span>
-                    {s.label}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
+        {hidden > 0 && (
+          <p className="legend__hint">
+            <strong>
+              {shown} of {shown + hidden}
+            </strong>{' '}
+            corridors drawn at this zoom — zoom in to reveal the smaller ones
+          </p>
+        )}
+      </div>
 
-          <div className="mappanel__group">
-            <h4>Layers</h4>
+      <div className="legend__layers">
+        <button
+          type="button"
+          className={`legend__toggle${open ? ' is-active' : ''}`}
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+        >
+          Layers <span aria-hidden="true">{open ? '▾' : '▴'}</span>
+        </button>
+
+        {open && (
+          <div className="legend__pop">
             <ul className="layerlist">
               {layers.map(({ id, label, value }) => (
                 <li key={id}>
@@ -102,24 +119,13 @@ export default function MapPanel({
                 </li>
               ))}
             </ul>
-          </div>
-
-          {hidden > 0 && (
-            <p className="mappanel__hint">
-              {shown} corridor{shown === 1 ? '' : 's'} shown ·{' '}
-              <strong>
-                {hidden} hidden
-              </strong>{' '}
-              at this zoom level. Zoom in to reveal the secondary corridors.
+            <p className="legend__note">
+              Thickness is the corridor’s order of magnitude, not a measurement.
+              Hollow circle at the origin, filled disc at the destination.
             </p>
-          )}
-
-          <p className="mappanel__note">
-            Thickness = order of magnitude of the corridor, not a measurement.
-            Hollow circle at origin, filled disc at destination.
-          </p>
-        </div>
-      )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

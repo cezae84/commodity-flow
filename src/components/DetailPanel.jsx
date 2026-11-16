@@ -9,6 +9,7 @@ import { TIMEFRAMES, WAR_START } from '../data/timeframes.js';
 import { FactCard, FactList } from './Facts.jsx';
 import { PriceRow } from './MarketsPanel.jsx';
 import Star from './Star.jsx';
+import StatusTag from './StatusTag.jsx';
 import { instrumentsFor } from '../data/live.js';
 
 /**
@@ -52,21 +53,19 @@ function ReferencePeriod({ item }) {
   );
 }
 
-function CurrentPeriod({ item, prices = [], watchlist }) {
+function CurrentPeriod({ item }) {
   const status = item.status ? STATUS[item.status] : null;
-  const evidence = [
-    ...(item.statusFact ? [item.statusFact] : []),
-    ...item.currentFacts.filter((f) => f !== item.statusFact),
-  ];
+  const more = item.currentFacts.filter((f) => f !== item.statusFact);
   const staleStatus = item.statusFact && item.statusFact.timeframe === 'baseline';
   return (
-    <section className="period period--current">
-      <h3 className="period__title">{TIMEFRAMES.current.heading}</h3>
-      {status && (
-        <p className="period__status" style={{ color: status.color }}>
-          {status.icon} {status.label}
-        </p>
-      )}
+    <section
+      className={`period period--current${item.status ? ` period--${item.status}` : ''}`}
+      style={status ? { '--status-color': status.color } : undefined}
+    >
+      <div className="period__headrow">
+        <h3 className="period__title">{TIMEFRAMES.current.heading}</h3>
+        {status && <StatusTag status={item.status} long />}
+      </div>
       <p className="period__text">
         {item.situation ||
           `No change since ${WAR_START} is documented in this dataset for this ${
@@ -78,33 +77,44 @@ function CurrentPeriod({ item, prices = [], watchlist }) {
           The latest evidence for this status predates the war.
         </p>
       )}
-      {evidence.length > 0 && (
+      {item.statusFact && (
         <ul className="facts">
-          {evidence.map((f) => (
-            <FactCard key={f.id} fact={f} showTimeframe={f.timeframe === 'baseline'} />
-          ))}
+          <FactCard fact={item.statusFact} showTimeframe={staleStatus} />
         </ul>
       )}
-      {prices.length > 0 && (
-        <div className="period__markets">
-          <h4 className="period__subtitle">Market prices now</h4>
-          <ul className="prices">
-            {prices.map((inst) => (
-              <PriceRow
-                key={inst.instrument_id}
-                inst={inst}
-                showReference
-                starred={watchlist?.isPrice(inst.instrument_id)}
-                onToggleStar={watchlist?.togglePrice}
-              />
-            ))}
-          </ul>
-          <p className="markets__note">
-            Automated feed, not part of the verified dataset: futures from Yahoo Finance
-            (delayed, indicative), monthly averages from the IMF via FRED.
-          </p>
-        </div>
+      {more.length > 0 && (
+        <details className="period__more" open={!item.statusFact && more.length <= 2}>
+          <summary>
+            {item.statusFact ? 'More facts since the war' : 'Facts since the war'} ({more.length})
+          </summary>
+          <FactList facts={more} />
+        </details>
       )}
+    </section>
+  );
+}
+
+/** Live prices for the route's commodity: an automated layer, labelled as such. */
+function Prices({ prices, watchlist }) {
+  if (!prices.length) return null;
+  return (
+    <section className="period period--prices">
+      <h3 className="period__title">Market prices now</h3>
+      <ul className="prices">
+        {prices.map((inst) => (
+          <PriceRow
+            key={inst.instrument_id}
+            inst={inst}
+            showReference
+            starred={watchlist?.isPrice(inst.instrument_id)}
+            onToggleStar={watchlist?.togglePrice}
+          />
+        ))}
+      </ul>
+      <p className="markets__note">
+        Automated feed, not part of the verified dataset: futures from Yahoo Finance
+        (delayed, indicative), monthly averages from the IMF via FRED.
+      </p>
     </section>
   );
 }
@@ -140,9 +150,10 @@ function Freight({ sailing }) {
 
 export function RouteDetail({ route, market, watchlist, onClose, onSelectChokepoint }) {
   const commodity = COMMODITY_BY_ID[route.commodity];
-  const status = STATUS[route.status];
   const sub = route.sub ? SUBFILTER_BY_ID[route.sub] : null;
   const distance = Math.round(pathLengthNm(route.path));
+  const crossed = route.chokepoints.map((id) => CHOKEPOINT_BY_ID[id]).filter(Boolean);
+  const prices = market?.status === 'ok' ? instrumentsFor(market.data, route.commodity) : [];
 
   return (
     <div className="detail" style={{ '--route-color': commodity.color }}>
@@ -205,43 +216,40 @@ export function RouteDetail({ route, market, watchlist, onClose, onSelectChokepo
           </span>
         </div>
         <div className="stat">
-          <span className="stat__value" style={{ color: status.color }}>
-            {status.icon}
+          <span className="stat__value">{crossed.length}</span>
+          <span className="stat__label">
+            {crossed.length === 0
+              ? 'chokepoints — open-sea route'
+              : `chokepoint${crossed.length === 1 ? '' : 's'} crossed`}
           </span>
-          <span className="stat__label">Now: {status.label}</span>
         </div>
       </div>
 
+      <CurrentPeriod item={route} />
       <ReferencePeriod item={route} />
       <Freight sailing={route.sailing} />
-      <CurrentPeriod
-        item={route}
-        watchlist={watchlist}
-        prices={market?.status === 'ok' ? instrumentsFor(market.data, route.commodity) : []}
-      />
+      <Prices prices={prices} watchlist={watchlist} />
 
-      {route.chokepoints.length > 0 && (
+      {crossed.length > 0 && (
         <div className="detail__block">
           <h3>Chokepoints crossed</h3>
-          <div className="cp-tags">
-            {route.chokepoints.map((id) => {
-              const cp = CHOKEPOINT_BY_ID[id];
-              if (!cp) return null;
-              const cpStatus = STATUS[cp.status];
-              return (
+          <ul className="cp-list">
+            {crossed.map((cp) => (
+              <li key={cp.id}>
                 <button
-                  key={id}
                   type="button"
-                  className="cp-tag"
-                  onClick={() => onSelectChokepoint(id)}
-                  style={{ '--cp-color': cpStatus.color }}
+                  className="cp-row"
+                  onClick={() => onSelectChokepoint(cp.id)}
                 >
-                  <span className="cp-tag__dot" aria-hidden="true" />
-                  {cp.name}
+                  <span className="cp-row__name">{cp.name}</span>
+                  <StatusTag status={cp.status} />
+                  <span className="cp-row__go" aria-hidden="true">
+                    →
+                  </span>
                 </button>
-              );
-            })}
-          </div>
+              </li>
+            ))}
+          </ul>
         </div>
       )}
 
@@ -263,13 +271,11 @@ export function ChokepointDetail({ chokepoint, routes, onClose, onSelectRoute })
         ← Back to the list
       </button>
 
-      <span className="detail__kicker" style={{ color: status.color }}>
-        {status.icon} Chokepoint — now: {status.label}
-      </span>
+      <span className="detail__kicker">Chokepoint</span>
       <h2 className="detail__title">{chokepoint.name}</h2>
 
-      <ReferencePeriod item={chokepoint} />
       <CurrentPeriod item={chokepoint} />
+      <ReferencePeriod item={chokepoint} />
 
       <div className="detail__block">
         <h3>Routes using it ({routes.length})</h3>
@@ -284,7 +290,8 @@ export function ChokepointDetail({ chokepoint, routes, onClose, onSelectRoute })
                   style={{ '--route-color': c.color }}
                 >
                   <span className="cp-routes__dot" aria-hidden="true" />
-                  <span>{r.name}</span>
+                  <span className="cp-routes__name">{r.name}</span>
+                  {r.status !== 'normal' && <StatusTag status={r.status} />}
                   <span className="cp-routes__commodity">{c.short}</span>
                 </button>
               </li>

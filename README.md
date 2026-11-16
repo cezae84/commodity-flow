@@ -31,8 +31,8 @@ dataset — not the code.
 | **83 corridors** | 8 families: crude oil, refined products, LNG, coal, iron ore, grain & oilseeds, metals & ores (base metals and critical minerals), fertilizers |
 | **Trading context** | For each route, in three lines: the selling country, the buying country, and why the route matters |
 | **Sailing time** | Typical vessel class (VLCC, Capesize, LNG carrier…), sea distance, and estimated days at sea, next to published transit times |
-| **10 chokepoints** | Volumes that pass through each one, and the routes that depend on it |
-| **Two periods, never mixed** | 2025 reference figures (before the war) in one block; the current status of each corridor (normal, reduced, rerouted, halted) in another |
+| **10 chokepoints** | Volumes that pass through each one, and the routes that depend on it — on the map and as a list, most affected first |
+| **Two periods, never mixed** | 2025 reference figures (before the war) in one block; the current status of each corridor (normal, reduced, rerouted, halted) in another, and a one-click filter on that status |
 | **AI market brief** | A panel on the right of the map with the commodity and geopolitical news of the last 24 hours, summarised by an AI agent, each item linked to its articles |
 | **18 market prices** | Brent, WTI, TTF, Henry Hub, Japan LNG, coal, iron ore, copper, soybeans, wheat…, refreshed automatically |
 | **Watchlist** | Star routes and prices, and show only those on the map |

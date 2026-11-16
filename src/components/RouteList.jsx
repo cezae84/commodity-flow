@@ -1,9 +1,6 @@
-import {
-  COMMODITY_BY_ID,
-  STATUS,
-  SUBFILTER_BY_ID,
-} from '../data/commodities.js';
+import { COMMODITY_BY_ID, SUBFILTER_BY_ID } from '../data/commodities.js';
 import Star from './Star.jsx';
+import StatusTag from './StatusTag.jsx';
 
 export default function RouteList({
   routes,
@@ -21,7 +18,6 @@ export default function RouteList({
     <ul className="routelist">
       {routes.map((route) => {
         const commodity = COMMODITY_BY_ID[route.commodity];
-        const status = STATUS[route.status];
         const sub = route.sub ? SUBFILTER_BY_ID[route.sub] : null;
         const isSelected = selectedId === route.id;
 
@@ -41,6 +37,11 @@ export default function RouteList({
               <span className="routecard__bar" aria-hidden="true" />
               <span className="routecard__body">
                 <span className="routecard__name">{route.name}</span>
+                {route.status !== 'normal' && (
+                  <span className="routecard__now">
+                    <StatusTag status={route.status} />
+                  </span>
+                )}
                 <span className="routecard__metric">
                   <span className="routecard__period">2025</span>
                   {route.leadFact?.statement}
@@ -65,15 +66,6 @@ export default function RouteList({
                       />
                     ))}
                   </span>
-                  {route.status !== 'normal' && (
-                    <span
-                      className="routecard__status"
-                      style={{ '--status-color': status.color }}
-                      title="Situation since the war (as of the date shown in the header)"
-                    >
-                      Now: {status.icon} {status.label}
-                    </span>
-                  )}
                 </span>
               </span>
             </button>

@@ -133,6 +133,7 @@ export const STATUS = {
   normal: {
     id: 'normal',
     label: 'Normal traffic',
+    short: 'Normal',
     color: '#2FB35A',
     icon: '●',
     dash: null,
@@ -140,6 +141,7 @@ export const STATUS = {
   reduced: {
     id: 'reduced',
     label: 'Reduced traffic',
+    short: 'Reduced',
     color: '#F2B21B',
     icon: '▽',
     dash: '14 5',
@@ -147,6 +149,7 @@ export const STATUS = {
   rerouted: {
     id: 'rerouted',
     label: 'Rerouted via the Cape of Good Hope',
+    short: 'Via the Cape',
     color: '#EC835A',
     icon: '↻',
     dash: '10 6',
@@ -154,6 +157,7 @@ export const STATUS = {
   disrupted: {
     id: 'disrupted',
     label: 'Halted or near standstill',
+    short: 'Halted',
     color: '#F0524F',
     icon: '✕',
     dash: '2 8',
@@ -161,6 +165,7 @@ export const STATUS = {
   new: {
     id: 'new',
     label: 'Recently opened corridor',
+    short: 'New corridor',
     color: '#4FC3F7',
     icon: '✦',
     dash: '1 6',

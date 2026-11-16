@@ -39,14 +39,34 @@ const CASING = '#1a1c20';
 const GENERALIZE_ABOVE = 20;
 
 const minWeightForZoom = (zoom) => {
-  if (zoom <= 3) return 4;
-  if (zoom === 4) return 3;
-  if (zoom === 5) return 2;
+  if (zoom < 4) return 4;
+  if (zoom < 5) return 3;
+  if (zoom < 6) return 2;
   return 1;
 };
 
-/** Strait names overlap at world scale. */
+/** Strait names overlap at world scale — except the few that are in trouble. */
 const LABEL_MIN_ZOOM = 4;
+
+/**
+ * The opening view: the whole trading world, from the US Gulf and Brazil to
+ * Japan and Australia, rather than a close-up that cuts the Asian end off.
+ */
+const WORLD_BOUNDS = [
+  [-40, -98],
+  [62, 152],
+];
+
+const LAPTOP_VIEW = { center: [16, 52], zoom: 3 };
+
+/** Room left for the legend strip and the port names when fitting the map to a route. */
+const FIT_PADDING = { paddingTopLeft: [150, 60], paddingBottomRight: [220, 130] };
+
+/** Straits whose name reads better to the left of their marker (crowded to the east). */
+const LABEL_ON_LEFT = new Set(['suez']);
+
+const escapeHtml = (s) =>
+  String(s).replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[ch]);
 
 export default function MapView({
   visibleIds,
@@ -63,6 +83,8 @@ export default function MapView({
 }) {
   const containerRef = useRef(null);
   const mapRef = useRef(null);
+  // A link that opens on a route or a strait should show it at once, not fly to it.
+  const bornAt = useRef(0);
   // Bumped on every (re)creation of the map: under StrictMode the mount effect
   // runs twice, and the layers have to be rebuilt.
   const [mapEpoch, setMapEpoch] = useState(0);
@@ -80,8 +102,8 @@ export default function MapView({
     if (mapRef.current) return undefined;
 
     const map = L.map(containerRef.current, {
-      center: [22, 40],
-      zoom: 3,
+      center: LAPTOP_VIEW.center,
+      zoom: LAPTOP_VIEW.zoom,
       minZoom: 2,
       maxZoom: 9,
       worldCopyJump: true,
@@ -113,6 +135,16 @@ export default function MapView({
 
     map.on('zoomend', () => setZoom(map.getZoom()));
 
+    // Whole zoom levels only (half steps leave hairline seams between tiles).
+    // A wide screen fits the whole trading world; a laptop opens on the
+    // Atlantic-to-Pacific span where most corridors run, Asia included.
+    if (map.getBoundsZoom(WORLD_BOUNDS) >= 3) {
+      map.fitBounds(WORLD_BOUNDS, { animate: false });
+    } else {
+      map.setView(LAPTOP_VIEW.center, LAPTOP_VIEW.zoom, { animate: false });
+    }
+
+    bornAt.current = Date.now();
     mapRef.current = map;
     setMapEpoch((n) => n + 1);
     setZoom(map.getZoom());
@@ -184,7 +216,11 @@ export default function MapView({
       declutter && eligible.length > GENERALIZE_ABOVE
         ? minWeightForZoom(zoom)
         : 1;
-    const visible = eligible.filter((r) => r.weight >= threshold);
+    // The selected corridor is always drawn: picking a secondary route in the
+    // list must show it, whatever the zoom.
+    const visible = eligible.filter(
+      (r) => r.weight >= threshold || r.id === selectedRouteId
+    );
 
     onRenderStats?.(visible.length, eligible.length);
 
@@ -287,6 +323,29 @@ export default function MapView({
           opacity: o,
           interactive: false,
         }).addTo(group);
+
+        // The selected corridor names its two ends on the map itself.
+        if (isSelected) {
+          // Each name sits on the side away from the line, so it never covers it.
+          [
+            [coords[0], route.from, coords[1]],
+            [coords[coords.length - 1], route.to, coords[coords.length - 2]],
+          ].forEach(([pos, name, neighbour]) => {
+            const left = neighbour && neighbour[1] > pos[1];
+            L.marker(pos, {
+              icon: L.divIcon({
+                className: 'wm-port-label-wrap',
+                html: `<span class="wm-port-label${
+                  left ? ' wm-port-label--left' : ''
+                }">${escapeHtml(name)}</span>`,
+                iconSize: [0, 0],
+                iconAnchor: left ? [10, 9] : [-10, 9],
+              }),
+              interactive: false,
+              keyboard: false,
+            }).addTo(group);
+          });
+        }
       });
     });
   }, [
@@ -357,15 +416,17 @@ export default function MapView({
       dot.on('click', () => onSelectChokepoint(cp.id));
       dot.addTo(group);
 
-      if (zoom >= LABEL_MIN_ZOOM || isSelected) {
+      if (zoom >= LABEL_MIN_ZOOM || isSelected || isAlert) {
         L.marker(pos, {
           icon: L.divIcon({
             className: 'wm-choke-label-wrap',
-            html: `<span class="wm-choke-label${
-              isSelected ? ' is-selected' : ''
-            }">${cp.name}</span>`,
+            html: `<span class="wm-choke-label${isSelected ? ' is-selected' : ''}${
+              isAlert ? ' is-alert' : ''
+            }${LABEL_ON_LEFT.has(cp.id) ? ' wm-choke-label--left' : ''}" style="--status-color:${status.color}">${
+              isAlert ? `<span class="wm-choke-label__icon">${status.icon}</span> ` : ''
+            }${escapeHtml(cp.name)}</span>`,
             iconSize: [0, 0],
-            iconAnchor: [-11, 6],
+            iconAnchor: LABEL_ON_LEFT.has(cp.id) ? [11, 6] : [-11, 6],
           }),
           interactive: false,
         }).addTo(group);
@@ -379,11 +440,12 @@ export default function MapView({
     if (!map || !selectedRouteId) return;
     const entry = layersRef.current.byRoute.get(selectedRouteId);
     if (!entry?.lines.length) return;
-    map.flyToBounds(entry.lines[0].getBounds(), {
-      padding: [80, 80],
-      duration: 0.7,
-      maxZoom: 5,
-    });
+    const bounds = entry.lines[0].getBounds();
+    if (Date.now() - bornAt.current < 1500) {
+      map.fitBounds(bounds, { ...FIT_PADDING, maxZoom: 5, animate: false });
+    } else {
+      map.flyToBounds(bounds, { ...FIT_PADDING, duration: 0.7, maxZoom: 5 });
+    }
   }, [selectedRouteId]);
 
   useEffect(() => {
@@ -391,9 +453,13 @@ export default function MapView({
     if (!map || !selectedChokepointId) return;
     const cp = CHOKEPOINTS.find((c) => c.id === selectedChokepointId);
     if (!cp) return;
-    map.flyTo([cp.c[0], wrapLng(cp.c[1])], Math.max(map.getZoom(), 5), {
-      duration: 0.7,
-    });
+    const target = [cp.c[0], wrapLng(cp.c[1])];
+    const targetZoom = Math.max(map.getZoom(), 5);
+    if (Date.now() - bornAt.current < 1500) {
+      map.setView(target, targetZoom, { animate: false });
+    } else {
+      map.flyTo(target, targetZoom, { duration: 0.7 });
+    }
   }, [selectedChokepointId]);
 
   return <div ref={containerRef} className="map-canvas" />;
