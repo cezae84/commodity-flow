@@ -79,7 +79,7 @@ can open by double-clicking, see [Standalone file](#standalone-file-no-server).
 - **Status filter** — one row of chips (*Halted*, *Reduced*, *New corridor*, *Normal*) narrows the
   list and the map to a single current status; each chip shows how many routes it would leave.
 - **Shareable links** — the address bar follows the selection:
-  `#route=crude-gulf-china`, `#chokepoint=hormuz`, `#commodity=lng&status=disrupted`, `#view=chokepoints`.
+  `#route=crude-gulf-china`, `#chokepoint=hormuz`, `#commodity=lng&status=disrupted`, `#view=chokepoints`, `#country=China&dir=to`, `#data=glossary`.
 - **Legend strip** — commodity colours and status line styles stay visible along the foot of the map;
   the layer toggles open from its *Layers* button.
 - **Hormuz bypass pipelines** — Petroline, ADCOP, Goreh-Jask, dashed in grey,
@@ -291,6 +291,8 @@ src/
     waypoints.js       ports (with country), chokepoint positions, pipeline paths, segments
     commodities.js     8 families, validated palette, sub-filters, statuses
     filters.js         country filter helpers
+    insights.js        derived readings: alternatives, country profile, chokepoint exposure
+    glossary.js        plain-language definitions shown in the Data view
     scopes.js          fact scope labels
     timeframes.js      war start date, SITUATION_AS_OF, period labels
     live.js            useLiveJson (shared fetch + keep-last-good) and the market prices
@@ -304,7 +306,7 @@ src/
     MarketsPanel.jsx   prices, sparklines   Watchlist.jsx  Star.jsx
     NewsPanel.jsx      AI market brief (floating panel / sidebar tab)
     CommodityFilter.jsx  CountryFilter.jsx  StatusFilter.jsx  RouteList.jsx
-    ChokepointList.jsx  StatusTag.jsx  Intro.jsx
+    ChokepointList.jsx  StatusTag.jsx  Intro.jsx  CountryProfile.jsx
     MapPanel.jsx       legend strip and layer toggles
   App.jsx              application state and layout
 scripts/

@@ -1,3 +1,4 @@
+import { GLOSSARY, GLOSSARY_COUNT } from '../data/glossary.js';
 import { useMemo, useState } from 'react';
 
 import {
@@ -365,11 +366,37 @@ function MarketsTable({ market }) {
   );
 }
 
+/** The vocabulary of the map, for a reader who is not a shipbroker. */
+function Glossary() {
+  return (
+    <div className="dataview__tablewrap glossary">
+      <p className="glossary__note">
+        Plain-language definitions of the terms used on the map. They are explanations,
+        not sourced facts, and carry no figure.
+      </p>
+      {GLOSSARY.map((group) => (
+        <section key={group.id} className="glossary__group">
+          <h3 className="eyebrow">{group.label}</h3>
+          <dl className="glossary__terms">
+            {group.terms.map(([term, text]) => (
+              <div key={term}>
+                <dt>{term}</dt>
+                <dd>{text}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      ))}
+    </div>
+  );
+}
+
 const TABS = [
   { id: 'facts', label: `Facts (${FACTS.length})` },
   { id: 'sources', label: `Sources (${SOURCES.length})` },
   { id: 'routes', label: `Routes (${ROUTES.length})` },
   { id: 'markets', label: 'Market prices' },
+  { id: 'glossary', label: `Glossary (${GLOSSARY_COUNT})` },
 ];
 
 /**
@@ -377,8 +404,7 @@ const TABS = [
  * quote and link, every source and how often it is cited, and the CSV files
  * themselves for anyone who wants to check or reuse them.
  */
-export default function DataView({ onClose, onSelectTarget, market }) {
-  const [tab, setTab] = useState('facts');
+export default function DataView({ tab, onTab: setTab, onClose, onSelectTarget, market }) {
 
   return (
     <div className="dataview" role="dialog" aria-label="Data and sources">
@@ -425,6 +451,7 @@ export default function DataView({ onClose, onSelectTarget, market }) {
       {tab === 'sources' && <SourcesTable />}
       {tab === 'routes' && <RoutesTable onSelectTarget={onSelectTarget} />}
       {tab === 'markets' && <MarketsTable market={market} />}
+      {tab === 'glossary' && <Glossary />}
     </div>
   );
 }

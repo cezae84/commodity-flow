@@ -3,7 +3,8 @@ import {
   STATUS,
   SUBFILTER_BY_ID,
 } from '../data/commodities.js';
-import { CHOKEPOINT_BY_ID } from '../data/index.js';
+import { CHOKEPOINT_BY_ID, ROUTES } from '../data/index.js';
+import { alternativesFor, chokepointExposure } from '../data/insights.js';
 import { pathLengthNm } from '../lib/geo.js';
 import { TIMEFRAMES, WAR_START } from '../data/timeframes.js';
 import { FactCard, FactList } from './Facts.jsx';
@@ -148,7 +149,135 @@ function Freight({ sailing }) {
   );
 }
 
-export function RouteDetail({ route, market, watchlist, onClose, onSelectChokepoint }) {
+/** One alternative corridor: who it is, how it stands now, how long it sails. */
+function AltRow({ route, label, onSelect }) {
+  const c = COMMODITY_BY_ID[route.commodity];
+  return (
+    <li>
+      <button
+        type="button"
+        onClick={() => onSelect(route.id)}
+        style={{ '--route-color': c.color, '--row-color': c.color }}
+        title={route.name}
+      >
+        <span className="cp-routes__dot" aria-hidden="true" />
+        <span className="cp-routes__name">{label}</span>
+        {route.status !== 'normal' && <StatusTag status={route.status} />}
+        <span className="cp-routes__commodity">
+          {route.sailing.days != null ? `≈ ${route.sailing.days} d` : '—'}
+        </span>
+      </button>
+    </li>
+  );
+}
+
+/**
+ * What the two ends of the corridor can turn to: other origins drawn into the
+ * same destination country, other destinations drawn out of the same origin.
+ * A reading of the map, not a list of every supplier — the note says so.
+ */
+function Alternatives({ route, onSelectRoute }) {
+  const { suppliers, outlets } = alternativesFor(route, ROUTES);
+  if (!suppliers.length && !outlets.length) return null;
+  const good =
+    (route.sub ? SUBFILTER_BY_ID[route.sub]?.label : null) ??
+    COMMODITY_BY_ID[route.commodity].label;
+  return (
+    <div className="detail__block alternatives">
+      <h3>Alternatives on this map</h3>
+      {suppliers.length > 0 && (
+        <>
+          <p className="alternatives__lead">
+            Other origins of {good.toLowerCase()} into {route.toCountry}
+          </p>
+          <ul className="cp-routes">
+            {suppliers.map((r) => (
+              <AltRow
+                key={r.id}
+                route={r}
+                label={r.name}
+                onSelect={onSelectRoute}
+              />
+            ))}
+          </ul>
+        </>
+      )}
+      {outlets.length > 0 && (
+        <>
+          <p className="alternatives__lead">
+            Other destinations of {good.toLowerCase()} out of {route.fromCountry}
+          </p>
+          <ul className="cp-routes">
+            {outlets.map((r) => (
+              <AltRow
+                key={r.id}
+                route={r}
+                label={r.name}
+                onSelect={onSelectRoute}
+              />
+            ))}
+          </ul>
+        </>
+      )}
+      <p className="alternatives__note">
+        Days are the computed time at sea of each corridor (
+        {route.sailing.days != null ? `≈ ${route.sailing.days} d` : 'not sourced'} for
+        this one). Only corridors drawn on this map are listed — it is not a full list of
+        suppliers or buyers.
+      </p>
+    </div>
+  );
+}
+
+/** What depends on the strait, counted on the corridors drawn through it. */
+function Exposure({ routes }) {
+  if (!routes.length) return null;
+  const e = chokepointExposure(routes);
+  const names = (list) => list.map(({ id, count }) => `${id} (${count})`).join(', ');
+  return (
+    <div className="detail__block exposure">
+      <h3>What crosses it on this map</h3>
+      <ul className="exposure__families">
+        {e.families.map(({ id, count }) => {
+          const c = COMMODITY_BY_ID[id];
+          return (
+            <li key={id}>
+              <span
+                className="profile__swatch"
+                style={{ background: c.color }}
+                aria-hidden="true"
+              />
+              {c.label} <span className="profile__n">{count}</span>
+            </li>
+          );
+        })}
+      </ul>
+      <dl className="exposure__ends">
+        <div>
+          <dt>Loading in</dt>
+          <dd>{names(e.loading)}</dd>
+        </div>
+        <div>
+          <dt>Discharging in</dt>
+          <dd>{names(e.discharging)}</dd>
+        </div>
+      </dl>
+      <p className="alternatives__note">
+        {e.affected} of {routes.length} corridors through it are not running normally.
+        Counts of drawn corridors, not volumes.
+      </p>
+    </div>
+  );
+}
+
+export function RouteDetail({
+  route,
+  market,
+  watchlist,
+  onClose,
+  onSelectChokepoint,
+  onSelectRoute,
+}) {
   const commodity = COMMODITY_BY_ID[route.commodity];
   const sub = route.sub ? SUBFILTER_BY_ID[route.sub] : null;
   const distance = Math.round(pathLengthNm(route.path));
@@ -253,6 +382,8 @@ export function RouteDetail({ route, market, watchlist, onClose, onSelectChokepo
         </div>
       )}
 
+      <Alternatives route={route} onSelectRoute={onSelectRoute} />
+
       <p className="detail__footnote">
         Ports mark where a flow typically loads and discharges; when a source reports a
         country-level figure, the port is representative. Line thickness is an editorial
@@ -276,6 +407,7 @@ export function ChokepointDetail({ chokepoint, routes, onClose, onSelectRoute })
 
       <CurrentPeriod item={chokepoint} />
       <ReferencePeriod item={chokepoint} />
+      <Exposure routes={routes} />
 
       <div className="detail__block">
         <h3>Routes using it ({routes.length})</h3>

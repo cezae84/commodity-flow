@@ -4,6 +4,7 @@ import MapView from './components/MapView.jsx';
 import CommodityFilter from './components/CommodityFilter.jsx';
 import RouteList from './components/RouteList.jsx';
 import CountryFilter from './components/CountryFilter.jsx';
+import CountryProfile from './components/CountryProfile.jsx';
 import MapPanel from './components/MapPanel.jsx';
 import { RouteDetail, ChokepointDetail } from './components/DetailPanel.jsx';
 import DataView from './components/DataView.jsx';
@@ -44,6 +45,8 @@ const fold = (s) =>
     .toLowerCase();
 
 const VIEWS = ['routes', 'chokepoints', 'markets', 'watchlist', 'news'];
+/** Tabs of the Data overlay that a link can open (`#data=glossary`). */
+const DATA_TABS = ['facts', 'sources', 'routes', 'markets', 'glossary'];
 
 /**
  * What the address bar remembers, so a view can be bookmarked or shared:
@@ -62,7 +65,15 @@ function readHash() {
   const commodity = p.get('commodity');
   const status = p.get('status');
   const view = p.get('view');
+  const country = p.get('country');
+  const dir = p.get('dir');
+  const data = p.get('data');
+  const knownCountry =
+    country && ROUTES.some((r) => r.fromCountry === country || r.toCountry === country);
   return {
+    country: knownCountry ? country : null,
+    direction: DIRECTIONS.some((d) => d.id === dir) ? dir : knownCountry ? 'either' : 'from',
+    data: DATA_TABS.includes(data) ? data : null,
     route: route && ROUTE_BY_ID[route] ? route : null,
     chokepoint: chokepoint && CHOKEPOINT_BY_ID[chokepoint] ? chokepoint : null,
     commodity: commodity && COMMODITY_BY_ID[commodity] ? commodity : 'all',
@@ -77,8 +88,8 @@ export default function App() {
   const [activeSub, setActiveSub] = useState(null);
   // Restricts the list (and so the map) to one current status: halted, reduced…
   const [statusFilter, setStatusFilter] = useState(initial.status);
-  const [direction, setDirection] = useState('from');
-  const [country, setCountry] = useState(null);
+  const [direction, setDirection] = useState(initial.direction);
+  const [country, setCountry] = useState(initial.country);
   const [query, setQuery] = useState('');
   const [selectedRouteId, setSelectedRouteId] = useState(initial.route);
   const [selectedChokepointId, setSelectedChokepointId] = useState(
@@ -91,7 +102,8 @@ export default function App() {
     labels: false,
     declutter: true,
   });
-  const [dataOpen, setDataOpen] = useState(false);
+  // The Data overlay: the open tab, or null when it is closed.
+  const [dataTab, setDataTab] = useState(initial.data);
   const market = useMarketPrices();
   const watchlist = useWatchlist();
   const news = useNewsBrief();
@@ -252,7 +264,7 @@ export default function App() {
       if (ROUTE_BY_ID[id]) selectRoute(id);
       else if (CHOKEPOINT_BY_ID[id]) selectChokepoint(id);
       else return;
-      setDataOpen(false);
+      setDataTab(null);
     },
     [selectRoute, selectChokepoint]
   );
@@ -282,6 +294,11 @@ export default function App() {
     if (view !== 'routes') p.set('view', view);
     if (activeCommodity !== 'all') p.set('commodity', activeCommodity);
     if (statusFilter) p.set('status', statusFilter);
+    if (country) {
+      p.set('country', country);
+      p.set('dir', direction);
+    }
+    if (dataTab) p.set('data', dataTab);
     const hash = p.toString();
     try {
       window.history.replaceState(
@@ -292,7 +309,16 @@ export default function App() {
     } catch {
       // Some embedded or file:// contexts refuse history changes: nothing to keep in step.
     }
-  }, [selectedRouteId, selectedChokepointId, view, activeCommodity, statusFilter]);
+  }, [
+    selectedRouteId,
+    selectedChokepointId,
+    view,
+    activeCommodity,
+    statusFilter,
+    country,
+    direction,
+    dataTab,
+  ]);
 
   // A pasted or edited link while the page is open.
   useEffect(() => {
@@ -301,6 +327,9 @@ export default function App() {
       setActiveCommodity(h.commodity);
       setStatusFilter(h.status);
       setView(h.view);
+      setCountry(h.country);
+      setDirection(h.direction);
+      setDataTab(h.data);
       setSelectedRouteId(h.route);
       setSelectedChokepointId(h.route ? null : h.chokepoint);
     };
@@ -311,7 +340,7 @@ export default function App() {
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === 'Escape') {
-        setDataOpen(false);
+        setDataTab(null);
         clearSelection();
         setDrawerOpen(false);
       }
@@ -390,7 +419,7 @@ export default function App() {
               {tab.count != null && <span className="menu__count">{tab.count}</span>}
             </button>
           ))}
-          <button type="button" className="menu__tab menu__tab--data" onClick={() => setDataOpen(true)}>
+          <button type="button" className="menu__tab menu__tab--data" onClick={() => setDataTab('facts')}>
             Data
           </button>
         </nav>
@@ -403,6 +432,7 @@ export default function App() {
               watchlist={watchlist}
               onClose={clearSelection}
               onSelectChokepoint={selectChokepoint}
+              onSelectRoute={selectRoute}
             />
           ) : selectedChokepoint ? (
             <ChokepointDetail
@@ -518,6 +548,9 @@ export default function App() {
                     {activeSub && ` · ${SUBFILTER_BY_ID[activeSub]?.label}`}
                   </p>
                 )}
+                {country && (
+                  <CountryProfile country={country} onSelectChokepoint={selectChokepoint} />
+                )}
                 {hiddenOnMap > 0 && (
                   <p className="results__zoom">
                     The map draws the {shownOnMap} largest of these at this zoom —
@@ -558,7 +591,7 @@ export default function App() {
                 <button
                   type="button"
                   className="method__data"
-                  onClick={() => setDataOpen(true)}
+                  onClick={() => setDataTab('facts')}
                 >
                   Browse the {FACTS.length} facts and {SOURCES.length} sources →
                 </button>
@@ -593,9 +626,11 @@ export default function App() {
 
         <NewsPanel news={news} />
 
-        {dataOpen && (
+        {dataTab && (
           <DataView
-            onClose={() => setDataOpen(false)}
+            tab={dataTab}
+            onTab={setDataTab}
+            onClose={() => setDataTab(null)}
             onSelectTarget={selectTarget}
             market={market}
           />
