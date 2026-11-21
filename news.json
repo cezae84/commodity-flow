@@ -1,0 +1,297 @@
+{
+ "generated_at": "2026-11-21T20:30:34+00:00",
+ "window_hours": 24,
+ "model": "claude-haiku-4-5-20251001",
+ "feeds": [
+  {
+   "id": "gcaptain",
+   "name": "gCaptain",
+   "ok": true,
+   "items": 12
+  },
+  {
+   "id": "splash247",
+   "name": "Splash247",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "hellenicshipping",
+   "name": "Hellenic Shipping News",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "eia",
+   "name": "U.S. Energy Information Administration — Today in Energy",
+   "ok": true,
+   "items": 29
+  },
+  {
+   "id": "rigzone",
+   "name": "Rigzone",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "oilprice",
+   "name": "OilPrice.com",
+   "ok": true,
+   "items": 15
+  },
+  {
+   "id": "lngprime",
+   "name": "LNG Prime",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "mining",
+   "name": "MINING.COM",
+   "ok": true,
+   "items": 36
+  },
+  {
+   "id": "worldgrain",
+   "name": "World Grain",
+   "ok": true,
+   "items": 30
+  },
+  {
+   "id": "gn-hormuz",
+   "name": "Google News — Hormuz and Gulf shipping",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-oil",
+   "name": "Google News — oil market",
+   "ok": true,
+   "items": 77
+  },
+  {
+   "id": "gn-sanctions",
+   "name": "Google News — energy sanctions",
+   "ok": true,
+   "items": 33
+  },
+  {
+   "id": "gn-redsea",
+   "name": "Google News — Red Sea and Suez",
+   "ok": true,
+   "items": 30
+  },
+  {
+   "id": "gn-lng",
+   "name": "Google News — gas and LNG",
+   "ok": true,
+   "items": 82
+  },
+  {
+   "id": "gn-metals",
+   "name": "Google News — metals and iron ore",
+   "ok": true,
+   "items": 36
+  },
+  {
+   "id": "gn-grain",
+   "name": "Google News — grain and fertilizer",
+   "ok": true,
+   "items": 24
+  },
+  {
+   "id": "gn-freight",
+   "name": "Google News — freight markets",
+   "ok": true,
+   "items": 17
+  }
+ ],
+ "counts": {
+  "collected": 581,
+  "candidates": 90,
+  "items": 7,
+  "dropped": 1
+ },
+ "usage": {
+  "input_tokens": 5979,
+  "output_tokens": 816
+ },
+ "status": "ok",
+ "brief_generated_at": "2026-11-21T20:30:34+00:00",
+ "overview": {
+  "text": "Strait of Hormuz attacked multiple times; oil prices fall amid supply surplus expectations despite Middle East tensions and US Iran sanctions.",
+  "sources": [
+   {
+    "title": "Two tankers hit by projectiles in Strait of Hormuz, UKMTO reports",
+    "publisher": "Israel National News",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9nb1FEX1lCTzlFNU91MjIzX2xTZHZwbkw5Y2NGX05aQm84elNPZlhiMnVVcjNhS2dvc0JJY0NNWVFjemowb3FEQ3p2Mks2M2xIc0JOM0ZnQkhuQQ?oc=5",
+    "published_at": "2026-11-21T20:05+00:00"
+   },
+   {
+    "title": "Tankers Struck Near Oman in Strait of Hormuz",
+    "publisher": "Oz Arab Media",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9YRW5rUzVScFVCei1Vd0dfVkkyZ2JEQzFuWFhENzZKYkswMzZLUjhENXBORHpzejdZT3dubXl6dlVkQVVNRk9uQU5sQVRyQkVTeGx0Q3dPY0RvdUxEMUpLTlRRMi0xQXEtYS1HdWpUTlJDbUhJ?oc=5",
+    "published_at": "2026-11-21T18:00+00:00"
+   },
+   {
+    "title": "Maritime agency says 2 tankers struck in Hormuz, as Iran says ship on fire",
+    "publisher": "Arab News",
+    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOFpvUFFXS183QXNQNkxvZDlyZ2ZnU3Y0VVNaRWV0YldNd3JoYUVCQk1ZcXE4ZUNMbVFJeWtYX0FKeFBRRy1hcXA0RkVNTUhjU1djQlZjOWNjTk9RNUpDVERoSFByMFpmbnViRlF3ZERkSk5Sb0xoeUdZX0RlcTJXVHBVMUwxSXR5bmpkRVk3b2twc3RFa0VobzZlT20tRjV3NmNiZ3o1bDltdFJsdXVyZHFHeGtDS0ZjZEE?oc=5",
+    "published_at": "2026-11-21T13:41+00:00"
+   },
+   {
+    "title": "Oil Tanker Catches Fire After Striking Naval Mine in Eastern Strait of Hormuz",
+    "publisher": "WANA News Agency",
+    "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNSnlmaEhQZ2JDZUxqNUp4dFQyWkE3YlRXSmFxdEp1aWI0WXE3c19UTkQtTEpWeTBWbEI5TWE4R3E5TjFPYVc0ZFVsSUd2ZHFZVW12bWhVQ3EyZWdQZlBOQVY0V0FEWTNIR29xMktCdGhqRWZpTms0N0xINFBVNFZnal9BM1d3WnlobnpxeWIwRC1UZTJ6Y2U0cFg3VE01UQ?oc=5",
+    "published_at": "2026-11-21T12:11+00:00"
+   }
+  ]
+ },
+ "items": [
+  {
+   "headline": "Oil prices fall 14% in a month despite Middle East tensions",
+   "summary": "Crude posts third weekly loss as forecasts of supply surplus outweigh Hormuz attacks. Brent traded in narrow range amid stalled Middle East diplomacy.",
+   "category": "oil",
+   "sources": [
+    {
+     "title": "Oil Prices Fall Amid Supply Surplus Expectations, Middle East Tensions",
+     "publisher": "WSJ",
+     "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPaDFCTV9zN1pVaFoteGpWam5uX3pGOXp4X3gwOVVqOVk5Yy1xdkdkc0w3MlFmWkNZWXA2Sms4OHhLMk5iNUExb3NYc3lJQW53dVJUQlkzVlNIX0FCWlM0cVpab0tQT2l1dzM0a3FlQmlqQ0NoQzB6WWs4Um9vbHY4LTFTMUc1Q3E5NnJYbVZSUzZ1czhPdXBkUjZMWXpKa2IxU1hqenFDc1RhRVV3bTJIdUtNWEJjZ2VsTUE?oc=5",
+     "published_at": "2026-11-21T16:39+00:00"
+    },
+    {
+     "title": "Oil prices fall 14% in a month despite Middle East tensions",
+     "publisher": "Banglanews24",
+     "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1GWlhrNWlHUGs0RVk1OXRyc1VTelpmaDhlZ3VkRXVnLVZjTkVjQlZQQVdTeXlvZV9fX05haUpmVVBfTGtBb3hyTy1zSmd6cmY0RW04MXM5M1NXTmVicGFha1FGdVQ3LWp5a280?oc=5",
+     "published_at": "2026-11-21T09:08+00:00"
+    },
+    {
+     "title": "Oil Prices Caught Between a Looming Glut and Middle East Turmoil",
+     "publisher": "OilPrice.com",
+     "url": "https://oilprice.com/Energy/Energy-General/Oil-Prices-Caught-Between-a-Looming-Glut-and-Middle-East-Turmoil.html",
+     "published_at": "2026-11-21T00:00+00:00"
+    },
+    {
+     "title": "Oil Posts Third Weekly Loss Amid Surplus",
+     "publisher": "Rigzone",
+     "url": "https://www.rigzone.com/news/wire/oil_posts_third_weekly_loss_amid_surplus-20-nov-2026-185141-article/?rss=true",
+     "published_at": "2026-11-20T21:25+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "US sanctions four Iranians over oil revenue transfers",
+   "summary": "Washington imposes sanctions on Iranian nationals and oil traders over alleged sanctions evasion and oil revenue schemes amid escalating economic pressure.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "US Targets Four Iranians with Sanctions Over Oil Sales and Terrorism Funding",
+     "publisher": "Inkorr",
+     "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNT2x5c1F6MUxTNFRvVFRUS25GVWhFMl81WEkxOXNmcWUxOE9WQm9vOFlmTHBGbTVwVnIyWHJpWXNnMk5rODdYU2tyNUJzU1NhV1VFb3FnQThoUG91Qnl1SUtyRmxsZU1NOFptZVg3NHRRNmtlYXNYUDA4dEYtN1dLdWZXcmw3Q0hiRzFlbkdETVUtaUVHV05JQ19zbE9qaHdIR0g4VlJxRmRhSG5HUUhua1ZVZ1YxbnVqSlFwZlpaTzlaclN3NDNKY9IBzgFBVV95cUxOXzRSSUl5T1lNX0Z1X1czQWxRaXlOYzd5ZDNsLTMzbVpndC1fVVRfQWFHSFdFeWVtalR5cUR0T0NrZk80b3hRU3lTN2lVYndscXVEVUVaYl83dTV1SHYzRGRXMzhfcVVWSU5UREhMNUJ4SUZqbEl3SDJMOWZ5eWdhNlNwaUxVeGRXSlJkYTVONWFsWVlhWUNoRFJ5eE4zT0tNYm9SZkV6amFrc05sRUZTTGN3VFUycjh5NnJKYjA3MDUtTGhNT0hhWk5hTHRzZw?oc=5",
+     "published_at": "2026-11-21T18:08+00:00"
+    },
+    {
+     "title": "US sanctions Iranian oil traders, government insiders over alleged oil revenue scheme",
+     "publisher": "Middle East Monitor",
+     "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQZzlVNXpWWDNBSDJjeVFXOVpEbGR3dWEzeHlUUHFJMF9HX292TGJfZ0dIdktqZnNGYjFHT0w2MEpVYlJzZWxBQThPazdxTzhMU2xRclNsSkh4RzFZdk1ncWVmYWE3U2ZuR0QzcUYyZEZ0UjhkcWlDOUdRbXgtZnpZLV94Vi1kQTQxYnFjdUlaZW1XZ3NOeTNCMG44NG5FWW9iT0t1MEtWT0ZMak9QM2lWc1Vfb0QzR3JTY3VMWE1wSmd0b0p3ck5XTnFiVzXSAcwBQVVfeXFMUGc5VTV6VlgzQUgyY3lRVzlaRGxkd3VhM3h5VFBxSTBfR19vdkxiX2dHSHZLamZzRmIxR09MNjBKVWJSc2VsQUE4T2s3cU84TFNsUXJTbEpIeEcxWXZNZ3FlZmFhN1NmbkdEM3FGMmRGdFI4ZHFpQzlHUW14LWZ6WS1feFYtZEE0MWJxY3VJWmVtV2dzTnkzQjBuODRuRVlvYk9LdTBLVk9GTGpPUDNpVnNVX29EM0dyU2N1TFhNcEpndG9Kd3JOV05xYlc1?oc=5",
+     "published_at": "2026-11-21T11:39+00:00"
+    },
+    {
+     "title": "US imposes new sanctions on Iran's oil industry",
+     "publisher": "RBC-Ukraine",
+     "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPQmFjY2FYMGlQbFRrZVNuam9JZ1RjM3ZZZV9YQjFjMGJoTVBfcnp2eHJ6TExsa0hSNXhiTUpwdkxiOGIwT2NZNWtuSlAzVDBxLS1YdllvT19aazcyVW9NSUlHR2Q1V3BlUDI3Yk9Yc3pvOXBsWk5oazRxUnNfX29icS12YTdnRWwwTzhFSnN4RmhtU3B6Yk9uNXltRQ?oc=5",
+     "published_at": "2026-11-21T09:20+00:00"
+    },
+    {
+     "title": "US Sanctions Four Iranian Nationals Over Oil Revenue Transfers",
+     "publisher": "WANA News Agency",
+     "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNRFh0UFI2TVY2dG1iRlNtNXZfVi1Ibld1aFF4WmZIX3JNUWVnTENHX2ZKbnpSU0k1RWRYMVNQWnFZZ1pkeGp5WEs5anljSzl0X3ZORnJBWUR0VGdRUmFCVjVPWGVBWGFnTTA1UVB3ZDNqNWM1TFF2QWs3S25vSm9WR0E4aUx0cUFKY0E?oc=5",
+     "published_at": "2026-11-21T07:21+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Houthis reach strategic island at mouth of shipping lane",
+   "summary": "Yemen's Houthis gain ground at vital chokepoint; Saudi-led coalition strikes Houthi targets. Red Sea militarisation threatens trade, Egypt warns.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "Yemen’s Houthis Reach Strategic Island at Mouth of Vital Shipping Lane",
+     "publisher": "EnergyNow",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOWlVDSHp0WUxGb2otTUFhaENpWnB0WHl0NFlEMHZTaU5QbkJVUkdXZld4bEpSQmFxckNzcV9xTTVyREdLY1NsRmRDekxFM1psYklWRW1xZjNVYWtCZlFnczVhYnF5amZaTzVHTmtvX2RlcjlHQUtHT011WmpUTTZRTkIweS11Z3B1aUtfdGlrQW53S3BjTkJSS1JNa0F3ZDdi?oc=5",
+     "published_at": "2026-11-21T13:32+00:00"
+    },
+    {
+     "title": "Red Sea escalation and Hodeidah strike unsettle barley trade flows — CMB News",
+     "publisher": "CMB News",
+     "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPQmZhRXJkaEVfYjBHWFBFMFpwR3NiQ0JNa3ZPeWhNeEstUWdjSWpwbXBIbFdSN0JsMUQ5YldzcTJURmVrelk2Q01obGJuZng0RDJ6aEhva2pDV19TUDliRFhjZHdPWjZXZlpnUkNNOVhaczg5M3B2SS1IbkQ1NmNKeVhaOUdVS0JMYTZ5ag?oc=5",
+     "published_at": "2026-11-21T07:29+00:00"
+    },
+    {
+     "title": "Saudi-led coalition strikes Houthi targets as rebels attack Saudi Arabia",
+     "publisher": "Business Standard",
+     "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQY3ZJQzdMdDU4a2tDMmVSVGp6RXdRSzQtR2ZTT015SzJSYzgwR01BNW9RUlZJWmdpRHNFZTgxV3pyUDd1bFdtaTRsWEhYRDdKXzBNY2tyeHBnRnFVSTZ6WG9TWWZUcC1rLUhqeXFfN25rWDRkcjZZaWptV094ZEIwRE1xR3I1ZERWTWU0NVBQWTFTaE9fbnJQOW5PR0RHelV5UXZkLVU4Vl9KaGpYVENxM1FqaUNJVzdCcmZUcEQ5enZoazJIZFl6NXRsMUpjZ255cEdV0gHYAUFVX3lxTE51T2FsYnBFVlFHMno1QjFodlhVbzExVnA5VUpFQXYxc05hdEFWVEN3eXhNSmV6WF9yaUlrbHdEcjhRa1lVNllzSjBDQS1zSHJMUGxNZTV1bmh0clkydW1OdzlSbFVnS1Q5Qi04SEFoTGtfOHM4cFh6N0ZyVTRkUGU2TnJWR0RGd3NBTEZzelF4Q1dPWkpKY3ViZC1DUWl6V2dSd1NtT0VWTXBwZjdiMkZmR2JWc2h1YzRGLWx4WHFOUkwwTkQyQlB3eUlROGZvOGVCTXprdWh4Ng?oc=5",
+     "published_at": "2026-11-21T04:51+00:00"
+    },
+    {
+     "title": "Saudi-led forces strike port to ‘destroy’ Houthi capabilities",
+     "publisher": "Business Recorder",
+     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTmZpS0lFZVBDRHVlTVR2cHdsQkw5ZU9RcFIyRTctaV9ld3JadEtDbEUwcVlnUHVmTmhHNnk5cG5qaE5FTUJMOUpBMHVpR2FfTjlkWGlLNDZic2tsWUMtaVhfS2xFeXBIUWdTeEZsVmQ1M3lrV205NXp5ZHh3MWFZVExEdWw3LVB0NmFhM3Vmd0Y0M0FFdWhDUWtrUmFfNzBk0gFWQVVfeXFMTXF1cHo2UEFaY2lSMUhHUDc1eUN3dzk3VHlNQWVza3UwWXQzQ1RQYlhHeXhTRDdaeHlCSDJWbk5meWFYZzFkdnZfWkJpcDZUUWdha2JFb2c?oc=5",
+     "published_at": "2026-11-20T23:53+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Arabia Gulf crude oil exports down 27.6% this year",
+   "summary": "War in Iran dealt significant blow to Gulf export markets with crude loading much lower over January-October period.",
+   "category": "oil",
+   "sources": [
+    {
+     "title": "Tanker Market: Arabian Gulf Crude Oil Exports Down 27.6% This Year",
+     "publisher": "Hellenic Shipping News",
+     "url": "https://www.hellenicshippingnews.com/tanker-market-arabian-gulf-crude-oil-exports-down-27-6-this-year/",
+     "published_at": "2026-11-20T22:00+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Hormuz shipping traffic falls to single digits due unrest",
+   "summary": "Data shows dramatic decline in vessels transiting the critical chokepoint amid continued security incidents and regional tensions.",
+   "category": "shipping",
+   "sources": [
+    {
+     "title": "Hormuz Shipping Traffic Falls to Single Digits, Data Shows",
+     "publisher": "EnergyNow",
+     "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQSlNPbDdnWmp0Qk10ajNvMHg2T1l2ZndCMUxmYWRhVVNTeWc5Sy1taHUxTDExUDdIUlhsUHpCNUxRekEyRGJUUEJ4dFh2WllfUjhRdUpZQlpJcENjQllSbGlpV04tdHNVMTJ2YTh4aHdLTU5Qdk9jMWp1cG9PSG9OMGhiQWptWm5Mc1hEWFFQazQ?oc=5",
+     "published_at": "2026-11-20T22:17+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Romania boosts wheat exports 45% amid Black Sea disruptions",
+   "summary": "Disruptions in the Black Sea reshape grain trade flows; Romania increases wheat exports significantly as alternative supply routes emerge.",
+   "category": "agri",
+   "sources": [
+    {
+     "title": "Romania increases its wheat exports by 45%, while disruptions in the Black Sea reshape the grain trade",
+     "publisher": "Informat.ro",
+     "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOcnlIRDdGdmppT1BNbnZfZUh2TnE4elRiMGR6SE9tYzdTSGV0UDR6UUpRX3E3MEl5TlRFWUNHUjdGRlFmT2NucEpjT0NIeHhsV2RPdDNyX2xIV1dxc21JaGJHZ1dYS1JBcG05Y2ZlQmVwWDdRdHdVZVJtRU9LSmFobE1fY2E5ajlDVW9kclBhOHZLUjQy?oc=5",
+     "published_at": "2026-11-21T17:57+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Asia LNG MOC records 148.5 TBtu deliveries in August",
+   "summary": "Participants in Asia LNG Platts Market on Close concluded physical deliveries for record volume during August assessment period.",
+   "category": "gas-lng",
+   "sources": [
+    {
+     "title": "ASIA LNG MOC PERFORMANCE: Deliveries conclude for record volume of 148.5 TBtu during August MOC",
+     "publisher": "Hellenic Shipping News",
+     "url": "https://www.hellenicshippingnews.com/asia-lng-moc-performance-deliveries-conclude-for-record-volume-of-148-5-tbtu-during-august-moc-2/",
+     "published_at": "2026-11-21T18:00+00:00"
+    }
+   ]
+  }
+ ]
+}
