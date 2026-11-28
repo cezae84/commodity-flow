@@ -1,0 +1,280 @@
+{
+ "generated_at": "2026-11-28T16:52:01+00:00",
+ "window_hours": 24,
+ "model": "claude-haiku-4-5-20251001",
+ "feeds": [
+  {
+   "id": "gcaptain",
+   "name": "gCaptain",
+   "ok": true,
+   "items": 12
+  },
+  {
+   "id": "splash247",
+   "name": "Splash247",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "hellenicshipping",
+   "name": "Hellenic Shipping News",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "eia",
+   "name": "U.S. Energy Information Administration — Today in Energy",
+   "ok": true,
+   "items": 32
+  },
+  {
+   "id": "rigzone",
+   "name": "Rigzone",
+   "ok": true,
+   "items": 20
+  },
+  {
+   "id": "oilprice",
+   "name": "OilPrice.com",
+   "ok": true,
+   "items": 15
+  },
+  {
+   "id": "lngprime",
+   "name": "LNG Prime",
+   "ok": true,
+   "items": 10
+  },
+  {
+   "id": "mining",
+   "name": "MINING.COM",
+   "ok": true,
+   "items": 36
+  },
+  {
+   "id": "worldgrain",
+   "name": "World Grain",
+   "ok": true,
+   "items": 30
+  },
+  {
+   "id": "gn-hormuz",
+   "name": "Google News — Hormuz and Gulf shipping",
+   "ok": true,
+   "items": 63
+  },
+  {
+   "id": "gn-oil",
+   "name": "Google News — oil market",
+   "ok": true,
+   "items": 100
+  },
+  {
+   "id": "gn-sanctions",
+   "name": "Google News — energy sanctions",
+   "ok": true,
+   "items": 25
+  },
+  {
+   "id": "gn-redsea",
+   "name": "Google News — Red Sea and Suez",
+   "ok": true,
+   "items": 25
+  },
+  {
+   "id": "gn-lng",
+   "name": "Google News — gas and LNG",
+   "ok": true,
+   "items": 91
+  },
+  {
+   "id": "gn-metals",
+   "name": "Google News — metals and iron ore",
+   "ok": true,
+   "items": 42
+  },
+  {
+   "id": "gn-grain",
+   "name": "Google News — grain and fertilizer",
+   "ok": true,
+   "items": 47
+  },
+  {
+   "id": "gn-freight",
+   "name": "Google News — freight markets",
+   "ok": true,
+   "items": 9
+  }
+ ],
+ "counts": {
+  "collected": 587,
+  "candidates": 90
+ },
+ "status": "stale",
+ "stale_reason": "Anthropic API HTTP 401: {\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"invalid x-api-key\"},\"request_id\":\"req_011ChVfyq6PDNc3XR9yTHsc9\"}",
+ "brief_generated_at": "2026-11-24T17:40:58+00:00",
+ "overview": {
+  "text": "Iran tanker attacks and Strait of Hormuz tensions dominate as multiple vessels struck mines, while Black Sea grain transit risk and European gas prices surge amid winter supply concerns.",
+  "sources": [
+   {
+    "title": "IRGC Navy Says Fourth Oil Tanker Exploded After Striking Mine in Strait of Hormuz: 7 outlets compared",
+    "publisher": "NewsCord",
+    "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQc3hUdWxfclBIQk42U1owdzA2dVQtSzNDTC1qYldQeHZ3dnluQXRDTUxxZFZEQ1Q5VUdzVUlZaXBuVkhvanctVzg5SlVELVRtUXBYSWl4S1hWLWNwdEZWWVV3TWlodHZZalBJUllRRWUxaWlTZG9pRUpaU1lld0VKU1VrTzFTNG1FUHJ6eUJIRnJnU1JQZ1V1ZDlCNmIyb1BjZmVmYVdKRnhYSmhPZ2dDa1dtVHZqUUd2bHl1QVZXQU5idVdSdy1qQTNWRnN0V21XOWZ3N1hhRjJQbjBlLWFHelljYkdKV1Y0bFE?oc=5",
+    "published_at": "2026-11-24T17:21+00:00"
+   },
+   {
+    "title": "IRGC Navy: Oil Tanker Hits Naval Mine in Eastern Strait of Hormuz",
+    "publisher": "ISNA News Agency",
+    "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOdmRSaDVWNTF3R0xhU29MN042MC14M1dsQV9CeWdzR3podDFCcmQ1M2pwQm5WWWJPc2VHYzNrYU9NTS1GUzRtN2tTdWRIR3ZGNU16VzRQeU44TUJSZzdDNlRaaFRMVU82TkZxSmtvb0N1bWMwMEoxOGtNT3JReHB1eEhmMXcxbVJqN3prRWFrY1pOYjZ1NUxNN2Y0SHc4OW40dF9kddIBTkFVX3lxTE9ncVdxWHVYMEZTMmpWQ2RPTDlZZEpqMVZmMEw3VU4teW96MGc5bDRDNDNiNGhETTZ1Q1ZtOGM0LXl3UGJrY2t0Y2J3WXNtQQ?oc=5",
+    "published_at": "2026-11-24T12:46+00:00"
+   },
+   {
+    "title": "Iran says two oil tankers catch fire after hitting naval mines in Hormuz",
+    "publisher": "Latest news from Azerbaijan",
+    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSUZQN3hlUkhtZ0RsaGNkZHFRc29fblRJeW9NcVRBaUdGYzJnYkprVTVieXNIeE5yR082cUxDMUJjWVM3ZHNkR3g5U21OMk1hdFlNRkJ5RXlPVEo2UzFXa19NeDljQmlkcnJmU3Rxb0xGTDktSDgwTlo5RnZudklpVzdRVThYTjhlQmYyY3R6bmdDdGhDdjN6Yg?oc=5",
+    "published_at": "2026-11-24T10:30+00:00"
+   },
+   {
+    "title": "WFP: ‘Triple chokepoint’ squeezing food supplies",
+    "publisher": "World Grain",
+    "url": "https://www.world-grain.com/articles/23490-wfp-triple-chokepoint-squeezing-food-supplies",
+    "published_at": "2026-11-24T14:38+00:00"
+   }
+  ]
+ },
+ "items": [
+  {
+   "headline": "Oil tankers hit mines in Strait of Hormuz amid escalating tensions",
+   "summary": "Iran's IRGC Navy reported multiple tanker strikes on naval mines in the Strait of Hormuz, including a fourth vessel explosion. U.S. Treasury widened sanctions on Iranian entities amid the incidents, while tensions persist over U.S. naval escorts.",
+   "category": "geopolitics",
+   "sources": [
+    {
+     "title": "IRGC Navy Says Fourth Oil Tanker Exploded After Striking Mine in Strait of Hormuz: 7 outlets compared",
+     "publisher": "NewsCord",
+     "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQc3hUdWxfclBIQk42U1owdzA2dVQtSzNDTC1qYldQeHZ3dnluQXRDTUxxZFZEQ1Q5VUdzVUlZaXBuVkhvanctVzg5SlVELVRtUXBYSWl4S1hWLWNwdEZWWVV3TWlodHZZalBJUllRRWUxaWlTZG9pRUpaU1lld0VKU1VrTzFTNG1FUHJ6eUJIRnJnU1JQZ1V1ZDlCNmIyb1BjZmVmYVdKRnhYSmhPZ2dDa1dtVHZqUUd2bHl1QVZXQU5idVdSdy1qQTNWRnN0V21XOWZ3N1hhRjJQbjBlLWFHelljYkdKV1Y0bFE?oc=5",
+     "published_at": "2026-11-24T17:21+00:00"
+    },
+    {
+     "title": "IRGC Navy: Oil Tanker Hits Naval Mine in Eastern Strait of Hormuz",
+     "publisher": "ISNA News Agency",
+     "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOdmRSaDVWNTF3R0xhU29MN042MC14M1dsQV9CeWdzR3podDFCcmQ1M2pwQm5WWWJPc2VHYzNrYU9NTS1GUzRtN2tTdWRIR3ZGNU16VzRQeU44TUJSZzdDNlRaaFRMVU82TkZxSmtvb0N1bWMwMEoxOGtNT3JReHB1eEhmMXcxbVJqN3prRWFrY1pOYjZ1NUxNN2Y0SHc4OW40dF9kddIBTkFVX3lxTE9ncVdxWHVYMEZTMmpWQ2RPTDlZZEpqMVZmMEw3VU4teW96MGc5bDRDNDNiNGhETTZ1Q1ZtOGM0LXl3UGJrY2t0Y2J3WXNtQQ?oc=5",
+     "published_at": "2026-11-24T12:46+00:00"
+    },
+    {
+     "title": "Iran says two oil tankers catch fire after hitting naval mines in Hormuz",
+     "publisher": "Latest news from Azerbaijan",
+     "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPSUZQN3hlUkhtZ0RsaGNkZHFRc29fblRJeW9NcVRBaUdGYzJnYkprVTVieXNIeE5yR082cUxDMUJjWVM3ZHNkR3g5U21OMk1hdFlNRkJ5RXlPVEo2UzFXa19NeDljQmlkcnJmU3Rxb0xGTDktSDgwTlo5RnZudklpVzdRVThYTjhlQmYyY3R6bmdDdGhDdjN6Yg?oc=5",
+     "published_at": "2026-11-24T10:30+00:00"
+    },
+    {
+     "title": "Iran says three tankers hit mines in Hormuz despite U.S. escort, as Treasury widens sanctions",
+     "publisher": "Forex Factory",
+     "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNTkF6TFptSnZGRUNOREtGRmF6N1pZSU9UdzFQZC05RllTQktMYXRFS0p6azVDUHFfdnkycXlHQzdZVEZEeE9FLUhYU3BNZHcxbmh2MjlDdVh5QVdPSXh4NXlNakxaMmVwd3J0V2hrSnJmbElaQUMzUjJRNUVBOTBLdVB6UUJiR01aaTZPbURn0gGTAUFVX3lxTFB5VFpZdnJpc1haQURNQnpqMHllanRTd2hzaWNQY0ZNd2pRTWFraWxWY3VHa0I0NVR0cjNVMXcyS1NLRmQ0cjY4T2Z6ZDZpcVlkMGJfY3A1T21MeTVQNzlxVFRLaGlQamNCZWRxQXh0c1lTbmhIcktDempKVEphU2xHMDNSRTFsanZJWUxMVGZpRHNHQQ?oc=5",
+     "published_at": "2026-11-24T11:32+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Black Sea wheat exports face 10 million tonne loss to market",
+   "summary": "World Food Programme warns that ongoing attacks in the Black Sea could deny 10 million tonnes of wheat from reaching global markets, disrupting grain supplies.",
+   "category": "agri",
+   "sources": [
+    {
+     "title": "WFP: ‘Triple chokepoint’ squeezing food supplies",
+     "publisher": "World Grain",
+     "url": "https://www.world-grain.com/articles/23490-wfp-triple-chokepoint-squeezing-food-supplies",
+     "published_at": "2026-11-24T14:38+00:00"
+    },
+    {
+     "title": "WFP warns 10 million tonnes of Black Sea wheat may not reach global markets",
+     "publisher": "Miller Magazine",
+     "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcnpuN1FuMEVSSHVfRGdyOWZLc2FHRDU2ZkFjZlBUUUJlZC1sU2JYUXRyUWdwRkpJT0lQc3h4NkxVVWJEQ3pLbG95TFJxbVBkcm52dmhjRmxUUFl0QkdJS01CRnNfRnRaT3NLUGZ6SU03SnM0VWlNWGttaE9yLVRyTHNndjNUakVWZlN6OUxQMnFjQUNRV21mcXg5NTd6cUY3TDNFYU5JWllRMmdGVnhJbE1n?oc=5",
+     "published_at": "2026-11-24T09:28+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Europe's gas prices surge 163% year-on-year amid winter concerns",
+   "summary": "TTF benchmark futures rose 12% month-on-month and 163% year-on-year to four-year highs, driven by tightening market balances ahead of the heating season.",
+   "category": "gas-lng",
+   "sources": [
+    {
+     "title": "Europe’s Gas Prices Jumped 163% in a Year",
+     "publisher": "OilPrice.com",
+     "url": "https://oilprice.com/Energy/Natural-Gas/Europes-Gas-Prices-Jumped-163-in-a-Year.html",
+     "published_at": "2026-11-24T17:00+00:00"
+    },
+    {
+     "title": "LNG Bunker Snapshot: Europe’s supply worries lift ARA as Singapore falls",
+     "publisher": "Hellenic Shipping News",
+     "url": "https://www.hellenicshippingnews.com/lng-bunker-snapshot-europes-supply-worries-lift-ara-as-singapore-falls/",
+     "published_at": "2026-11-24T11:00+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Used supertankers now command premium over new vessels due to war",
+   "summary": "Fifteen-year-old tankers now worth considerably more than new ships as Iran war creates extraordinary premium in global oil tanker market.",
+   "category": "shipping",
+   "sources": [
+    {
+     "title": "Used Supertankers Now Cost More Than New Ships as Hormuz War Upends Shipping Markets",
+     "publisher": "gCaptain",
+     "url": "https://gcaptain.com/used-supertankers-now-cost-more-than-new-ships-as-hormuz-war-upends-shipping-markets/",
+     "published_at": "2026-11-24T16:13+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Oil prices rebound as Hormuz shipping risks offset surplus concerns",
+   "summary": "Brent crude rises as shipping risks in Strait of Hormuz weigh against supply surplus concerns, with prices fluctuating amid escalating geopolitical tensions.",
+   "category": "oil",
+   "sources": [
+    {
+     "title": "Brent crude rises as surplus concerns weigh against shipping risks",
+     "publisher": "Traders Union",
+     "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOZGlGRWhRWDYwSkZPSVJGaGh3aUEzZEFYSnh6M0Z4anRaZmxzaHRhMXJKMy0wTWxyd1ZLS3Boa2F4bVRXZ3ZKOEpFTGF3emZxazJUNFcyZW9od0xrQlBHWG4wOTI3SkJ3bTZHbmdIOFk1U1A0LU8yTF9ZWDlkdmRRbGY5QUExMGhiVk5Hcw?oc=5",
+     "published_at": "2026-11-24T17:28+00:00"
+    },
+    {
+     "title": "Oil Prices Rebound as Shipping Risks Persist",
+     "publisher": "WSJ",
+     "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMkpRNmtac0F4dkZ2QTRqVEhSc2piS0Vpd1JNaHVScnZZYmRfdzBEbWZXOUFjb0dhR29XZURYZnRUcTVkQW41Y3pOT1plS0ZDOU5NTm1Qel9OUWRMNU53Y2ZoUjBWU045YUczZFRfZGswa0UtY2hVMVJMS2g0b29qUmw3YjN4VHF0aGVTYjVZdl94WjcwdXkxZ3diaVNXSWZwcE9tM2V3b3JLcTRTU0o0aw?oc=5",
+     "published_at": "2026-11-24T12:33+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Indonesia approves major deepwater gas hub development by Eni-Petronas",
+   "summary": "Indonesian authorities approved development of the Geliga gas field in East Kalimantan, enabling a deepwater production hub with FPSO vessel and 15 subsea wells.",
+   "category": "gas-lng",
+   "sources": [
+    {
+     "title": "Indonesia clears offshore gas development for Eni-Petronas venture",
+     "publisher": "Splash247",
+     "url": "https://splash247.com/indonesia-clears-offshore-gas-development-for-eni-petronas-venture/",
+     "published_at": "2026-11-24T12:00+00:00"
+    },
+    {
+     "title": "Eni gets OK for Indonesian gas hub",
+     "publisher": "LNG Prime",
+     "url": "https://lngprime.com/asia/eni-gets-ok-for-indonesian-gas-hub/200477/",
+     "published_at": "2026-11-24T07:05+00:00"
+    }
+   ]
+  },
+  {
+   "headline": "Baltic Dry Index climbs 68 points to 3068 as rates strengthen",
+   "summary": "Baltic Dry Index rose to 3068 points, covering prices for coal, grain and iron ore transport amid strengthening shipping demand.",
+   "category": "shipping",
+   "sources": [
+    {
+     "title": "Baltic Dry Index climbs to 3068 up 68 points",
+     "publisher": "Hellenic Shipping News",
+     "url": "https://www.hellenicshippingnews.com/baltic-dry-index-climbs-to-3068-up-68-points/",
+     "published_at": "2026-11-24T13:00+00:00"
+    }
+   ]
+  }
+ ]
+}
